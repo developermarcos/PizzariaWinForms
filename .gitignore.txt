@@ -1,1 +1,2 @@
-ProjetoDevSistemas2023\.vs
+/.vs
+/PizzariaDoZe/obj/
