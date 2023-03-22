@@ -73,6 +73,26 @@ namespace PizzariaDoZe.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cancel {
+            get {
+                object obj = ResourceManager.GetObject("cancel", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap disk {
+            get {
+                object obj = ResourceManager.GetObject("disk", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap edit_button {
             get {
                 object obj = ResourceManager.GetObject("edit-button", resourceCulture);
@@ -86,6 +106,16 @@ namespace PizzariaDoZe.Properties {
         internal static System.Drawing.Bitmap filter {
             get {
                 object obj = ResourceManager.GetObject("filter", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap login_ {
+            get {
+                object obj = ResourceManager.GetObject("login-", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

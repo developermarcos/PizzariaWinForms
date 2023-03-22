@@ -11,10 +11,31 @@ namespace PizzariaDoZe.TelaCliente
             InitializeComponent();
             Text = telaNome;
             panelAcoes.Controls.Add(AcoesUserControl);
-            AcoesUserControl.NomeTelaConfirmacao = telaNome;
             panelEndereco.Controls.Add(EnderecoUserControl);
 
             PreencherTela();
+
+            Salvar();
+            Cancelar();
+        }
+
+        private void Salvar()
+        {
+            AcoesUserControl.btnSalvar.Click += (object? sender, EventArgs e) =>
+            {
+                if (MessageBox.Show("Deseja realmente salvar as informações?", Text, MessageBoxButtons.OKCancel) == DialogResult.Cancel)
+                    DialogResult = DialogResult.None;
+            };
+            
+        }
+        private void Cancelar()
+        {
+            AcoesUserControl.btnCancelar.Click += (object? sender, EventArgs e) =>
+            {
+                if (MessageBox.Show("Deseja realmente cancelar?", Text, MessageBoxButtons.OKCancel) == DialogResult.Cancel)
+                    DialogResult = DialogResult.None;
+            };
+
         }
 
         private void PreencherTela()

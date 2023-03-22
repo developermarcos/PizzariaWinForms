@@ -3,8 +3,10 @@ using PizzariaDoZe.Compartilhado.Configurar;
 using PizzariaDoZe.Compartilhado.ExtensionMethods;
 using PizzariaDoZe.TelaCliente;
 using PizzariaDoZe.TelaIngrediente;
+using PizzariaDoZe.TelaLogin;
 using PizzariaDoZe.TelaSabores;
 using PizzariaDoZe.TelasFuncionario;
+using System.Numerics;
 
 namespace PizzariaDoZe
 {
@@ -12,15 +14,25 @@ namespace PizzariaDoZe
     {
         private List<Tuple<string, ControladorBase>> _controladores = new List<Tuple<string, ControladorBase>>();
         private ControladorBase _controladorSelecionado;
+        private TelaLoginForm _telaLogin = new TelaLoginForm();
 
         public TelaPrincipalForm()
         {
             InitializeComponent();
             CarregarControladores();
             ConfigurarTelaInicial();
+            Logar();
         }
 
-        
+        private void Logar()
+        {
+            do
+            {
+                _telaLogin.ShowDialog();
+            } while (!_telaLogin.UsuarioLogado);
+        }
+
+
 
         #region menu seleção
         private void CarregarControladores()
@@ -64,7 +76,7 @@ namespace PizzariaDoZe
             return _controladores.FirstOrDefault(t => t.Item1 == controladorName.RemoverCaracterEspeciaisEhEspacoesEh()).Item2;
         }
 
-        public void AtualizarListagem() 
+        public void AtualizarListagem()
         {
             //
         }
@@ -73,7 +85,7 @@ namespace PizzariaDoZe
             if (string.IsNullOrEmpty(texto))
                 return;
 
-            lbRodape.Text= texto;
+            lbRodape.Text = texto;
         }
 
         private void ConfigurarTela()
@@ -130,7 +142,7 @@ namespace PizzariaDoZe
 
         private void btnFiltrar_Click(object sender, EventArgs e)
         {
-            if(_controladorSelecionado is ITelaTipoFiltrarDados)
+            if (_controladorSelecionado is ITelaTipoFiltrarDados)
             {
                 var telaFiltro = (ITelaTipoFiltrarDados)_controladorSelecionado;
                 telaFiltro.Filtrar();

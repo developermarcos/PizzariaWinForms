@@ -1,1 +1,1 @@
-ProjetoDevSistemas\.vs
+ProjetoDevSistemas2023\.vs
