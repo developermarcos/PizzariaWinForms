@@ -1,2 +1,4 @@
+ProjetoDevSistemas2023/.vs
+ProjetoDevSistemas2023/PizzariaDoZe/obj/
 /.vs
 /PizzariaDoZe/obj/
