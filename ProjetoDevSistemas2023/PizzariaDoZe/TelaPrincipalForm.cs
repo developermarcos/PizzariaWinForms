@@ -4,8 +4,10 @@ using PizzariaDoZe.Compartilhado.ExtensionMethods;
 using PizzariaDoZe.TelaCliente;
 using PizzariaDoZe.TelaIngrediente;
 using PizzariaDoZe.TelaLogin;
+using PizzariaDoZe.TelaProduto;
 using PizzariaDoZe.TelaSabores;
 using PizzariaDoZe.TelasFuncionario;
+using PizzariaDoZe.TelaValor;
 using System.Numerics;
 
 namespace PizzariaDoZe
@@ -21,7 +23,7 @@ namespace PizzariaDoZe
             InitializeComponent();
             CarregarControladores();
             ConfigurarTelaInicial();
-            Logar();
+            //Logar();
         }
 
         private void Logar()
@@ -41,6 +43,8 @@ namespace PizzariaDoZe
             _controladores.Add(new Tuple<string, ControladorBase>("clientes", new ControladorCliente(this)));
             _controladores.Add(new Tuple<string, ControladorBase>("ingredientes", new ControladorIngrediente(this)));
             _controladores.Add(new Tuple<string, ControladorBase>("sabores", new ControladorSabores(this)));
+            _controladores.Add(new Tuple<string, ControladorBase>("produtos", new ControladorProduto(this)));
+            _controladores.Add(new Tuple<string, ControladorBase>("valores", new ControladorValor(this)));
         }
 
         private void funcionáriosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -65,6 +69,19 @@ namespace PizzariaDoZe
         private void ingredientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             _controladorSelecionado = ObterControlador(ingredientesToolStripMenuItem.Text);
+
+            ConfigurarTela();
+        }
+        private void produtosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            _controladorSelecionado = ObterControlador(produtosToolStripMenuItem.Text);
+
+            ConfigurarTela();
+        }
+
+        private void valoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            _controladorSelecionado = ObterControlador(valoresToolStripMenuItem.Text);
 
             ConfigurarTela();
         }
