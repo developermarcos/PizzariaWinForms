@@ -45,6 +45,8 @@
             panelConteudo = new Panel();
             panelInformacoes = new Panel();
             lbRodape = new Label();
+            produtosToolStripMenuItem = new ToolStripMenuItem();
+            valoresToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             panelAcoes.SuspendLayout();
             toolStripAcoes.SuspendLayout();
@@ -62,7 +64,7 @@
             // 
             // cadastrosToolStripMenuItem
             // 
-            cadastrosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { funcionáriosToolStripMenuItem, clientesToolStripMenuItem, saboresToolStripMenuItem, ingredientesToolStripMenuItem });
+            cadastrosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { funcionáriosToolStripMenuItem, clientesToolStripMenuItem, saboresToolStripMenuItem, ingredientesToolStripMenuItem, produtosToolStripMenuItem, valoresToolStripMenuItem });
             cadastrosToolStripMenuItem.Name = "cadastrosToolStripMenuItem";
             cadastrosToolStripMenuItem.Size = new Size(71, 20);
             cadastrosToolStripMenuItem.Text = "Cadastros";
@@ -70,28 +72,28 @@
             // funcionáriosToolStripMenuItem
             // 
             funcionáriosToolStripMenuItem.Name = "funcionáriosToolStripMenuItem";
-            funcionáriosToolStripMenuItem.Size = new Size(142, 22);
+            funcionáriosToolStripMenuItem.Size = new Size(180, 22);
             funcionáriosToolStripMenuItem.Text = "Funcionários";
             funcionáriosToolStripMenuItem.Click += funcionáriosToolStripMenuItem_Click;
             // 
             // clientesToolStripMenuItem
             // 
             clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            clientesToolStripMenuItem.Size = new Size(142, 22);
+            clientesToolStripMenuItem.Size = new Size(180, 22);
             clientesToolStripMenuItem.Text = "Clientes";
             clientesToolStripMenuItem.Click += clientesToolStripMenuItem_Click;
             // 
             // saboresToolStripMenuItem
             // 
             saboresToolStripMenuItem.Name = "saboresToolStripMenuItem";
-            saboresToolStripMenuItem.Size = new Size(142, 22);
+            saboresToolStripMenuItem.Size = new Size(180, 22);
             saboresToolStripMenuItem.Text = "Sabores";
             saboresToolStripMenuItem.Click += saboresToolStripMenuItem_Click;
             // 
             // ingredientesToolStripMenuItem
             // 
             ingredientesToolStripMenuItem.Name = "ingredientesToolStripMenuItem";
-            ingredientesToolStripMenuItem.Size = new Size(142, 22);
+            ingredientesToolStripMenuItem.Size = new Size(180, 22);
             ingredientesToolStripMenuItem.Text = "Ingredientes";
             ingredientesToolStripMenuItem.Click += ingredientesToolStripMenuItem_Click;
             // 
@@ -201,6 +203,20 @@
             lbRodape.Size = new Size(0, 15);
             lbRodape.TabIndex = 0;
             // 
+            // produtosToolStripMenuItem
+            // 
+            produtosToolStripMenuItem.Name = "produtosToolStripMenuItem";
+            produtosToolStripMenuItem.Size = new Size(180, 22);
+            produtosToolStripMenuItem.Text = "Produtos";
+            produtosToolStripMenuItem.Click += produtosToolStripMenuItem_Click;
+            // 
+            // valoresToolStripMenuItem
+            // 
+            valoresToolStripMenuItem.Name = "valoresToolStripMenuItem";
+            valoresToolStripMenuItem.Size = new Size(180, 22);
+            valoresToolStripMenuItem.Text = "Valores";
+            valoresToolStripMenuItem.Click += valoresToolStripMenuItem_Click;
+            // 
             // TelaPrincipalForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -247,5 +263,7 @@
         private ToolStripButton btnExcluir;
         private ToolStripButton btnFiltrar;
         private Label lbRodape;
+        private ToolStripMenuItem produtosToolStripMenuItem;
+        private ToolStripMenuItem valoresToolStripMenuItem;
     }
 }
