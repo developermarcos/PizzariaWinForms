@@ -28,196 +28,195 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.grupoEndereco = new System.Windows.Forms.GroupBox();
-            this.complemento = new System.Windows.Forms.TextBox();
-            this.pais = new System.Windows.Forms.TextBox();
-            this.uf = new System.Windows.Forms.TextBox();
-            this.cidade = new System.Windows.Forms.TextBox();
-            this.cep = new System.Windows.Forms.TextBox();
-            this.numero = new System.Windows.Forms.TextBox();
-            this.bairro = new System.Windows.Forms.TextBox();
-            this.rua = new System.Windows.Forms.TextBox();
-            this.lfPais = new System.Windows.Forms.Label();
-            this.lbUf = new System.Windows.Forms.Label();
-            this.lbComplemento = new System.Windows.Forms.Label();
-            this.lbCidade = new System.Windows.Forms.Label();
-            this.lbBairro = new System.Windows.Forms.Label();
-            this.lbNumero = new System.Windows.Forms.Label();
-            this.lbCep = new System.Windows.Forms.Label();
-            this.lbRua = new System.Windows.Forms.Label();
-            this.grupoEndereco.SuspendLayout();
-            this.SuspendLayout();
+            lbEndereco = new GroupBox();
+            complemento = new TextBox();
+            pais = new TextBox();
+            uf = new TextBox();
+            cidade = new TextBox();
+            cep = new TextBox();
+            numero = new TextBox();
+            bairro = new TextBox();
+            rua = new TextBox();
+            lbPais = new Label();
+            lbUf = new Label();
+            lbComplemento = new Label();
+            lbCidade = new Label();
+            lbBairro = new Label();
+            lbNumero = new Label();
+            lbCep = new Label();
+            lbRua = new Label();
+            lbEndereco.SuspendLayout();
+            SuspendLayout();
             // 
-            // grupoEndereco
+            // lbEndereco
             // 
-            this.grupoEndereco.Controls.Add(this.complemento);
-            this.grupoEndereco.Controls.Add(this.pais);
-            this.grupoEndereco.Controls.Add(this.uf);
-            this.grupoEndereco.Controls.Add(this.cidade);
-            this.grupoEndereco.Controls.Add(this.cep);
-            this.grupoEndereco.Controls.Add(this.numero);
-            this.grupoEndereco.Controls.Add(this.bairro);
-            this.grupoEndereco.Controls.Add(this.rua);
-            this.grupoEndereco.Controls.Add(this.lfPais);
-            this.grupoEndereco.Controls.Add(this.lbUf);
-            this.grupoEndereco.Controls.Add(this.lbComplemento);
-            this.grupoEndereco.Controls.Add(this.lbCidade);
-            this.grupoEndereco.Controls.Add(this.lbBairro);
-            this.grupoEndereco.Controls.Add(this.lbNumero);
-            this.grupoEndereco.Controls.Add(this.lbCep);
-            this.grupoEndereco.Controls.Add(this.lbRua);
-            this.grupoEndereco.Location = new System.Drawing.Point(3, 3);
-            this.grupoEndereco.Name = "grupoEndereco";
-            this.grupoEndereco.Size = new System.Drawing.Size(347, 370);
-            this.grupoEndereco.TabIndex = 21;
-            this.grupoEndereco.TabStop = false;
-            this.grupoEndereco.Text = "Endereço";
+            lbEndereco.Controls.Add(complemento);
+            lbEndereco.Controls.Add(pais);
+            lbEndereco.Controls.Add(uf);
+            lbEndereco.Controls.Add(cidade);
+            lbEndereco.Controls.Add(cep);
+            lbEndereco.Controls.Add(numero);
+            lbEndereco.Controls.Add(bairro);
+            lbEndereco.Controls.Add(rua);
+            lbEndereco.Controls.Add(lbPais);
+            lbEndereco.Controls.Add(lbUf);
+            lbEndereco.Controls.Add(lbComplemento);
+            lbEndereco.Controls.Add(lbCidade);
+            lbEndereco.Controls.Add(lbBairro);
+            lbEndereco.Controls.Add(lbNumero);
+            lbEndereco.Controls.Add(lbCep);
+            lbEndereco.Controls.Add(lbRua);
+            lbEndereco.Location = new Point(3, 3);
+            lbEndereco.Name = "lbEndereco";
+            lbEndereco.Size = new Size(347, 370);
+            lbEndereco.TabIndex = 21;
+            lbEndereco.TabStop = false;
+            lbEndereco.Text = "Endereço--";
             // 
             // complemento
             // 
-            this.complemento.Location = new System.Drawing.Point(19, 227);
-            this.complemento.Multiline = true;
-            this.complemento.Name = "complemento";
-            this.complemento.Size = new System.Drawing.Size(306, 130);
-            this.complemento.TabIndex = 16;
+            complemento.Location = new Point(19, 227);
+            complemento.Multiline = true;
+            complemento.Name = "complemento";
+            complemento.Size = new Size(306, 130);
+            complemento.TabIndex = 16;
             // 
             // pais
             // 
-            this.pais.Location = new System.Drawing.Point(175, 183);
-            this.pais.Name = "pais";
-            this.pais.Size = new System.Drawing.Size(150, 23);
-            this.pais.TabIndex = 15;
+            pais.Location = new Point(175, 183);
+            pais.Name = "pais";
+            pais.Size = new Size(150, 23);
+            pais.TabIndex = 15;
             // 
             // uf
             // 
-            this.uf.Location = new System.Drawing.Point(19, 183);
-            this.uf.Name = "uf";
-            this.uf.Size = new System.Drawing.Size(150, 23);
-            this.uf.TabIndex = 14;
+            uf.Location = new Point(19, 183);
+            uf.Name = "uf";
+            uf.Size = new Size(150, 23);
+            uf.TabIndex = 14;
             // 
             // cidade
             // 
-            this.cidade.Location = new System.Drawing.Point(109, 139);
-            this.cidade.Name = "cidade";
-            this.cidade.Size = new System.Drawing.Size(216, 23);
-            this.cidade.TabIndex = 13;
+            cidade.Location = new Point(109, 139);
+            cidade.Name = "cidade";
+            cidade.Size = new Size(216, 23);
+            cidade.TabIndex = 13;
             // 
             // cep
             // 
-            this.cep.Location = new System.Drawing.Point(19, 139);
-            this.cep.Name = "cep";
-            this.cep.Size = new System.Drawing.Size(84, 23);
-            this.cep.TabIndex = 12;
+            cep.Location = new Point(19, 139);
+            cep.Name = "cep";
+            cep.Size = new Size(84, 23);
+            cep.TabIndex = 12;
             // 
             // numero
             // 
-            this.numero.Location = new System.Drawing.Point(218, 95);
-            this.numero.Name = "numero";
-            this.numero.Size = new System.Drawing.Size(107, 23);
-            this.numero.TabIndex = 11;
+            numero.Location = new Point(218, 95);
+            numero.Name = "numero";
+            numero.Size = new Size(107, 23);
+            numero.TabIndex = 11;
             // 
             // bairro
             // 
-            this.bairro.Location = new System.Drawing.Point(19, 95);
-            this.bairro.Name = "bairro";
-            this.bairro.Size = new System.Drawing.Size(193, 23);
-            this.bairro.TabIndex = 10;
+            bairro.Location = new Point(19, 95);
+            bairro.Name = "bairro";
+            bairro.Size = new Size(193, 23);
+            bairro.TabIndex = 10;
             // 
             // rua
             // 
-            this.rua.Location = new System.Drawing.Point(19, 51);
-            this.rua.Name = "rua";
-            this.rua.Size = new System.Drawing.Size(306, 23);
-            this.rua.TabIndex = 9;
+            rua.Location = new Point(19, 51);
+            rua.Name = "rua";
+            rua.Size = new Size(306, 23);
+            rua.TabIndex = 9;
             // 
-            // lfPais
+            // lbPais
             // 
-            this.lfPais.AutoSize = true;
-            this.lfPais.Location = new System.Drawing.Point(175, 165);
-            this.lfPais.Name = "lfPais";
-            this.lfPais.Size = new System.Drawing.Size(28, 15);
-            this.lfPais.TabIndex = 8;
-            this.lfPais.Text = "País";
+            lbPais.AutoSize = true;
+            lbPais.Location = new Point(175, 165);
+            lbPais.Name = "lbPais";
+            lbPais.Size = new Size(38, 15);
+            lbPais.TabIndex = 8;
+            lbPais.Text = "País--";
             // 
             // lbUf
             // 
-            this.lbUf.AutoSize = true;
-            this.lbUf.Location = new System.Drawing.Point(19, 165);
-            this.lbUf.Name = "lbUf";
-            this.lbUf.Size = new System.Drawing.Size(21, 15);
-            this.lbUf.TabIndex = 7;
-            this.lbUf.Text = "UF";
+            lbUf.AutoSize = true;
+            lbUf.Location = new Point(19, 165);
+            lbUf.Name = "lbUf";
+            lbUf.Size = new Size(31, 15);
+            lbUf.TabIndex = 7;
+            lbUf.Text = "UF--";
             // 
             // lbComplemento
             // 
-            this.lbComplemento.AutoSize = true;
-            this.lbComplemento.Location = new System.Drawing.Point(19, 209);
-            this.lbComplemento.Name = "lbComplemento";
-            this.lbComplemento.Size = new System.Drawing.Size(84, 15);
-            this.lbComplemento.TabIndex = 5;
-            this.lbComplemento.Text = "Complemento";
+            lbComplemento.AutoSize = true;
+            lbComplemento.Location = new Point(19, 209);
+            lbComplemento.Name = "lbComplemento";
+            lbComplemento.Size = new Size(94, 15);
+            lbComplemento.TabIndex = 5;
+            lbComplemento.Text = "Complemento--";
             // 
             // lbCidade
             // 
-            this.lbCidade.AutoSize = true;
-            this.lbCidade.Location = new System.Drawing.Point(109, 121);
-            this.lbCidade.Name = "lbCidade";
-            this.lbCidade.Size = new System.Drawing.Size(44, 15);
-            this.lbCidade.TabIndex = 4;
-            this.lbCidade.Text = "Cidade";
+            lbCidade.AutoSize = true;
+            lbCidade.Location = new Point(109, 121);
+            lbCidade.Name = "lbCidade";
+            lbCidade.Size = new Size(54, 15);
+            lbCidade.TabIndex = 4;
+            lbCidade.Text = "Cidade--";
             // 
             // lbBairro
             // 
-            this.lbBairro.AutoSize = true;
-            this.lbBairro.Location = new System.Drawing.Point(19, 77);
-            this.lbBairro.Name = "lbBairro";
-            this.lbBairro.Size = new System.Drawing.Size(38, 15);
-            this.lbBairro.TabIndex = 3;
-            this.lbBairro.Text = "Bairro";
+            lbBairro.AutoSize = true;
+            lbBairro.Location = new Point(19, 77);
+            lbBairro.Name = "lbBairro";
+            lbBairro.Size = new Size(48, 15);
+            lbBairro.TabIndex = 3;
+            lbBairro.Text = "Bairro--";
             // 
             // lbNumero
             // 
-            this.lbNumero.AutoSize = true;
-            this.lbNumero.Location = new System.Drawing.Point(218, 77);
-            this.lbNumero.Name = "lbNumero";
-            this.lbNumero.Size = new System.Drawing.Size(51, 15);
-            this.lbNumero.TabIndex = 2;
-            this.lbNumero.Text = "Número";
+            lbNumero.AutoSize = true;
+            lbNumero.Location = new Point(218, 77);
+            lbNumero.Name = "lbNumero";
+            lbNumero.Size = new Size(61, 15);
+            lbNumero.TabIndex = 2;
+            lbNumero.Text = "Número--";
             // 
             // lbCep
             // 
-            this.lbCep.AutoSize = true;
-            this.lbCep.Location = new System.Drawing.Point(19, 121);
-            this.lbCep.Name = "lbCep";
-            this.lbCep.Size = new System.Drawing.Size(28, 15);
-            this.lbCep.TabIndex = 1;
-            this.lbCep.Text = "CEP";
+            lbCep.AutoSize = true;
+            lbCep.Location = new Point(19, 121);
+            lbCep.Name = "lbCep";
+            lbCep.Size = new Size(38, 15);
+            lbCep.TabIndex = 1;
+            lbCep.Text = "CEP--";
             // 
             // lbRua
             // 
-            this.lbRua.AutoSize = true;
-            this.lbRua.Location = new System.Drawing.Point(19, 26);
-            this.lbRua.Name = "lbRua";
-            this.lbRua.Size = new System.Drawing.Size(27, 15);
-            this.lbRua.TabIndex = 0;
-            this.lbRua.Text = "Rua";
+            lbRua.AutoSize = true;
+            lbRua.Location = new Point(19, 26);
+            lbRua.Name = "lbRua";
+            lbRua.Size = new Size(37, 15);
+            lbRua.TabIndex = 0;
+            lbRua.Text = "Rua--";
             // 
             // UserControlEndereco
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.grupoEndereco);
-            this.Name = "UserControlEndereco";
-            this.Size = new System.Drawing.Size(355, 380);
-            this.grupoEndereco.ResumeLayout(false);
-            this.grupoEndereco.PerformLayout();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(lbEndereco);
+            Name = "UserControlEndereco";
+            Size = new Size(355, 380);
+            lbEndereco.ResumeLayout(false);
+            lbEndereco.PerformLayout();
+            ResumeLayout(false);
         }
 
         #endregion
 
-        private GroupBox grupoEndereco;
+        private GroupBox lbEndereco;
         private TextBox complemento;
         private TextBox pais;
         private TextBox uf;
@@ -226,7 +225,7 @@
         private TextBox numero;
         private TextBox bairro;
         private TextBox rua;
-        private Label lfPais;
+        private Label lbPais;
         private Label lbUf;
         private Label lbComplemento;
         private Label lbCidade;

@@ -1,14 +1,20 @@
 using PizzariaDoZe.Compartilhado;
 using PizzariaDoZe.Compartilhado.Configurar;
-using PizzariaDoZe.Compartilhado.ExtensionMethods;
+using PizzariaDoZe.Configuracoes.TelaIdioma;
 using PizzariaDoZe.TelaCliente;
 using PizzariaDoZe.TelaIngrediente;
 using PizzariaDoZe.TelaLogin;
 using PizzariaDoZe.TelaProduto;
 using PizzariaDoZe.TelaSabores;
+using PizzariaDoZe.TelasCadastro.TelaCliente;
+using PizzariaDoZe.TelasCadastro.TelaIngrediente;
+using PizzariaDoZe.TelasCadastro.TelaProduto;
+using PizzariaDoZe.TelasCadastro.TelaSabores;
+using PizzariaDoZe.TelasCadastro.TelasFuncionario;
+using PizzariaDoZe.TelasCadastro.TelaValor;
 using PizzariaDoZe.TelasFuncionario;
 using PizzariaDoZe.TelaValor;
-using System.Numerics;
+using System.ComponentModel;
 
 namespace PizzariaDoZe
 {
@@ -39,58 +45,64 @@ namespace PizzariaDoZe
         #region menu seleção
         private void CarregarControladores()
         {
-            _controladores.Add(new Tuple<string, ControladorBase>("funcionarios", new ControladorFuncionario(this)));
-            _controladores.Add(new Tuple<string, ControladorBase>("clientes", new ControladorCliente(this)));
-            _controladores.Add(new Tuple<string, ControladorBase>("ingredientes", new ControladorIngrediente(this)));
-            _controladores.Add(new Tuple<string, ControladorBase>("sabores", new ControladorSabores(this)));
-            _controladores.Add(new Tuple<string, ControladorBase>("produtos", new ControladorProduto(this)));
-            _controladores.Add(new Tuple<string, ControladorBase>("valores", new ControladorValor(this)));
+            _controladores.Add(new Tuple<string, ControladorBase>(funcionariosToolStripMenuItem.Name, new ControladorFuncionario(this)));
+            _controladores.Add(new Tuple<string, ControladorBase>(clientesToolStripMenuItem.Name, new ControladorCliente(this)));
+            _controladores.Add(new Tuple<string, ControladorBase>(ingredientesToolStripMenuItem.Name, new ControladorIngrediente(this)));
+            _controladores.Add(new Tuple<string, ControladorBase>(saboresToolStripMenuItem.Name, new ControladorSabores(this)));
+            _controladores.Add(new Tuple<string, ControladorBase>(produtosToolStripMenuItem.Name, new ControladorProduto(this)));
+            _controladores.Add(new Tuple<string, ControladorBase>(valoresToolStripMenuItem.Name, new ControladorValor(this)));
         }
 
         private void funcionáriosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            _controladorSelecionado = ObterControlador(funcionáriosToolStripMenuItem.Text);
+            _controladorSelecionado = ObterControlador(funcionariosToolStripMenuItem.Name);
 
             ConfigurarTela();
         }
         private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            _controladorSelecionado = ObterControlador(clientesToolStripMenuItem.Text);
+            _controladorSelecionado = ObterControlador(clientesToolStripMenuItem.Name);
 
             ConfigurarTela();
         }
 
         private void saboresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            _controladorSelecionado = ObterControlador(saboresToolStripMenuItem.Text);
+            _controladorSelecionado = ObterControlador(saboresToolStripMenuItem.Name);
 
             ConfigurarTela();
         }
         private void ingredientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            _controladorSelecionado = ObterControlador(ingredientesToolStripMenuItem.Text);
+            _controladorSelecionado = ObterControlador(ingredientesToolStripMenuItem.Name);
 
             ConfigurarTela();
         }
         private void produtosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            _controladorSelecionado = ObterControlador(produtosToolStripMenuItem.Text);
+            _controladorSelecionado = ObterControlador(produtosToolStripMenuItem.Name);
 
             ConfigurarTela();
         }
 
         private void valoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            _controladorSelecionado = ObterControlador(valoresToolStripMenuItem.Text);
+            _controladorSelecionado = ObterControlador(valoresToolStripMenuItem.Name);
 
             ConfigurarTela();
+        }
+        private void idiomasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var controladorIdioma = new ControladorIdioma();
+
+            controladorIdioma.IdiomaPanel(panelConteudo);
         }
         #endregion
 
         #region configuração tela inicial
         private ControladorBase ObterControlador(string controladorName)
         {
-            return _controladores.FirstOrDefault(t => t.Item1 == controladorName.RemoverCaracterEspeciaisEhEspacoesEh()).Item2;
+            return _controladores.FirstOrDefault(t => t.Item1 == controladorName).Item2;
         }
 
         public void AtualizarListagem()
@@ -115,6 +127,8 @@ namespace PizzariaDoZe
         }
         private void ConfigurarTelaInicial()
         {
+            ComponentResourceManager resources = new(typeof(Properties.Resources));
+
             BtnInserir.Enabled = false;
             btnEditar.Enabled = false;
             btnExcluir.Enabled = false;
@@ -124,6 +138,23 @@ namespace PizzariaDoZe
             btnEditar.Text = "";
             btnExcluir.Text = "";
             btnFiltrar.Text = "";
+
+            this.Text = Properties.Resources.ResourceManager.GetString("TelaPrincipalForm.Text");
+
+            cadastrosToolStripMenuItem.Text = Properties.Resources.ResourceManager.GetString("cadastrosToolStripMenuItem.Text");
+            funcionariosToolStripMenuItem.Text = Properties.Resources.ResourceManager.GetString("funcionariosToolStripMenuItem.Text");
+            clientesToolStripMenuItem.Text = Properties.Resources.ResourceManager.GetString("clientesToolStripMenuItem.Text");
+            saboresToolStripMenuItem.Text = Properties.Resources.ResourceManager.GetString("saboresToolStripMenuItem.Text");
+            ingredientesToolStripMenuItem.Text = Properties.Resources.ResourceManager.GetString("ingredientesToolStripMenuItem.Text");
+            produtosToolStripMenuItem.Text = Properties.Resources.ResourceManager.GetString("produtosToolStripMenuItem.Text");
+            valoresToolStripMenuItem.Text = Properties.Resources.ResourceManager.GetString("valoresToolStripMenuItem.Text");
+            
+            pedidosToolStripMenuItem.Text = Properties.Resources.ResourceManager.GetString("pedidosToolStripMenuItem.Text");
+
+            relatoriosToolStripMenuItem.Text = Properties.Resources.ResourceManager.GetString("relatoriosToolStripMenuItem.Text");
+
+            configuracoesToolStripMenuItem.Text = Properties.Resources.ResourceManager.GetString("configuracoesToolStripMenuItem.Text");
+            idiomasToolStripMenuItem.Text = Properties.Resources.ResourceManager.GetString("idiomasToolStripMenuItem.Text");
         }
         private void ConfigurarToolTips()
         {

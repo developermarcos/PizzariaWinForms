@@ -1,3 +1,5 @@
+using System.Globalization;
+
 namespace PizzariaDoZe
 {
     internal static class Program
@@ -10,6 +12,10 @@ namespace PizzariaDoZe
         {
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
+            Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("en");
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo("en");
+            Thread.CurrentThread.CurrentCulture = new CultureInfo("en");
+
             ApplicationConfiguration.Initialize();
             Application.Run(new TelaPrincipalForm());
         }

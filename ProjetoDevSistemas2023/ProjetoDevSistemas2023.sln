@@ -3,7 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PizzariaDoZe", "PizzariaDoZe\PizzariaDoZe.csproj", "{BD040FE5-6316-411F-80AC-AC532A98A5AE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PizzariaDoZe", "PizzariaDoZe\PizzariaDoZe.csproj", "{BD040FE5-6316-411F-80AC-AC532A98A5AE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1- Application", "1- Application", "{DE974008-D624-48FB-A98F-C213EA0577E9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2- Distribuition", "2- Distribuition", "{D0E8FC2B-8ED8-47B4-91BE-7A8FE8500197}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3- Domain", "3- Domain", "{BD479A21-DF49-4EB5-B514-329F07356799}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4- Infra", "4- Infra", "{D2F7EE93-34EB-4011-BABC-6D5312423619}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5- Testes", "5- Testes", "{EC95F6B2-7349-4134-BBDB-4A21C5359312}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,6 +28,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{BD040FE5-6316-411F-80AC-AC532A98A5AE} = {DE974008-D624-48FB-A98F-C213EA0577E9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5FDC15A0-2B6F-43E5-853C-388F3FD63A2F}
