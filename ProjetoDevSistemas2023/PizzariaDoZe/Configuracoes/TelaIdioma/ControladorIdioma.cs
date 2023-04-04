@@ -11,8 +11,10 @@ namespace PizzariaDoZe.Configuracoes.TelaIdioma
     {
         private UserControlIdioma Idioma = new UserControlIdioma();
         
-        public void IdiomaPanel(Panel panelTelaPrincipal)
+        public  void IdiomaPanel(Panel panelTelaPrincipal, TelaPrincipalForm telaPrincipalForm)
         {
+            Idioma.TelaPrincipal = telaPrincipalForm;
+
             panelTelaPrincipal.Controls.Add(Idioma);
         }
     }

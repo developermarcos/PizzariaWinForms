@@ -22,14 +22,14 @@ namespace PizzariaDoZe.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    internal class Resources___Copy {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Resources() {
+        internal Resources___Copy() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace PizzariaDoZe.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("PizzariaDoZe.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("PizzariaDoZe.Properties.Resources - Copy", typeof(Resources___Copy).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -71,7 +71,7 @@ namespace PizzariaDoZe.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Adicionar.
+        ///   Looks up a localized string similar to Para agregar.
         /// </summary>
         internal static string btnAdicionar_Text {
             get {
@@ -89,7 +89,7 @@ namespace PizzariaDoZe.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Editar.
+        ///   Looks up a localized string similar to Para editar.
         /// </summary>
         internal static string btnEditar_Text {
             get {
@@ -98,7 +98,7 @@ namespace PizzariaDoZe.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Excluir.
+        ///   Looks up a localized string similar to Borrar.
         /// </summary>
         internal static string btnExcluir_Text {
             get {
@@ -116,7 +116,7 @@ namespace PizzariaDoZe.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Inserir.
+        ///   Looks up a localized string similar to Insertar.
         /// </summary>
         internal static string btnInserir_Text {
             get {
@@ -125,7 +125,7 @@ namespace PizzariaDoZe.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Login.
+        ///   Looks up a localized string similar to Acceso.
         /// </summary>
         internal static string btnLogin_Text {
             get {
@@ -134,7 +134,7 @@ namespace PizzariaDoZe.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Salvar.
+        ///   Looks up a localized string similar to Ahorrar.
         /// </summary>
         internal static string btnSalvar_Text {
             get {
@@ -143,7 +143,7 @@ namespace PizzariaDoZe.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Cadastros.
+        ///   Looks up a localized string similar to Inscripción.
         /// </summary>
         internal static string cadastrosToolStripMenuItem_Text {
             get {
@@ -171,7 +171,7 @@ namespace PizzariaDoZe.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Configurações.
+        ///   Looks up a localized string similar to Ajustes.
         /// </summary>
         internal static string configuracoesToolStripMenuItem_Text {
             get {
@@ -200,7 +200,7 @@ namespace PizzariaDoZe.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Espanhol.
+        ///   Looks up a localized string similar to Español.
         /// </summary>
         internal static string espanhol_Text {
             get {
@@ -218,7 +218,7 @@ namespace PizzariaDoZe.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Funcionário.
+        ///   Looks up a localized string similar to Empleado.
         /// </summary>
         internal static string FeatureFuncionario {
             get {
@@ -236,7 +236,7 @@ namespace PizzariaDoZe.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Login.
+        ///   Looks up a localized string similar to Acceso.
         /// </summary>
         internal static string FeatureLogin {
             get {
@@ -245,7 +245,7 @@ namespace PizzariaDoZe.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Produto.
+        ///   Looks up a localized string similar to Producto.
         /// </summary>
         internal static string FeatureProduto {
             get {
@@ -282,7 +282,7 @@ namespace PizzariaDoZe.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Funcionários.
+        ///   Looks up a localized string similar to Empleados.
         /// </summary>
         internal static string funcionariosToolStripMenuItem_Text {
             get {
@@ -291,7 +291,7 @@ namespace PizzariaDoZe.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Possui Habilitação?.
+        ///   Looks up a localized string similar to ¿Tiene una licencia?.
         /// </summary>
         internal static string grupoHabilitacao_Text {
             get {
@@ -300,7 +300,7 @@ namespace PizzariaDoZe.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Idiomais.
+        ///   Looks up a localized string similar to Idioma.
         /// </summary>
         internal static string idiomasToolStripMenuItem_Text {
             get {
@@ -327,7 +327,7 @@ namespace PizzariaDoZe.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Bairro.
+        ///   Looks up a localized string similar to Vecindario.
         /// </summary>
         internal static string lbBairro_Text {
             get {
@@ -345,7 +345,7 @@ namespace PizzariaDoZe.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to CEP.
+        ///   Looks up a localized string similar to Código postal.
         /// </summary>
         internal static string lbCep_Text {
             get {
@@ -354,7 +354,7 @@ namespace PizzariaDoZe.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Cidade.
+        ///   Looks up a localized string similar to Ciudad.
         /// </summary>
         internal static string lbCidade_Text {
             get {
@@ -363,7 +363,7 @@ namespace PizzariaDoZe.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Confirmar Senha.
+        ///   Looks up a localized string similar to Confirmar seña.
         /// </summary>
         internal static string lbComfirmarSenha_Text {
             get {
@@ -372,7 +372,7 @@ namespace PizzariaDoZe.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Complemento.
+        ///   Looks up a localized string similar to Complementar.
         /// </summary>
         internal static string lbComplemento_Text {
             get {
@@ -390,7 +390,7 @@ namespace PizzariaDoZe.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Data Vencimento.
+        ///   Looks up a localized string similar to Fecha de vencimiento.
         /// </summary>
         internal static string lbDataVencimento_Text {
             get {
@@ -399,7 +399,7 @@ namespace PizzariaDoZe.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Email.
+        ///   Looks up a localized string similar to Correo electrónico.
         /// </summary>
         internal static string lbEmail_Text {
             get {
@@ -408,7 +408,7 @@ namespace PizzariaDoZe.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Endereço.
+        ///   Looks up a localized string similar to DIRECCIÓN.
         /// </summary>
         internal static string lbEndereco_Text {
             get {
@@ -417,7 +417,7 @@ namespace PizzariaDoZe.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Foto.
+        ///   Looks up a localized string similar to Fotografía.
         /// </summary>
         internal static string lbFoto_Text {
             get {
@@ -426,7 +426,7 @@ namespace PizzariaDoZe.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ID.
+        ///   Looks up a localized string similar to IDENTIFICACIÓN.
         /// </summary>
         internal static string lbId_Text {
             get {
@@ -444,7 +444,7 @@ namespace PizzariaDoZe.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Matrícula.
+        ///   Looks up a localized string similar to Registro.
         /// </summary>
         internal static string lbMatricula_Text {
             get {
@@ -462,7 +462,7 @@ namespace PizzariaDoZe.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nome.
+        ///   Looks up a localized string similar to Nombre.
         /// </summary>
         internal static string lbNome_Text {
             get {
@@ -471,7 +471,7 @@ namespace PizzariaDoZe.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nome Completo.
+        ///   Looks up a localized string similar to Nombre completo.
         /// </summary>
         internal static string lbNomeCompleto_Text {
             get {
@@ -489,7 +489,7 @@ namespace PizzariaDoZe.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Observações.
+        ///   Looks up a localized string similar to Comentario.
         /// </summary>
         internal static string lbObservacoes_Text {
             get {
@@ -516,7 +516,7 @@ namespace PizzariaDoZe.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Rua.
+        ///   Looks up a localized string similar to Camino.
         /// </summary>
         internal static string lbRua_Text {
             get {
@@ -525,7 +525,7 @@ namespace PizzariaDoZe.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Senha.
+        ///   Looks up a localized string similar to Contraseña.
         /// </summary>
         internal static string lbSenha_Text {
             get {
@@ -534,7 +534,7 @@ namespace PizzariaDoZe.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Tamanho.
+        ///   Looks up a localized string similar to Tamaño.
         /// </summary>
         internal static string lbTamanho_Text {
             get {
@@ -543,7 +543,7 @@ namespace PizzariaDoZe.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Telefone.
+        ///   Looks up a localized string similar to Teléfono.
         /// </summary>
         internal static string lbTelefone_Text {
             get {
@@ -588,7 +588,7 @@ namespace PizzariaDoZe.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Valor Borda Especial.
+        ///   Looks up a localized string similar to Valor fronterizo especial.
         /// </summary>
         internal static string lbValorBordaEspecial_Text {
             get {
@@ -597,7 +597,7 @@ namespace PizzariaDoZe.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Valor Borda Normal.
+        ///   Looks up a localized string similar to Valor fronterizo normal.
         /// </summary>
         internal static string lbValorBordaNormal_Text {
             get {
@@ -606,7 +606,7 @@ namespace PizzariaDoZe.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Valor Pizza Especial.
+        ///   Looks up a localized string similar to Valor de pizza especial.
         /// </summary>
         internal static string lbValorPizzaEspecial_Text {
             get {
@@ -615,7 +615,7 @@ namespace PizzariaDoZe.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Valor Pizza Tradicional.
+        ///   Looks up a localized string similar to Valor de pizza tradicional.
         /// </summary>
         internal static string lbValorPizzaTradicional_Text {
             get {
@@ -624,7 +624,7 @@ namespace PizzariaDoZe.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Listando.
+        ///   Looks up a localized string similar to Listado.
         /// </summary>
         internal static string Listando {
             get {
@@ -633,7 +633,7 @@ namespace PizzariaDoZe.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Listar.
+        ///   Looks up a localized string similar to Prodigar.
         /// </summary>
         internal static string Listar {
             get {
@@ -652,7 +652,7 @@ namespace PizzariaDoZe.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Deseja realmente excluir o dado?.
+        ///   Looks up a localized string similar to ¿Realmente quieres eliminar los datos?.
         /// </summary>
         internal static string MensagemConfirmacaoExclusao {
             get {
@@ -661,7 +661,7 @@ namespace PizzariaDoZe.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Deseja realmente cancelar? .
+        ///   Looks up a localized string similar to ¿De verdad quieres cancelar?.
         /// </summary>
         internal static string MensagemDesejaCancelar {
             get {
@@ -670,7 +670,7 @@ namespace PizzariaDoZe.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Deseja realmente salvar as informações?.
+        ///   Looks up a localized string similar to ¿Realmente quieres guardar la información?.
         /// </summary>
         internal static string MensagemDesejaSalvar {
             get {
@@ -679,7 +679,7 @@ namespace PizzariaDoZe.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Item editado com sucesso!.
+        ///   Looks up a localized string similar to Artículo editado con éxito!.
         /// </summary>
         internal static string MensagemEditadoSucesso {
             get {
@@ -688,7 +688,7 @@ namespace PizzariaDoZe.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Item excluído com sucesso!.
+        ///   Looks up a localized string similar to Artículo excluido con éxito!.
         /// </summary>
         internal static string MensagemExcluidoSucesso {
             get {
@@ -697,7 +697,7 @@ namespace PizzariaDoZe.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Idioma foi atualizado para potuguês.
+        ///   Looks up a localized string similar to El idioma ha sido actualizado a español.
         /// </summary>
         internal static string MensagemIdiomaAtualizado {
             get {
@@ -706,7 +706,7 @@ namespace PizzariaDoZe.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Item salvo com sucesso!.
+        ///   Looks up a localized string similar to Artículo guardado con éxito!.
         /// </summary>
         internal static string MensagemInseridoSucesso {
             get {
@@ -715,7 +715,7 @@ namespace PizzariaDoZe.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nenhum item editado.
+        ///   Looks up a localized string similar to No hay artículo editado.
         /// </summary>
         internal static string MensagemNenhumItemEditado {
             get {
@@ -724,7 +724,7 @@ namespace PizzariaDoZe.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nenhum item excluído.
+        ///   Looks up a localized string similar to Sin artículo eliminado.
         /// </summary>
         internal static string MensagemNenhumItemExcluido {
             get {
@@ -733,7 +733,7 @@ namespace PizzariaDoZe.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nenhum item inserido.
+        ///   Looks up a localized string similar to Sin elemento insertado.
         /// </summary>
         internal static string MensagemNenhumItemInserido {
             get {
@@ -742,7 +742,7 @@ namespace PizzariaDoZe.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Não.
+        ///   Looks up a localized string similar to No.
         /// </summary>
         internal static string nao_Text {
             get {
@@ -751,7 +751,7 @@ namespace PizzariaDoZe.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Novo.
+        ///   Looks up a localized string similar to Nuevo.
         /// </summary>
         internal static string Novo {
             get {
@@ -760,7 +760,7 @@ namespace PizzariaDoZe.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Pedidos.
+        ///   Looks up a localized string similar to Peticiones.
         /// </summary>
         internal static string pedidosToolStripMenuItem_Text {
             get {
@@ -769,7 +769,7 @@ namespace PizzariaDoZe.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Português.
+        ///   Looks up a localized string similar to portugués.
         /// </summary>
         internal static string portugues_Text {
             get {
@@ -778,7 +778,7 @@ namespace PizzariaDoZe.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Produtos.
+        ///   Looks up a localized string similar to Productos.
         /// </summary>
         internal static string produtosToolStripMenuItem_Text {
             get {
@@ -787,7 +787,7 @@ namespace PizzariaDoZe.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Relatórios.
+        ///   Looks up a localized string similar to Informes.
         /// </summary>
         internal static string relatoriosToolStripMenuItem_Text {
             get {
@@ -805,7 +805,7 @@ namespace PizzariaDoZe.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Selecionar Idioma.
+        ///   Looks up a localized string similar to Seleccione el idioma.
         /// </summary>
         internal static string selecionarIdioma_Text {
             get {
@@ -814,7 +814,7 @@ namespace PizzariaDoZe.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sim.
+        ///   Looks up a localized string similar to Sí.
         /// </summary>
         internal static string sim_Text {
             get {
@@ -832,7 +832,7 @@ namespace PizzariaDoZe.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Funcionário.
+        ///   Looks up a localized string similar to Empleado.
         /// </summary>
         internal static string TelaCadastroFuncionarioForm_Text {
             get {
@@ -850,7 +850,7 @@ namespace PizzariaDoZe.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Login.
+        ///   Looks up a localized string similar to Acceso.
         /// </summary>
         internal static string TelaCadastroLoginForm_Text {
             get {
@@ -859,7 +859,7 @@ namespace PizzariaDoZe.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Produto.
+        ///   Looks up a localized string similar to Producto.
         /// </summary>
         internal static string TelaCadastroProdutoForm_Text {
             get {

@@ -33,7 +33,7 @@ namespace PizzariaDoZe.Compartilhado
         public abstract void Inserir();
         public abstract void Editar();
         public abstract void Excluir();
-        public abstract void Listar();
+        public abstract void Listar(TelaPrincipalForm telaPrincipalForm);
         public abstract ToolStripBase ToolTripConfiguracao { get; }
     }
 }

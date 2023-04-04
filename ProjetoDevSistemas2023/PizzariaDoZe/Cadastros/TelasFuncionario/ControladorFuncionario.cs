@@ -53,8 +53,9 @@ namespace PizzariaDoZe.TelasCadastro.TelasFuncionario
             TelaPrincipalForm.AtualizarRodape($"{_mensagemRegistroExcluido}");
         }
 
-        public override void Listar()
+        public override void Listar(TelaPrincipalForm telaPrincipalForm)
         {
+            telaPrincipalForm.AtualizarListagem(new Control());
             TelaPrincipalForm.AtualizarRodape($"{_listando} 0 {_featurePlural}");
         }
 

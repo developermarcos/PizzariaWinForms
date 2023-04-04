@@ -15,6 +15,7 @@ using PizzariaDoZe.TelasCadastro.TelaValor;
 using PizzariaDoZe.TelasFuncionario;
 using PizzariaDoZe.TelaValor;
 using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 namespace PizzariaDoZe
 {
@@ -39,7 +40,14 @@ namespace PizzariaDoZe
                 _telaLogin.ShowDialog();
             } while (!_telaLogin.UsuarioLogado);
         }
+        public void AtualizarTelaPrincipal()
+        {
+            this.Refresh();
 
+            ConfigurarTelaInicial();
+
+            ConfigurarTela();
+        }
 
 
         #region menu seleção
@@ -95,7 +103,7 @@ namespace PizzariaDoZe
         {
             var controladorIdioma = new ControladorIdioma();
 
-            controladorIdioma.IdiomaPanel(panelConteudo);
+            controladorIdioma.IdiomaPanel(panelConteudo, this);
         }
         #endregion
 
@@ -105,9 +113,10 @@ namespace PizzariaDoZe
             return _controladores.FirstOrDefault(t => t.Item1 == controladorName).Item2;
         }
 
-        public void AtualizarListagem()
+        public void AtualizarListagem(Control conteudo)
         {
-            //
+            panelConteudo.Controls.Clear();
+            panelConteudo.Controls.Add(conteudo);
         }
         public void AtualizarRodape(string texto)
         {
@@ -122,7 +131,8 @@ namespace PizzariaDoZe
             if (_controladorSelecionado != null)
             {
                 ConfigurarToolTips();
-                _controladorSelecionado.Listar();
+
+                _controladorSelecionado.Listar(this);
             }
         }
         private void ConfigurarTelaInicial()

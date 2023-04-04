@@ -16,6 +16,9 @@ namespace PizzariaDoZe.Configuracoes.TelaIdioma
     public partial class UserControlIdioma : UserControl
     {
         private List<Tuple<string, string>> idiomas;
+
+        public TelaPrincipalForm TelaPrincipal { get; internal set; }
+
         public UserControlIdioma()
         {
             InitializeComponent();
@@ -36,8 +39,8 @@ namespace PizzariaDoZe.Configuracoes.TelaIdioma
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            string auxIdiomaRegiao = "en-US"; // en-US, es, pt-BR, etc
-                                              //ajusta o idioma/região
+            string auxIdiomaRegiao = string.Empty; 
+
             foreach (var item in selecionarIdioma.Controls)
             {
                 var btn = (RadioButton)item;
@@ -46,6 +49,12 @@ namespace PizzariaDoZe.Configuracoes.TelaIdioma
 
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(auxIdiomaRegiao);
             Thread.CurrentThread.CurrentCulture = new CultureInfo(auxIdiomaRegiao);
+
+            TelaPrincipal.AtualizarTelaPrincipal();
+            
+            Configurar();
+
+            TelaPrincipal.AtualizarRodape(Properties.Resources.ResourceManager.GetString("MensagemIdiomaAtualizado"));
         }
     }
 }
