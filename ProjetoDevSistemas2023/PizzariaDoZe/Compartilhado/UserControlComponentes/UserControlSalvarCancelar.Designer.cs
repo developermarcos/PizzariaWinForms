@@ -40,7 +40,7 @@
             btnSalvar.Name = "btnSalvar";
             btnSalvar.Size = new Size(91, 35);
             btnSalvar.TabIndex = 0;
-            btnSalvar.Text = "Salvar";
+            btnSalvar.Text = "Salvar--";
             btnSalvar.TextAlign = ContentAlignment.MiddleRight;
             btnSalvar.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnSalvar.UseVisualStyleBackColor = true;
@@ -53,7 +53,7 @@
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(91, 35);
             btnCancelar.TabIndex = 1;
-            btnCancelar.Text = "Cancelar";
+            btnCancelar.Text = "Cancelar--";
             btnCancelar.TextAlign = ContentAlignment.MiddleRight;
             btnCancelar.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnCancelar.UseVisualStyleBackColor = true;

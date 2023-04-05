@@ -34,7 +34,7 @@
             senha = new TextBox();
             btnLogin = new Button();
             panel1 = new Panel();
-            label1 = new Label();
+            inditativoLogin = new Label();
             lbPizzariaNome = new Label();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -44,18 +44,18 @@
             lbUsuario.AutoSize = true;
             lbUsuario.Location = new Point(21, 43);
             lbUsuario.Name = "lbUsuario";
-            lbUsuario.Size = new Size(47, 15);
+            lbUsuario.Size = new Size(57, 15);
             lbUsuario.TabIndex = 0;
-            lbUsuario.Text = "Usuário";
+            lbUsuario.Text = "Usuário--";
             // 
             // lbSenha
             // 
             lbSenha.AutoSize = true;
             lbSenha.Location = new Point(29, 87);
             lbSenha.Name = "lbSenha";
-            lbSenha.Size = new Size(39, 15);
+            lbSenha.Size = new Size(49, 15);
             lbSenha.TabIndex = 1;
-            lbSenha.Text = "Senha";
+            lbSenha.Text = "Senha--";
             // 
             // usuario
             // 
@@ -87,7 +87,7 @@
             // 
             // panel1
             // 
-            panel1.Controls.Add(label1);
+            panel1.Controls.Add(inditativoLogin);
             panel1.Controls.Add(lbUsuario);
             panel1.Controls.Add(btnLogin);
             panel1.Controls.Add(usuario);
@@ -98,14 +98,14 @@
             panel1.Size = new Size(298, 200);
             panel1.TabIndex = 5;
             // 
-            // label1
+            // inditativoLogin
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(125, 110);
-            label1.Name = "label1";
-            label1.Size = new Size(142, 15);
-            label1.TabIndex = 5;
-            label1.Text = "usuario e senha = marcos";
+            inditativoLogin.AutoSize = true;
+            inditativoLogin.Location = new Point(125, 110);
+            inditativoLogin.Name = "inditativoLogin";
+            inditativoLogin.Size = new Size(142, 15);
+            inditativoLogin.TabIndex = 5;
+            inditativoLogin.Text = "usuario e senha = marcos";
             // 
             // lbPizzariaNome
             // 
@@ -113,9 +113,9 @@
             lbPizzariaNome.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point);
             lbPizzariaNome.Location = new Point(147, 77);
             lbPizzariaNome.Name = "lbPizzariaNome";
-            lbPizzariaNome.Size = new Size(528, 40);
+            lbPizzariaNome.Size = new Size(552, 40);
             lbPizzariaNome.TabIndex = 6;
-            lbPizzariaNome.Text = "Pizzaria Desenvolvimento de Sistema";
+            lbPizzariaNome.Text = "Pizzaria Desenvolvimento de Sistema--";
             // 
             // TelaLoginForm
             // 
@@ -143,6 +143,6 @@
         private Button btnLogin;
         private Panel panel1;
         private Label lbPizzariaNome;
-        private Label label1;
+        private Label inditativoLogin;
     }
 }

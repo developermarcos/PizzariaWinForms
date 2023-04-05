@@ -28,14 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            menuStrip1 = new MenuStrip();
+            menuPricipal = new MenuStrip();
             cadastrosToolStripMenuItem = new ToolStripMenuItem();
-            funcionáriosToolStripMenuItem = new ToolStripMenuItem();
+            funcionariosToolStripMenuItem = new ToolStripMenuItem();
             clientesToolStripMenuItem = new ToolStripMenuItem();
             saboresToolStripMenuItem = new ToolStripMenuItem();
             ingredientesToolStripMenuItem = new ToolStripMenuItem();
+            produtosToolStripMenuItem = new ToolStripMenuItem();
+            valoresToolStripMenuItem = new ToolStripMenuItem();
             pedidosToolStripMenuItem = new ToolStripMenuItem();
-            relatóriosToolStripMenuItem = new ToolStripMenuItem();
+            relatoriosToolStripMenuItem = new ToolStripMenuItem();
+            configuracoesToolStripMenuItem = new ToolStripMenuItem();
+            idiomasToolStripMenuItem = new ToolStripMenuItem();
             panelAcoes = new Panel();
             toolStripAcoes = new ToolStrip();
             BtnInserir = new ToolStripButton();
@@ -45,69 +49,95 @@
             panelConteudo = new Panel();
             panelInformacoes = new Panel();
             lbRodape = new Label();
-            produtosToolStripMenuItem = new ToolStripMenuItem();
-            valoresToolStripMenuItem = new ToolStripMenuItem();
-            menuStrip1.SuspendLayout();
+            menuPricipal.SuspendLayout();
             panelAcoes.SuspendLayout();
             toolStripAcoes.SuspendLayout();
             panelInformacoes.SuspendLayout();
             SuspendLayout();
             // 
-            // menuStrip1
+            // menuPricipal
             // 
-            menuStrip1.Items.AddRange(new ToolStripItem[] { cadastrosToolStripMenuItem, pedidosToolStripMenuItem, relatóriosToolStripMenuItem });
-            menuStrip1.Location = new Point(0, 0);
-            menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(800, 24);
-            menuStrip1.TabIndex = 0;
-            menuStrip1.Text = "menuStrip1";
+            menuPricipal.Items.AddRange(new ToolStripItem[] { cadastrosToolStripMenuItem, pedidosToolStripMenuItem, relatoriosToolStripMenuItem, configuracoesToolStripMenuItem });
+            menuPricipal.Location = new Point(0, 0);
+            menuPricipal.Name = "menuPricipal";
+            menuPricipal.Size = new Size(800, 24);
+            menuPricipal.TabIndex = 0;
+            menuPricipal.Text = "menuPricipal";
             // 
             // cadastrosToolStripMenuItem
             // 
-            cadastrosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { funcionáriosToolStripMenuItem, clientesToolStripMenuItem, saboresToolStripMenuItem, ingredientesToolStripMenuItem, produtosToolStripMenuItem, valoresToolStripMenuItem });
+            cadastrosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { funcionariosToolStripMenuItem, clientesToolStripMenuItem, saboresToolStripMenuItem, ingredientesToolStripMenuItem, produtosToolStripMenuItem, valoresToolStripMenuItem });
             cadastrosToolStripMenuItem.Name = "cadastrosToolStripMenuItem";
-            cadastrosToolStripMenuItem.Size = new Size(71, 20);
-            cadastrosToolStripMenuItem.Text = "Cadastros";
+            cadastrosToolStripMenuItem.Size = new Size(81, 20);
+            cadastrosToolStripMenuItem.Text = "Cadastros--";
             // 
-            // funcionáriosToolStripMenuItem
+            // funcionariosToolStripMenuItem
             // 
-            funcionáriosToolStripMenuItem.Name = "funcionáriosToolStripMenuItem";
-            funcionáriosToolStripMenuItem.Size = new Size(180, 22);
-            funcionáriosToolStripMenuItem.Text = "Funcionários";
-            funcionáriosToolStripMenuItem.Click += funcionáriosToolStripMenuItem_Click;
+            funcionariosToolStripMenuItem.Name = "funcionariosToolStripMenuItem";
+            funcionariosToolStripMenuItem.Size = new Size(152, 22);
+            funcionariosToolStripMenuItem.Text = "Funcionários--";
+            funcionariosToolStripMenuItem.Click += funcionáriosToolStripMenuItem_Click;
             // 
             // clientesToolStripMenuItem
             // 
             clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            clientesToolStripMenuItem.Size = new Size(180, 22);
-            clientesToolStripMenuItem.Text = "Clientes";
+            clientesToolStripMenuItem.Size = new Size(152, 22);
+            clientesToolStripMenuItem.Text = "Clientes--";
             clientesToolStripMenuItem.Click += clientesToolStripMenuItem_Click;
             // 
             // saboresToolStripMenuItem
             // 
             saboresToolStripMenuItem.Name = "saboresToolStripMenuItem";
-            saboresToolStripMenuItem.Size = new Size(180, 22);
-            saboresToolStripMenuItem.Text = "Sabores";
+            saboresToolStripMenuItem.Size = new Size(152, 22);
+            saboresToolStripMenuItem.Text = "Sabores--";
             saboresToolStripMenuItem.Click += saboresToolStripMenuItem_Click;
             // 
             // ingredientesToolStripMenuItem
             // 
             ingredientesToolStripMenuItem.Name = "ingredientesToolStripMenuItem";
-            ingredientesToolStripMenuItem.Size = new Size(180, 22);
-            ingredientesToolStripMenuItem.Text = "Ingredientes";
+            ingredientesToolStripMenuItem.Size = new Size(152, 22);
+            ingredientesToolStripMenuItem.Text = "Ingredientes--";
             ingredientesToolStripMenuItem.Click += ingredientesToolStripMenuItem_Click;
+            // 
+            // produtosToolStripMenuItem
+            // 
+            produtosToolStripMenuItem.Name = "produtosToolStripMenuItem";
+            produtosToolStripMenuItem.Size = new Size(152, 22);
+            produtosToolStripMenuItem.Text = "Produtos--";
+            produtosToolStripMenuItem.Click += produtosToolStripMenuItem_Click;
+            // 
+            // valoresToolStripMenuItem
+            // 
+            valoresToolStripMenuItem.Name = "valoresToolStripMenuItem";
+            valoresToolStripMenuItem.Size = new Size(152, 22);
+            valoresToolStripMenuItem.Text = "Valores--";
+            valoresToolStripMenuItem.Click += valoresToolStripMenuItem_Click;
             // 
             // pedidosToolStripMenuItem
             // 
             pedidosToolStripMenuItem.Name = "pedidosToolStripMenuItem";
-            pedidosToolStripMenuItem.Size = new Size(61, 20);
-            pedidosToolStripMenuItem.Text = "Pedidos";
+            pedidosToolStripMenuItem.Size = new Size(71, 20);
+            pedidosToolStripMenuItem.Text = "Pedidos--";
             // 
-            // relatóriosToolStripMenuItem
+            // relatoriosToolStripMenuItem
             // 
-            relatóriosToolStripMenuItem.Name = "relatóriosToolStripMenuItem";
-            relatóriosToolStripMenuItem.Size = new Size(71, 20);
-            relatóriosToolStripMenuItem.Text = "Relatórios";
+            relatoriosToolStripMenuItem.Name = "relatoriosToolStripMenuItem";
+            relatoriosToolStripMenuItem.Size = new Size(81, 20);
+            relatoriosToolStripMenuItem.Text = "Relatórios--";
+            // 
+            // configuracoesToolStripMenuItem
+            // 
+            configuracoesToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { idiomasToolStripMenuItem });
+            configuracoesToolStripMenuItem.Name = "configuracoesToolStripMenuItem";
+            configuracoesToolStripMenuItem.Size = new Size(106, 20);
+            configuracoesToolStripMenuItem.Text = "Configurações--";
+            // 
+            // idiomasToolStripMenuItem
+            // 
+            idiomasToolStripMenuItem.Name = "idiomasToolStripMenuItem";
+            idiomasToolStripMenuItem.Size = new Size(180, 22);
+            idiomasToolStripMenuItem.Text = "Idiomas--";
+            idiomasToolStripMenuItem.Click += idiomasToolStripMenuItem_Click;
             // 
             // panelAcoes
             // 
@@ -203,20 +233,6 @@
             lbRodape.Size = new Size(0, 15);
             lbRodape.TabIndex = 0;
             // 
-            // produtosToolStripMenuItem
-            // 
-            produtosToolStripMenuItem.Name = "produtosToolStripMenuItem";
-            produtosToolStripMenuItem.Size = new Size(180, 22);
-            produtosToolStripMenuItem.Text = "Produtos";
-            produtosToolStripMenuItem.Click += produtosToolStripMenuItem_Click;
-            // 
-            // valoresToolStripMenuItem
-            // 
-            valoresToolStripMenuItem.Name = "valoresToolStripMenuItem";
-            valoresToolStripMenuItem.Size = new Size(180, 22);
-            valoresToolStripMenuItem.Text = "Valores";
-            valoresToolStripMenuItem.Click += valoresToolStripMenuItem_Click;
-            // 
             // TelaPrincipalForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -226,14 +242,14 @@
             Controls.Add(panelInformacoes);
             Controls.Add(panelConteudo);
             Controls.Add(panelAcoes);
-            Controls.Add(menuStrip1);
-            MainMenuStrip = menuStrip1;
+            Controls.Add(menuPricipal);
+            MainMenuStrip = menuPricipal;
             Name = "TelaPrincipalForm";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Tela Principal";
+            Text = "Tela Principal----";
             WindowState = FormWindowState.Maximized;
-            menuStrip1.ResumeLayout(false);
-            menuStrip1.PerformLayout();
+            menuPricipal.ResumeLayout(false);
+            menuPricipal.PerformLayout();
             panelAcoes.ResumeLayout(false);
             panelAcoes.PerformLayout();
             toolStripAcoes.ResumeLayout(false);
@@ -246,14 +262,14 @@
 
         #endregion
 
-        private MenuStrip menuStrip1;
+        private MenuStrip menuPricipal;
         private ToolStripMenuItem cadastrosToolStripMenuItem;
-        private ToolStripMenuItem funcionáriosToolStripMenuItem;
+        private ToolStripMenuItem funcionariosToolStripMenuItem;
         private ToolStripMenuItem clientesToolStripMenuItem;
         private ToolStripMenuItem saboresToolStripMenuItem;
         private ToolStripMenuItem ingredientesToolStripMenuItem;
         private ToolStripMenuItem pedidosToolStripMenuItem;
-        private ToolStripMenuItem relatóriosToolStripMenuItem;
+        private ToolStripMenuItem relatoriosToolStripMenuItem;
         private Panel panelAcoes;
         private Panel panelConteudo;
         private Panel panelInformacoes;
@@ -265,5 +281,7 @@
         private Label lbRodape;
         private ToolStripMenuItem produtosToolStripMenuItem;
         private ToolStripMenuItem valoresToolStripMenuItem;
+        private ToolStripMenuItem configuracoesToolStripMenuItem;
+        private ToolStripMenuItem idiomasToolStripMenuItem;
     }
 }

@@ -140,94 +140,94 @@
     <value>..\Resources\trash.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="btnAdicionar.Text" xml:space="preserve">
-    <value>Adicionar</value>
+    <value>Para agregar</value>
   </data>
   <data name="btnCancelar.Text" xml:space="preserve">
     <value>Cancelar</value>
   </data>
   <data name="btnEditar.Text" xml:space="preserve">
-    <value>Editar</value>
+    <value>Para editar</value>
   </data>
   <data name="btnExcluir.Text" xml:space="preserve">
-    <value>Excluir</value>
+    <value>Borrar</value>
   </data>
   <data name="btnFiltrar.Text" xml:space="preserve">
     <value>Filtrar</value>
   </data>
   <data name="btnLogin.Text" xml:space="preserve">
-    <value>Login</value>
+    <value>Acceso</value>
   </data>
   <data name="btnSalvar.Text" xml:space="preserve">
-    <value>Salvar</value>
+    <value>Ahorrar</value>
   </data>
   <data name="cadastrosToolStripMenuItem.Text" xml:space="preserve">
-    <value>Cadastros</value>
+    <value>Inscripción</value>
   </data>
   <data name="clientesToolStripMenuItem.Text" xml:space="preserve">
     <value>Clientes</value>
   </data>
   <data name="funcionariosToolStripMenuItem.Text" xml:space="preserve">
-    <value>Funcionários</value>
+    <value>Empleados</value>
   </data>
   <data name="grupoHabilitacao.Text" xml:space="preserve">
-    <value>Possui Habilitação?</value>
+    <value>¿Tiene una licencia?</value>
   </data>
   <data name="ingredientesToolStripMenuItem.Text" xml:space="preserve">
     <value>Ingredientes</value>
   </data>
   <data name="lbBairro.Text" xml:space="preserve">
-    <value>Bairro</value>
+    <value>Vecindario</value>
   </data>
   <data name="lbCategorias.Text" xml:space="preserve">
     <value>Categorias</value>
   </data>
   <data name="lbCep.Text" xml:space="preserve">
-    <value>CEP</value>
+    <value>Código postal</value>
   </data>
   <data name="lbCidade.Text" xml:space="preserve">
-    <value>Cidade</value>
+    <value>Ciudad</value>
   </data>
   <data name="lbComfirmarSenha.Text" xml:space="preserve">
-    <value>Confirmar Senha</value>
+    <value>Confirmar seña</value>
   </data>
   <data name="lbComplemento.Text" xml:space="preserve">
-    <value>Complemento</value>
+    <value>Complementar</value>
   </data>
   <data name="lbCpf.Text" xml:space="preserve">
     <value>CPF</value>
   </data>
   <data name="lbDataVencimento.Text" xml:space="preserve">
-    <value>Data Vencimento</value>
+    <value>Fecha de vencimiento</value>
   </data>
   <data name="lbEmail.Text" xml:space="preserve">
-    <value>Email</value>
+    <value>Correo electrónico</value>
   </data>
   <data name="lbFoto.Text" xml:space="preserve">
-    <value>Foto</value>
+    <value>Fotografía</value>
   </data>
   <data name="lbId.Text" xml:space="preserve">
-    <value>ID</value>
+    <value>IDENTIFICACIÓN</value>
   </data>
   <data name="lbIngredientes.Text" xml:space="preserve">
     <value>Ingredientes</value>
   </data>
   <data name="lbMatricula.Text" xml:space="preserve">
-    <value>Matrícula</value>
+    <value>Registro</value>
   </data>
   <data name="lbMl.Text" xml:space="preserve">
     <value>ML</value>
   </data>
   <data name="lbNome.Text" xml:space="preserve">
-    <value>Nome</value>
+    <value>Nombre</value>
   </data>
   <data name="lbNomeCompleto.Text" xml:space="preserve">
-    <value>Nome Completo</value>
+    <value>Nombre completo</value>
   </data>
   <data name="lbNumero.Text" xml:space="preserve">
     <value>Número</value>
   </data>
   <data name="lbObservacoes.Text" xml:space="preserve">
-    <value>Observações</value>
+    <value>Comentario</value>
   </data>
   <data name="lbPais.Text" xml:space="preserve">
     <value>País</value>
@@ -236,13 +236,13 @@
     <value>Pizzaria do Zé</value>
   </data>
   <data name="lbRua.Text" xml:space="preserve">
-    <value>Rua</value>
+    <value>Camino</value>
   </data>
   <data name="lbSenha.Text" xml:space="preserve">
-    <value>Senha</value>
+    <value>Contraseña</value>
   </data>
   <data name="lbTelefone.Text" xml:space="preserve">
-    <value>Telefone</value>
+    <value>Teléfono</value>
   </data>
   <data name="lbTipo.Text" xml:space="preserve">
     <value>Tipo</value>
@@ -257,40 +257,40 @@
     <value>Valor</value>
   </data>
   <data name="nao.Text" xml:space="preserve">
-    <value>Não</value>
+    <value>No</value>
   </data>
   <data name="pedidosToolStripMenuItem.Text" xml:space="preserve">
-    <value>Pedidos</value>
+    <value>Peticiones</value>
   </data>
   <data name="produtosToolStripMenuItem.Text" xml:space="preserve">
-    <value>Produtos</value>
+    <value>Productos</value>
   </data>
   <data name="relatoriosToolStripMenuItem.Text" xml:space="preserve">
-    <value>Relatórios</value>
+    <value>Informes</value>
   </data>
   <data name="saboresToolStripMenuItem.Text" xml:space="preserve">
     <value>Sabores</value>
   </data>
   <data name="sim.Text" xml:space="preserve">
-    <value>Sim</value>
+    <value>Sí</value>
   </data>
   <data name="lbTamanho.Text" xml:space="preserve">
-    <value>Tamanho</value>
+    <value>Tamaño</value>
   </data>
   <data name="TelaCadastroClienteForm.Text" xml:space="preserve">
     <value>Cliente</value>
   </data>
   <data name="TelaCadastroFuncionarioForm.Text" xml:space="preserve">
-    <value>Funcionário</value>
+    <value>Empleado</value>
   </data>
   <data name="TelaCadastroIngredienteForm.Text" xml:space="preserve">
     <value>Ingrediente</value>
   </data>
   <data name="TelaCadastroLoginForm.Text" xml:space="preserve">
-    <value>Login</value>
+    <value>Acceso</value>
   </data>
   <data name="TelaCadastroProdutoForm.Text" xml:space="preserve">
-    <value>Produto</value>
+    <value>Producto</value>
   </data>
   <data name="TelaCadastroSaborForm.Text" xml:space="preserve">
     <value>Sabor</value>
@@ -299,34 +299,34 @@
     <value>Pizzaria do Zé</value>
   </data>
   <data name="lbValorBordaEspecial.Text" xml:space="preserve">
-    <value>Valor Borda Especial</value>
+    <value>Valor fronterizo especial</value>
   </data>
   <data name="lbValorBordaNormal.Text" xml:space="preserve">
-    <value>Valor Borda Normal</value>
+    <value>Valor fronterizo normal</value>
   </data>
   <data name="valoresToolStripMenuItem.Text" xml:space="preserve">
     <value>Valores</value>
   </data>
   <data name="lbValorPizzaEspecial.Text" xml:space="preserve">
-    <value>Valor Pizza Especial</value>
+    <value>Valor de pizza especial</value>
   </data>
   <data name="lbValorPizzaTradicional.Text" xml:space="preserve">
-    <value>Valor Pizza Tradicional</value>
+    <value>Valor de pizza tradicional</value>
   </data>
   <data name="FeatureCliente" xml:space="preserve">
     <value>Cliente</value>
   </data>
   <data name="FeatureFuncionario" xml:space="preserve">
-    <value>Funcionário</value>
+    <value>Empleado</value>
   </data>
   <data name="FeatureIngrediente" xml:space="preserve">
     <value>Ingrediente</value>
   </data>
   <data name="FeatureLogin" xml:space="preserve">
-    <value>Login</value>
+    <value>Acceso</value>
   </data>
   <data name="FeatureProduto" xml:space="preserve">
-    <value>Produto</value>
+    <value>Producto</value>
   </data>
   <data name="FeatureSabor" xml:space="preserve">
     <value>Sabor</value>
@@ -335,66 +335,66 @@
     <value>Valor</value>
   </data>
   <data name="btnInserir.Text" xml:space="preserve">
-    <value>Inserir</value>
+    <value>Insertar</value>
   </data>
   <data name="Novo" xml:space="preserve">
-    <value>Novo</value>
+    <value>Nuevo</value>
   </data>
   <data name="Listando" xml:space="preserve">
-    <value>Listando</value>
+    <value>Listado</value>
   </data>
   <data name="Listar" xml:space="preserve">
-    <value>Listar</value>
+    <value>Prodigar</value>
   </data>
   <data name="MensagemConfirmacaoExclusao" xml:space="preserve">
-    <value>Deseja realmente excluir o dado?</value>
+    <value>¿Realmente quieres eliminar los datos?</value>
   </data>
   <data name="MensagemEditadoSucesso" xml:space="preserve">
-    <value>Item editado com sucesso!</value>
+    <value>Artículo editado con éxito!</value>
   </data>
   <data name="MensagemExcluidoSucesso" xml:space="preserve">
-    <value>Item excluído com sucesso!</value>
+    <value>Artículo excluido con éxito!</value>
   </data>
   <data name="MensagemInseridoSucesso" xml:space="preserve">
-    <value>Item salvo com sucesso!</value>
+    <value>Artículo guardado con éxito!</value>
   </data>
   <data name="MensagemNenhumItemEditado" xml:space="preserve">
-    <value>Nenhum item editado</value>
+    <value>No hay artículo editado</value>
   </data>
   <data name="MensagemNenhumItemExcluido" xml:space="preserve">
-    <value>Nenhum item excluído</value>
+    <value>Sin artículo eliminado</value>
   </data>
   <data name="MensagemNenhumItemInserido" xml:space="preserve">
-    <value>Nenhum item inserido</value>
+    <value>Sin elemento insertado</value>
   </data>
   <data name="MensagemDesejaCancelar" xml:space="preserve">
-    <value>Deseja realmente cancelar? </value>
+    <value>¿De verdad quieres cancelar?</value>
   </data>
   <data name="MensagemDesejaSalvar" xml:space="preserve">
-    <value>Deseja realmente salvar as informações?</value>
+    <value>¿Realmente quieres guardar la información?</value>
   </data>
   <data name="lbEndereco.Text" xml:space="preserve">
-    <value>Endereço</value>
+    <value>DIRECCIÓN</value>
   </data>
   <data name="configuracoesToolStripMenuItem.Text" xml:space="preserve">
-    <value>Configurações</value>
+    <value>Ajustes</value>
   </data>
   <data name="espanhol.Text" xml:space="preserve">
-    <value>Espanhol</value>
+    <value>Español</value>
   </data>
   <data name="idiomasToolStripMenuItem.Text" xml:space="preserve">
-    <value>Idiomais</value>
+    <value>Idioma</value>
   </data>
   <data name="ingles.Text" xml:space="preserve">
     <value>Inglês</value>
   </data>
   <data name="portugues.Text" xml:space="preserve">
-    <value>Português</value>
+    <value>portugués</value>
   </data>
   <data name="selecionarIdioma.Text" xml:space="preserve">
-    <value>Selecionar Idioma</value>
+    <value>Seleccione el idioma</value>
   </data>
   <data name="MensagemIdiomaAtualizado" xml:space="preserve">
-    <value>Idioma foi atualizado para potuguês</value>
+    <value>El idioma ha sido actualizado a español</value>
   </data>
 </root>
