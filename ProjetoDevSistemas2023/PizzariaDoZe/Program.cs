@@ -1,3 +1,5 @@
+using PizzariaDoZe.Compartilhado.ExtensionMethods;
+using System.Configuration;
 using System.Globalization;
 
 namespace PizzariaDoZe
@@ -10,6 +12,10 @@ namespace PizzariaDoZe
         [STAThread]
         static void Main()
         {
+            #region Idioma aplicação
+            ProgramExtensions.SelecionarIdiomaAplicacao();
+            #endregion
+
             ApplicationConfiguration.Initialize();
             Application.Run(new TelaPrincipalForm());
         }

@@ -7,31 +7,31 @@
     <Compile Update="Compartilhado\UserControlComponentes\UserControlSalvarCancelar.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Cadastros\TelaCliente\TelaCadastroClienteForm.cs">
+    <Compile Update="Telas\Cadastros\TelaCliente\TelaCadastroClienteForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Cadastros\TelaIngrediente\TelaCadastroIngredienteForm.cs">
+    <Compile Update="Telas\Cadastros\TelaIngrediente\TelaCadastroIngredienteForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Configuracoes\TelaIdioma\UserControlIdioma.cs">
+    <Compile Update="Telas\Cadastros\TelaProduto\TelaCadastroProdutoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Telas\Cadastros\TelaSabores\TelaCadastroSaboresForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Telas\Cadastros\TelasFuncionario\TelaCadastroFuncionarioForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Telas\Cadastros\TelaValor\TelaCadastroValorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Telas\Configuracoes\TelaIdioma\UserControlIdioma.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="TelaLogin\TelaLoginForm.cs">
+    <Compile Update="Telas\TelaLogin\TelaLoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="TelaPrincipalForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Cadastros\TelaProduto\TelaCadastroProdutoForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Cadastros\TelaSabores\TelaCadastroSaboresForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Cadastros\TelasFuncionario\TelaCadastroFuncionarioForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Cadastros\TelaValor\TelaCadastroValorForm.cs">
+    <Compile Update="Telas\TelaPrincipalForm.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

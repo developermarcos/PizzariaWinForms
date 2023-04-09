@@ -1,11 +1,6 @@
 ﻿using PizzariaDoZe.Compartilhado.Configurar;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace PizzariaDoZe.Configuracoes.TelaIdioma
+namespace PizzariaDoZe.Telas.Configuracoes.TelaIdioma
 {
     internal class ToolStripIdioma : ToolStripBase
     {

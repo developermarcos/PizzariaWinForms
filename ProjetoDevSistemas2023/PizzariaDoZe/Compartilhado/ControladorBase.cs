@@ -30,9 +30,21 @@ namespace PizzariaDoZe.Compartilhado
         {
             TelaPrincipalForm = telaPrincipalForm;
         }
+        /// <summary>
+        /// Método responsável por implementar o fluxo de inserção da feature
+        /// </summary>
         public abstract void Inserir();
+        /// <summary>
+        /// Método responsável por implementar o fluxo de edição da feature
+        /// </summary>
         public abstract void Editar();
+        /// <summary>
+        /// Método responsável por implementar o fluxo de exclusão da feature
+        /// </summary>
         public abstract void Excluir();
+        /// <summary>
+        /// Método responsável por implementar o fluxo de listagem de dados da feature
+        /// </summary>
         public abstract void Listar(TelaPrincipalForm telaPrincipalForm);
         public abstract ToolStripBase ToolTripConfiguracao { get; }
     }

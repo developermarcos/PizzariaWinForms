@@ -1,27 +1,28 @@
 ﻿using PizzariaDoZe.Compartilhado;
 using PizzariaDoZe.Compartilhado.Configurar;
-using PizzariaDoZe.TelaCliente;
-using PizzariaDoZe.TelasCadastro.TelaCliente;
+using PizzariaDoZe.TelasFuncionario;
+using System.ComponentModel.DataAnnotations;
 
-namespace PizzariaDoZe.TelasCadastro.TelaIngrediente
+namespace PizzariaDoZe.Telas.Cadastros.TelasFuncionario
 {
-    internal class ControladorIngrediente : ControladorBase, ITelaTipoFiltrarDados
+    [Display(Name = "funcionario")]
+    public class ControladorFuncionario : ControladorBase, ITelaTipoFiltrarDados
     {
-        public override ToolStripBase ToolTripConfiguracao => new ToolStripCliente();
-        protected override string _featureSingular => Properties.Resources.ResourceManager.GetString("FeatureIngrediente");
-        protected override string _featurePlural => Properties.Resources.ResourceManager.GetString("ingredientesToolStripMenuItem.Text");
+        public override ToolStripBase ToolTripConfiguracao => new ToolStripFuncionario();
+        protected override string _featureSingular => Properties.Resources.ResourceManager.GetString("FeatureFuncionario");
+        protected override string _featurePlural => Properties.Resources.ResourceManager.GetString("funcionariosToolStripMenuItem.Text");
 
-        public ControladorIngrediente(TelaPrincipalForm telaPrincipalForm) : base(telaPrincipalForm)
+        public ControladorFuncionario(TelaPrincipalForm telaPrincipalForm) : base(telaPrincipalForm)
         {
 
         }
 
         public override void Inserir()
         {
-            TelaCadastroProdutoForm telaCadastroIngrediente =
-                new TelaCadastroProdutoForm($"{_inserir} {_novo} {_featureSingular}", _mensagemDesejaSalvar, _mensagemDesejaCancelar);
+            TelaCadastroFuncionarioForm telaCadastroFuncionario =
+            new TelaCadastroFuncionarioForm($"{_inserir} {_novo} {_featureSingular}", _mensagemDesejaSalvar, _mensagemDesejaCancelar);
 
-            if (telaCadastroIngrediente.ShowDialog() == DialogResult.Cancel)
+            if (telaCadastroFuncionario.ShowDialog() == DialogResult.Cancel)
             {
                 TelaPrincipalForm.AtualizarRodape($"{_mensagemRegistroNaoInserido}");
                 return;
@@ -32,9 +33,9 @@ namespace PizzariaDoZe.TelasCadastro.TelaIngrediente
         }
         public override void Editar()
         {
-            TelaCadastroProdutoForm telaCadastroFuncionario = new TelaCadastroProdutoForm($"{_editar} {_featureSingular}", _mensagemDesejaSalvar, _mensagemDesejaCancelar);
+            TelaCadastroFuncionarioForm telaCadastroProduto = new TelaCadastroFuncionarioForm($"{_editar} {_featureSingular}", _mensagemDesejaSalvar, _mensagemDesejaCancelar);
 
-            if (telaCadastroFuncionario.ShowDialog() == DialogResult.Cancel)
+            if (telaCadastroProduto.ShowDialog() == DialogResult.Cancel)
             {
                 TelaPrincipalForm.AtualizarRodape($"{_mensagemRegistroNaoEditado}");
                 return;

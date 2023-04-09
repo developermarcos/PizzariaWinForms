@@ -1,10 +1,10 @@
 ﻿using PizzariaDoZe.Compartilhado.Configurar;
 
-namespace PizzariaDoZe.TelasCadastro.TelaIngrediente
+namespace PizzariaDoZe.Telas.Cadastros.TelaProduto
 {
-    internal class ToolTripIngrediente : ToolStripBase
+    internal class ToolStripProduto : ToolStripBase
     {
-        private string _feature = Properties.Resources.ResourceManager.GetString("FeatureIngrediente");
+        private string _feature = Properties.Resources.ResourceManager.GetString("FeatureProduto");
         protected override string Feature => _feature;
         public override bool habilitarInserir => true;
 

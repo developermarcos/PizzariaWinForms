@@ -2,7 +2,7 @@
 using PizzariaDoZe.Compartilhado.Configurar;
 using PizzariaDoZe.TelaValor;
 
-namespace PizzariaDoZe.TelasCadastro.TelaValor
+namespace PizzariaDoZe.Telas.Cadastros.TelaValor
 {
     internal class ControladorValor : ControladorBase, ITelaTipoFiltrarDados
     {
