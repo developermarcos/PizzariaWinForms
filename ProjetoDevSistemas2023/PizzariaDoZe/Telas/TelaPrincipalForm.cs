@@ -1,21 +1,14 @@
 using PizzariaDoZe.Compartilhado;
 using PizzariaDoZe.Compartilhado.Configurar;
-using PizzariaDoZe.Configuracoes.TelaIdioma;
-using PizzariaDoZe.TelaCliente;
-using PizzariaDoZe.TelaIngrediente;
 using PizzariaDoZe.TelaLogin;
-using PizzariaDoZe.TelaProduto;
-using PizzariaDoZe.TelaSabores;
-using PizzariaDoZe.TelasCadastro.TelaCliente;
-using PizzariaDoZe.TelasCadastro.TelaIngrediente;
-using PizzariaDoZe.TelasCadastro.TelaProduto;
-using PizzariaDoZe.TelasCadastro.TelaSabores;
-using PizzariaDoZe.TelasCadastro.TelasFuncionario;
-using PizzariaDoZe.TelasCadastro.TelaValor;
-using PizzariaDoZe.TelasFuncionario;
-using PizzariaDoZe.TelaValor;
+using PizzariaDoZe.Telas.Cadastros.TelaCliente;
+using PizzariaDoZe.Telas.Cadastros.TelaIngrediente;
+using PizzariaDoZe.Telas.Cadastros.TelaProduto;
+using PizzariaDoZe.Telas.Cadastros.TelaSabores;
+using PizzariaDoZe.Telas.Cadastros.TelasFuncionario;
+using PizzariaDoZe.Telas.Cadastros.TelaValor;
+using PizzariaDoZe.Telas.Configuracoes.TelaIdioma;
 using System.ComponentModel;
-using System.Runtime.CompilerServices;
 
 namespace PizzariaDoZe
 {
@@ -30,16 +23,10 @@ namespace PizzariaDoZe
             InitializeComponent();
             CarregarControladores();
             ConfigurarTelaInicial();
-            //Logar();
         }
-
-        private void Logar()
-        {
-            do
-            {
-                _telaLogin.ShowDialog();
-            } while (!_telaLogin.UsuarioLogado);
-        }
+        /// <summary>
+        /// Método responsável por atualizar informações da tela principal como idioma e configurações de nome de menus e botões
+        /// </summary>
         public void AtualizarTelaPrincipal()
         {
             this.Refresh();
@@ -47,6 +34,26 @@ namespace PizzariaDoZe
             ConfigurarTelaInicial();
 
             ConfigurarTela();
+        }
+        /// <summary>
+        /// Método responsável por atualizar o conteúdo da feature em seleção
+        /// </summary>
+        /// <param name="conteudo">Recebe um control com dados da feature em seleção</param>
+        public void AtualizarListagem(Control conteudo)
+        {
+            panelConteudo.Controls.Clear();
+            panelConteudo.Controls.Add(conteudo);
+        }
+        /// <summary>
+        /// Método responsável por mostrar mensagens de informação ao usuário
+        /// </summary>
+        /// <param name="texto"></param>
+        public void AtualizarRodape(string texto)
+        {
+            if (string.IsNullOrEmpty(texto))
+                return;
+
+            lbRodape.Text = texto;
         }
 
 
@@ -104,6 +111,10 @@ namespace PizzariaDoZe
             var controladorIdioma = new ControladorIdioma();
 
             controladorIdioma.IdiomaPanel(panelConteudo, this);
+
+            _controladorSelecionado = null;
+
+            InabilitarBotoesAcoes();
         }
         #endregion
 
@@ -112,20 +123,7 @@ namespace PizzariaDoZe
         {
             return _controladores.FirstOrDefault(t => t.Item1 == controladorName).Item2;
         }
-
-        public void AtualizarListagem(Control conteudo)
-        {
-            panelConteudo.Controls.Clear();
-            panelConteudo.Controls.Add(conteudo);
-        }
-        public void AtualizarRodape(string texto)
-        {
-            if (string.IsNullOrEmpty(texto))
-                return;
-
-            lbRodape.Text = texto;
-        }
-
+        
         private void ConfigurarTela()
         {
             if (_controladorSelecionado != null)
@@ -137,17 +135,7 @@ namespace PizzariaDoZe
         }
         private void ConfigurarTelaInicial()
         {
-            ComponentResourceManager resources = new(typeof(Properties.Resources));
-
-            BtnInserir.Enabled = false;
-            btnEditar.Enabled = false;
-            btnExcluir.Enabled = false;
-            btnFiltrar.Enabled = false;
-
-            BtnInserir.Text = "";
-            btnEditar.Text = "";
-            btnExcluir.Text = "";
-            btnFiltrar.Text = "";
+            InabilitarBotoesAcoes();
 
             this.Text = Properties.Resources.ResourceManager.GetString("TelaPrincipalForm.Text");
 
@@ -158,7 +146,7 @@ namespace PizzariaDoZe
             ingredientesToolStripMenuItem.Text = Properties.Resources.ResourceManager.GetString("ingredientesToolStripMenuItem.Text");
             produtosToolStripMenuItem.Text = Properties.Resources.ResourceManager.GetString("produtosToolStripMenuItem.Text");
             valoresToolStripMenuItem.Text = Properties.Resources.ResourceManager.GetString("valoresToolStripMenuItem.Text");
-            
+
             pedidosToolStripMenuItem.Text = Properties.Resources.ResourceManager.GetString("pedidosToolStripMenuItem.Text");
 
             relatoriosToolStripMenuItem.Text = Properties.Resources.ResourceManager.GetString("relatoriosToolStripMenuItem.Text");
@@ -166,6 +154,20 @@ namespace PizzariaDoZe
             configuracoesToolStripMenuItem.Text = Properties.Resources.ResourceManager.GetString("configuracoesToolStripMenuItem.Text");
             idiomasToolStripMenuItem.Text = Properties.Resources.ResourceManager.GetString("idiomasToolStripMenuItem.Text");
         }
+
+        private void InabilitarBotoesAcoes()
+        {
+            BtnInserir.Enabled = false;
+            btnEditar.Enabled = false;
+            btnExcluir.Enabled = false;
+            btnFiltrar.Enabled = false;
+
+            BtnInserir.Text = "";
+            btnEditar.Text = "";
+            btnExcluir.Text = "";
+            btnFiltrar.Text = "";
+        }
+
         private void ConfigurarToolTips()
         {
             var toolStrip = _controladorSelecionado.ToolTripConfiguracao;

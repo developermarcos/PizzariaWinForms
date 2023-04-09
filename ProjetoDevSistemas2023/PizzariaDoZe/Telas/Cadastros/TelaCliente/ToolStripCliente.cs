@@ -1,12 +1,11 @@
 ﻿using PizzariaDoZe.Compartilhado.Configurar;
 
-namespace PizzariaDoZe.TelasCadastro.TelasFuncionario
+namespace PizzariaDoZe.Telas.Cadastros.TelaCliente
 {
-    internal class ToolStripFuncionario : ToolStripBase
+    internal class ToolStripCliente : ToolStripBase
     {
-        private string _feature = Properties.Resources.ResourceManager.GetString("FeatureFuncionario");
+        private string _feature = Properties.Resources.ResourceManager.GetString("FeatureCliente");
         protected override string Feature => _feature;
-
         public override bool habilitarInserir => true;
 
         public override bool habilitarEditar => true;

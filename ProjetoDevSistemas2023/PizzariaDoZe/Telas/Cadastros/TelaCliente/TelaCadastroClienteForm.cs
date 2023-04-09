@@ -1,5 +1,4 @@
-﻿using PizzariaDoZe.Compartilhado;
-using PizzariaDoZe.Compartilhado.Configurar;
+﻿using PizzariaDoZe.Compartilhado.Configurar;
 using PizzariaDoZe.Compartilhado.UserControlComponentes;
 
 
