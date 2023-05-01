@@ -69,7 +69,7 @@
             ML.Location = new Point(22, 214);
             ML.Name = "ML";
             ML.Size = new Size(121, 23);
-            ML.TabIndex = 9;
+            ML.TabIndex = 4;
             // 
             // tipo
             // 
@@ -79,21 +79,21 @@
             tipo.Location = new Point(22, 170);
             tipo.Name = "tipo";
             tipo.Size = new Size(121, 23);
-            tipo.TabIndex = 8;
+            tipo.TabIndex = 3;
             // 
             // valor
             // 
             valor.Location = new Point(22, 126);
             valor.Name = "valor";
             valor.Size = new Size(100, 23);
-            valor.TabIndex = 7;
+            valor.TabIndex = 2;
             // 
             // nome
             // 
             nome.Location = new Point(22, 82);
             nome.Name = "nome";
             nome.Size = new Size(170, 23);
-            nome.TabIndex = 6;
+            nome.TabIndex = 1;
             // 
             // ID
             // 

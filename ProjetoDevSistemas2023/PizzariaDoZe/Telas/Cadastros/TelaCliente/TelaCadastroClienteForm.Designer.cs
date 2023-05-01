@@ -40,18 +40,20 @@
             lbNome = new Label();
             lbId = new Label();
             panelAcoes = new Panel();
+            id = new TextBox();
             panelDadosPesooais.SuspendLayout();
             SuspendLayout();
             // 
             // panelEndereco
             // 
-            panelEndereco.Location = new Point(12, 181);
+            panelEndereco.Location = new Point(12, 197);
             panelEndereco.Name = "panelEndereco";
-            panelEndereco.Size = new Size(360, 377);
-            panelEndereco.TabIndex = 0;
+            panelEndereco.Size = new Size(360, 397);
+            panelEndereco.TabIndex = 2;
             // 
             // panelDadosPesooais
             // 
+            panelDadosPesooais.Controls.Add(id);
             panelDadosPesooais.Controls.Add(textBox4);
             panelDadosPesooais.Controls.Add(textBox3);
             panelDadosPesooais.Controls.Add(textBox2);
@@ -63,41 +65,41 @@
             panelDadosPesooais.Controls.Add(lbId);
             panelDadosPesooais.Location = new Point(12, 12);
             panelDadosPesooais.Name = "panelDadosPesooais";
-            panelDadosPesooais.Size = new Size(360, 163);
+            panelDadosPesooais.Size = new Size(360, 179);
             panelDadosPesooais.TabIndex = 1;
             // 
             // textBox4
             // 
-            textBox4.Location = new Point(137, 128);
+            textBox4.Location = new Point(137, 151);
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(210, 23);
-            textBox4.TabIndex = 8;
+            textBox4.TabIndex = 4;
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(3, 128);
+            textBox3.Location = new Point(3, 151);
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(128, 23);
-            textBox3.TabIndex = 7;
+            textBox3.TabIndex = 3;
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(3, 84);
+            textBox2.Location = new Point(3, 107);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(344, 23);
-            textBox2.TabIndex = 6;
+            textBox2.TabIndex = 2;
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(3, 40);
+            textBox1.Location = new Point(3, 63);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(344, 23);
-            textBox1.TabIndex = 5;
+            textBox1.TabIndex = 1;
             // 
             // lbTelefone
             // 
             lbTelefone.AutoSize = true;
-            lbTelefone.Location = new Point(137, 110);
+            lbTelefone.Location = new Point(137, 133);
             lbTelefone.Name = "lbTelefone";
             lbTelefone.Size = new Size(61, 15);
             lbTelefone.TabIndex = 4;
@@ -106,7 +108,7 @@
             // lbCpf
             // 
             lbCpf.AutoSize = true;
-            lbCpf.Location = new Point(3, 110);
+            lbCpf.Location = new Point(3, 133);
             lbCpf.Name = "lbCpf";
             lbCpf.Size = new Size(38, 15);
             lbCpf.TabIndex = 3;
@@ -115,7 +117,7 @@
             // lbEmail
             // 
             lbEmail.AutoSize = true;
-            lbEmail.Location = new Point(3, 66);
+            lbEmail.Location = new Point(3, 89);
             lbEmail.Name = "lbEmail";
             lbEmail.Size = new Size(46, 15);
             lbEmail.TabIndex = 2;
@@ -124,7 +126,7 @@
             // lbNome
             // 
             lbNome.AutoSize = true;
-            lbNome.Location = new Point(3, 22);
+            lbNome.Location = new Point(3, 45);
             lbNome.Name = "lbNome";
             lbNome.Size = new Size(50, 15);
             lbNome.TabIndex = 1;
@@ -142,23 +144,32 @@
             // panelAcoes
             // 
             panelAcoes.Dock = DockStyle.Bottom;
-            panelAcoes.Location = new Point(0, 565);
+            panelAcoes.Location = new Point(0, 600);
             panelAcoes.Name = "panelAcoes";
             panelAcoes.Size = new Size(385, 59);
-            panelAcoes.TabIndex = 2;
+            panelAcoes.TabIndex = 3;
             // 
-            // TelaCadastroClienteForm
+            // id
+            // 
+            id.Enabled = false;
+            id.Location = new Point(4, 20);
+            id.Name = "id";
+            id.Size = new Size(84, 23);
+            id.TabIndex = 9;
+            id.TabStop = false;
+            // 
+            // TelaCadastroProdutoForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(385, 624);
+            ClientSize = new Size(385, 659);
             Controls.Add(panelAcoes);
             Controls.Add(panelDadosPesooais);
             Controls.Add(panelEndereco);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
             MinimizeBox = false;
-            Name = "TelaCadastroClienteForm";
+            Name = "TelaCadastroProdutoForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "TelaCadastroClienteForm--";
             panelDadosPesooais.ResumeLayout(false);
@@ -180,5 +191,6 @@
         private TextBox textBox3;
         private TextBox textBox2;
         private TextBox textBox1;
+        private TextBox id;
     }
 }

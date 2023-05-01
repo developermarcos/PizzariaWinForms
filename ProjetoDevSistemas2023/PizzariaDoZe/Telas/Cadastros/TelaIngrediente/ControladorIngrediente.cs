@@ -1,6 +1,7 @@
 ﻿using PizzariaDoZe.Compartilhado;
 using PizzariaDoZe.Compartilhado.Configurar;
 using PizzariaDoZe.TelaCliente;
+using PizzariaDoZe.TelaIngrediente;
 using PizzariaDoZe.Telas.Cadastros.TelaCliente;
 
 namespace PizzariaDoZe.Telas.Cadastros.TelaIngrediente
@@ -18,8 +19,8 @@ namespace PizzariaDoZe.Telas.Cadastros.TelaIngrediente
 
         public override void Inserir()
         {
-            TelaCadastroProdutoForm telaCadastroIngrediente =
-                new TelaCadastroProdutoForm($"{_inserir} {_novo} {_featureSingular}", _mensagemDesejaSalvar, _mensagemDesejaCancelar);
+            TelaCadastroIngredienteForm telaCadastroIngrediente =
+                new TelaCadastroIngredienteForm($"{_inserir} {_novo} {_featureSingular}", _mensagemDesejaSalvar, _mensagemDesejaCancelar);
 
             if (telaCadastroIngrediente.ShowDialog() == DialogResult.Cancel)
             {
@@ -32,7 +33,7 @@ namespace PizzariaDoZe.Telas.Cadastros.TelaIngrediente
         }
         public override void Editar()
         {
-            TelaCadastroProdutoForm telaCadastroFuncionario = new TelaCadastroProdutoForm($"{_editar} {_featureSingular}", _mensagemDesejaSalvar, _mensagemDesejaCancelar);
+            TelaCadastroIngredienteForm telaCadastroFuncionario = new TelaCadastroIngredienteForm($"{_editar} {_featureSingular}", _mensagemDesejaSalvar, _mensagemDesejaCancelar);
 
             if (telaCadastroFuncionario.ShowDialog() == DialogResult.Cancel)
             {
