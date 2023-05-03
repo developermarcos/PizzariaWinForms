@@ -257,6 +257,9 @@
             // 
             // notifyBandeja
             // 
+            notifyBandeja.BalloonTipIcon = ToolTipIcon.Info;
+            notifyBandeja.BalloonTipText = "Solução rodando na bandeja";
+            notifyBandeja.BalloonTipTitle = "Pizzaria do Zé";
             notifyBandeja.ContextMenuStrip = menuContextoPrincipal;
             notifyBandeja.Icon = (Icon)resources.GetObject("notifyBandeja.Icon");
             notifyBandeja.Text = "Pizzaria do Zé";

@@ -127,6 +127,7 @@ namespace PizzariaDoZe
                 case DialogResult.Abort:
                     this.Hide();
                     notifyBandeja.Visible = true;
+                    notifyBandeja.ShowBalloonTip(200);
                     break;
             }
         }
