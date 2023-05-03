@@ -1,27 +1,38 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace PizzariaDoZe.Compartilhado.Configurar
 {
     public class Helpers
     {
+        /// <summary>
+        /// Método responsável por setar um background color em campos TextBoxCase, ComboBox, RadioButton e Checkbox que estiverem em foco
+        /// </summary>
+        /// <param name="container"></param>
         public static void FocusTextBox(Control container)
         {
-            switch (container)
+            foreach (Control c in container.Controls)
             {
-                case TextBoxBase:
-                case ComboBox:
-                case RadioButton:
-                case CheckBox:
-                    //case ButtonBase:
-                    //adiciona eventos ganhar e perder o foco
-                    container.Enter += new EventHandler(CampoEventoEnter!);
-                    container.Leave += new EventHandler(CampoEventoLeave!);
-                    break;
+                FocusTextBox(c);
+                switch (c)
+                {
+                    case TextBoxBase:
+                    case ComboBox:
+                    case RadioButton:
+                    case CheckBox:
+                        //case ButtonBase:
+                        //adiciona eventos ganhar e perder o foco
+                        c.Enter += new EventHandler(CampoEventoEnter!);
+                        c.Leave += new EventHandler(CampoEventoLeave!);
+                        break;
 
+                }
             }
         }
 
@@ -32,7 +43,7 @@ namespace PizzariaDoZe.Compartilhado.Configurar
         /// <param name="sender">Objeto que gerou o evento</param>
         /// <param name="e">Evento que foi capturado</param>
         /// <example> textBoxUsuario.Enter += new System.EventHandler(ClassFuncoes.CampoEventoEnter); </example>
-        public static void CampoEventoEnter(object sender, System.EventArgs e)
+        private static void CampoEventoEnter(object sender, EventArgs e)
         {
             if (sender is TextBoxBase txt) //MaskedTextBox, TextBox
             {
@@ -59,7 +70,7 @@ namespace PizzariaDoZe.Compartilhado.Configurar
         /// <param name="sender">Objeto que gerou o evento</param>
         /// <param name="e">Evento que foi capturado</param>
         /// <example> textBoxUsuario.Leave += new System.EventHandler(ClassFuncoes.CampoEventoLeave); </example>
-        public static void CampoEventoLeave(object sender, System.EventArgs e)
+        private static void CampoEventoLeave(object sender, EventArgs e)
         {
             if (sender is TextBoxBase txt)
             {
@@ -78,6 +89,7 @@ namespace PizzariaDoZe.Compartilhado.Configurar
                 btn.BackColor = Color.Red;
             }
         }
+        
         #endregion
     }
 }

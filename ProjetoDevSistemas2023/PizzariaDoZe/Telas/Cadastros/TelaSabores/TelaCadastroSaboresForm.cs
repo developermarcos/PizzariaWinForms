@@ -41,6 +41,8 @@ namespace PizzariaDoZe.TelaSabores
             };
 
             new AjustarIdioma(this);
+
+            Helpers.FocusTextBox(this);
         }
 
         private void btnSelecionarImagem_Click(object sender, EventArgs e)

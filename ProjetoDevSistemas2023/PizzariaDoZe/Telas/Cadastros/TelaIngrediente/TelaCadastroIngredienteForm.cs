@@ -42,6 +42,8 @@ namespace PizzariaDoZe.TelaIngrediente
             };
 
             new AjustarIdioma(this);
+
+            Helpers.FocusTextBox(this);
         }
     }
 }
