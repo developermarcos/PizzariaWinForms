@@ -7,6 +7,7 @@ using PizzariaDoZe.Telas.Cadastros.TelaProduto;
 using PizzariaDoZe.Telas.Cadastros.TelaSabores;
 using PizzariaDoZe.Telas.Cadastros.TelasFuncionario;
 using PizzariaDoZe.Telas.Cadastros.TelaValor;
+using PizzariaDoZe.Telas.Configuracoes;
 using PizzariaDoZe.Telas.Configuracoes.TelaIdioma;
 using System.ComponentModel;
 
@@ -116,6 +117,19 @@ namespace PizzariaDoZe
 
             InabilitarBotoesAcoes();
         }
+        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            switch (new TelaSairSistemaForm().ShowDialog())
+            {
+                case DialogResult.OK:
+                    this.Close();
+                    break;
+                case DialogResult.Abort:
+                    this.Hide();
+                    notifyBandeja.Visible = true;
+                    break;
+            }
+        }
         #endregion
 
         #region configuração tela inicial
@@ -123,7 +137,7 @@ namespace PizzariaDoZe
         {
             return _controladores.FirstOrDefault(t => t.Item1 == controladorName).Item2;
         }
-        
+
         private void ConfigurarTela()
         {
             if (_controladorSelecionado != null)
@@ -153,6 +167,11 @@ namespace PizzariaDoZe
 
             configuracoesToolStripMenuItem.Text = Properties.Resources.ResourceManager.GetString("configuracoesToolStripMenuItem.Text");
             idiomasToolStripMenuItem.Text = Properties.Resources.ResourceManager.GetString("idiomasToolStripMenuItem.Text");
+
+            sairToolStripMenuItem.Text = Properties.Resources.ResourceManager.GetString("sairToolStripMenuItem.Text");
+            abrirToolStripMenuItem.Text = Properties.Resources.ResourceManager.GetString("abrirToolStripMenuItem.Text");
+            encerarToolStripMenuItem.Text = Properties.Resources.ResourceManager.GetString("encerarToolStripMenuItem.Text");
+            sobreToolStripMenuItem.Text = Properties.Resources.ResourceManager.GetString("sobreToolStripMenuItem.Text");
         }
 
         private void InabilitarBotoesAcoes()
@@ -208,6 +227,27 @@ namespace PizzariaDoZe
                 telaFiltro.Filtrar();
             }
         }
+
         #endregion
+
+        #region Ações menu contexto bandeja
+        private void abrirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Show();
+            notifyBandeja.Visible = false;
+        }
+
+        private void encerarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            notifyBandeja.Visible = false;
+        }
+        #endregion
+
+        private void notifyBandeja_DoubleClick(object sender, EventArgs e)
+        {
+            Show();
+            notifyBandeja.Visible = false;
+        }
     }
 }

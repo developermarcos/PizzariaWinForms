@@ -28,6 +28,9 @@
     <Compile Update="Telas\Configuracoes\TelaIdioma\UserControlIdioma.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="Telas\Configuracoes\TelaSairSistemaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Telas\TelaLogin\TelaLoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -36,6 +39,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.en.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Update="Properties\Resources.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>

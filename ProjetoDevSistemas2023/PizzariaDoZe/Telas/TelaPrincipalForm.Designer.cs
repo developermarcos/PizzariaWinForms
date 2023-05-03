@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaPrincipalForm));
             menuPricipal = new MenuStrip();
             cadastrosToolStripMenuItem = new ToolStripMenuItem();
             funcionariosToolStripMenuItem = new ToolStripMenuItem();
@@ -40,6 +42,7 @@
             relatoriosToolStripMenuItem = new ToolStripMenuItem();
             configuracoesToolStripMenuItem = new ToolStripMenuItem();
             idiomasToolStripMenuItem = new ToolStripMenuItem();
+            sairToolStripMenuItem = new ToolStripMenuItem();
             panelAcoes = new Panel();
             toolStripAcoes = new ToolStrip();
             BtnInserir = new ToolStripButton();
@@ -49,15 +52,21 @@
             panelConteudo = new Panel();
             panelInformacoes = new Panel();
             lbRodape = new Label();
+            notifyBandeja = new NotifyIcon(components);
+            menuContextoPrincipal = new ContextMenuStrip(components);
+            abrirToolStripMenuItem = new ToolStripMenuItem();
+            encerarToolStripMenuItem = new ToolStripMenuItem();
+            sobreToolStripMenuItem = new ToolStripMenuItem();
             menuPricipal.SuspendLayout();
             panelAcoes.SuspendLayout();
             toolStripAcoes.SuspendLayout();
             panelInformacoes.SuspendLayout();
+            menuContextoPrincipal.SuspendLayout();
             SuspendLayout();
             // 
             // menuPricipal
             // 
-            menuPricipal.Items.AddRange(new ToolStripItem[] { cadastrosToolStripMenuItem, pedidosToolStripMenuItem, relatoriosToolStripMenuItem, configuracoesToolStripMenuItem });
+            menuPricipal.Items.AddRange(new ToolStripItem[] { cadastrosToolStripMenuItem, pedidosToolStripMenuItem, relatoriosToolStripMenuItem, configuracoesToolStripMenuItem, sairToolStripMenuItem });
             menuPricipal.Location = new Point(0, 0);
             menuPricipal.Name = "menuPricipal";
             menuPricipal.Size = new Size(800, 24);
@@ -74,42 +83,48 @@
             // funcionariosToolStripMenuItem
             // 
             funcionariosToolStripMenuItem.Name = "funcionariosToolStripMenuItem";
-            funcionariosToolStripMenuItem.Size = new Size(152, 22);
+            funcionariosToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.F1;
+            funcionariosToolStripMenuItem.Size = new Size(198, 22);
             funcionariosToolStripMenuItem.Text = "Funcionários--";
             funcionariosToolStripMenuItem.Click += funcionáriosToolStripMenuItem_Click;
             // 
             // clientesToolStripMenuItem
             // 
             clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            clientesToolStripMenuItem.Size = new Size(152, 22);
+            clientesToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.F2;
+            clientesToolStripMenuItem.Size = new Size(198, 22);
             clientesToolStripMenuItem.Text = "Clientes--";
             clientesToolStripMenuItem.Click += clientesToolStripMenuItem_Click;
             // 
             // saboresToolStripMenuItem
             // 
             saboresToolStripMenuItem.Name = "saboresToolStripMenuItem";
-            saboresToolStripMenuItem.Size = new Size(152, 22);
+            saboresToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.F3;
+            saboresToolStripMenuItem.Size = new Size(198, 22);
             saboresToolStripMenuItem.Text = "Sabores--";
             saboresToolStripMenuItem.Click += saboresToolStripMenuItem_Click;
             // 
             // ingredientesToolStripMenuItem
             // 
             ingredientesToolStripMenuItem.Name = "ingredientesToolStripMenuItem";
-            ingredientesToolStripMenuItem.Size = new Size(152, 22);
+            ingredientesToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.F4;
+            ingredientesToolStripMenuItem.Size = new Size(198, 22);
             ingredientesToolStripMenuItem.Text = "Ingredientes--";
             ingredientesToolStripMenuItem.Click += ingredientesToolStripMenuItem_Click;
             // 
             // produtosToolStripMenuItem
             // 
             produtosToolStripMenuItem.Name = "produtosToolStripMenuItem";
-            produtosToolStripMenuItem.Size = new Size(152, 22);
+            produtosToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.F5;
+            produtosToolStripMenuItem.Size = new Size(198, 22);
             produtosToolStripMenuItem.Text = "Produtos--";
             produtosToolStripMenuItem.Click += produtosToolStripMenuItem_Click;
             // 
             // valoresToolStripMenuItem
             // 
             valoresToolStripMenuItem.Name = "valoresToolStripMenuItem";
-            valoresToolStripMenuItem.Size = new Size(152, 22);
+            valoresToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.F6;
+            valoresToolStripMenuItem.Size = new Size(198, 22);
             valoresToolStripMenuItem.Text = "Valores--";
             valoresToolStripMenuItem.Click += valoresToolStripMenuItem_Click;
             // 
@@ -135,9 +150,16 @@
             // idiomasToolStripMenuItem
             // 
             idiomasToolStripMenuItem.Name = "idiomasToolStripMenuItem";
-            idiomasToolStripMenuItem.Size = new Size(180, 22);
+            idiomasToolStripMenuItem.Size = new Size(126, 22);
             idiomasToolStripMenuItem.Text = "Idiomas--";
             idiomasToolStripMenuItem.Click += idiomasToolStripMenuItem_Click;
+            // 
+            // sairToolStripMenuItem
+            // 
+            sairToolStripMenuItem.Name = "sairToolStripMenuItem";
+            sairToolStripMenuItem.Size = new Size(48, 20);
+            sairToolStripMenuItem.Text = "Sair--";
+            sairToolStripMenuItem.Click += sairToolStripMenuItem_Click;
             // 
             // panelAcoes
             // 
@@ -233,6 +255,39 @@
             lbRodape.Size = new Size(0, 15);
             lbRodape.TabIndex = 0;
             // 
+            // notifyBandeja
+            // 
+            notifyBandeja.ContextMenuStrip = menuContextoPrincipal;
+            notifyBandeja.Icon = (Icon)resources.GetObject("notifyBandeja.Icon");
+            notifyBandeja.Text = "Pizzaria do Zé";
+            notifyBandeja.DoubleClick += notifyBandeja_DoubleClick;
+            // 
+            // menuContextoPrincipal
+            // 
+            menuContextoPrincipal.Items.AddRange(new ToolStripItem[] { abrirToolStripMenuItem, encerarToolStripMenuItem, sobreToolStripMenuItem });
+            menuContextoPrincipal.Name = "menuContextoPrincipal";
+            menuContextoPrincipal.Size = new Size(124, 70);
+            // 
+            // abrirToolStripMenuItem
+            // 
+            abrirToolStripMenuItem.Name = "abrirToolStripMenuItem";
+            abrirToolStripMenuItem.Size = new Size(123, 22);
+            abrirToolStripMenuItem.Text = "Abrir--";
+            abrirToolStripMenuItem.Click += abrirToolStripMenuItem_Click;
+            // 
+            // encerarToolStripMenuItem
+            // 
+            encerarToolStripMenuItem.Name = "encerarToolStripMenuItem";
+            encerarToolStripMenuItem.Size = new Size(123, 22);
+            encerarToolStripMenuItem.Text = "Encerar--";
+            encerarToolStripMenuItem.Click += encerarToolStripMenuItem_Click;
+            // 
+            // sobreToolStripMenuItem
+            // 
+            sobreToolStripMenuItem.Name = "sobreToolStripMenuItem";
+            sobreToolStripMenuItem.Size = new Size(123, 22);
+            sobreToolStripMenuItem.Text = "Sobre--";
+            // 
             // TelaPrincipalForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -256,6 +311,7 @@
             toolStripAcoes.PerformLayout();
             panelInformacoes.ResumeLayout(false);
             panelInformacoes.PerformLayout();
+            menuContextoPrincipal.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -283,5 +339,11 @@
         private ToolStripMenuItem valoresToolStripMenuItem;
         private ToolStripMenuItem configuracoesToolStripMenuItem;
         private ToolStripMenuItem idiomasToolStripMenuItem;
+        private ToolStripMenuItem sairToolStripMenuItem;
+        private NotifyIcon notifyBandeja;
+        private ContextMenuStrip menuContextoPrincipal;
+        private ToolStripMenuItem abrirToolStripMenuItem;
+        private ToolStripMenuItem encerarToolStripMenuItem;
+        private ToolStripMenuItem sobreToolStripMenuItem;
     }
 }
