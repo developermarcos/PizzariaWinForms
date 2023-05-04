@@ -47,6 +47,8 @@ namespace PizzariaDoZe.TelaCliente
             };
 
             new AjustarIdioma(this);
+
+            Helpers.FocusTextBox(this);
         }
     }
 }

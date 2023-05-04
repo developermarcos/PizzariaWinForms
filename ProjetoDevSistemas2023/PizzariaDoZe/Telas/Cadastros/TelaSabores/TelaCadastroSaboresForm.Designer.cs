@@ -28,190 +28,192 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lbNome = new System.Windows.Forms.Label();
-            this.lbIngredientes = new System.Windows.Forms.Label();
-            this.lbCategorias = new System.Windows.Forms.Label();
-            this.lbTipo = new System.Windows.Forms.Label();
-            this.lbFoto = new System.Windows.Forms.Label();
-            this.nome = new System.Windows.Forms.TextBox();
-            this.categorias = new System.Windows.Forms.ComboBox();
-            this.tipo = new System.Windows.Forms.ComboBox();
-            this.imagemPK = new System.Windows.Forms.PictureBox();
-            this.lbId = new System.Windows.Forms.Label();
-            this.panelConteudo = new System.Windows.Forms.Panel();
-            this.ingredientes = new System.Windows.Forms.CheckedListBox();
-            this.btnSelecionarImagem = new System.Windows.Forms.Button();
-            this.panelAcoes = new System.Windows.Forms.Panel();
-            this.selecionarImagem = new System.Windows.Forms.OpenFileDialog();
-            ((System.ComponentModel.ISupportInitialize)(this.imagemPK)).BeginInit();
-            this.panelConteudo.SuspendLayout();
-            this.SuspendLayout();
+            lbNome = new Label();
+            lbIngredientes = new Label();
+            lbCategorias = new Label();
+            lbTipo = new Label();
+            lbFoto = new Label();
+            nome = new TextBox();
+            categorias = new ComboBox();
+            tipo = new ComboBox();
+            imagemPK = new PictureBox();
+            lbId = new Label();
+            panelConteudo = new Panel();
+            ingredientes = new CheckedListBox();
+            btnSelecionarImagem = new Button();
+            panelAcoes = new Panel();
+            selecionarImagem = new OpenFileDialog();
+            textBox1 = new TextBox();
+            ((System.ComponentModel.ISupportInitialize)imagemPK).BeginInit();
+            panelConteudo.SuspendLayout();
+            SuspendLayout();
             // 
             // lbNome
             // 
-            this.lbNome.AutoSize = true;
-            this.lbNome.Location = new System.Drawing.Point(6, 25);
-            this.lbNome.Name = "lbNome";
-            this.lbNome.Size = new System.Drawing.Size(40, 15);
-            this.lbNome.TabIndex = 0;
-            this.lbNome.Text = "Nome";
+            lbNome.AutoSize = true;
+            lbNome.Location = new Point(6, 48);
+            lbNome.Name = "lbNome";
+            lbNome.Size = new Size(40, 15);
+            lbNome.TabIndex = 0;
+            lbNome.Text = "Nome";
             // 
             // lbIngredientes
             // 
-            this.lbIngredientes.AutoSize = true;
-            this.lbIngredientes.Location = new System.Drawing.Point(6, 157);
-            this.lbIngredientes.Name = "lbIngredientes";
-            this.lbIngredientes.Size = new System.Drawing.Size(72, 15);
-            this.lbIngredientes.TabIndex = 1;
-            this.lbIngredientes.Text = "Ingredientes";
+            lbIngredientes.AutoSize = true;
+            lbIngredientes.Location = new Point(6, 180);
+            lbIngredientes.Name = "lbIngredientes";
+            lbIngredientes.Size = new Size(72, 15);
+            lbIngredientes.TabIndex = 1;
+            lbIngredientes.Text = "Ingredientes";
             // 
             // lbCategorias
             // 
-            this.lbCategorias.AutoSize = true;
-            this.lbCategorias.Location = new System.Drawing.Point(6, 69);
-            this.lbCategorias.Name = "lbCategorias";
-            this.lbCategorias.Size = new System.Drawing.Size(63, 15);
-            this.lbCategorias.TabIndex = 2;
-            this.lbCategorias.Text = "Categorias";
+            lbCategorias.AutoSize = true;
+            lbCategorias.Location = new Point(6, 92);
+            lbCategorias.Name = "lbCategorias";
+            lbCategorias.Size = new Size(63, 15);
+            lbCategorias.TabIndex = 2;
+            lbCategorias.Text = "Categorias";
             // 
             // lbTipo
             // 
-            this.lbTipo.AutoSize = true;
-            this.lbTipo.Location = new System.Drawing.Point(6, 113);
-            this.lbTipo.Name = "lbTipo";
-            this.lbTipo.Size = new System.Drawing.Size(30, 15);
-            this.lbTipo.TabIndex = 3;
-            this.lbTipo.Text = "Tipo";
+            lbTipo.AutoSize = true;
+            lbTipo.Location = new Point(6, 136);
+            lbTipo.Name = "lbTipo";
+            lbTipo.Size = new Size(30, 15);
+            lbTipo.TabIndex = 3;
+            lbTipo.Text = "Tipo";
             // 
             // lbFoto
             // 
-            this.lbFoto.AutoSize = true;
-            this.lbFoto.Location = new System.Drawing.Point(162, 25);
-            this.lbFoto.Name = "lbFoto";
-            this.lbFoto.Size = new System.Drawing.Size(31, 15);
-            this.lbFoto.TabIndex = 4;
-            this.lbFoto.Text = "Foto";
+            lbFoto.AutoSize = true;
+            lbFoto.Location = new Point(162, 9);
+            lbFoto.Name = "lbFoto";
+            lbFoto.Size = new Size(31, 15);
+            lbFoto.TabIndex = 4;
+            lbFoto.Text = "Foto";
             // 
             // nome
             // 
-            this.nome.Location = new System.Drawing.Point(6, 43);
-            this.nome.Name = "nome";
-            this.nome.Size = new System.Drawing.Size(141, 23);
-            this.nome.TabIndex = 5;
+            nome.Location = new Point(6, 66);
+            nome.Name = "nome";
+            nome.Size = new Size(141, 23);
+            nome.TabIndex = 1;
             // 
             // categorias
             // 
-            this.categorias.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.categorias.FormattingEnabled = true;
-            this.categorias.Items.AddRange(new object[] {
-            "Tradicional",
-            "Especial"});
-            this.categorias.Location = new System.Drawing.Point(6, 87);
-            this.categorias.Name = "categorias";
-            this.categorias.Size = new System.Drawing.Size(141, 23);
-            this.categorias.TabIndex = 7;
+            categorias.DropDownStyle = ComboBoxStyle.DropDownList;
+            categorias.FormattingEnabled = true;
+            categorias.Items.AddRange(new object[] { "Tradicional", "Especial" });
+            categorias.Location = new Point(6, 110);
+            categorias.Name = "categorias";
+            categorias.Size = new Size(141, 23);
+            categorias.TabIndex = 2;
             // 
             // tipo
             // 
-            this.tipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.tipo.FormattingEnabled = true;
-            this.tipo.Items.AddRange(new object[] {
-            "Salgada",
-            "Doce"});
-            this.tipo.Location = new System.Drawing.Point(6, 131);
-            this.tipo.Name = "tipo";
-            this.tipo.Size = new System.Drawing.Size(141, 23);
-            this.tipo.TabIndex = 8;
+            tipo.DropDownStyle = ComboBoxStyle.DropDownList;
+            tipo.FormattingEnabled = true;
+            tipo.Items.AddRange(new object[] { "Salgada", "Doce" });
+            tipo.Location = new Point(6, 154);
+            tipo.Name = "tipo";
+            tipo.Size = new Size(141, 23);
+            tipo.TabIndex = 3;
             // 
             // imagemPK
             // 
-            this.imagemPK.Location = new System.Drawing.Point(162, 87);
-            this.imagemPK.Name = "imagemPK";
-            this.imagemPK.Size = new System.Drawing.Size(229, 197);
-            this.imagemPK.TabIndex = 9;
-            this.imagemPK.TabStop = false;
+            imagemPK.Location = new Point(162, 71);
+            imagemPK.Name = "imagemPK";
+            imagemPK.Size = new Size(229, 197);
+            imagemPK.TabIndex = 9;
+            imagemPK.TabStop = false;
             // 
             // lbId
             // 
-            this.lbId.AutoSize = true;
-            this.lbId.Location = new System.Drawing.Point(6, 6);
-            this.lbId.Name = "lbId";
-            this.lbId.Size = new System.Drawing.Size(34, 15);
-            this.lbId.TabIndex = 10;
-            this.lbId.Text = "ID: --";
+            lbId.AutoSize = true;
+            lbId.Location = new Point(6, 7);
+            lbId.Name = "lbId";
+            lbId.Size = new Size(34, 15);
+            lbId.TabIndex = 10;
+            lbId.Text = "ID: --";
             // 
             // panelConteudo
             // 
-            this.panelConteudo.Controls.Add(this.ingredientes);
-            this.panelConteudo.Controls.Add(this.btnSelecionarImagem);
-            this.panelConteudo.Controls.Add(this.lbId);
-            this.panelConteudo.Controls.Add(this.lbNome);
-            this.panelConteudo.Controls.Add(this.imagemPK);
-            this.panelConteudo.Controls.Add(this.nome);
-            this.panelConteudo.Controls.Add(this.lbFoto);
-            this.panelConteudo.Controls.Add(this.tipo);
-            this.panelConteudo.Controls.Add(this.lbTipo);
-            this.panelConteudo.Controls.Add(this.lbIngredientes);
-            this.panelConteudo.Controls.Add(this.categorias);
-            this.panelConteudo.Controls.Add(this.lbCategorias);
-            this.panelConteudo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelConteudo.Location = new System.Drawing.Point(0, 0);
-            this.panelConteudo.Name = "panelConteudo";
-            this.panelConteudo.Size = new System.Drawing.Size(406, 353);
-            this.panelConteudo.TabIndex = 11;
+            panelConteudo.Controls.Add(textBox1);
+            panelConteudo.Controls.Add(ingredientes);
+            panelConteudo.Controls.Add(btnSelecionarImagem);
+            panelConteudo.Controls.Add(lbId);
+            panelConteudo.Controls.Add(lbNome);
+            panelConteudo.Controls.Add(imagemPK);
+            panelConteudo.Controls.Add(nome);
+            panelConteudo.Controls.Add(lbFoto);
+            panelConteudo.Controls.Add(tipo);
+            panelConteudo.Controls.Add(lbTipo);
+            panelConteudo.Controls.Add(lbIngredientes);
+            panelConteudo.Controls.Add(categorias);
+            panelConteudo.Controls.Add(lbCategorias);
+            panelConteudo.Dock = DockStyle.Fill;
+            panelConteudo.Location = new Point(0, 0);
+            panelConteudo.Name = "panelConteudo";
+            panelConteudo.Size = new Size(406, 379);
+            panelConteudo.TabIndex = 11;
             // 
             // ingredientes
             // 
-            this.ingredientes.FormattingEnabled = true;
-            this.ingredientes.Items.AddRange(new object[] {
-            "Queijo",
-            "Carne",
-            "Calabresa"});
-            this.ingredientes.Location = new System.Drawing.Point(6, 175);
-            this.ingredientes.Name = "ingredientes";
-            this.ingredientes.Size = new System.Drawing.Size(141, 112);
-            this.ingredientes.TabIndex = 12;
+            ingredientes.FormattingEnabled = true;
+            ingredientes.Items.AddRange(new object[] { "Queijo", "Carne", "Calabresa" });
+            ingredientes.Location = new Point(6, 198);
+            ingredientes.Name = "ingredientes";
+            ingredientes.Size = new Size(141, 112);
+            ingredientes.TabIndex = 4;
             // 
             // btnSelecionarImagem
             // 
-            this.btnSelecionarImagem.Location = new System.Drawing.Point(162, 43);
-            this.btnSelecionarImagem.Name = "btnSelecionarImagem";
-            this.btnSelecionarImagem.Size = new System.Drawing.Size(121, 35);
-            this.btnSelecionarImagem.TabIndex = 11;
-            this.btnSelecionarImagem.Text = "SelecionarImagem";
-            this.btnSelecionarImagem.UseVisualStyleBackColor = true;
-            this.btnSelecionarImagem.Click += new System.EventHandler(this.btnSelecionarImagem_Click);
+            btnSelecionarImagem.Location = new Point(162, 27);
+            btnSelecionarImagem.Name = "btnSelecionarImagem";
+            btnSelecionarImagem.Size = new Size(121, 35);
+            btnSelecionarImagem.TabIndex = 5;
+            btnSelecionarImagem.Text = "SelecionarImagem";
+            btnSelecionarImagem.UseVisualStyleBackColor = true;
+            btnSelecionarImagem.Click += btnSelecionarImagem_Click;
             // 
             // panelAcoes
             // 
-            this.panelAcoes.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelAcoes.Location = new System.Drawing.Point(0, 292);
-            this.panelAcoes.Name = "panelAcoes";
-            this.panelAcoes.Size = new System.Drawing.Size(406, 61);
-            this.panelAcoes.TabIndex = 12;
+            panelAcoes.Dock = DockStyle.Bottom;
+            panelAcoes.Location = new Point(0, 318);
+            panelAcoes.Name = "panelAcoes";
+            panelAcoes.Size = new Size(406, 61);
+            panelAcoes.TabIndex = 12;
             // 
             // selecionarImagem
             // 
-            this.selecionarImagem.FileName = "selecionarImagem";
+            selecionarImagem.FileName = "selecionarImagem";
             // 
-            // TelaCadastroSaboresForm
+            // textBox1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(406, 353);
-            this.Controls.Add(this.panelAcoes);
-            this.Controls.Add(this.panelConteudo);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "TelaCadastroSaboresForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "TelaCadastroSaboresForm";
-            ((System.ComponentModel.ISupportInitialize)(this.imagemPK)).EndInit();
-            this.panelConteudo.ResumeLayout(false);
-            this.panelConteudo.PerformLayout();
-            this.ResumeLayout(false);
-
+            textBox1.Enabled = false;
+            textBox1.Location = new Point(6, 23);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(100, 23);
+            textBox1.TabIndex = 13;
+            // 
+            // TelaCadastroFuncionarioForm
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(406, 379);
+            Controls.Add(panelAcoes);
+            Controls.Add(panelConteudo);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "TelaCadastroFuncionarioForm";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "TelaCadastroSaboresForm";
+            ((System.ComponentModel.ISupportInitialize)imagemPK).EndInit();
+            panelConteudo.ResumeLayout(false);
+            panelConteudo.PerformLayout();
+            ResumeLayout(false);
         }
 
         #endregion
@@ -231,5 +233,6 @@
         private OpenFileDialog selecionarImagem;
         private Button btnSelecionarImagem;
         private CheckedListBox ingredientes;
+        private TextBox textBox1;
     }
 }

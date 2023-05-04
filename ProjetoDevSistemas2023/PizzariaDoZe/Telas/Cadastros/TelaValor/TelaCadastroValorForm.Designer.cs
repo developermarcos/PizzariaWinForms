@@ -89,7 +89,7 @@
             tamanho.Location = new Point(78, 30);
             tamanho.Name = "tamanho";
             tamanho.Size = new Size(66, 23);
-            tamanho.TabIndex = 5;
+            tamanho.TabIndex = 1;
             // 
             // lbValorPizzaTradicional
             // 
@@ -114,28 +114,28 @@
             valorTradicional.Location = new Point(12, 89);
             valorTradicional.Name = "valorTradicional";
             valorTradicional.Size = new Size(107, 23);
-            valorTradicional.TabIndex = 8;
+            valorTradicional.TabIndex = 2;
             // 
             // valorEspecial
             // 
             valorEspecial.Location = new Point(158, 89);
             valorEspecial.Name = "valorEspecial";
             valorEspecial.Size = new Size(107, 23);
-            valorEspecial.TabIndex = 9;
+            valorEspecial.TabIndex = 3;
             // 
             // valorBordaTradicional
             // 
             valorBordaTradicional.Location = new Point(12, 133);
             valorBordaTradicional.Name = "valorBordaTradicional";
             valorBordaTradicional.Size = new Size(107, 23);
-            valorBordaTradicional.TabIndex = 10;
+            valorBordaTradicional.TabIndex = 4;
             // 
             // valorBordaEspecial
             // 
             valorBordaEspecial.Location = new Point(158, 133);
             valorBordaEspecial.Name = "valorBordaEspecial";
             valorBordaEspecial.Size = new Size(107, 23);
-            valorBordaEspecial.TabIndex = 11;
+            valorBordaEspecial.TabIndex = 5;
             // 
             // lbValorBordaEspecial
             // 

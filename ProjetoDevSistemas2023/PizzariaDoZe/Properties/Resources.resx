@@ -397,4 +397,22 @@
   <data name="MensagemIdiomaAtualizado" xml:space="preserve">
     <value>Idioma foi atualizado para potuguês</value>
   </data>
+  <data name="sairToolStripMenuItem.Text" xml:space="preserve">
+    <value>Sair</value>
+  </data>
+  <data name="mensagemSairSistema" xml:space="preserve">
+    <value>Deseja realmente sair?</value>
+  </data>
+  <data name="btnBandeja.Text" xml:space="preserve">
+    <value>Bandeja</value>
+  </data>
+  <data name="abrirToolStripMenuItem.Text" xml:space="preserve">
+    <value>Abrir</value>
+  </data>
+  <data name="encerarToolStripMenuItem.Text" xml:space="preserve">
+    <value>Encerrar</value>
+  </data>
+  <data name="sobreToolStripMenuItem.Text" xml:space="preserve">
+    <value>Sobre</value>
+  </data>
 </root>

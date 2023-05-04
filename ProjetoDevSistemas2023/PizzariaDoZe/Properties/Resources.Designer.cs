@@ -61,6 +61,15 @@ namespace PizzariaDoZe.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Abrir.
+        /// </summary>
+        internal static string abrirToolStripMenuItem_Text {
+            get {
+                return ResourceManager.GetString("abrirToolStripMenuItem.Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap add {
@@ -76,6 +85,15 @@ namespace PizzariaDoZe.Properties {
         internal static string btnAdicionar_Text {
             get {
                 return ResourceManager.GetString("btnAdicionar.Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bandeja.
+        /// </summary>
+        internal static string btnBandeja_Text {
+            get {
+                return ResourceManager.GetString("btnBandeja.Text", resourceCulture);
             }
         }
         
@@ -196,6 +214,15 @@ namespace PizzariaDoZe.Properties {
             get {
                 object obj = ResourceManager.GetObject("edit-button", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Encerrar.
+        /// </summary>
+        internal static string encerarToolStripMenuItem_Text {
+            get {
+                return ResourceManager.GetString("encerarToolStripMenuItem.Text", resourceCulture);
             }
         }
         
@@ -742,6 +769,15 @@ namespace PizzariaDoZe.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Deseja realmente sair?.
+        /// </summary>
+        internal static string mensagemSairSistema {
+            get {
+                return ResourceManager.GetString("mensagemSairSistema", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Não.
         /// </summary>
         internal static string nao_Text {
@@ -805,6 +841,15 @@ namespace PizzariaDoZe.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Sair.
+        /// </summary>
+        internal static string sairToolStripMenuItem_Text {
+            get {
+                return ResourceManager.GetString("sairToolStripMenuItem.Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Selecionar Idioma.
         /// </summary>
         internal static string selecionarIdioma_Text {
@@ -819,6 +864,15 @@ namespace PizzariaDoZe.Properties {
         internal static string sim_Text {
             get {
                 return ResourceManager.GetString("sim.Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sobre.
+        /// </summary>
+        internal static string sobreToolStripMenuItem_Text {
+            get {
+                return ResourceManager.GetString("sobreToolStripMenuItem.Text", resourceCulture);
             }
         }
         

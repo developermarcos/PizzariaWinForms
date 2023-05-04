@@ -117,8 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="abrirToolStripMenuItem.Text" xml:space="preserve">
+    <value>Open</value>
+  </data>
   <data name="btnAdicionar.Text" xml:space="preserve">
     <value>To Add</value>
+  </data>
+  <data name="btnBandeja.Text" xml:space="preserve">
+    <value>Tray</value>
   </data>
   <data name="btnCancelar.Text" xml:space="preserve">
     <value>Cancel</value>
@@ -149,6 +155,9 @@
   </data>
   <data name="configuracoesToolStripMenuItem.Text" xml:space="preserve">
     <value>Settings</value>
+  </data>
+  <data name="encerarToolStripMenuItem.Text" xml:space="preserve">
+    <value>Finish</value>
   </data>
   <data name="espanhol.Text" xml:space="preserve">
     <value>Spanish</value>
@@ -345,11 +354,17 @@
   <data name="saboresToolStripMenuItem.Text" xml:space="preserve">
     <value>Flavors</value>
   </data>
+  <data name="sairToolStripMenuItem.Text" xml:space="preserve">
+    <value>Close</value>
+  </data>
   <data name="selecionarIdioma.Text" xml:space="preserve">
     <value>Selected language</value>
   </data>
   <data name="sim.Text" xml:space="preserve">
     <value>Yes</value>
+  </data>
+  <data name="sobreToolStripMenuItem.Text" xml:space="preserve">
+    <value>About</value>
   </data>
   <data name="TelaCadastroClienteForm.Text" xml:space="preserve">
     <value>Client</value>

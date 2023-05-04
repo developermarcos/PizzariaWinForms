@@ -43,6 +43,8 @@ namespace PizzariaDoZe.TelasFuncionario
             };
 
             new AjustarIdioma(this);
+
+            Helpers.FocusTextBox(this);
         }
     }
 }

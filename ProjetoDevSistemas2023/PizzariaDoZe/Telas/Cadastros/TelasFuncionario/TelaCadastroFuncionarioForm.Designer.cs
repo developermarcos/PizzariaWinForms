@@ -30,6 +30,8 @@
         {
             lbNomeCompleto = new Label();
             panelConteudo = new Panel();
+            cpf = new MaskedTextBox();
+            id = new TextBox();
             panelEndereco = new Panel();
             email = new TextBox();
             lbEmail = new Label();
@@ -49,14 +51,13 @@
             textBox1 = new TextBox();
             comboBox1 = new ComboBox();
             lbFuncao = new Label();
-            telefone = new TextBox();
             lbTelefone = new Label();
             matricula = new TextBox();
             lbMatricula = new Label();
-            CPF = new TextBox();
             lbCpf = new Label();
             nomeCompleto = new TextBox();
             panelAcoes = new Panel();
+            telefone = new MaskedTextBox();
             panelConteudo.SuspendLayout();
             grupoHabilitacao.SuspendLayout();
             SuspendLayout();
@@ -64,7 +65,7 @@
             // lbNomeCompleto
             // 
             lbNomeCompleto.AutoSize = true;
-            lbNomeCompleto.Location = new Point(20, 17);
+            lbNomeCompleto.Location = new Point(20, 53);
             lbNomeCompleto.Name = "lbNomeCompleto";
             lbNomeCompleto.Size = new Size(106, 15);
             lbNomeCompleto.TabIndex = 1;
@@ -72,6 +73,9 @@
             // 
             // panelConteudo
             // 
+            panelConteudo.Controls.Add(telefone);
+            panelConteudo.Controls.Add(cpf);
+            panelConteudo.Controls.Add(id);
             panelConteudo.Controls.Add(panelEndereco);
             panelConteudo.Controls.Add(email);
             panelConteudo.Controls.Add(lbEmail);
@@ -85,11 +89,9 @@
             panelConteudo.Controls.Add(grupoHabilitacao);
             panelConteudo.Controls.Add(comboBox1);
             panelConteudo.Controls.Add(lbFuncao);
-            panelConteudo.Controls.Add(telefone);
             panelConteudo.Controls.Add(lbTelefone);
             panelConteudo.Controls.Add(matricula);
             panelConteudo.Controls.Add(lbMatricula);
-            panelConteudo.Controls.Add(CPF);
             panelConteudo.Controls.Add(lbCpf);
             panelConteudo.Controls.Add(nomeCompleto);
             panelConteudo.Controls.Add(lbNomeCompleto);
@@ -97,8 +99,24 @@
             panelConteudo.Location = new Point(0, 0);
             panelConteudo.Name = "panelConteudo";
             panelConteudo.Padding = new Padding(30);
-            panelConteudo.Size = new Size(728, 491);
+            panelConteudo.Size = new Size(728, 557);
             panelConteudo.TabIndex = 2;
+            // 
+            // cpf
+            // 
+            cpf.Location = new Point(20, 115);
+            cpf.Name = "cpf";
+            cpf.Size = new Size(147, 23);
+            cpf.TabIndex = 2;
+            // 
+            // id
+            // 
+            id.Enabled = false;
+            id.Location = new Point(20, 27);
+            id.Name = "id";
+            id.Size = new Size(67, 23);
+            id.TabIndex = 21;
+            id.TabStop = false;
             // 
             // panelEndereco
             // 
@@ -109,15 +127,15 @@
             // 
             // email
             // 
-            email.Location = new Point(20, 166);
+            email.Location = new Point(20, 202);
             email.Name = "email";
             email.Size = new Size(336, 23);
-            email.TabIndex = 18;
+            email.TabIndex = 6;
             // 
             // lbEmail
             // 
             lbEmail.AutoSize = true;
-            lbEmail.Location = new Point(20, 148);
+            lbEmail.Location = new Point(20, 184);
             lbEmail.Name = "lbEmail";
             lbEmail.Size = new Size(46, 15);
             lbEmail.TabIndex = 19;
@@ -126,7 +144,7 @@
             // lbId
             // 
             lbId.AutoSize = true;
-            lbId.Location = new Point(270, 17);
+            lbId.Location = new Point(20, 13);
             lbId.Name = "lbId";
             lbId.Size = new Size(28, 15);
             lbId.TabIndex = 17;
@@ -135,7 +153,7 @@
             // lbObservacoes
             // 
             lbObservacoes.AutoSize = true;
-            lbObservacoes.Location = new Point(20, 244);
+            lbObservacoes.Location = new Point(20, 280);
             lbObservacoes.Name = "lbObservacoes";
             lbObservacoes.Size = new Size(84, 15);
             lbObservacoes.TabIndex = 16;
@@ -143,30 +161,30 @@
             // 
             // observacoes
             // 
-            observacoes.Location = new Point(20, 262);
+            observacoes.Location = new Point(20, 298);
             observacoes.Multiline = true;
             observacoes.Name = "observacoes";
             observacoes.Size = new Size(336, 112);
-            observacoes.TabIndex = 15;
+            observacoes.TabIndex = 9;
             // 
             // senhaConfirmar
             // 
-            senhaConfirmar.Location = new Point(191, 209);
+            senhaConfirmar.Location = new Point(191, 245);
             senhaConfirmar.Name = "senhaConfirmar";
             senhaConfirmar.Size = new Size(165, 23);
-            senhaConfirmar.TabIndex = 12;
+            senhaConfirmar.TabIndex = 8;
             // 
             // senha
             // 
-            senha.Location = new Point(20, 209);
+            senha.Location = new Point(20, 245);
             senha.Name = "senha";
             senha.Size = new Size(165, 23);
-            senha.TabIndex = 11;
+            senha.TabIndex = 7;
             // 
             // lbComfirmaSenha
             // 
             lbComfirmaSenha.AutoSize = true;
-            lbComfirmaSenha.Location = new Point(191, 191);
+            lbComfirmaSenha.Location = new Point(191, 227);
             lbComfirmaSenha.Name = "lbComfirmaSenha";
             lbComfirmaSenha.Size = new Size(110, 15);
             lbComfirmaSenha.TabIndex = 14;
@@ -175,7 +193,7 @@
             // lbSenha
             // 
             lbSenha.AutoSize = true;
-            lbSenha.Location = new Point(20, 191);
+            lbSenha.Location = new Point(20, 227);
             lbSenha.Name = "lbSenha";
             lbSenha.Size = new Size(49, 15);
             lbSenha.TabIndex = 13;
@@ -189,10 +207,10 @@
             grupoHabilitacao.Controls.Add(sim);
             grupoHabilitacao.Controls.Add(lbNumero);
             grupoHabilitacao.Controls.Add(textBox1);
-            grupoHabilitacao.Location = new Point(20, 380);
+            grupoHabilitacao.Location = new Point(20, 426);
             grupoHabilitacao.Name = "grupoHabilitacao";
             grupoHabilitacao.Size = new Size(336, 100);
-            grupoHabilitacao.TabIndex = 6;
+            grupoHabilitacao.TabIndex = 10;
             grupoHabilitacao.TabStop = false;
             grupoHabilitacao.Text = "Possui Habilitação?--";
             // 
@@ -210,7 +228,7 @@
             dateTimePicker1.Location = new Point(171, 64);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(142, 23);
-            dateTimePicker1.TabIndex = 10;
+            dateTimePicker1.TabIndex = 13;
             dateTimePicker1.Value = new DateTime(2023, 3, 8, 0, 0, 0, 0);
             // 
             // nao
@@ -219,7 +237,7 @@
             nao.Location = new Point(78, 20);
             nao.Name = "nao";
             nao.Size = new Size(57, 19);
-            nao.TabIndex = 8;
+            nao.TabIndex = 11;
             nao.TabStop = true;
             nao.Text = "Não--";
             nao.UseVisualStyleBackColor = true;
@@ -230,7 +248,7 @@
             sim.Location = new Point(19, 19);
             sim.Name = "sim";
             sim.Size = new Size(55, 19);
-            sim.TabIndex = 7;
+            sim.TabIndex = 10;
             sim.TabStop = true;
             sim.Text = "Sim--";
             sim.UseVisualStyleBackColor = true;
@@ -249,14 +267,14 @@
             textBox1.Location = new Point(6, 64);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(141, 23);
-            textBox1.TabIndex = 9;
+            textBox1.TabIndex = 12;
             // 
             // comboBox1
             // 
             comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox1.FormattingEnabled = true;
             comboBox1.Items.AddRange(new object[] { "Atendente", "Entregador", "Gerente" });
-            comboBox1.Location = new Point(177, 122);
+            comboBox1.Location = new Point(177, 158);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(179, 23);
             comboBox1.TabIndex = 5;
@@ -264,23 +282,16 @@
             // lbFuncao
             // 
             lbFuncao.AutoSize = true;
-            lbFuncao.Location = new Point(177, 104);
+            lbFuncao.Location = new Point(177, 140);
             lbFuncao.Name = "lbFuncao";
             lbFuncao.Size = new Size(56, 15);
             lbFuncao.TabIndex = 9;
             lbFuncao.Text = "Função--";
             // 
-            // telefone
-            // 
-            telefone.Location = new Point(177, 78);
-            telefone.Name = "telefone";
-            telefone.Size = new Size(179, 23);
-            telefone.TabIndex = 3;
-            // 
             // lbTelefone
             // 
             lbTelefone.AutoSize = true;
-            lbTelefone.Location = new Point(177, 60);
+            lbTelefone.Location = new Point(177, 96);
             lbTelefone.Name = "lbTelefone";
             lbTelefone.Size = new Size(61, 15);
             lbTelefone.TabIndex = 7;
@@ -288,7 +299,7 @@
             // 
             // matricula
             // 
-            matricula.Location = new Point(20, 122);
+            matricula.Location = new Point(20, 158);
             matricula.Name = "matricula";
             matricula.Size = new Size(147, 23);
             matricula.TabIndex = 4;
@@ -296,23 +307,16 @@
             // lbMatricula
             // 
             lbMatricula.AutoSize = true;
-            lbMatricula.Location = new Point(20, 104);
+            lbMatricula.Location = new Point(20, 140);
             lbMatricula.Name = "lbMatricula";
             lbMatricula.Size = new Size(67, 15);
             lbMatricula.TabIndex = 5;
             lbMatricula.Text = "Matrícula--";
             // 
-            // CPF
-            // 
-            CPF.Location = new Point(20, 78);
-            CPF.Name = "CPF";
-            CPF.Size = new Size(147, 23);
-            CPF.TabIndex = 2;
-            // 
             // lbCpf
             // 
             lbCpf.AutoSize = true;
-            lbCpf.Location = new Point(20, 61);
+            lbCpf.Location = new Point(20, 97);
             lbCpf.Name = "lbCpf";
             lbCpf.Size = new Size(38, 15);
             lbCpf.TabIndex = 3;
@@ -320,7 +324,7 @@
             // 
             // nomeCompleto
             // 
-            nomeCompleto.Location = new Point(20, 35);
+            nomeCompleto.Location = new Point(20, 71);
             nomeCompleto.Name = "nomeCompleto";
             nomeCompleto.Size = new Size(336, 23);
             nomeCompleto.TabIndex = 1;
@@ -328,16 +332,23 @@
             // panelAcoes
             // 
             panelAcoes.Dock = DockStyle.Bottom;
-            panelAcoes.Location = new Point(0, 493);
+            panelAcoes.Location = new Point(0, 563);
             panelAcoes.Name = "panelAcoes";
             panelAcoes.Size = new Size(728, 56);
             panelAcoes.TabIndex = 3;
+            // 
+            // telefone
+            // 
+            telefone.Location = new Point(173, 114);
+            telefone.Name = "telefone";
+            telefone.Size = new Size(179, 23);
+            telefone.TabIndex = 3;
             // 
             // TelaCadastroFuncionarioForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(728, 549);
+            ClientSize = new Size(728, 619);
             Controls.Add(panelAcoes);
             Controls.Add(panelConteudo);
             FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -356,14 +367,12 @@
         #endregion
         private Label lbNomeCompleto;
         private Panel panelConteudo;
-        private TextBox CPF;
         private Label lbCpf;
         private TextBox nomeCompleto;
         private Panel panelAcoes;
         private TextBox matricula;
         private Label lbMatricula;
         private Label lbFuncao;
-        private TextBox telefone;
         private Label lbTelefone;
         private GroupBox grupoHabilitacao;
         private ComboBox comboBox1;
@@ -383,5 +392,8 @@
         private TextBox email;
         private Label lbEmail;
         private Panel panelEndereco;
+        private TextBox id;
+        private MaskedTextBox cpf;
+        private MaskedTextBox telefone;
     }
 }

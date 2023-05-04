@@ -397,4 +397,19 @@
   <data name="MensagemIdiomaAtualizado" xml:space="preserve">
     <value>El idioma ha sido actualizado a español</value>
   </data>
+  <data name="abrirToolStripMenuItem.Text" xml:space="preserve">
+    <value>Abierto</value>
+  </data>
+  <data name="btnBandeja.Text" xml:space="preserve">
+    <value>Bandeja</value>
+  </data>
+  <data name="encerarToolStripMenuItem.Text" xml:space="preserve">
+    <value>Finalizar</value>
+  </data>
+  <data name="sairToolStripMenuItem.Text" xml:space="preserve">
+    <value>Salir</value>
+  </data>
+  <data name="sobreToolStripMenuItem.Text" xml:space="preserve">
+    <value>Acerca de</value>
+  </data>
 </root>

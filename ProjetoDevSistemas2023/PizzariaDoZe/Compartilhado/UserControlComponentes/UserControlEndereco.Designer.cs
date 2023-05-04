@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             lbEndereco = new GroupBox();
+            cep = new MaskedTextBox();
             complemento = new TextBox();
             pais = new TextBox();
             uf = new TextBox();
             cidade = new TextBox();
-            cep = new TextBox();
             numero = new TextBox();
             bairro = new TextBox();
             rua = new TextBox();
@@ -50,11 +50,11 @@
             // 
             // lbEndereco
             // 
+            lbEndereco.Controls.Add(cep);
             lbEndereco.Controls.Add(complemento);
             lbEndereco.Controls.Add(pais);
             lbEndereco.Controls.Add(uf);
             lbEndereco.Controls.Add(cidade);
-            lbEndereco.Controls.Add(cep);
             lbEndereco.Controls.Add(numero);
             lbEndereco.Controls.Add(bairro);
             lbEndereco.Controls.Add(rua);
@@ -72,6 +72,13 @@
             lbEndereco.TabIndex = 21;
             lbEndereco.TabStop = false;
             lbEndereco.Text = "Endereço--";
+            // 
+            // cep
+            // 
+            cep.Location = new Point(19, 139);
+            cep.Name = "cep";
+            cep.Size = new Size(84, 23);
+            cep.TabIndex = 12;
             // 
             // complemento
             // 
@@ -101,13 +108,6 @@
             cidade.Name = "cidade";
             cidade.Size = new Size(216, 23);
             cidade.TabIndex = 13;
-            // 
-            // cep
-            // 
-            cep.Location = new Point(19, 139);
-            cep.Name = "cep";
-            cep.Size = new Size(84, 23);
-            cep.TabIndex = 12;
             // 
             // numero
             // 
@@ -221,7 +221,6 @@
         private TextBox pais;
         private TextBox uf;
         private TextBox cidade;
-        private TextBox cep;
         private TextBox numero;
         private TextBox bairro;
         private TextBox rua;
@@ -233,5 +232,6 @@
         private Label lbNumero;
         private Label lbCep;
         private Label lbRua;
+        private MaskedTextBox cep;
     }
 }

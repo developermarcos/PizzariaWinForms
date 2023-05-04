@@ -33,11 +33,13 @@
             lbNome = new Label();
             lbId = new Label();
             panelAcoes = new Panel();
+            textBox1 = new TextBox();
             panelConteudo.SuspendLayout();
             SuspendLayout();
             // 
             // panelConteudo
             // 
+            panelConteudo.Controls.Add(textBox1);
             panelConteudo.Controls.Add(nome);
             panelConteudo.Controls.Add(lbNome);
             panelConteudo.Controls.Add(lbId);
@@ -49,15 +51,15 @@
             // 
             // nome
             // 
-            nome.Location = new Point(19, 59);
+            nome.Location = new Point(19, 72);
             nome.Name = "nome";
             nome.Size = new Size(280, 23);
-            nome.TabIndex = 2;
+            nome.TabIndex = 1;
             // 
             // lbNome
             // 
             lbNome.AutoSize = true;
-            lbNome.Location = new Point(19, 41);
+            lbNome.Location = new Point(19, 54);
             lbNome.Name = "lbNome";
             lbNome.Size = new Size(50, 15);
             lbNome.TabIndex = 1;
@@ -66,7 +68,7 @@
             // lbId
             // 
             lbId.AutoSize = true;
-            lbId.Location = new Point(19, 13);
+            lbId.Location = new Point(19, 6);
             lbId.Name = "lbId";
             lbId.Size = new Size(28, 15);
             lbId.TabIndex = 0;
@@ -79,6 +81,14 @@
             panelAcoes.Name = "panelAcoes";
             panelAcoes.Size = new Size(311, 72);
             panelAcoes.TabIndex = 1;
+            // 
+            // textBox1
+            // 
+            textBox1.Enabled = false;
+            textBox1.Location = new Point(19, 24);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(100, 23);
+            textBox1.TabIndex = 3;
             // 
             // TelaCadastroIngredienteForm
             // 
@@ -105,5 +115,6 @@
         private Label lbId;
         private TextBox nome;
         private Label lbNome;
+        private TextBox textBox1;
     }
 }

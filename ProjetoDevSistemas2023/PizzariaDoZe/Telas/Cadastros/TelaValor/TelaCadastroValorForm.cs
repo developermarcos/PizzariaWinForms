@@ -42,6 +42,8 @@ namespace PizzariaDoZe.TelaValor
             };
 
             new AjustarIdioma(this);
+
+            Helpers.FocusTextBox(this);
         }
     }
 }

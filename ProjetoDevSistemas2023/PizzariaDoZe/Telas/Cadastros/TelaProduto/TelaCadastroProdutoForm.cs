@@ -42,6 +42,8 @@ namespace PizzariaDoZe.TelaProduto
             };
 
             new AjustarIdioma(this);
+
+            Helpers.FocusTextBox(this);
         }
     }
 }
