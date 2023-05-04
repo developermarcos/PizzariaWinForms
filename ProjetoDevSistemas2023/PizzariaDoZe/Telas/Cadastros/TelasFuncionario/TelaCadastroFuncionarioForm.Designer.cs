@@ -30,6 +30,7 @@
         {
             lbNomeCompleto = new Label();
             panelConteudo = new Panel();
+            cpf = new MaskedTextBox();
             id = new TextBox();
             panelEndereco = new Panel();
             email = new TextBox();
@@ -50,14 +51,13 @@
             textBox1 = new TextBox();
             comboBox1 = new ComboBox();
             lbFuncao = new Label();
-            telefone = new TextBox();
             lbTelefone = new Label();
             matricula = new TextBox();
             lbMatricula = new Label();
-            CPF = new TextBox();
             lbCpf = new Label();
             nomeCompleto = new TextBox();
             panelAcoes = new Panel();
+            telefone = new MaskedTextBox();
             panelConteudo.SuspendLayout();
             grupoHabilitacao.SuspendLayout();
             SuspendLayout();
@@ -73,6 +73,8 @@
             // 
             // panelConteudo
             // 
+            panelConteudo.Controls.Add(telefone);
+            panelConteudo.Controls.Add(cpf);
             panelConteudo.Controls.Add(id);
             panelConteudo.Controls.Add(panelEndereco);
             panelConteudo.Controls.Add(email);
@@ -87,11 +89,9 @@
             panelConteudo.Controls.Add(grupoHabilitacao);
             panelConteudo.Controls.Add(comboBox1);
             panelConteudo.Controls.Add(lbFuncao);
-            panelConteudo.Controls.Add(telefone);
             panelConteudo.Controls.Add(lbTelefone);
             panelConteudo.Controls.Add(matricula);
             panelConteudo.Controls.Add(lbMatricula);
-            panelConteudo.Controls.Add(CPF);
             panelConteudo.Controls.Add(lbCpf);
             panelConteudo.Controls.Add(nomeCompleto);
             panelConteudo.Controls.Add(lbNomeCompleto);
@@ -101,6 +101,13 @@
             panelConteudo.Padding = new Padding(30);
             panelConteudo.Size = new Size(728, 557);
             panelConteudo.TabIndex = 2;
+            // 
+            // cpf
+            // 
+            cpf.Location = new Point(20, 115);
+            cpf.Name = "cpf";
+            cpf.Size = new Size(147, 23);
+            cpf.TabIndex = 2;
             // 
             // id
             // 
@@ -281,13 +288,6 @@
             lbFuncao.TabIndex = 9;
             lbFuncao.Text = "Função--";
             // 
-            // telefone
-            // 
-            telefone.Location = new Point(177, 114);
-            telefone.Name = "telefone";
-            telefone.Size = new Size(179, 23);
-            telefone.TabIndex = 3;
-            // 
             // lbTelefone
             // 
             lbTelefone.AutoSize = true;
@@ -313,13 +313,6 @@
             lbMatricula.TabIndex = 5;
             lbMatricula.Text = "Matrícula--";
             // 
-            // CPF
-            // 
-            CPF.Location = new Point(20, 114);
-            CPF.Name = "CPF";
-            CPF.Size = new Size(147, 23);
-            CPF.TabIndex = 2;
-            // 
             // lbCpf
             // 
             lbCpf.AutoSize = true;
@@ -344,6 +337,13 @@
             panelAcoes.Size = new Size(728, 56);
             panelAcoes.TabIndex = 3;
             // 
+            // telefone
+            // 
+            telefone.Location = new Point(173, 114);
+            telefone.Name = "telefone";
+            telefone.Size = new Size(179, 23);
+            telefone.TabIndex = 3;
+            // 
             // TelaCadastroFuncionarioForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -367,14 +367,12 @@
         #endregion
         private Label lbNomeCompleto;
         private Panel panelConteudo;
-        private TextBox CPF;
         private Label lbCpf;
         private TextBox nomeCompleto;
         private Panel panelAcoes;
         private TextBox matricula;
         private Label lbMatricula;
         private Label lbFuncao;
-        private TextBox telefone;
         private Label lbTelefone;
         private GroupBox grupoHabilitacao;
         private ComboBox comboBox1;
@@ -395,5 +393,7 @@
         private Label lbEmail;
         private Panel panelEndereco;
         private TextBox id;
+        private MaskedTextBox cpf;
+        private MaskedTextBox telefone;
     }
 }

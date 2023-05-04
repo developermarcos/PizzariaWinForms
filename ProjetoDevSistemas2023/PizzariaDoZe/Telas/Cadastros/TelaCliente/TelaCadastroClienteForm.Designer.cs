@@ -30,9 +30,10 @@
         {
             panelEndereco = new Panel();
             panelDadosPesooais = new Panel();
-            textBox4 = new TextBox();
-            textBox3 = new TextBox();
-            textBox2 = new TextBox();
+            telefone = new MaskedTextBox();
+            cpf = new MaskedTextBox();
+            email = new MaskedTextBox();
+            id = new TextBox();
             textBox1 = new TextBox();
             lbTelefone = new Label();
             lbCpf = new Label();
@@ -40,7 +41,6 @@
             lbNome = new Label();
             lbId = new Label();
             panelAcoes = new Panel();
-            id = new TextBox();
             panelDadosPesooais.SuspendLayout();
             SuspendLayout();
             // 
@@ -53,10 +53,10 @@
             // 
             // panelDadosPesooais
             // 
+            panelDadosPesooais.Controls.Add(telefone);
+            panelDadosPesooais.Controls.Add(cpf);
+            panelDadosPesooais.Controls.Add(email);
             panelDadosPesooais.Controls.Add(id);
-            panelDadosPesooais.Controls.Add(textBox4);
-            panelDadosPesooais.Controls.Add(textBox3);
-            panelDadosPesooais.Controls.Add(textBox2);
             panelDadosPesooais.Controls.Add(textBox1);
             panelDadosPesooais.Controls.Add(lbTelefone);
             panelDadosPesooais.Controls.Add(lbCpf);
@@ -68,26 +68,37 @@
             panelDadosPesooais.Size = new Size(360, 179);
             panelDadosPesooais.TabIndex = 1;
             // 
-            // textBox4
+            // telefone
             // 
-            textBox4.Location = new Point(137, 151);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(210, 23);
-            textBox4.TabIndex = 4;
+            telefone.Location = new Point(137, 151);
+            telefone.Mask = "(99) 09999-9999";
+            telefone.Name = "telefone";
+            telefone.Size = new Size(210, 23);
+            telefone.TabIndex = 4;
             // 
-            // textBox3
+            // cpf
             // 
-            textBox3.Location = new Point(3, 151);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(128, 23);
-            textBox3.TabIndex = 3;
+            cpf.Location = new Point(4, 151);
+            cpf.Mask = "999.999.999-99";
+            cpf.Name = "cpf";
+            cpf.Size = new Size(128, 23);
+            cpf.TabIndex = 3;
             // 
-            // textBox2
+            // email
             // 
-            textBox2.Location = new Point(3, 107);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(344, 23);
-            textBox2.TabIndex = 2;
+            email.Location = new Point(3, 107);
+            email.Name = "email";
+            email.Size = new Size(344, 23);
+            email.TabIndex = 1;
+            // 
+            // id
+            // 
+            id.Enabled = false;
+            id.Location = new Point(4, 20);
+            id.Name = "id";
+            id.Size = new Size(84, 23);
+            id.TabIndex = 9;
+            id.TabStop = false;
             // 
             // textBox1
             // 
@@ -149,15 +160,6 @@
             panelAcoes.Size = new Size(385, 59);
             panelAcoes.TabIndex = 3;
             // 
-            // id
-            // 
-            id.Enabled = false;
-            id.Location = new Point(4, 20);
-            id.Name = "id";
-            id.Size = new Size(84, 23);
-            id.TabIndex = 9;
-            id.TabStop = false;
-            // 
             // TelaCadastroProdutoForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -188,9 +190,11 @@
         private Label lbEmail;
         private Label lbNome;
         private TextBox textBox4;
-        private TextBox textBox3;
         private TextBox textBox2;
         private TextBox textBox1;
         private TextBox id;
+        private MaskedTextBox email;
+        private MaskedTextBox cpf;
+        private MaskedTextBox telefone;
     }
 }
