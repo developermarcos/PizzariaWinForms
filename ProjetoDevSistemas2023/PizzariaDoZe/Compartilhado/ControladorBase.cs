@@ -25,11 +25,6 @@ namespace PizzariaDoZe.Compartilhado
         protected abstract string _featureSingular { get; }
         protected abstract string _featurePlural { get; }
 
-        protected TelaPrincipalForm TelaPrincipalForm { get; set; }
-        public ControladorBase(TelaPrincipalForm telaPrincipalForm)
-        {
-            TelaPrincipalForm = telaPrincipalForm;
-        }
         /// <summary>
         /// Método responsável por implementar o fluxo de inserção da feature
         /// </summary>
@@ -45,7 +40,7 @@ namespace PizzariaDoZe.Compartilhado
         /// <summary>
         /// Método responsável por implementar o fluxo de listagem de dados da feature
         /// </summary>
-        public abstract void Listar(TelaPrincipalForm telaPrincipalForm);
+        public abstract UserControl ObtemListagem();
         public abstract ToolStripBase ToolTripConfiguracao { get; }
     }
 }

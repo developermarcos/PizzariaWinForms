@@ -8,6 +8,7 @@ namespace PizzariaDoZe.Domain.FeatureIngrediente
 {
     public interface IRepositorioIngrediente
     {
-        void Inserir(IngredienteVO Ingrediente);
+        void Inserir(Ingrediente Ingrediente);
+        List<Ingrediente> SelecionarTodos();
     }
 }

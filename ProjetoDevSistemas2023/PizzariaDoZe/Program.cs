@@ -1,3 +1,4 @@
+using PizzariaDoZe.Compartilhado;
 using PizzariaDoZe.Compartilhado.ExtensionMethods;
 using PizzariaDoZe.Domain.FeatureIngrediente;
 using PizzariaDoZe.Infra;
@@ -19,18 +20,8 @@ namespace PizzariaDoZe
             ProgramExtensions.SelecionarIdiomaAplicacao();
             #endregion
 
-            Startup.InicializarInfra();
-
-            var repositorio = new RepositorioIngrediente();
-
-            var ingrediente = new IngredienteVO() {
-                Nome = "Calabresa"
-            };
-
-            repositorio.Inserir(ingrediente);
-
             ApplicationConfiguration.Initialize();
-            Application.Run(new TelaPrincipalForm());
+            Application.Run(new TelaPrincipalForm(new Dependencias()));
         }
     }
 }

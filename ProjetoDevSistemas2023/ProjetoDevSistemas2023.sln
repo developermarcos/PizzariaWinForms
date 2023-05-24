@@ -15,9 +15,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4- Infra", "4- Infra", "{D2
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5- Testes", "5- Testes", "{EC95F6B2-7349-4134-BBDB-4A21C5359312}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PizzariaDoZe.Domain", "PizzariaDoZe.Domain\PizzariaDoZe.Domain.csproj", "{32FA6781-DB39-4725-BA64-DD6953013FCA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PizzariaDoZe.Domain", "PizzariaDoZe.Domain\PizzariaDoZe.Domain.csproj", "{32FA6781-DB39-4725-BA64-DD6953013FCA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PizzariaDoZe.Infra", "PizzariaDoZe.Infra\PizzariaDoZe.Infra.csproj", "{1365B3C1-618F-4747-9BF1-3DE93977CF6F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PizzariaDoZe.Infra", "PizzariaDoZe.Infra\PizzariaDoZe.Infra.csproj", "{1365B3C1-618F-4747-9BF1-3DE93977CF6F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PizzariaDoZe.Distribuiton", "PizzariaDoZe.Distribuiton\PizzariaDoZe.Distribuiton.csproj", "{526F222D-4F76-4BF9-9BC0-D2A1528ECC2C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,6 +39,10 @@ Global
 		{1365B3C1-618F-4747-9BF1-3DE93977CF6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1365B3C1-618F-4747-9BF1-3DE93977CF6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1365B3C1-618F-4747-9BF1-3DE93977CF6F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{526F222D-4F76-4BF9-9BC0-D2A1528ECC2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{526F222D-4F76-4BF9-9BC0-D2A1528ECC2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{526F222D-4F76-4BF9-9BC0-D2A1528ECC2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{526F222D-4F76-4BF9-9BC0-D2A1528ECC2C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -45,6 +51,7 @@ Global
 		{BD040FE5-6316-411F-80AC-AC532A98A5AE} = {DE974008-D624-48FB-A98F-C213EA0577E9}
 		{32FA6781-DB39-4725-BA64-DD6953013FCA} = {BD479A21-DF49-4EB5-B514-329F07356799}
 		{1365B3C1-618F-4747-9BF1-3DE93977CF6F} = {D2F7EE93-34EB-4011-BABC-6D5312423619}
+		{526F222D-4F76-4BF9-9BC0-D2A1528ECC2C} = {D0E8FC2B-8ED8-47B4-91BE-7A8FE8500197}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5FDC15A0-2B6F-43E5-853C-388F3FD63A2F}

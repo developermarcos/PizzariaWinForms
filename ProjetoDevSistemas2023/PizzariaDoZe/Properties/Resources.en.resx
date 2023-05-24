@@ -318,6 +318,9 @@
   <data name="MensagemExcluidoSucesso" xml:space="preserve">
     <value>Item excluded successfully!</value>
   </data>
+  <data name="mensagemFalhaCadastro" xml:space="preserve">
+    <value>¡Registro fallido!</value>
+  </data>
   <data name="MensagemIdiomaAtualizado" xml:space="preserve">
     <value>Language has been updated to English</value>
   </data>
@@ -332,6 +335,9 @@
   </data>
   <data name="MensagemNenhumItemInserido" xml:space="preserve">
     <value>No inserted item</value>
+  </data>
+  <data name="mensagemSucessoCadastro" xml:space="preserve">
+    <value>¡Registro completado con éxito!</value>
   </data>
   <data name="nao.Text" xml:space="preserve">
     <value>No</value>

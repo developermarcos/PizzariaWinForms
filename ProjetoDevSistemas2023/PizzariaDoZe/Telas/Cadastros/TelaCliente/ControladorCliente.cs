@@ -13,7 +13,7 @@ namespace PizzariaDoZe.Telas.Cadastros.TelaCliente
 
         protected override string _featurePlural => Properties.Resources.ResourceManager.GetString("clientesToolStripMenuItem.Text");
 
-        public ControladorCliente(TelaPrincipalForm telaPrincipalForm) : base(telaPrincipalForm)
+        public ControladorCliente()
         {
 
         }
@@ -25,11 +25,11 @@ namespace PizzariaDoZe.Telas.Cadastros.TelaCliente
 
             if (telaCadastroFuncionario.ShowDialog() == DialogResult.Cancel)
             {
-                TelaPrincipalForm.AtualizarRodape($"{_mensagemRegistroNaoInserido}");
+                TelaPrincipalForm.Instancia.AtualizarRodape($"{_mensagemRegistroNaoInserido}");
                 return;
             }
 
-            TelaPrincipalForm.AtualizarRodape($"{_mensagemRegistroInserido}");
+            TelaPrincipalForm.Instancia.AtualizarRodape($"{_mensagemRegistroInserido}");
 
         }
         public override void Editar()
@@ -38,31 +38,32 @@ namespace PizzariaDoZe.Telas.Cadastros.TelaCliente
 
             if (telaCadastroFuncionario.ShowDialog() == DialogResult.Cancel)
             {
-                TelaPrincipalForm.AtualizarRodape($"{_mensagemRegistroNaoEditado}");
+                TelaPrincipalForm.Instancia.AtualizarRodape($"{_mensagemRegistroNaoEditado}");
                 return;
             }
-            TelaPrincipalForm.AtualizarRodape($"{_mensagemRegistroEditado}");
+            TelaPrincipalForm.Instancia.AtualizarRodape($"{_mensagemRegistroEditado}");
         }
 
         public override void Excluir()
         {
             if (MessageBox.Show($"{_mensagemConfirmacaoExclusao}", $"{_excluir} {_featureSingular}", MessageBoxButtons.OKCancel) == DialogResult.Cancel)
             {
-                TelaPrincipalForm.AtualizarRodape($"{_mensagemRegistroNaoExcluido}");
+                TelaPrincipalForm.Instancia.AtualizarRodape($"{_mensagemRegistroNaoExcluido}");
                 return;
             }
-            TelaPrincipalForm.AtualizarRodape($"{_mensagemRegistroExcluido}");
+            TelaPrincipalForm.Instancia.AtualizarRodape($"{_mensagemRegistroExcluido}");
         }
 
-        public override void Listar(TelaPrincipalForm telaPrincipalForm)
+        public override UserControl ObtemListagem()
         {
-            telaPrincipalForm.AtualizarListagem(new Control());
-            TelaPrincipalForm.AtualizarRodape($"{_listando} 0 {_featurePlural}");
+            TelaPrincipalForm.Instancia.AtualizarRodape($"{_listando} 0 {_featurePlural}");
+
+            return new UserControl();
         }
 
         public void Filtrar()
         {
-            TelaPrincipalForm.AtualizarRodape("Nenhum filtro desponível no momento");
+            TelaPrincipalForm.Instancia.AtualizarRodape("Nenhum filtro desponível no momento");
         }
     }
 }

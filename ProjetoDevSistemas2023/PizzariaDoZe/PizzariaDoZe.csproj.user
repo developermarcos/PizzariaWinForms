@@ -10,6 +10,9 @@
     <Compile Update="Telas\Cadastros\TelaCliente\TelaCadastroClienteForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Telas\Cadastros\TelaIngrediente\TabelaingredientesControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="Telas\Cadastros\TelaIngrediente\TelaCadastroIngredienteForm.cs">
       <SubType>Form</SubType>
     </Compile>

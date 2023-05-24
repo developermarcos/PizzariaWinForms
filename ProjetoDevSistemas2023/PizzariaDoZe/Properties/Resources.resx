@@ -415,4 +415,10 @@
   <data name="sobreToolStripMenuItem.Text" xml:space="preserve">
     <value>Sobre</value>
   </data>
+  <data name="mensagemFalhaCadastro" xml:space="preserve">
+    <value>Cadastro não realizado!</value>
+  </data>
+  <data name="mensagemSucessoCadastro" xml:space="preserve">
+    <value>Cadastro realizado com sucesso!</value>
+  </data>
 </root>

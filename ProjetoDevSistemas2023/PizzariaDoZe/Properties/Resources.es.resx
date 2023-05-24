@@ -412,4 +412,10 @@
   <data name="sobreToolStripMenuItem.Text" xml:space="preserve">
     <value>Acerca de</value>
   </data>
+  <data name="mensagemFalhaCadastro" xml:space="preserve">
+    <value>Registration failed!</value>
+  </data>
+  <data name="mensagemSucessoCadastro" xml:space="preserve">
+    <value>Registration completed successfully!</value>
+  </data>
 </root>
