@@ -1,3 +1,4 @@
+using Microsoft.Extensions.DependencyInjection;
 using PizzariaDoZe.Compartilhado;
 using PizzariaDoZe.Compartilhado.Configurar;
 using PizzariaDoZe.TelaLogin;
@@ -15,34 +16,44 @@ namespace PizzariaDoZe
 {
     public partial class TelaPrincipalForm : Form
     {
-        private List<Tuple<string, ControladorBase>> _controladores = new List<Tuple<string, ControladorBase>>();
-        private ControladorBase _controladorSelecionado;
         private TelaLoginForm _telaLogin = new TelaLoginForm();
+        private Dependencias _dependencias;
+        private ControladorBase _controladorSelecionado;
 
-        public TelaPrincipalForm()
+        public TelaPrincipalForm(Dependencias Dependencias)
         {
+            _dependencias = Dependencias;
+
             InitializeComponent();
-            CarregarControladores();
             ConfigurarTelaInicial();
+
+            Instancia = this;
         }
         /// <summary>
         /// Método responsável por atualizar informações da tela principal como idioma e configurações de nome de menus e botões
         /// </summary>
+        /// 
+
+        public static TelaPrincipalForm Instancia
+        {
+            get;
+            private set;
+        }
+
         public void AtualizarTelaPrincipal()
         {
             this.Refresh();
 
             ConfigurarTelaInicial();
-
-            ConfigurarTela();
         }
         /// <summary>
         /// Método responsável por atualizar o conteúdo da feature em seleção
         /// </summary>
         /// <param name="conteudo">Recebe um control com dados da feature em seleção</param>
-        public void AtualizarListagem(Control conteudo)
+        public void AtualizarListagem(UserControl conteudo)
         {
             panelConteudo.Controls.Clear();
+
             panelConteudo.Controls.Add(conteudo);
         }
         /// <summary>
@@ -59,61 +70,41 @@ namespace PizzariaDoZe
 
 
         #region menu seleção
-        private void CarregarControladores()
-        {
-            _controladores.Add(new Tuple<string, ControladorBase>(funcionariosToolStripMenuItem.Name, new ControladorFuncionario(this)));
-            _controladores.Add(new Tuple<string, ControladorBase>(clientesToolStripMenuItem.Name, new ControladorCliente(this)));
-            _controladores.Add(new Tuple<string, ControladorBase>(ingredientesToolStripMenuItem.Name, new ControladorIngrediente(this)));
-            _controladores.Add(new Tuple<string, ControladorBase>(saboresToolStripMenuItem.Name, new ControladorSabores(this)));
-            _controladores.Add(new Tuple<string, ControladorBase>(produtosToolStripMenuItem.Name, new ControladorProduto(this)));
-            _controladores.Add(new Tuple<string, ControladorBase>(valoresToolStripMenuItem.Name, new ControladorValor(this)));
-        }
-
         private void funcionáriosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            _controladorSelecionado = ObterControlador(funcionariosToolStripMenuItem.Name);
-
-            ConfigurarTela();
+            ConfigurarTela(_dependencias.Get<ControladorFuncionario>());
         }
+
         private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            _controladorSelecionado = ObterControlador(clientesToolStripMenuItem.Name);
-
-            ConfigurarTela();
+            ConfigurarTela(_dependencias.Get<ControladorCliente>());
         }
 
         private void saboresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            _controladorSelecionado = ObterControlador(saboresToolStripMenuItem.Name);
-
-            ConfigurarTela();
+            ConfigurarTela(_dependencias.Get<ControladorSabores>());
         }
+
         private void ingredientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            _controladorSelecionado = ObterControlador(ingredientesToolStripMenuItem.Name);
-
-            ConfigurarTela();
+            ConfigurarTela(_dependencias.Get<ControladorIngrediente>());
         }
+
         private void produtosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            _controladorSelecionado = ObterControlador(produtosToolStripMenuItem.Name);
-
-            ConfigurarTela();
+            ConfigurarTela(_dependencias.Get<ControladorProduto>());
         }
 
         private void valoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            _controladorSelecionado = ObterControlador(valoresToolStripMenuItem.Name);
-
-            ConfigurarTela();
+            ConfigurarTela(_dependencias.Get<ControladorValor>());
         }
+
         private void idiomasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var controladorIdioma = new ControladorIdioma();
 
-            controladorIdioma.IdiomaPanel(panelConteudo, this);
-
-            _controladorSelecionado = null;
+            AtualizarListagem(controladorIdioma.IdiomaPanel());
 
             InabilitarBotoesAcoes();
         }
@@ -134,19 +125,14 @@ namespace PizzariaDoZe
         #endregion
 
         #region configuração tela inicial
-        private ControladorBase ObterControlador(string controladorName)
+        private void ConfigurarTela(ControladorBase controlador)
         {
-            return _controladores.FirstOrDefault(t => t.Item1 == controladorName).Item2;
-        }
+            _controladorSelecionado = controlador;
 
-        private void ConfigurarTela()
-        {
-            if (_controladorSelecionado != null)
-            {
-                ConfigurarToolTips();
+            ConfigurarToolTips(controlador);
 
-                _controladorSelecionado.Listar(this);
-            }
+            AtualizarListagem(controlador.ObtemListagem());
+
         }
         private void ConfigurarTelaInicial()
         {
@@ -188,9 +174,9 @@ namespace PizzariaDoZe
             btnFiltrar.Text = "";
         }
 
-        private void ConfigurarToolTips()
+        private void ConfigurarToolTips(ControladorBase controlador)
         {
-            var toolStrip = _controladorSelecionado.ToolTripConfiguracao;
+            var toolStrip = controlador.ToolTripConfiguracao;
 
             BtnInserir.Text = toolStrip.InserirText;
             btnEditar.Text = toolStrip.EditarText;
@@ -243,12 +229,12 @@ namespace PizzariaDoZe
             this.Close();
             notifyBandeja.Visible = false;
         }
-        #endregion
-
         private void notifyBandeja_DoubleClick(object sender, EventArgs e)
         {
             Show();
             notifyBandeja.Visible = false;
         }
+        #endregion
+
     }
 }

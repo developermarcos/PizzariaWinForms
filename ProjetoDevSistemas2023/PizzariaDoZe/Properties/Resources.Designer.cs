@@ -724,6 +724,15 @@ namespace PizzariaDoZe.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cadastro não realizado!.
+        /// </summary>
+        internal static string mensagemFalhaCadastro {
+            get {
+                return ResourceManager.GetString("mensagemFalhaCadastro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Idioma foi atualizado para potuguês.
         /// </summary>
         internal static string MensagemIdiomaAtualizado {
@@ -774,6 +783,15 @@ namespace PizzariaDoZe.Properties {
         internal static string mensagemSairSistema {
             get {
                 return ResourceManager.GetString("mensagemSairSistema", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cadastro realizado com sucesso!.
+        /// </summary>
+        internal static string mensagemSucessoCadastro {
+            get {
+                return ResourceManager.GetString("mensagemSucessoCadastro", resourceCulture);
             }
         }
         

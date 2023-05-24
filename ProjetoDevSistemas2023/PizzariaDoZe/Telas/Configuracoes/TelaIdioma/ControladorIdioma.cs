@@ -10,11 +10,9 @@ namespace PizzariaDoZe.Telas.Configuracoes.TelaIdioma
         /// </summary>
         /// <param name="panelTelaPrincipal">Adicional as opções de idioma a tela principal</param>
         /// <param name="telaPrincipalForm">Parametro necessário para atualizar o idioma da tela principal</param>
-        public void IdiomaPanel(Panel panelTelaPrincipal, TelaPrincipalForm telaPrincipalForm)
+        public UserControlIdioma IdiomaPanel()
         {
-            Idioma.TelaPrincipal = telaPrincipalForm;
-
-            panelTelaPrincipal.Controls.Add(Idioma);
+            return Idioma;
         }
     }
 }

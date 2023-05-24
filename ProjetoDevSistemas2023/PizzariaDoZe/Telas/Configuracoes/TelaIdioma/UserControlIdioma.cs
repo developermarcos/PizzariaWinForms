@@ -9,8 +9,6 @@ namespace PizzariaDoZe.Configuracoes.TelaIdioma
     {
         private List<Tuple<string, Idioma>> idiomas;
 
-        public TelaPrincipalForm TelaPrincipal { get; internal set; }
-
         public UserControlIdioma()
         {
             InitializeComponent();
@@ -36,13 +34,13 @@ namespace PizzariaDoZe.Configuracoes.TelaIdioma
                 var btn = (RadioButton)item;
                 if (btn.Checked) ProgramExtensions.AtualizarIdiomaAplicacao(idiomas.FirstOrDefault(x => x.Item1 == btn.Name).Item2);
             }
-            
 
-            TelaPrincipal.AtualizarTelaPrincipal();
+
+            TelaPrincipalForm.Instancia.AtualizarTelaPrincipal();
 
             Configurar();
 
-            TelaPrincipal.AtualizarRodape(Properties.Resources.ResourceManager.GetString("MensagemIdiomaAtualizado"));
+            TelaPrincipalForm.Instancia.AtualizarRodape(Properties.Resources.ResourceManager.GetString("MensagemIdiomaAtualizado"));
         }
     }
 }

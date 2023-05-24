@@ -1,5 +1,7 @@
 ﻿using PizzariaDoZe.Compartilhado;
 using PizzariaDoZe.Compartilhado.Configurar;
+using PizzariaDoZe.Distribuiton.FeatureIngrediente;
+using PizzariaDoZe.Domain.FeatureIngrediente;
 using PizzariaDoZe.TelaCliente;
 using PizzariaDoZe.TelaIngrediente;
 using PizzariaDoZe.Telas.Cadastros.TelaCliente;
@@ -12,9 +14,13 @@ namespace PizzariaDoZe.Telas.Cadastros.TelaIngrediente
         protected override string _featureSingular => Properties.Resources.ResourceManager.GetString("FeatureIngrediente");
         protected override string _featurePlural => Properties.Resources.ResourceManager.GetString("ingredientesToolStripMenuItem.Text");
 
-        public ControladorIngrediente(TelaPrincipalForm telaPrincipalForm) : base(telaPrincipalForm)
-        {
+        private IngredienteService _ingredienteService;
 
+        private TabelaingredientesControl tabelaingredientes;
+
+        public ControladorIngrediente(IngredienteService serviceCliente)
+        {
+            _ingredienteService = serviceCliente;
         }
 
         public override void Inserir()
@@ -22,13 +28,15 @@ namespace PizzariaDoZe.Telas.Cadastros.TelaIngrediente
             TelaCadastroIngredienteForm telaCadastroIngrediente =
                 new TelaCadastroIngredienteForm($"{_inserir} {_novo} {_featureSingular}", _mensagemDesejaSalvar, _mensagemDesejaCancelar);
 
+            telaCadastroIngrediente.Gravar = _ingredienteService.Inserir;
+
             if (telaCadastroIngrediente.ShowDialog() == DialogResult.Cancel)
             {
-                TelaPrincipalForm.AtualizarRodape($"{_mensagemRegistroNaoInserido}");
+                TelaPrincipalForm.Instancia.AtualizarRodape($"{_mensagemRegistroNaoInserido}");
                 return;
             }
 
-            TelaPrincipalForm.AtualizarRodape($"{_mensagemRegistroInserido}");
+            CarregarIngredientes();
 
         }
         public override void Editar()
@@ -37,31 +45,44 @@ namespace PizzariaDoZe.Telas.Cadastros.TelaIngrediente
 
             if (telaCadastroFuncionario.ShowDialog() == DialogResult.Cancel)
             {
-                TelaPrincipalForm.AtualizarRodape($"{_mensagemRegistroNaoEditado}");
+                TelaPrincipalForm.Instancia.AtualizarRodape($"{_mensagemRegistroNaoEditado}");
                 return;
             }
-            TelaPrincipalForm.AtualizarRodape($"{_mensagemRegistroEditado}");
+            TelaPrincipalForm.Instancia.AtualizarRodape($"{_mensagemRegistroEditado}");
         }
 
         public override void Excluir()
         {
             if (MessageBox.Show($"{_mensagemConfirmacaoExclusao}", $"{_excluir} {_featureSingular}", MessageBoxButtons.OKCancel) == DialogResult.Cancel)
             {
-                TelaPrincipalForm.AtualizarRodape($"{_mensagemRegistroNaoExcluido}");
+                TelaPrincipalForm.Instancia.AtualizarRodape($"{_mensagemRegistroNaoExcluido}");
                 return;
             }
-            TelaPrincipalForm.AtualizarRodape($"{_mensagemRegistroExcluido}");
+            TelaPrincipalForm.Instancia.AtualizarRodape($"{_mensagemRegistroExcluido}");
         }
 
-        public override void Listar(TelaPrincipalForm telaPrincipalForm)
+        public override UserControl ObtemListagem()
         {
-            telaPrincipalForm.AtualizarListagem(new Control());
-            TelaPrincipalForm.AtualizarRodape($"{_listando} 0 {_featurePlural}");
+            tabelaingredientes = new TabelaingredientesControl();
+
+            CarregarIngredientes();
+
+            return tabelaingredientes;
         }
 
         public void Filtrar()
         {
-            TelaPrincipalForm.AtualizarRodape("Nenhum filtro desponível no momento");
+            TelaPrincipalForm.Instancia.AtualizarRodape("Nenhum filtro desponível no momento");
+        }
+
+        private void CarregarIngredientes()
+        {
+            List<Ingrediente> contatos = _ingredienteService.SelecionarTodos().Value;
+
+            tabelaingredientes.AtualizarRegistros(contatos);
+
+            TelaPrincipalForm.Instancia.AtualizarRodape($"{_listando} {contatos.Count} {_featurePlural}");
+
         }
     }
 }
