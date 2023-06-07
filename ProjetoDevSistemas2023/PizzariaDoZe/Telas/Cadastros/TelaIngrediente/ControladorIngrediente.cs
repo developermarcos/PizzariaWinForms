@@ -41,23 +41,43 @@ namespace PizzariaDoZe.Telas.Cadastros.TelaIngrediente
         }
         public override void Editar()
         {
-            TelaCadastroIngredienteForm telaCadastroFuncionario = new TelaCadastroIngredienteForm($"{_editar} {_featureSingular}", _mensagemDesejaSalvar, _mensagemDesejaCancelar);
+            TelaCadastroIngredienteForm telaCadastroIngrediente = new TelaCadastroIngredienteForm($"{_editar} {_featureSingular}", _mensagemDesejaSalvar, _mensagemDesejaCancelar);
 
-            if (telaCadastroFuncionario.ShowDialog() == DialogResult.Cancel)
+            telaCadastroIngrediente.IngredienteSelecionado = this.ObtemCompromissoSelecionado();
+
+            telaCadastroIngrediente.Gravar = _ingredienteService.Editar;
+
+            if (telaCadastroIngrediente.ShowDialog() == DialogResult.Cancel)
             {
                 TelaPrincipalForm.Instancia.AtualizarRodape($"{_mensagemRegistroNaoEditado}");
                 return;
             }
+            
+            CarregarIngredientes();
+
             TelaPrincipalForm.Instancia.AtualizarRodape($"{_mensagemRegistroEditado}");
         }
 
         public override void Excluir()
         {
+            Ingrediente IngredienteSelecionado = this.ObtemCompromissoSelecionado();
+
+            if(IngredienteSelecionado == null)
+            {
+                TelaPrincipalForm.Instancia.AtualizarRodape($"Selecione um registro caso deseje excluir");
+
+                return;
+            }
             if (MessageBox.Show($"{_mensagemConfirmacaoExclusao}", $"{_excluir} {_featureSingular}", MessageBoxButtons.OKCancel) == DialogResult.Cancel)
             {
                 TelaPrincipalForm.Instancia.AtualizarRodape($"{_mensagemRegistroNaoExcluido}");
                 return;
             }
+
+            _ingredienteService.Excluir(IngredienteSelecionado);
+
+            CarregarIngredientes();
+
             TelaPrincipalForm.Instancia.AtualizarRodape($"{_mensagemRegistroExcluido}");
         }
 
@@ -74,7 +94,7 @@ namespace PizzariaDoZe.Telas.Cadastros.TelaIngrediente
         {
             TelaPrincipalForm.Instancia.AtualizarRodape("Nenhum filtro desponível no momento");
         }
-
+       
         private void CarregarIngredientes()
         {
             List<Ingrediente> contatos = _ingredienteService.SelecionarTodos().Value;
@@ -83,6 +103,13 @@ namespace PizzariaDoZe.Telas.Cadastros.TelaIngrediente
 
             TelaPrincipalForm.Instancia.AtualizarRodape($"{_listando} {contatos.Count} {_featurePlural}");
 
+        }
+
+        private Ingrediente ObtemCompromissoSelecionado()
+        {
+            var numero = tabelaingredientes.ObtemNumeroContatoSelecionado();
+
+            return _ingredienteService.SelecionarPorId(numero).Value;
         }
     }
 }

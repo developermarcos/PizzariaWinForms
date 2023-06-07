@@ -14,6 +14,13 @@ namespace PizzariaDoZe.Infra.FeatureIngrediente
 {
     public class MapeadorIngrediente
     {
+        public void ConfigurarParametros(string parametro, string valor, DbCommand comando)
+        {
+            var item = comando.CreateParameter();
+            item.ParameterName = parametro;
+            item.Value = valor;
+            comando.Parameters.Add(item);
+        }
         public void ConfigurarParametros(Ingrediente registro, DbCommand comando)
         {
 

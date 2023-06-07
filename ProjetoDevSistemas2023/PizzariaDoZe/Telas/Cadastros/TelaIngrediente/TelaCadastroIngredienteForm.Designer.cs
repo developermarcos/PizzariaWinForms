@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             panelConteudo = new Panel();
+            id = new TextBox();
             nome = new TextBox();
             lbNome = new Label();
             lbId = new Label();
             panelAcoes = new Panel();
-            textBox1 = new TextBox();
             panelConteudo.SuspendLayout();
             SuspendLayout();
             // 
             // panelConteudo
             // 
-            panelConteudo.Controls.Add(textBox1);
+            panelConteudo.Controls.Add(id);
             panelConteudo.Controls.Add(nome);
             panelConteudo.Controls.Add(lbNome);
             panelConteudo.Controls.Add(lbId);
@@ -48,6 +48,14 @@
             panelConteudo.Name = "panelConteudo";
             panelConteudo.Size = new Size(311, 177);
             panelConteudo.TabIndex = 0;
+            // 
+            // id
+            // 
+            id.Enabled = false;
+            id.Location = new Point(19, 24);
+            id.Name = "id";
+            id.Size = new Size(100, 23);
+            id.TabIndex = 3;
             // 
             // nome
             // 
@@ -82,14 +90,6 @@
             panelAcoes.Size = new Size(311, 72);
             panelAcoes.TabIndex = 1;
             // 
-            // textBox1
-            // 
-            textBox1.Enabled = false;
-            textBox1.Location = new Point(19, 24);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(100, 23);
-            textBox1.TabIndex = 3;
-            // 
             // TelaCadastroIngredienteForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -115,6 +115,6 @@
         private Label lbId;
         private TextBox nome;
         private Label lbNome;
-        private TextBox textBox1;
+        private TextBox id;
     }
 }

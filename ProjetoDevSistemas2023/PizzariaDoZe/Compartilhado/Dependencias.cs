@@ -41,6 +41,7 @@ namespace PizzariaDoZe.Compartilhado
             IRepositorioIngrediente repositorioingrediente = new RepositorioIngrediente();
             IngredienteService serviceCliente = new IngredienteService(repositorioingrediente);
             controladores.Add("ControladorIngrediente", new ControladorIngrediente(serviceCliente));
+
         }
     }
 }
