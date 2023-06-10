@@ -19,12 +19,36 @@ namespace PizzariaDoZe.Distribuiton.FeatureIngrediente
 
         public Result<Ingrediente> Editar(Ingrediente ingrediente)
         {
-            throw new NotImplementedException();
+            Result resultado = Validar(ingrediente);
+
+            if (resultado.IsFailed)
+                return Result.Fail(resultado.Errors);
+
+            try
+            {
+                _repositorio.Editar(ingrediente);
+
+                return Result.Ok(ingrediente);
+            }
+            catch (Exception ex)
+            {
+                return Result.Fail("Falha no sistema ao tentar editar o Ingrediente");
+            }
         }
 
         public Result<Ingrediente> Excluir(Ingrediente ingrediente)
         {
-            throw new NotImplementedException();
+
+            try
+            {
+                _repositorio.Excluir(ingrediente);
+
+                return Result.Ok(ingrediente);
+            }
+            catch (Exception ex)
+            {
+                return Result.Fail("Falha no sistema ao tentar excluir o Ingrediente");
+            }
         }
 
         public Result<Ingrediente> Inserir(Ingrediente ingrediente)
@@ -52,6 +76,24 @@ namespace PizzariaDoZe.Distribuiton.FeatureIngrediente
             try
             {
                 var result = _repositorio.SelecionarTodos();
+
+                if(result is null)
+                {
+                    Result.Fail("Nenhum ingrediente encotrando");
+                }
+
+                return Result.Ok(result);
+            }
+            catch (Exception ex)
+            {
+                return Result.Fail("Falha no sistema ao tentar selecionar todos os Ingrediente");
+            }
+        }
+        public Result<Ingrediente> SelecionarPorId(int id)
+        {
+            try
+            {
+                var result = _repositorio.SelecionarPorId(id);
 
                 if(result is null)
                 {

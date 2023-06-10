@@ -8,25 +8,50 @@ namespace PizzariaDoZe.TelaIngrediente
     public partial class TelaCadastroIngredienteForm : Form
     {
         private UserControlSalvarCancelar AcoesUserControl = new UserControlSalvarCancelar();
-        private List<Tuple<string, string>> Mensagens;
+        private Ingrediente _ingredienteSelecionado;
         public TelaCadastroIngredienteForm(string telaNome, string mensagemDejesaSalvar, string mensagemDesejaCancelar)
         {
             InitializeComponent();
             Text = telaNome;
-            Configurar();
-            Mensagens = new List<Tuple<string, string>>()
-            {
-                new Tuple<string, string>("mensagemSalvar", mensagemDejesaSalvar),
-                new Tuple<string, string>("mensagemCancelar", mensagemDesejaCancelar)
-            };
+            ConfigurarTela();
         }
 
         public Func<Ingrediente, Result<Ingrediente>> Gravar { get; internal set; }
-
-        private void Configurar()
+        
+        public Ingrediente IngredienteSelecionado
         {
-            ConfigurarTela();
-            //PreencherTela();
+            set
+            {
+                _ingredienteSelecionado = value;
+                PopularTela();
+            }
+            private get
+            {
+                var ingrediente = new Ingrediente()
+                {
+                    Nome = nome.Text
+                };
+
+                if (id.Text != string.Empty && id.Text != "0")
+                    ingrediente.Id = Convert.ToUInt32(id.Text);
+
+                return ingrediente;
+            }
+        }
+
+        #region métodos privados
+        private string ValidarCamposPreenchidos()
+        {
+            if (nome.Text.Length < 2)
+                return "Nome invalido";
+
+            return string.Empty;
+        }
+
+        private void PopularTela()
+        {
+            id.Text = Convert.ToString(_ingredienteSelecionado.Id);
+            nome.Text = _ingredienteSelecionado.Nome;
         }
 
         private void ConfigurarTela()
@@ -35,42 +60,26 @@ namespace PizzariaDoZe.TelaIngrediente
 
             AcoesUserControl.btnSalvar.Click += (object? sender, EventArgs e) =>
             {
-                if (MessageBox.Show(Mensagens.FirstOrDefault(t => t.Item1 == "mensagemSalvar").Item2, Text, MessageBoxButtons.OKCancel) == DialogResult.Cancel)
-                    DialogResult = DialogResult.None;
+                string resultado = ValidarCamposPreenchidos();
 
-                var ingrediente = ObterObjeto();
-
-                var result = Gravar(ingrediente);
-
-                if (result.IsFailed)
+                if (resultado != string.Empty)
                 {
-                    TelaPrincipalForm.Instancia.AtualizarRodape(Properties.Resources.ResourceManager.GetString("mensagemFalhaCadastro"));
+                    TelaPrincipalForm.Instancia.AtualizarRodape(resultado);
 
                     DialogResult = DialogResult.None;
 
                     return;
                 }
 
-                TelaPrincipalForm.Instancia.AtualizarRodape(Properties.Resources.ResourceManager.GetString("mensagemSucessoCadastro"));
-            };
+                var result = Gravar(IngredienteSelecionado);
 
-            AcoesUserControl.btnCancelar.Click += (object? sender, EventArgs e) =>
-            {
-                if (MessageBox.Show(Mensagens.FirstOrDefault(t => t.Item1 == "mensagemCancelar").Item2, Text, MessageBoxButtons.OKCancel) == DialogResult.Cancel)
-                    DialogResult = DialogResult.None;
+                TelaPrincipalForm.Instancia.AtualizarRodape(Properties.Resources.ResourceManager.GetString("mensagemSucessoCadastro"));
             };
 
             new AjustarIdioma(this);
 
             Helpers.FocusTextBox(this);
         }
-
-        private Ingrediente ObterObjeto()
-        {
-            return new Ingrediente()
-            {
-                Nome = nome.Text
-            };
-        }
+        #endregion
     }
 }

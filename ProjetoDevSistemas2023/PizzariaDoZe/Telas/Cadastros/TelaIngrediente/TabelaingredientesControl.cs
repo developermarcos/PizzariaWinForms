@@ -35,9 +35,9 @@ namespace PizzariaDoZe.Telas.Cadastros.TelaIngrediente
             return colunas;
         }
 
-        public Guid ObtemNumeroContatoSelecionado()
+        public int ObtemNumeroContatoSelecionado()
         {
-            return grid.SelecionarNumero<Guid>();
+            return grid.SelecionarNumero<int>();
         }
 
         public void AtualizarRegistros(List<Ingrediente> ingredientes)
