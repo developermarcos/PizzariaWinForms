@@ -29,11 +29,11 @@ namespace PizzariaDoZe.TelaIngrediente
             {
                 var ingrediente = new Ingrediente()
                 {
-                    Nome = nome.Text
+                    descricao_ingrediente = nome.Text
                 };
 
                 if (id.Text != string.Empty && id.Text != "0")
-                    ingrediente.Id = Convert.ToUInt32(id.Text);
+                    ingrediente.id_ingrediente = Convert.ToInt32(id.Text);
 
                 return ingrediente;
             }
@@ -50,8 +50,8 @@ namespace PizzariaDoZe.TelaIngrediente
 
         private void PopularTela()
         {
-            id.Text = Convert.ToString(_ingredienteSelecionado.Id);
-            nome.Text = _ingredienteSelecionado.Nome;
+            id.Text = Convert.ToString(_ingredienteSelecionado.id_ingrediente);
+            nome.Text = _ingredienteSelecionado.descricao_ingrediente;
         }
 
         private void ConfigurarTela()

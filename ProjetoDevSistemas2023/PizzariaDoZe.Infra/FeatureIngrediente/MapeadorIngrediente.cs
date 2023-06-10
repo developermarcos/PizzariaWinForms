@@ -37,16 +37,16 @@ namespace PizzariaDoZe.Infra.FeatureIngrediente
         {
             Ingrediente registro = new Ingrediente();
 
-            if (!leitorRegistro.IsDBNull(leitorRegistro.GetOrdinal("Id")))
+            if (!leitorRegistro.IsDBNull(leitorRegistro.GetOrdinal("id_ingrediente")))
             {
-                long Id = leitorRegistro.GetInt64(leitorRegistro.GetOrdinal("Id"));
-                registro.Id = Id;
+                int id_ingrediente = leitorRegistro.GetInt32(leitorRegistro.GetOrdinal("id_ingrediente"));
+                registro.id_ingrediente = id_ingrediente;
             }
 
-            if (!leitorRegistro.IsDBNull(leitorRegistro.GetOrdinal("Nome")))
+            if (!leitorRegistro.IsDBNull(leitorRegistro.GetOrdinal("descricao_ingrediente")))
             {
-                string Nome = leitorRegistro.GetString(leitorRegistro.GetOrdinal("Nome"));
-                registro.Nome = Nome;
+                string descricao_ingrediente = leitorRegistro.GetString(leitorRegistro.GetOrdinal("descricao_ingrediente"));
+                registro.descricao_ingrediente = descricao_ingrediente;
             }
             
             return registro;

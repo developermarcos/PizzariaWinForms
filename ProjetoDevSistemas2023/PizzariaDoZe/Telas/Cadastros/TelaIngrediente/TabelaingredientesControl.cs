@@ -27,9 +27,9 @@ namespace PizzariaDoZe.Telas.Cadastros.TelaIngrediente
         {
             var colunas = new DataGridViewColumn[]
             {
-                new DataGridViewTextBoxColumn { DataPropertyName = "Id", HeaderText = "Id"},
+                new DataGridViewTextBoxColumn { DataPropertyName = "id_ingrediente", HeaderText = "Id"},
 
-                new DataGridViewTextBoxColumn { DataPropertyName = "Nome", HeaderText = "Nome"}
+                new DataGridViewTextBoxColumn { DataPropertyName = "descricao_ingrediente", HeaderText = "Nome"}
             };
             
             return colunas;

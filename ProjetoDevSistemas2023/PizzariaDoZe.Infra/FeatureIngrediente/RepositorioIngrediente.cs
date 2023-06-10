@@ -7,13 +7,13 @@ namespace PizzariaDoZe.Infra.FeatureIngrediente
 {
     public class RepositorioIngrediente : Connection, IRepositorioIngrediente
     {
-        public string selecionarTodosSql => @"Select * from tb_ingrediente";
-        public string selecionarPorIdSql => @"Select * from tb_ingrediente where id = @id";
-        public string insertSql => @"INSERT INTO tb_ingrediente(nome) VALUES (@nome)";
-        public string editarSql => @"UPDATE [dbo].[tb_ingrediente]
-                                       SET Nome = @Nome
-                                     WHERE id = @id";
-        public string exclusaoSql => @"DELETE tb_ingrediente WHERE id = @id";
+        public string selecionarTodosSql => @"Select * from cad_ingredientes";
+        public string selecionarPorIdSql => @"Select * from cad_ingredientes where [id_ingrediente] = @id_ingrediente";
+        public string insertSql => @"INSERT INTO cad_ingredientes(descricao_ingrediente) VALUES (@descricao_ingrediente)";
+        public string editarSql => @"UPDATE [dbo].[cad_ingredientes]
+                                       SET [descricao_ingrediente] = @descricao_ingrediente
+                                     WHERE [id_ingrediente] = @id_ingrediente";
+        public string exclusaoSql => @"DELETE cad_ingredientes WHERE id_ingrediente = @id_ingrediente";
 
         public void Editar(Ingrediente ingrediente)
         {
@@ -71,7 +71,7 @@ namespace PizzariaDoZe.Infra.FeatureIngrediente
 
                 SqlCommand command = new SqlCommand(selecionarPorIdSql, connection);
 
-                new MapeadorIngrediente().ConfigurarParametros("@id", id.ToString(), command);
+                new MapeadorIngrediente().ConfigurarParametros("@id_ingrediente", id.ToString(), command);
 
                 using (SqlDataReader reader = command.ExecuteReader())
                 {
