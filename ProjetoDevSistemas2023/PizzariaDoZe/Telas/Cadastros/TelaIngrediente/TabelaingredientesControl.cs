@@ -1,14 +1,5 @@
 ﻿using PizzariaDoZe.Compartilhado.ExtensionMethods;
 using PizzariaDoZe.Domain.FeatureIngrediente;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace PizzariaDoZe.Telas.Cadastros.TelaIngrediente
 {
@@ -31,7 +22,7 @@ namespace PizzariaDoZe.Telas.Cadastros.TelaIngrediente
 
                 new DataGridViewTextBoxColumn { DataPropertyName = "descricao_ingrediente", HeaderText = "Nome"}
             };
-            
+
             return colunas;
         }
 

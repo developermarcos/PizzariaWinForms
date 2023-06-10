@@ -2,7 +2,6 @@
 using PizzariaDoZe.Compartilhado.Configurar;
 using PizzariaDoZe.Distribuiton.FeatureIngrediente;
 using PizzariaDoZe.Domain.FeatureIngrediente;
-using PizzariaDoZe.TelaCliente;
 using PizzariaDoZe.TelaIngrediente;
 using PizzariaDoZe.Telas.Cadastros.TelaCliente;
 
@@ -52,7 +51,7 @@ namespace PizzariaDoZe.Telas.Cadastros.TelaIngrediente
                 TelaPrincipalForm.Instancia.AtualizarRodape($"{_mensagemRegistroNaoEditado}");
                 return;
             }
-            
+
             CarregarIngredientes();
 
             TelaPrincipalForm.Instancia.AtualizarRodape($"{_mensagemRegistroEditado}");
@@ -62,7 +61,7 @@ namespace PizzariaDoZe.Telas.Cadastros.TelaIngrediente
         {
             Ingrediente IngredienteSelecionado = this.ObtemCompromissoSelecionado();
 
-            if(IngredienteSelecionado == null)
+            if (IngredienteSelecionado == null)
             {
                 TelaPrincipalForm.Instancia.AtualizarRodape($"Selecione um registro caso deseje excluir");
 
@@ -94,7 +93,7 @@ namespace PizzariaDoZe.Telas.Cadastros.TelaIngrediente
         {
             TelaPrincipalForm.Instancia.AtualizarRodape("Nenhum filtro desponível no momento");
         }
-       
+
         private void CarregarIngredientes()
         {
             List<Ingrediente> contatos = _ingredienteService.SelecionarTodos().Value;

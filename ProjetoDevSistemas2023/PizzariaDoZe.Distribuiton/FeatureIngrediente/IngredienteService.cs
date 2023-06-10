@@ -1,11 +1,6 @@
 ﻿using FluentResults;
 using PizzariaDoZe.Distribuiton.Compartilhado;
 using PizzariaDoZe.Domain.FeatureIngrediente;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PizzariaDoZe.Distribuiton.FeatureIngrediente
 {
@@ -53,7 +48,7 @@ namespace PizzariaDoZe.Distribuiton.FeatureIngrediente
 
         public Result<Ingrediente> Inserir(Ingrediente ingrediente)
         {
-            
+
             Result resultado = Validar(ingrediente);
 
             if (resultado.IsFailed)
@@ -77,7 +72,7 @@ namespace PizzariaDoZe.Distribuiton.FeatureIngrediente
             {
                 var result = _repositorio.SelecionarTodos();
 
-                if(result is null)
+                if (result is null)
                 {
                     Result.Fail("Nenhum ingrediente encotrando");
                 }
@@ -95,7 +90,7 @@ namespace PizzariaDoZe.Distribuiton.FeatureIngrediente
             {
                 var result = _repositorio.SelecionarPorId(id);
 
-                if(result is null)
+                if (result is null)
                 {
                     Result.Fail("Nenhum ingrediente encotrando");
                 }

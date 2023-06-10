@@ -22,12 +22,7 @@ using PizzariaDoZe.Telas.Cadastros.TelaProduto;
 using PizzariaDoZe.Telas.Cadastros.TelaSabores;
 using PizzariaDoZe.Telas.Cadastros.TelasFuncionario;
 using PizzariaDoZe.Telas.Cadastros.TelaValor;
-using System;
-using System.Collections.Generic;
 using System.Data.Common;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PizzariaDoZe.Compartilhado
 {
