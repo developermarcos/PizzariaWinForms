@@ -82,7 +82,7 @@ namespace PizzariaDoZe
 
         private void saboresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ConfigurarTela(_dependencias.Get<ControladorSabores>());
+            ConfigurarTela(_dependencias.Get<ControladorSabor>());
         }
 
         private void ingredientesToolStripMenuItem_Click(object sender, EventArgs e)

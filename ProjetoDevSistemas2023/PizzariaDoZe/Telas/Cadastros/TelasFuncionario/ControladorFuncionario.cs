@@ -1,5 +1,6 @@
 ﻿using PizzariaDoZe.Compartilhado;
 using PizzariaDoZe.Compartilhado.Configurar;
+using PizzariaDoZe.Distribuiton.FeatureFuncionario;
 using PizzariaDoZe.TelasFuncionario;
 using System.ComponentModel.DataAnnotations;
 
@@ -8,6 +9,8 @@ namespace PizzariaDoZe.Telas.Cadastros.TelasFuncionario
     [Display(Name = "funcionario")]
     public class ControladorFuncionario : ControladorBase, ITelaTipoFiltrarDados
     {
+        private FuncionarioService serviceFuncionario;
+
         public override ToolStripBase ToolTripConfiguracao => new ToolStripFuncionario();
         protected override string _featureSingular => Properties.Resources.ResourceManager.GetString("FeatureFuncionario");
         protected override string _featurePlural => Properties.Resources.ResourceManager.GetString("funcionariosToolStripMenuItem.Text");
@@ -15,6 +18,11 @@ namespace PizzariaDoZe.Telas.Cadastros.TelasFuncionario
         public ControladorFuncionario()
         {
 
+        }
+
+        public ControladorFuncionario(FuncionarioService serviceFuncionario)
+        {
+            this.serviceFuncionario = serviceFuncionario;
         }
 
         public override void Inserir()

@@ -1,5 +1,6 @@
 ﻿using PizzariaDoZe.Compartilhado;
 using PizzariaDoZe.Compartilhado.Configurar;
+using PizzariaDoZe.Distribuiton.FeatureCliente;
 using PizzariaDoZe.TelaCliente;
 
 
@@ -7,6 +8,8 @@ namespace PizzariaDoZe.Telas.Cadastros.TelaCliente
 {
     internal class ControladorCliente : ControladorBase, ITelaTipoFiltrarDados
     {
+        private ClienteService clienteService;
+
         public override ToolStripBase ToolTripConfiguracao => new ToolStripCliente();
 
         protected override string _featureSingular => Properties.Resources.ResourceManager.GetString("FeatureCliente");
@@ -16,6 +19,11 @@ namespace PizzariaDoZe.Telas.Cadastros.TelaCliente
         public ControladorCliente()
         {
 
+        }
+
+        public ControladorCliente(ClienteService clienteService)
+        {
+            this.clienteService = clienteService;
         }
 
         public override void Inserir()

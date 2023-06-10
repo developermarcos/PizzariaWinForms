@@ -1,11 +1,14 @@
 ﻿using PizzariaDoZe.Compartilhado;
 using PizzariaDoZe.Compartilhado.Configurar;
+using PizzariaDoZe.Distribuiton.FeatureValor;
 using PizzariaDoZe.TelaValor;
 
 namespace PizzariaDoZe.Telas.Cadastros.TelaValor
 {
     internal class ControladorValor : ControladorBase, ITelaTipoFiltrarDados
     {
+        private ValorService valorService;
+
         public override ToolStripValor ToolTripConfiguracao => new ToolStripValor();
         protected override string _featureSingular => Properties.Resources.ResourceManager.GetString("FeatureValor");
         protected override string _featurePlural => Properties.Resources.ResourceManager.GetString("valoresToolStripMenuItem.Text");
@@ -13,6 +16,11 @@ namespace PizzariaDoZe.Telas.Cadastros.TelaValor
         public ControladorValor()
         {
 
+        }
+
+        public ControladorValor(ValorService valorService)
+        {
+            this.valorService = valorService;
         }
 
         public override void Inserir()

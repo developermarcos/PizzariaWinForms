@@ -1,18 +1,26 @@
 ﻿using PizzariaDoZe.Compartilhado;
 using PizzariaDoZe.Compartilhado.Configurar;
+using PizzariaDoZe.Distribuiton.FeatureSabor;
 using PizzariaDoZe.TelaSabores;
 
 namespace PizzariaDoZe.Telas.Cadastros.TelaSabores
 {
-    internal class ControladorSabores : ControladorBase, ITelaTipoFiltrarDados
+    internal class ControladorSabor : ControladorBase, ITelaTipoFiltrarDados
     {
+        private SaborService saborService;
+
         public override ToolStripSabores ToolTripConfiguracao => new ToolStripSabores();
         protected override string _featureSingular => Properties.Resources.ResourceManager.GetString("FeatureSabor");
         protected override string _featurePlural => Properties.Resources.ResourceManager.GetString("saboresToolStripMenuItem.Text");
 
-        public ControladorSabores()
+        public ControladorSabor()
         {
 
+        }
+
+        public ControladorSabor(SaborService saborService)
+        {
+            this.saborService = saborService;
         }
 
         public override void Inserir()

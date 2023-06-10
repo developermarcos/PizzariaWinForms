@@ -1,11 +1,14 @@
 ﻿using PizzariaDoZe.Compartilhado;
 using PizzariaDoZe.Compartilhado.Configurar;
+using PizzariaDoZe.Distribuiton.FeatureProduto;
 using PizzariaDoZe.TelaProduto;
 
 namespace PizzariaDoZe.Telas.Cadastros.TelaProduto
 {
     internal class ControladorProduto : ControladorBase, ITelaTipoFiltrarDados
     {
+        private ProdutoService produtoService;
+
         public override ToolStripProduto ToolTripConfiguracao => new ToolStripProduto();
         protected override string _featureSingular => Properties.Resources.ResourceManager.GetString("FeatureProduto");
         protected override string _featurePlural => Properties.Resources.ResourceManager.GetString("produtosToolStripMenuItem.Text");
@@ -13,6 +16,11 @@ namespace PizzariaDoZe.Telas.Cadastros.TelaProduto
         public ControladorProduto()
         {
 
+        }
+
+        public ControladorProduto(ProdutoService produtoService)
+        {
+            this.produtoService = produtoService;
         }
 
         public override void Inserir()
