@@ -1,5 +1,7 @@
-﻿using PizzariaDoZe.Compartilhado.Configurar;
+﻿using FluentResults;
+using PizzariaDoZe.Compartilhado.Configurar;
 using PizzariaDoZe.Compartilhado.UserControlComponentes;
+using PizzariaDoZe.Domain.FeatureProduto;
 
 namespace PizzariaDoZe.TelaProduto
 {
@@ -19,6 +21,9 @@ namespace PizzariaDoZe.TelaProduto
                 new Tuple<string, string>("mensagemCancelar", mensagemDesejaCancelar)
             };
         }
+
+        public Func<Produto, Result<Produto>> Gravar { get; internal set; }
+
         private void Configurar()
         {
             ConfigurarTela();

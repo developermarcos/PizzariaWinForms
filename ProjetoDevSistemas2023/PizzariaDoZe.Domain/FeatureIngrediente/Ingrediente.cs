@@ -2,7 +2,7 @@
 {
     public class Ingrediente
     {
-        public long Id { get; set; }
-        public string Nome { get; set; }
+        public int id_ingrediente { get; set; }
+        public string descricao_ingrediente { get; set; }
     }
 }

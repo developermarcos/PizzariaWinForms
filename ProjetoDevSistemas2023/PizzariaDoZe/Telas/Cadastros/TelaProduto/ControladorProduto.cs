@@ -7,26 +7,23 @@ namespace PizzariaDoZe.Telas.Cadastros.TelaProduto
 {
     internal class ControladorProduto : ControladorBase, ITelaTipoFiltrarDados
     {
-        private ProdutoService produtoService;
+        private ProdutoService _produtoService;
 
         public override ToolStripProduto ToolTripConfiguracao => new ToolStripProduto();
         protected override string _featureSingular => Properties.Resources.ResourceManager.GetString("FeatureProduto");
         protected override string _featurePlural => Properties.Resources.ResourceManager.GetString("produtosToolStripMenuItem.Text");
 
-        public ControladorProduto()
-        {
-
-        }
-
         public ControladorProduto(ProdutoService produtoService)
         {
-            this.produtoService = produtoService;
+            this._produtoService = produtoService;
         }
 
         public override void Inserir()
         {
             TelaCadastroProdutoForm telaCadastroIngrediente =
                 new TelaCadastroProdutoForm($"{_inserir} {_novo} {_featureSingular}", _mensagemDesejaSalvar, _mensagemDesejaCancelar);
+
+            telaCadastroIngrediente.Gravar = _produtoService.Inserir;
 
             if (telaCadastroIngrediente.ShowDialog() == DialogResult.Cancel)
             {

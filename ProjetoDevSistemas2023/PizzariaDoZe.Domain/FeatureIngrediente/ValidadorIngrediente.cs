@@ -11,7 +11,7 @@ namespace PizzariaDoZe.Domain.FeatureIngrediente
     {
         public ValidadorIngrediente()
         {
-            RuleFor(x => x.Nome)
+            RuleFor(x => x.descricao_ingrediente)
                 .NotNull()
                 .NotEmpty();
         }
