@@ -1,13 +1,6 @@
 ﻿using PizzariaDoZe.Domain.Compartilhado;
-using PizzariaDoZe.Domain.FeatureIngrediente;
-using PizzariaDoZe.Infra.FeatureIngrediente;
-using System;
-using System.Collections.Generic;
 using System.Data.Common;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PizzariaDoZe.Infra.Compartilhado
 {
@@ -19,57 +12,51 @@ namespace PizzariaDoZe.Infra.Compartilhado
         public abstract string editarSql { get; }
         public abstract string exclusaoSql { get; }
 
-        public void Editar(T ingrediente)
+        public void Editar(T registro)
         {
-            using var conexao = factory.CreateConnection(); //Cria conexão
-            conexao!.ConnectionString = strConnection; //Atribui a string de conexão
-            using var comando = factory.CreateCommand(); //Cria comando
-            comando!.Connection = conexao; //Atribui conexão
-                                           //Adiciona parâmetro (@campo e valor)
-            MapearObjeto(ingrediente, comando);
+            using (SqlConnection connection = new SqlConnection(strConnection))
+            {
+                connection.Open();
 
-            conexao.Open();
-            comando.CommandText = editarSql;
-            //Executa o script na conexão e retorna o número de linhas afetadas.
-            var linhas = comando.ExecuteNonQuery();
-            //using faz o Close() automático quando fecha o seu escopo
+                SqlCommand command = new SqlCommand(editarSql, connection);
+
+                MapearObjeto(registro, command);
+
+                command.ExecuteNonQuery();
+            }
         }
 
-        public void Excluir(T ingrediente)
+        public void Excluir(T registro)
         {
-            using var conexao = factory.CreateConnection(); //Cria conexão
-            conexao!.ConnectionString = strConnection; //Atribui a string de conexão
-            using var comando = factory.CreateCommand(); //Cria comando
-            comando!.Connection = conexao; //Atribui conexão
-                                           //Adiciona parâmetro (@campo e valor)
-            MapearObjeto(ingrediente, comando);
-            conexao.Open();
-            comando.CommandText = exclusaoSql;
-            //Executa o script na conexão e retorna o número de linhas afetadas.
-            var linhas = comando.ExecuteNonQuery();
-            //using faz o Close() automático quando fecha o seu escopo
+            using (SqlConnection connection = new SqlConnection(strConnection))
+            {
+                connection.Open();
+
+                SqlCommand command = new SqlCommand(exclusaoSql, connection);
+
+                MapearObjeto(registro, command);
+
+                command.ExecuteNonQuery();
+            }
         }
 
-        public void Inserir(T Ingrediente)
+        public void Inserir(T registro)
         {
-            using var conexao = factory.CreateConnection(); //Cria conexão
-            conexao!.ConnectionString = strConnection; //Atribui a string de conexão
-            using var comando = factory.CreateCommand(); //Cria comando
-            comando!.Connection = conexao; //Atribui conexão
-                                           //Adiciona parâmetro (@campo e valor)
-            MapearObjeto(Ingrediente, comando);
+            using (SqlConnection connection = new SqlConnection(strConnection))
+            {
+                connection.Open();
 
-            conexao.Open();
-            comando.CommandText = insertSql;
-            //Executa o script na conexão e retorna o número de linhas afetadas.
-            var linhas = comando.ExecuteNonQuery();
-            //using faz o Close() automático quando fecha o seu escopo
+                SqlCommand command = new SqlCommand(insertSql, connection);
+
+                MapearObjeto(registro, command);
+
+                command.ExecuteNonQuery();
+            }
         }
 
         public T SelecionarPorId(int id)
         {
-            //var ingrediente = new T();
-            var ingrediente = (T)Activator.CreateInstance(typeof(T));
+            var registro = (T)Activator.CreateInstance(typeof(T));
 
             using (SqlConnection connection = new SqlConnection(strConnection))
             {
@@ -85,12 +72,12 @@ namespace PizzariaDoZe.Infra.Compartilhado
                     {
                         if (reader.HasRows)
                         {
-                            ingrediente = ConverterValor(reader);
+                            registro = ConverterValor(reader);
                         }
                     }
                 }
             }
-            return ingrediente;
+            return registro;
         }
 
         public List<T> SelecionarTodos()
@@ -117,8 +104,11 @@ namespace PizzariaDoZe.Infra.Compartilhado
             }
             return listaItens;
         }
+
         public abstract T ConverterValor(SqlDataReader reader);
+
         public abstract void MapearCampoIdentificador(SqlCommand command, int id);
+
         public abstract void MapearObjeto(T objeto, DbCommand comando);
     }
 }
