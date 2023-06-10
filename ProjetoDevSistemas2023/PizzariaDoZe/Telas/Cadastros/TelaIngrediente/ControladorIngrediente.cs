@@ -2,6 +2,7 @@
 using PizzariaDoZe.Compartilhado.Configurar;
 using PizzariaDoZe.Distribuiton.FeatureIngrediente;
 using PizzariaDoZe.Domain.FeatureIngrediente;
+using PizzariaDoZe.Domain.FeatureProduto;
 using PizzariaDoZe.TelaIngrediente;
 using PizzariaDoZe.Telas.Cadastros.TelaCliente;
 
@@ -40,9 +41,18 @@ namespace PizzariaDoZe.Telas.Cadastros.TelaIngrediente
         }
         public override void Editar()
         {
+
+            Ingrediente ingredienteSelecionado = this.ObtemCompromissoSelecionado();
+
+            if (ingredienteSelecionado is null || ingredienteSelecionado.id_ingrediente == 0)
+            {
+                TelaPrincipalForm.Instancia.AtualizarRodape($"Selecione um registro primeiro");
+
+                return;
+            }
             TelaCadastroIngredienteForm telaCadastroIngrediente = new TelaCadastroIngredienteForm($"{_editar} {_featureSingular}", _mensagemDesejaSalvar, _mensagemDesejaCancelar);
 
-            telaCadastroIngrediente.IngredienteSelecionado = this.ObtemCompromissoSelecionado();
+            telaCadastroIngrediente.IngredienteSelecionado = ingredienteSelecionado;
 
             telaCadastroIngrediente.Gravar = _ingredienteService.Editar;
 

@@ -1,11 +1,8 @@
-﻿namespace PizzariaDoZe.Domain.FeatureIngrediente
+﻿using PizzariaDoZe.Domain.Compartilhado;
+
+namespace PizzariaDoZe.Domain.FeatureIngrediente
 {
-    public interface IRepositorioIngrediente
+    public interface IRepositorioIngrediente : IRepositorioBase<Ingrediente>
     {
-        void Editar(Ingrediente ingrediente);
-        void Excluir(Ingrediente ingrediente);
-        void Inserir(Ingrediente Ingrediente);
-        Ingrediente SelecionarPorId(int id);
-        List<Ingrediente> SelecionarTodos();
     }
 }

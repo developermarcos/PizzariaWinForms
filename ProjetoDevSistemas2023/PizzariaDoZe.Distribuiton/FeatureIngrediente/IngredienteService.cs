@@ -1,6 +1,7 @@
 ﻿using FluentResults;
 using PizzariaDoZe.Distribuiton.Compartilhado;
 using PizzariaDoZe.Domain.FeatureIngrediente;
+using PizzariaDoZe.Infra.FeatureIngrediente;
 
 namespace PizzariaDoZe.Distribuiton.FeatureIngrediente
 {

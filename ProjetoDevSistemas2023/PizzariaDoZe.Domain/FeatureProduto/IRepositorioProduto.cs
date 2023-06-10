@@ -1,7 +1,8 @@
-﻿namespace PizzariaDoZe.Domain.FeatureProduto
+﻿using PizzariaDoZe.Domain.Compartilhado;
+
+namespace PizzariaDoZe.Domain.FeatureProduto
 {
-    public interface IRepositorioProduto
+    public interface IRepositorioProduto : IRepositorioBase<Produto>
     {
-        void Inserir(object ingrediente);
     }
 }

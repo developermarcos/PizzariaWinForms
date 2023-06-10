@@ -10,6 +10,10 @@
     }
     public enum TipoProduto
     {
-
+        Agua = 1,
+        Cerveja = 2,
+        Refrigerante = 3,
+        Suco = 4,
+        Outros = 5
     }
 }

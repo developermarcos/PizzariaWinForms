@@ -15,8 +15,6 @@ namespace PizzariaDoZe.Distribuiton.Compartilhado
 
             foreach (var validationFailure in resultadoValidacao.Errors)
             {
-                //Log.Logger.Warning(validationFailure.ErrorMessage);
-
                 erros.Add(new Error(validationFailure.ErrorMessage));
             }
 
