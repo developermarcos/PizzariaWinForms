@@ -1,5 +1,4 @@
-﻿using PizzariaDoZe.Domain.FeatureProduto;
-using PizzariaDoZe.Domain.FeatureSabor;
+﻿using PizzariaDoZe.Domain.FeatureSabor;
 using PizzariaDoZe.Infra.Compartilhado;
 using System.Data.Common;
 using System.Data.SqlClient;
@@ -11,7 +10,7 @@ namespace PizzariaDoZe.Infra.FeatureSabor
         public override Sabor ConverterRegistro(SqlDataReader leitorRegistro)
         {
             Sabor registro = new Sabor();
-            
+
             if (!leitorRegistro.IsDBNull(leitorRegistro.GetOrdinal("id")))
             {
                 int id_sabor = leitorRegistro.GetInt32(leitorRegistro.GetOrdinal("id"));
@@ -47,7 +46,7 @@ namespace PizzariaDoZe.Infra.FeatureSabor
 
         public override void ConfigurarParametros(Sabor registro, DbCommand comando)
         {
-            if(registro.id != 0)
+            if (registro.id != 0)
             {
                 var id_sabor = comando.CreateParameter();
                 id_sabor.ParameterName = "@id";

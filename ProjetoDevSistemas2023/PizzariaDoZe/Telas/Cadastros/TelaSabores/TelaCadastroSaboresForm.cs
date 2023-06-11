@@ -1,18 +1,8 @@
 ﻿using FluentResults;
 using PizzariaDoZe.Compartilhado.Configurar;
 using PizzariaDoZe.Compartilhado.UserControlComponentes;
-using PizzariaDoZe.Distribuiton.FeatureSabor;
 using PizzariaDoZe.Domain.FeatureIngrediente;
-using PizzariaDoZe.Domain.FeatureProduto;
 using PizzariaDoZe.Domain.FeatureSabor;
-using PizzariaDoZe.Domain.FeatureValor;
-using System;
-using System.Collections;
-using System.Drawing;
-using System.Reflection;
-using System.Security.Cryptography.X509Certificates;
-using System.Windows.Forms;
-using static System.ComponentModel.Design.ObjectSelectorEditor;
 
 namespace PizzariaDoZe.TelaSabores
 {
@@ -28,7 +18,8 @@ namespace PizzariaDoZe.TelaSabores
 
         public Sabor SaborSelecionado
         {
-            get {
+            get
+            {
 
                 Sabor sabor = new Sabor()
                 {
@@ -54,8 +45,8 @@ namespace PizzariaDoZe.TelaSabores
                         sabor.ingredientes.Add((Ingrediente)ingredientes.Items[i]);
                     }
                 }
-                
-                return sabor; 
+
+                return sabor;
             }
             set
             {
@@ -80,7 +71,7 @@ namespace PizzariaDoZe.TelaSabores
             {
                 var validarResult = ValidarCampos();
 
-                if(validarResult != string.Empty)
+                if (validarResult != string.Empty)
                 {
                     TelaPrincipalForm.Instancia.AtualizarRodape(validarResult);
                     DialogResult = DialogResult.None;
@@ -99,7 +90,7 @@ namespace PizzariaDoZe.TelaSabores
             ingredientes.Items.Clear();
 
             ingredientes.Items.AddRange(Ingredientes.ToArray());
-            
+
             PreencherEnum(Enum.GetValues(typeof(TipoSabor)), tipo);
 
             PreencherEnum(Enum.GetValues(typeof(CategoriaSabor)), categorias);
@@ -122,8 +113,8 @@ namespace PizzariaDoZe.TelaSabores
 
             if (sabor.tipo == 0)
                 return "Tipo invalido";
-            
-            if(sabor.categoria == 0)
+
+            if (sabor.categoria == 0)
                 return "categoria invalido";
 
             if (string.IsNullOrEmpty(sabor.nome))
@@ -150,7 +141,7 @@ namespace PizzariaDoZe.TelaSabores
                 {
                     ingredientes.SetItemChecked(i, true);
                 }
-                    
+
             }
 
             imagemPK.Image = ByteToImage(_saborSelecionado.foto);

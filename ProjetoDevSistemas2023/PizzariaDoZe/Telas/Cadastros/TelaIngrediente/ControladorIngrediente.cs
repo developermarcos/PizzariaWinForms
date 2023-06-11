@@ -2,7 +2,6 @@
 using PizzariaDoZe.Compartilhado.Configurar;
 using PizzariaDoZe.Distribuiton.FeatureIngrediente;
 using PizzariaDoZe.Domain.FeatureIngrediente;
-using PizzariaDoZe.Domain.FeatureProduto;
 using PizzariaDoZe.TelaIngrediente;
 using PizzariaDoZe.Telas.Cadastros.TelaCliente;
 

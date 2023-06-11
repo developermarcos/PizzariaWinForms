@@ -1,14 +1,9 @@
-﻿using Microsoft.Win32;
-using PizzariaDoZe.Domain.FeatureIngrediente;
+﻿using PizzariaDoZe.Domain.FeatureIngrediente;
 using PizzariaDoZe.Domain.FeatureSabor;
-using PizzariaDoZe.Domain.FeatureValor;
 using PizzariaDoZe.Infra.Compartilhado;
 using PizzariaDoZe.Infra.FeatureIngrediente;
-using PizzariaDoZe.Infra.FeatureProduto;
-using PizzariaDoZe.Infra.FeatureValor;
 using System.Data.Common;
 using System.Data.SqlClient;
-using System.Reflection.Metadata;
 
 namespace PizzariaDoZe.Infra.FeatureSabor
 {
@@ -76,9 +71,9 @@ namespace PizzariaDoZe.Infra.FeatureSabor
             using (SqlConnection connection = new SqlConnection(strConnection))
             {
                 connection.Open();
-                
+
                 SqlCommand command = new SqlCommand(insertSql, connection);
-                
+
                 var mapeadorSabor = new MapeadorSabor();
 
                 mapeadorSabor.ConfigurarParametros(registro, command);
@@ -92,7 +87,7 @@ namespace PizzariaDoZe.Infra.FeatureSabor
                     mapeadorSabor.ConfigurarParametro("@ingrediente_id", x.id.ToString(), command2);
                     command2.ExecuteNonQuery();
                 });
-                
+
             }
         }
 
@@ -115,13 +110,13 @@ namespace PizzariaDoZe.Infra.FeatureSabor
                 mapeadorSabor.ConfigurarParametro("@sabor_id", registro.id.ToString(), command2);
                 command2.ExecuteNonQuery();
 
-               registro.ingredientes.ForEach(x =>
-                {
-                    SqlCommand command3 = new SqlCommand(inserirIngredientes_saborSql, connection);
-                    mapeadorSabor.ConfigurarParametro("@sabor_id", registro.id.ToString(), command3);
-                    mapeadorSabor.ConfigurarParametro("@ingrediente_id", x.id.ToString(), command3);
-                    command3.ExecuteNonQuery();
-                });
+                registro.ingredientes.ForEach(x =>
+                 {
+                     SqlCommand command3 = new SqlCommand(inserirIngredientes_saborSql, connection);
+                     mapeadorSabor.ConfigurarParametro("@sabor_id", registro.id.ToString(), command3);
+                     mapeadorSabor.ConfigurarParametro("@ingrediente_id", x.id.ToString(), command3);
+                     command3.ExecuteNonQuery();
+                 });
             }
         }
 

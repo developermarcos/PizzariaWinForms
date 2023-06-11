@@ -1,5 +1,4 @@
 ﻿using FluentValidation;
-using PizzariaDoZe.Domain.FeatureIngrediente;
 
 namespace PizzariaDoZe.Domain.FeatureSabor
 {

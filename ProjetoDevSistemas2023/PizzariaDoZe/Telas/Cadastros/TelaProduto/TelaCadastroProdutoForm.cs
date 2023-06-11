@@ -1,7 +1,6 @@
 ﻿using FluentResults;
 using PizzariaDoZe.Compartilhado.Configurar;
 using PizzariaDoZe.Compartilhado.UserControlComponentes;
-using PizzariaDoZe.Domain.FeatureIngrediente;
 using PizzariaDoZe.Domain.FeatureProduto;
 
 namespace PizzariaDoZe.TelaProduto

@@ -17,7 +17,7 @@ namespace PizzariaDoZe.TelaIngrediente
         }
 
         public Func<Ingrediente, Result<Ingrediente>> Gravar { get; internal set; }
-        
+
         public Ingrediente IngredienteSelecionado
         {
             set

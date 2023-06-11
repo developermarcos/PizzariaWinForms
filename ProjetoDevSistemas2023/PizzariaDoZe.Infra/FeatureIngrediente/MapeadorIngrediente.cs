@@ -1,14 +1,7 @@
-﻿using Microsoft.Win32;
-using PizzariaDoZe.Domain.FeatureIngrediente;
-using System;
-using System.Collections.Generic;
+﻿using PizzariaDoZe.Domain.FeatureIngrediente;
 using System.Data.Common;
 using System.Data.SqlClient;
-using System.Linq;
 using System.Reflection;
-using System.Reflection.PortableExecutable;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PizzariaDoZe.Infra.FeatureIngrediente
 {
@@ -48,7 +41,7 @@ namespace PizzariaDoZe.Infra.FeatureIngrediente
                 string descricao_ingrediente = leitorRegistro.GetString(leitorRegistro.GetOrdinal("nome"));
                 registro.nome = descricao_ingrediente;
             }
-            
+
             return registro;
         }
 

@@ -1,11 +1,8 @@
 ﻿using PizzariaDoZe.Compartilhado;
 using PizzariaDoZe.Compartilhado.Configurar;
-using PizzariaDoZe.Distribuiton.FeatureIngrediente;
 using PizzariaDoZe.Distribuiton.FeatureProduto;
-using PizzariaDoZe.Domain.FeatureIngrediente;
 using PizzariaDoZe.Domain.FeatureProduto;
 using PizzariaDoZe.TelaProduto;
-using PizzariaDoZe.Telas.Cadastros.TelaIngrediente;
 
 namespace PizzariaDoZe.Telas.Cadastros.TelaProduto
 {
@@ -46,7 +43,7 @@ namespace PizzariaDoZe.Telas.Cadastros.TelaProduto
         {
             Produto produtoSelecionado = this.ObtemCompromissoSelecionado();
 
-            if(produtoSelecionado is null)
+            if (produtoSelecionado is null)
             {
                 TelaPrincipalForm.Instancia.AtualizarRodape($"Selecione um registro primeiro");
 

@@ -1,11 +1,8 @@
 ﻿using PizzariaDoZe.Compartilhado;
 using PizzariaDoZe.Compartilhado.Configurar;
 using PizzariaDoZe.Distribuiton.FeatureIngrediente;
-using PizzariaDoZe.Distribuiton.FeatureProduto;
 using PizzariaDoZe.Distribuiton.FeatureSabor;
-using PizzariaDoZe.Domain.FeatureProduto;
 using PizzariaDoZe.Domain.FeatureSabor;
-using PizzariaDoZe.Telas.Cadastros.TelaProduto;
 using PizzariaDoZe.TelaSabores;
 
 namespace PizzariaDoZe.Telas.Cadastros.TelaSabores
@@ -31,11 +28,11 @@ namespace PizzariaDoZe.Telas.Cadastros.TelaSabores
         {
             TelaCadastroFuncionarioForm telaCadastroSabor =
             new TelaCadastroFuncionarioForm($"{_inserir} {_novo} {_featureSingular}", ingredienteService.SelecionarTodos().Value);
-            
+
             telaCadastroSabor.Ingredientes = ingredienteService.SelecionarTodos().Value;
 
             telaCadastroSabor.Gravar = saborService.Inserir;
-            
+
             if (telaCadastroSabor.ShowDialog() == DialogResult.Cancel)
             {
                 TelaPrincipalForm.Instancia.AtualizarRodape($"{_mensagemRegistroNaoInserido}");
