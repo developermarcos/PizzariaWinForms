@@ -33,7 +33,7 @@ namespace PizzariaDoZe.Infra.FeatureSabor
                                                   ,tipo = @tipo
                                               WHERE id_sabor = @id_sabor";
 
-        public override string exclusaoSql => @"DELETE FROM [dbo].[cad_produtos] WHERE id_sabor = @id_sabor";
+        public override string exclusaoSql => @"DELETE FROM [dbo].[tb_sabores] WHERE id_sabor = @id_sabor";
 
         public override Sabor ConverterValor(SqlDataReader reader)
         {
@@ -61,6 +61,20 @@ namespace PizzariaDoZe.Infra.FeatureSabor
                 
                 SqlCommand command = new SqlCommand(insertSql, connection);
                 
+                new MapeadorSabor().ConfigurarParametros(registro, command);
+
+                command.ExecuteNonQuery();
+            }
+        }
+
+        public override void Editar(Sabor registro)
+        {
+            using (SqlConnection connection = new SqlConnection(strConnection))
+            {
+                connection.Open();
+
+                SqlCommand command = new SqlCommand(editarSql, connection);
+
                 new MapeadorSabor().ConfigurarParametros(registro, command);
 
                 command.ExecuteNonQuery();

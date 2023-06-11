@@ -5,9 +5,11 @@ using PizzariaDoZe.Distribuiton.FeatureSabor;
 using PizzariaDoZe.Domain.FeatureIngrediente;
 using PizzariaDoZe.Domain.FeatureProduto;
 using PizzariaDoZe.Domain.FeatureSabor;
+using PizzariaDoZe.Domain.FeatureValor;
 using System;
 using System.Collections;
 using System.Drawing;
+using System.Reflection;
 using System.Security.Cryptography.X509Certificates;
 using System.Windows.Forms;
 using static System.ComponentModel.Design.ObjectSelectorEditor;
@@ -35,6 +37,9 @@ namespace PizzariaDoZe.TelaSabores
                     descricao_sabor = nome.Text,
                     foto = ImagemToByte(imagemPK.Image)
                 };
+
+                if (!string.IsNullOrEmpty(id.Text))
+                    sabor.id_sabor = Convert.ToInt32(id.Text);
 
                 sabor.ingredientes.Clear();
                 foreach (int index in ingredientes.SelectedIndices)
@@ -70,6 +75,7 @@ namespace PizzariaDoZe.TelaSabores
                 if(validarResult != string.Empty)
                 {
                     TelaPrincipalForm.Instancia.AtualizarRodape(validarResult);
+                    DialogResult = DialogResult.None;
                     return;
                 }
 
@@ -123,11 +129,17 @@ namespace PizzariaDoZe.TelaSabores
         {
             id.Text = _saborSelecionado.id_sabor.ToString();
             nome.Text = _saborSelecionado.descricao_sabor;
-            categorias.SelectedItem = _saborSelecionado.categoria;
-            tipo.SelectedItem = _saborSelecionado.tipo;
-            _saborSelecionado.ingredientes.ForEach(x => {
-                categorias.SelectedValue = x.ToString();
-            });
+            categorias.SelectedItem = _saborSelecionado.categoria.ToString();
+            tipo.SelectedItem = _saborSelecionado.tipo.ToString();
+
+            //var tamanhoArray = ingredientes.Items.Count;
+
+            //for(int i = 0; i < tamanhoArray; i++)
+            //{
+            //    if (SaborSelecionado.ingredientes.Exists(x => x == (Ingrediente)ingredientes.Items[i]))
+            //        ingredientes.CheckedItems[i] = true;
+            //}
+            imagemPK.Image = ByteToImage(_saborSelecionado.foto);
         }
 
         private void btnSelecionarImagem_Click(object sender, EventArgs e)
@@ -150,7 +162,7 @@ namespace PizzariaDoZe.TelaSabores
                 return mStream.ToArray();
             }
         }
-        private Image BytoToImage(byte[] bityImage)
+        private Image ByteToImage(byte[] bityImage)
         {
             using (var ms = new MemoryStream(bityImage))
             {

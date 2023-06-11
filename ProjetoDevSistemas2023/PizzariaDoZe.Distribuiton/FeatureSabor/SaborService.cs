@@ -1,8 +1,6 @@
 ﻿using FluentResults;
 using PizzariaDoZe.Distribuiton.Compartilhado;
 using PizzariaDoZe.Domain.FeatureSabor;
-using PizzariaDoZe.Domain.FeatureSabor;
-using PizzariaDoZe.Domain.FeatureSabor;
 
 namespace PizzariaDoZe.Distribuiton.FeatureSabor
 {

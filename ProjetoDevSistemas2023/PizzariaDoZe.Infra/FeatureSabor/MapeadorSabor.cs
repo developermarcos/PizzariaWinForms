@@ -47,6 +47,14 @@ namespace PizzariaDoZe.Infra.FeatureSabor
 
         public override void ConfigurarParametros(Sabor registro, DbCommand comando)
         {
+            if(registro.id_sabor != 0)
+            {
+                var id_sabor = comando.CreateParameter();
+                id_sabor.ParameterName = "@id_sabor";
+                id_sabor.Value = registro.id_sabor;
+                comando.Parameters.Add(id_sabor);
+            }
+
             var descricao_sabor = comando.CreateParameter();
             descricao_sabor.ParameterName = "@descricao_sabor";
             descricao_sabor.Value = registro.descricao_sabor;
