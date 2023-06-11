@@ -1,6 +1,8 @@
-﻿namespace PizzariaDoZe.Domain.FeatureSabor
+﻿using PizzariaDoZe.Domain.Compartilhado;
+
+namespace PizzariaDoZe.Domain.FeatureSabor
 {
-    public interface IRepositorioSabor
+    public interface IRepositorioSabor : IRepositorioBase<Sabor>
     {
     }
 }

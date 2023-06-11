@@ -60,13 +60,13 @@ namespace PizzariaDoZe.Compartilhado
             ClienteService clienteService = new ClienteService(repositorioCliente);
             controladores.Add("ControladorCliente", new ControladorCliente(clienteService));
 
+            IRepositorioIngrediente repositorioingrediente = new RepositorioIngrediente();
+            IngredienteService ingredienteService = new IngredienteService(repositorioingrediente);
+            controladores.Add("ControladorIngrediente", new ControladorIngrediente(ingredienteService));
+
             IRepositorioSabor repositorioSabor = new RepositorioSabor();
             SaborService saborService = new SaborService(repositorioSabor);
-            controladores.Add("ControladorSabor", new ControladorSabor(saborService));
-
-            IRepositorioIngrediente repositorioingrediente = new RepositorioIngrediente();
-            IngredienteService serviceCliente = new IngredienteService(repositorioingrediente);
-            controladores.Add("ControladorIngrediente", new ControladorIngrediente(serviceCliente));
+            controladores.Add("ControladorSabor", new ControladorSabor(saborService, ingredienteService));
 
             IRepositorioProduto repositorioProduto = new RepositorioProduto();
             ProdutoService produtoService = new ProdutoService(repositorioProduto);

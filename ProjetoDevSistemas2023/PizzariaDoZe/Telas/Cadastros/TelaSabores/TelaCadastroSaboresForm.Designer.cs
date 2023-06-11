@@ -39,11 +39,11 @@
             imagemPK = new PictureBox();
             lbId = new Label();
             panelConteudo = new Panel();
+            id = new TextBox();
             ingredientes = new CheckedListBox();
             btnSelecionarImagem = new Button();
             panelAcoes = new Panel();
             selecionarImagem = new OpenFileDialog();
-            textBox1 = new TextBox();
             ((System.ComponentModel.ISupportInitialize)imagemPK).BeginInit();
             panelConteudo.SuspendLayout();
             SuspendLayout();
@@ -139,7 +139,7 @@
             // 
             // panelConteudo
             // 
-            panelConteudo.Controls.Add(textBox1);
+            panelConteudo.Controls.Add(id);
             panelConteudo.Controls.Add(ingredientes);
             panelConteudo.Controls.Add(btnSelecionarImagem);
             panelConteudo.Controls.Add(lbId);
@@ -157,6 +157,14 @@
             panelConteudo.Name = "panelConteudo";
             panelConteudo.Size = new Size(406, 379);
             panelConteudo.TabIndex = 11;
+            // 
+            // id
+            // 
+            id.Enabled = false;
+            id.Location = new Point(6, 23);
+            id.Name = "id";
+            id.Size = new Size(100, 23);
+            id.TabIndex = 13;
             // 
             // ingredientes
             // 
@@ -188,14 +196,6 @@
             // selecionarImagem
             // 
             selecionarImagem.FileName = "selecionarImagem";
-            // 
-            // textBox1
-            // 
-            textBox1.Enabled = false;
-            textBox1.Location = new Point(6, 23);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(100, 23);
-            textBox1.TabIndex = 13;
             // 
             // TelaCadastroFuncionarioForm
             // 
@@ -233,6 +233,6 @@
         private OpenFileDialog selecionarImagem;
         private Button btnSelecionarImagem;
         private CheckedListBox ingredientes;
-        private TextBox textBox1;
+        private TextBox id;
     }
 }

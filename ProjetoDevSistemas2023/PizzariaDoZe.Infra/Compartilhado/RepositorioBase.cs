@@ -12,7 +12,7 @@ namespace PizzariaDoZe.Infra.Compartilhado
         public abstract string editarSql { get; }
         public abstract string exclusaoSql { get; }
 
-        public void Editar(T registro)
+        public virtual void Editar(T registro)
         {
             using (SqlConnection connection = new SqlConnection(strConnection))
             {
@@ -26,7 +26,7 @@ namespace PizzariaDoZe.Infra.Compartilhado
             }
         }
 
-        public void Excluir(T registro)
+        public virtual void Excluir(T registro)
         {
             using (SqlConnection connection = new SqlConnection(strConnection))
             {
@@ -40,7 +40,7 @@ namespace PizzariaDoZe.Infra.Compartilhado
             }
         }
 
-        public void Inserir(T registro)
+        public virtual void Inserir(T registro)
         {
             using (SqlConnection connection = new SqlConnection(strConnection))
             {
@@ -54,7 +54,7 @@ namespace PizzariaDoZe.Infra.Compartilhado
             }
         }
 
-        public T SelecionarPorId(int id)
+        public virtual T SelecionarPorId(int id)
         {
             var registro = (T)Activator.CreateInstance(typeof(T));
 
@@ -80,7 +80,7 @@ namespace PizzariaDoZe.Infra.Compartilhado
             return registro;
         }
 
-        public List<T> SelecionarTodos()
+        public virtual List<T> SelecionarTodos()
         {
             var listaItens = new List<T>();
 

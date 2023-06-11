@@ -12,14 +12,14 @@ namespace PizzariaDoZe.Infra.Compartilhado
 {
     internal abstract class MapeadorBase<T>
     {
-        public void ConfigurarParametros(string parametro, string valor, DbCommand comando)
+        public virtual void ConfigurarParametros(string parametro, string valor, DbCommand comando)
         {
             var item = comando.CreateParameter();
             item.ParameterName = parametro;
             item.Value = valor;
             comando.Parameters.Add(item);
         }
-        public void ConfigurarParametros(T registro, DbCommand comando)
+        public virtual void ConfigurarParametros(T registro, DbCommand comando)
         {
 
             Type tipo = registro.GetType();
