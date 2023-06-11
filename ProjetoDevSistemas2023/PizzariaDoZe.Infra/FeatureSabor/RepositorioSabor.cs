@@ -1,8 +1,11 @@
 ﻿using Microsoft.Win32;
+using PizzariaDoZe.Domain.FeatureIngrediente;
 using PizzariaDoZe.Domain.FeatureSabor;
 using PizzariaDoZe.Domain.FeatureValor;
 using PizzariaDoZe.Infra.Compartilhado;
+using PizzariaDoZe.Infra.FeatureIngrediente;
 using PizzariaDoZe.Infra.FeatureProduto;
+using PizzariaDoZe.Infra.FeatureValor;
 using System.Data.Common;
 using System.Data.SqlClient;
 using System.Reflection.Metadata;
@@ -11,29 +14,44 @@ namespace PizzariaDoZe.Infra.FeatureSabor
 {
     public class RepositorioSabor : RepositorioBase<Sabor>, IRepositorioSabor
     {
-        public override string selecionarTodosSql => @"SELECT TOP (1000) * FROM [pizzaria_ze].[dbo].[tb_sabores]";
+        public override string selecionarTodosSql => @"SELECT TOP (1000) * FROM [pizzaria_ze].[cadastro].[tb_sabor]";
 
-        public override string selecionarPorIdSql => @"SELECT TOP (1000) * FROM [pizzaria_ze].[dbo].[tb_sabores] where id_sabor = @id_sabor";
+        public override string selecionarPorIdSql => @"SELECT TOP (1000) * FROM [pizzaria_ze].[cadastro].[tb_sabor] where id = @id";
 
-        public override string insertSql => @"INSERT INTO [dbo].[tb_sabores]
-                                                   (descricao_sabor
+        public override string insertSql => @"INSERT INTO [pizzaria_ze].[cadastro].[tb_sabor]
+                                                   (nome
                                                    ,foto
                                                    ,categoria
                                                    ,tipo)
                                              VALUES
-                                                   (@descricao_sabor
+                                                   (@nome
                                                    ,@foto
                                                    ,@categoria
-                                                   ,@tipo)";
+                                                   ,@tipo)
+                                            SELECT SCOPE_IDENTITY()";
 
-        public override string editarSql => @"UPDATE [dbo].[tb_sabores]
-                                               SET descricao_sabor = @descricao_sabor
+        public override string editarSql => @"UPDATE [pizzaria_ze].[cadastro].[tb_sabor]
+                                               SET nome = @nome
                                                   ,foto = @foto
                                                   ,categoria = @categoria
                                                   ,tipo = @tipo
-                                              WHERE id_sabor = @id_sabor";
+                                              WHERE id = @id";
 
-        public override string exclusaoSql => @"DELETE FROM [dbo].[tb_sabores] WHERE id_sabor = @id_sabor";
+        public override string exclusaoSql => @"DELETE FROM [pizzaria_ze].[cadastro].[tb_sabor] WHERE id = @id";
+
+        public string selectIngredientes_saborSql => @"Select * from pizzaria_ze.cadastro.tb_ingrediente as ingrediente
+                                                inner join [pizzaria_ze].[cadastro].[ingredientes_sabores] as vinculo
+                                                on vinculo.ingrediente_id = ingrediente.id
+                                                where vinculo.sabor_id = @id";
+
+        public string inserirIngredientes_saborSql => @"INSERT INTO [cadastro].[ingredientes_sabores]
+                                                           (ingrediente_id
+                                                           ,sabor_id)
+                                                     VALUES
+                                                           (@ingrediente_id
+                                                           ,@sabor_id)";
+
+        public string excluirIngredientes_saborSql => @"DELETE FROM [cadastro].[ingredientes_sabores] where sabor_id = @sabor_id";
 
         public override Sabor ConverterValor(SqlDataReader reader)
         {
@@ -43,7 +61,7 @@ namespace PizzariaDoZe.Infra.FeatureSabor
         public override void MapearCampoIdentificador(SqlCommand command, int id)
         {
             var id_sabor = command.CreateParameter();
-            id_sabor.ParameterName = "@id_sabor";
+            id_sabor.ParameterName = "@id";
             id_sabor.Value = id;
             command.Parameters.Add(id_sabor);
         }
@@ -61,9 +79,20 @@ namespace PizzariaDoZe.Infra.FeatureSabor
                 
                 SqlCommand command = new SqlCommand(insertSql, connection);
                 
-                new MapeadorSabor().ConfigurarParametros(registro, command);
+                var mapeadorSabor = new MapeadorSabor();
 
-                command.ExecuteNonQuery();
+                mapeadorSabor.ConfigurarParametros(registro, command);
+
+                var idSaborInserido = command.ExecuteScalar();
+
+                registro.ingredientes.ForEach(x =>
+                {
+                    SqlCommand command2 = new SqlCommand(selecionarPorIdSql, connection);
+                    mapeadorSabor.ConfigurarParametro("@sabor_id", idSaborInserido.ToString(), command2);
+                    mapeadorSabor.ConfigurarParametro("@ingrediente_id", x.id.ToString(), command2);
+                    command2.ExecuteNonQuery();
+                });
+                
             }
         }
 
@@ -75,10 +104,105 @@ namespace PizzariaDoZe.Infra.FeatureSabor
 
                 SqlCommand command = new SqlCommand(editarSql, connection);
 
-                new MapeadorSabor().ConfigurarParametros(registro, command);
+                var mapeadorSabor = new MapeadorSabor();
+
+                mapeadorSabor.ConfigurarParametros(registro, command);
+
+                command.ExecuteNonQuery();
+
+                SqlCommand command2 = new SqlCommand(excluirIngredientes_saborSql, connection);
+
+                mapeadorSabor.ConfigurarParametro("@sabor_id", registro.id.ToString(), command2);
+                command2.ExecuteNonQuery();
+
+               registro.ingredientes.ForEach(x =>
+                {
+                    SqlCommand command3 = new SqlCommand(inserirIngredientes_saborSql, connection);
+                    mapeadorSabor.ConfigurarParametro("@sabor_id", registro.id.ToString(), command3);
+                    mapeadorSabor.ConfigurarParametro("@ingrediente_id", x.id.ToString(), command3);
+                    command3.ExecuteNonQuery();
+                });
+            }
+        }
+
+        public override void Excluir(Sabor registro)
+        {
+            using (SqlConnection connection = new SqlConnection(strConnection))
+            {
+                connection.Open();
+
+                SqlCommand command2 = new SqlCommand(excluirIngredientes_saborSql, connection);
+
+                new MapeadorSabor().ConfigurarParametro("@sabor_id", registro.id.ToString(), command2);
+
+                command2.ExecuteNonQuery();
+
+                SqlCommand command = new SqlCommand(exclusaoSql, connection);
+
+                MapearObjeto(registro, command);
 
                 command.ExecuteNonQuery();
             }
+        }
+
+        public Sabor SelecionarPorId(int id, bool incluirIngredientes = false)
+        {
+            var registro = new Sabor();
+
+            using (SqlConnection connection = new SqlConnection(strConnection))
+            {
+                connection.Open();
+
+                SqlCommand command = new SqlCommand(selecionarPorIdSql, connection);
+
+                MapearCampoIdentificador(command, id);
+
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        if (reader.HasRows)
+                        {
+                            registro = ConverterValor(reader);
+                        }
+                    }
+                }
+            }
+
+            if (incluirIngredientes)
+                registro.ingredientes = BuscarIngredientes(registro.id);
+
+            return registro;
+        }
+
+        private List<Ingrediente> BuscarIngredientes(int saborId)
+        {
+
+            var listaItens = new List<Ingrediente>();
+
+            using (SqlConnection connection = new SqlConnection(strConnection))
+            {
+                connection.Open();
+
+                SqlCommand command = new SqlCommand(selectIngredientes_saborSql, connection);
+
+                var mapeadorIngrediente = new MapeadorIngrediente();
+
+                mapeadorIngrediente.ConfigurarParametros("@id", saborId.ToString(), command);
+
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        if (reader.HasRows)
+                        {
+                            var result = mapeadorIngrediente.ConverterRegistro(reader);
+                            listaItens.Add(result);
+                        }
+                    }
+                }
+            }
+            return listaItens;
         }
     }
 }

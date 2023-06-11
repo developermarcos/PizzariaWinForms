@@ -120,7 +120,7 @@ namespace PizzariaDoZe.Telas.Cadastros.TelaSabores
         {
             var numero = tabelaSabor.ObtemNumeroContatoSelecionado();
 
-            return saborService.SelecionarPorId(numero).Value;
+            return saborService.SelecionarPorId(numero, true).Value;
         }
 
         public void Filtrar()

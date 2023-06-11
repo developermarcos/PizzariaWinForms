@@ -28,15 +28,13 @@ namespace PizzariaDoZe.Telas.Cadastros.TelaSabores
         {
             var colunas = new DataGridViewColumn[]
             {
-                new DataGridViewTextBoxColumn { DataPropertyName = "id_sabor", HeaderText = "Id"},
+                new DataGridViewTextBoxColumn { DataPropertyName = "id", HeaderText = "Id"},
 
-                new DataGridViewTextBoxColumn { DataPropertyName = "descricao_sabor", HeaderText = "Nome"},
+                new DataGridViewTextBoxColumn { DataPropertyName = "nome", HeaderText = "Nome"},
 
-                //new DataGridViewTextBoxColumn { DataPropertyName = "valor", HeaderText = "Valor"},
+                new DataGridViewTextBoxColumn { DataPropertyName = "categoria", HeaderText = "Categoria"},
 
-                //new DataGridViewTextBoxColumn { DataPropertyName = "tipo", HeaderText = "Tipo"},
-
-                //new DataGridViewTextBoxColumn { DataPropertyName = "medida_unitaria", HeaderText = "Medida Unitária"},
+                new DataGridViewTextBoxColumn { DataPropertyName = "tipo", HeaderText = "Tipo"},
             };
 
             return colunas;

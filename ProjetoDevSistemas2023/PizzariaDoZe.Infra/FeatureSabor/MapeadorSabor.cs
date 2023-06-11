@@ -12,16 +12,16 @@ namespace PizzariaDoZe.Infra.FeatureSabor
         {
             Sabor registro = new Sabor();
             
-            if (!leitorRegistro.IsDBNull(leitorRegistro.GetOrdinal("id_sabor")))
+            if (!leitorRegistro.IsDBNull(leitorRegistro.GetOrdinal("id")))
             {
-                int id_sabor = leitorRegistro.GetInt32(leitorRegistro.GetOrdinal("id_sabor"));
-                registro.id_sabor = id_sabor;
+                int id_sabor = leitorRegistro.GetInt32(leitorRegistro.GetOrdinal("id"));
+                registro.id = id_sabor;
             }
 
-            if (!leitorRegistro.IsDBNull(leitorRegistro.GetOrdinal("descricao_sabor")))
+            if (!leitorRegistro.IsDBNull(leitorRegistro.GetOrdinal("nome")))
             {
-                string descricao_sabor = leitorRegistro.GetString(leitorRegistro.GetOrdinal("descricao_sabor"));
-                registro.descricao_sabor = descricao_sabor;
+                string descricao_sabor = leitorRegistro.GetString(leitorRegistro.GetOrdinal("nome"));
+                registro.nome = descricao_sabor;
             }
 
             if (!leitorRegistro.IsDBNull(leitorRegistro.GetOrdinal("foto")))
@@ -47,17 +47,17 @@ namespace PizzariaDoZe.Infra.FeatureSabor
 
         public override void ConfigurarParametros(Sabor registro, DbCommand comando)
         {
-            if(registro.id_sabor != 0)
+            if(registro.id != 0)
             {
                 var id_sabor = comando.CreateParameter();
-                id_sabor.ParameterName = "@id_sabor";
-                id_sabor.Value = registro.id_sabor;
+                id_sabor.ParameterName = "@id";
+                id_sabor.Value = registro.id;
                 comando.Parameters.Add(id_sabor);
             }
 
             var descricao_sabor = comando.CreateParameter();
-            descricao_sabor.ParameterName = "@descricao_sabor";
-            descricao_sabor.Value = registro.descricao_sabor;
+            descricao_sabor.ParameterName = "@nome";
+            descricao_sabor.Value = registro.nome;
             comando.Parameters.Add(descricao_sabor);
 
             var categoria = comando.CreateParameter();

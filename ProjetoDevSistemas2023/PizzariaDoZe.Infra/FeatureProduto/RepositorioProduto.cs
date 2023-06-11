@@ -39,7 +39,7 @@ namespace PizzariaDoZe.Infra.FeatureProduto
 
         public override void MapearCampoIdentificador(SqlCommand command, int id)
         {
-            new MapeadorProduto().ConfigurarParametros("@id_produto", id.ToString(), command);
+            new MapeadorProduto().ConfigurarParametro("@id_produto", id.ToString(), command);
         }
 
         public override void MapearObjeto(Produto objeto, DbCommand comando)

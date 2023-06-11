@@ -17,7 +17,7 @@ namespace PizzariaDoZe.TelaIngrediente
         }
 
         public Func<Ingrediente, Result<Ingrediente>> Gravar { get; internal set; }
-
+        
         public Ingrediente IngredienteSelecionado
         {
             set
@@ -29,11 +29,11 @@ namespace PizzariaDoZe.TelaIngrediente
             {
                 var ingrediente = new Ingrediente()
                 {
-                    descricao_ingrediente = nome.Text
+                    nome = nome.Text
                 };
 
                 if (id.Text != string.Empty && id.Text != "0")
-                    ingrediente.id_ingrediente = Convert.ToInt32(id.Text);
+                    ingrediente.id = Convert.ToInt32(id.Text);
 
                 return ingrediente;
             }
@@ -50,8 +50,8 @@ namespace PizzariaDoZe.TelaIngrediente
 
         private void PopularTela()
         {
-            id.Text = Convert.ToString(_ingredienteSelecionado.id_ingrediente);
-            nome.Text = _ingredienteSelecionado.descricao_ingrediente;
+            id.Text = Convert.ToString(_ingredienteSelecionado.id);
+            nome.Text = _ingredienteSelecionado.nome;
         }
 
         private void ConfigurarTela()

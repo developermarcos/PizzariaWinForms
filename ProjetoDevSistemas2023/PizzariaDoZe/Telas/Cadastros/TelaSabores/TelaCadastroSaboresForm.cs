@@ -34,19 +34,27 @@ namespace PizzariaDoZe.TelaSabores
                 {
                     tipo = Enum.Parse<TipoSabor>(tipo.Text),
                     categoria = Enum.Parse<CategoriaSabor>(categorias.Text),
-                    descricao_sabor = nome.Text,
-                    foto = ImagemToByte(imagemPK.Image)
+                    nome = nome.Text
                 };
 
+                if (imagemPK.Image != null)
+                    sabor.foto = ImagemToByte(imagemPK.Image);
+
+
                 if (!string.IsNullOrEmpty(id.Text))
-                    sabor.id_sabor = Convert.ToInt32(id.Text);
+                    sabor.id = Convert.ToInt32(id.Text);
 
                 sabor.ingredientes.Clear();
-                foreach (int index in ingredientes.SelectedIndices)
-                {
-                    sabor.ingredientes.Add((Ingrediente)ingredientes.Items[index]);
-                }
 
+                var contador = ingredientes.Items.Count;
+                for (int i = 0; i < contador; i++)
+                {
+                    if (ingredientes.GetItemCheckState(i) == CheckState.Checked)
+                    {
+                        sabor.ingredientes.Add((Ingrediente)ingredientes.Items[i]);
+                    }
+                }
+                
                 return sabor; 
             }
             set
@@ -97,7 +105,8 @@ namespace PizzariaDoZe.TelaSabores
             PreencherEnum(Enum.GetValues(typeof(CategoriaSabor)), categorias);
         }
 
-        public void PreencherEnum(Array valores, ComboBox comboBox)
+        #region métodos auxiliares
+        private void PreencherEnum(Array valores, ComboBox comboBox)
         {
             comboBox.Items.Clear();
 
@@ -107,7 +116,7 @@ namespace PizzariaDoZe.TelaSabores
                 comboBox.Items.Add(i.ToString());
             }
         }
-        public string ValidarCampos()
+        private string ValidarCampos()
         {
             var sabor = SaborSelecionado;
 
@@ -117,7 +126,7 @@ namespace PizzariaDoZe.TelaSabores
             if(sabor.categoria == 0)
                 return "categoria invalido";
 
-            if (string.IsNullOrEmpty(sabor.descricao_sabor))
+            if (string.IsNullOrEmpty(sabor.nome))
                 return "Nome não informado invalido";
 
             if (sabor.ingredientes.Count == 0)
@@ -127,19 +136,27 @@ namespace PizzariaDoZe.TelaSabores
         }
         private void PreencherTela()
         {
-            id.Text = _saborSelecionado.id_sabor.ToString();
-            nome.Text = _saborSelecionado.descricao_sabor;
+            id.Text = _saborSelecionado.id.ToString();
+            nome.Text = _saborSelecionado.nome;
             categorias.SelectedItem = _saborSelecionado.categoria.ToString();
             tipo.SelectedItem = _saborSelecionado.tipo.ToString();
 
-            //var tamanhoArray = ingredientes.Items.Count;
+            var tamanhoArray = ingredientes.Items.Count;
 
-            //for(int i = 0; i < tamanhoArray; i++)
-            //{
-            //    if (SaborSelecionado.ingredientes.Exists(x => x == (Ingrediente)ingredientes.Items[i]))
-            //        ingredientes.CheckedItems[i] = true;
-            //}
+            for (int i = 0; i < tamanhoArray; i++)
+            {
+                var ingredienteTeste = (Ingrediente)ingredientes.Items[i];
+                if (_saborSelecionado.ingredientes.Exists(x => x.Igual(ingredienteTeste)))
+                {
+                    ingredientes.SetItemChecked(i, true);
+                }
+                    
+            }
+
             imagemPK.Image = ByteToImage(_saborSelecionado.foto);
+            imagemPK.SizeMode = PictureBoxSizeMode.StretchImage;
+            imagemPK.Height = 197;
+            imagemPK.Width = 229;
         }
 
         private void btnSelecionarImagem_Click(object sender, EventArgs e)
@@ -169,5 +186,6 @@ namespace PizzariaDoZe.TelaSabores
                 return Image.FromStream(ms);
             }
         }
+        #endregion
     }
 }

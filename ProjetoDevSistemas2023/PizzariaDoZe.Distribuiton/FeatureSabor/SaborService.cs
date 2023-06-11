@@ -85,11 +85,11 @@ namespace PizzariaDoZe.Distribuiton.FeatureSabor
                 return Result.Fail("Falha no sistema ao tentar selecionar todos os Sabor");
             }
         }
-        public Result<Sabor> SelecionarPorId(int id)
+        public Result<Sabor> SelecionarPorId(int id, bool incluirIngredientes = false)
         {
             try
             {
-                var result = repositorioSabor.SelecionarPorId(id);
+                var result = repositorioSabor.SelecionarPorId(id, incluirIngredientes);
 
                 if (result is null)
                 {

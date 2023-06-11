@@ -4,8 +4,8 @@ namespace PizzariaDoZe.Domain.FeatureSabor
 {
     public class Sabor
     {
-        public int id_sabor { get; set; }
-        public string descricao_sabor { get; set; }
+        public int id { get; set; }
+        public string nome { get; set; }
         public byte[] foto { get; set; }
         public CategoriaSabor categoria { get; set; }
         public TipoSabor tipo { get; set; }

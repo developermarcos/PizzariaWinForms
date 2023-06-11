@@ -19,7 +19,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PizzariaDoZe.Domain", "Pizz
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PizzariaDoZe.Infra", "PizzariaDoZe.Infra\PizzariaDoZe.Infra.csproj", "{1365B3C1-618F-4747-9BF1-3DE93977CF6F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PizzariaDoZe.Distribuiton", "PizzariaDoZe.Distribuiton\PizzariaDoZe.Distribuiton.csproj", "{526F222D-4F76-4BF9-9BC0-D2A1528ECC2C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PizzariaDoZe.Distribuiton", "PizzariaDoZe.Distribuiton\PizzariaDoZe.Distribuiton.csproj", "{526F222D-4F76-4BF9-9BC0-D2A1528ECC2C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -44,7 +44,7 @@ namespace PizzariaDoZe.Telas.Cadastros.TelaIngrediente
 
             Ingrediente ingredienteSelecionado = this.ObtemCompromissoSelecionado();
 
-            if (ingredienteSelecionado is null || ingredienteSelecionado.id_ingrediente == 0)
+            if (ingredienteSelecionado is null || ingredienteSelecionado.id == 0)
             {
                 TelaPrincipalForm.Instancia.AtualizarRodape($"Selecione um registro primeiro");
 

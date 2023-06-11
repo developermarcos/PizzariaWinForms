@@ -1,0 +1,75 @@
+﻿create database pizzaria_ze;
+
+use pizzaria_ze;
+
+CREATE SCHEMA [cadastro];
+
+CREATE SCHEMA [pedido];
+
+CREATE TABLE cadastro.tb_funcionario (
+    id INT PRIMARY KEY Identity,
+    nome VARCHAR(45),
+    cpf VARCHAR(11),
+    matricula VARCHAR(15),
+    senha VARCHAR(256),
+    grupo CHAR(1),
+    motorista VARCHAR(15),
+    validade_motorista DATE,
+    observacao VARCHAR(45),
+    telefone VARCHAR(11),
+    email VARCHAR(45),
+    numero VARCHAR(10),
+    complemento VARCHAR(45),
+    UNIQUE (matricula, cpf, motorista),
+    logradouro VARCHAR(100),
+    bairro varchar (50),
+	cep VARCHAR(8) UNIQUE
+);
+
+CREATE TABLE cadastro.tb_cliente (
+    id INT PRIMARY KEY Identity,
+    nome VARCHAR(50),
+    cpf VARCHAR(11) UNIQUE,
+    telefone VARCHAR(11),
+    email VARCHAR(45),
+    numero VARCHAR(10),
+    complemento VARCHAR(45),
+    logradouro VARCHAR(100),
+    bairro varchar (50),
+	cep VARCHAR(8) UNIQUE
+);
+
+CREATE TABLE cadastro.tb_ingrediente (
+    id INT PRIMARY KEY Identity,
+    nome VARCHAR(100) UNIQUE
+);
+
+CREATE TABLE cadastro.tb_sabor (
+    id INT PRIMARY KEY Identity,
+    nome VARCHAR(50) UNIQUE,
+    foto Varbinary(MAX),
+    categoria CHAR(1),
+    tipo CHAR(1)
+);
+
+CREATE TABLE cadastro.ingredientes_sabores (
+    id_ingrediente_sabor INT PRIMARY KEY Identity,
+    ingrediente_id INT,
+    sabor_id INT
+);
+
+CREATE TABLE cadastro.tb_produto (
+    id INT PRIMARY KEY Identity,
+    nome VARCHAR(45),
+    valor DECIMAL(11,2),
+    tipo CHAR(1),
+    medida_unitaria VARCHAR(20)
+);
+
+ALTER TABLE cadastro.ingredientes_sabores ADD CONSTRAINT FK_ingredientes_sabores
+    FOREIGN KEY (ingrediente_id)
+    REFERENCES cadastro.tb_ingrediente (id);
+ 
+ALTER TABLE cadastro.ingredientes_sabores ADD CONSTRAINT FK_ingrediente_sabor
+    FOREIGN KEY (sabor_id)
+    REFERENCES cadastro.tb_sabor (id);

@@ -1,4 +1,9 @@
 ﻿using FluentValidation;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace PizzariaDoZe.Domain.FeatureIngrediente
 {
@@ -6,7 +11,7 @@ namespace PizzariaDoZe.Domain.FeatureIngrediente
     {
         public ValidadorIngrediente()
         {
-            RuleFor(x => x.descricao_ingrediente)
+            RuleFor(x => x.nome)
                 .NotNull()
                 .NotEmpty();
         }

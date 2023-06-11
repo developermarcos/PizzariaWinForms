@@ -2,12 +2,16 @@
 {
     public class Ingrediente
     {
-        public int id_ingrediente { get; set; }
-        public string descricao_ingrediente { get; set; }
+        public int id { get; set; }
+        public string nome { get; set; }
 
         public override string ToString()
         {
-            return descricao_ingrediente;
+            return nome;
+        }
+        public bool Igual(Ingrediente ingrediente)
+        {
+            return ingrediente.id == id && ingrediente.nome == nome;
         }
     }
 }

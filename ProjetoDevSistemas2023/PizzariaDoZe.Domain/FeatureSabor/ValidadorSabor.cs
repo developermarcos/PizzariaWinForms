@@ -7,7 +7,7 @@ namespace PizzariaDoZe.Domain.FeatureSabor
     {
         public ValidadorSabor()
         {
-            RuleFor(x => x.descricao_sabor)
+            RuleFor(x => x.nome)
                 .NotNull()
                 .NotEmpty();
         }

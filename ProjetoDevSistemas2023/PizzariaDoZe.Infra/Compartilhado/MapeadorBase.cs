@@ -12,7 +12,7 @@ namespace PizzariaDoZe.Infra.Compartilhado
 {
     internal abstract class MapeadorBase<T>
     {
-        public virtual void ConfigurarParametros(string parametro, string valor, DbCommand comando)
+        public virtual void ConfigurarParametro(string parametro, string valor, DbCommand comando)
         {
             var item = comando.CreateParameter();
             item.ParameterName = parametro;
