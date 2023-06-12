@@ -16,14 +16,23 @@
     <Compile Update="Telas\Cadastros\TelaIngrediente\TelaCadastroIngredienteForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Telas\Cadastros\TelaProduto\TabelaProdutoControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="Telas\Cadastros\TelaProduto\TelaCadastroProdutoForm.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Telas\Cadastros\TelaSabores\TabelaSaborControl.cs">
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Telas\Cadastros\TelaSabores\TelaCadastroSaboresForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Telas\Cadastros\TelasFuncionario\TelaCadastroFuncionarioForm.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Telas\Cadastros\TelaValor\TabelaValorControl.cs">
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Telas\Cadastros\TelaValor\TelaCadastroValorForm.cs">
       <SubType>Form</SubType>

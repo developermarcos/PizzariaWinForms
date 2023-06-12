@@ -33,7 +33,7 @@
             tipo = new ComboBox();
             valor = new TextBox();
             nome = new TextBox();
-            ID = new TextBox();
+            id = new TextBox();
             lbMl = new Label();
             lbTipo = new Label();
             lbValor = new Label();
@@ -49,7 +49,7 @@
             panelConteudo.Controls.Add(tipo);
             panelConteudo.Controls.Add(valor);
             panelConteudo.Controls.Add(nome);
-            panelConteudo.Controls.Add(ID);
+            panelConteudo.Controls.Add(id);
             panelConteudo.Controls.Add(lbMl);
             panelConteudo.Controls.Add(lbTipo);
             panelConteudo.Controls.Add(lbValor);
@@ -75,7 +75,6 @@
             // 
             tipo.DropDownStyle = ComboBoxStyle.DropDownList;
             tipo.FormattingEnabled = true;
-            tipo.Items.AddRange(new object[] { "Agua", "Cerveja", "Refrigerante", "Suco", "Outros" });
             tipo.Location = new Point(22, 170);
             tipo.Name = "tipo";
             tipo.Size = new Size(121, 23);
@@ -95,13 +94,13 @@
             nome.Size = new Size(170, 23);
             nome.TabIndex = 1;
             // 
-            // ID
+            // id
             // 
-            ID.Enabled = false;
-            ID.Location = new Point(22, 38);
-            ID.Name = "ID";
-            ID.Size = new Size(83, 23);
-            ID.TabIndex = 5;
+            id.Enabled = false;
+            id.Location = new Point(22, 38);
+            id.Name = "id";
+            id.Size = new Size(83, 23);
+            id.TabIndex = 5;
             // 
             // lbMl
             // 
@@ -181,7 +180,7 @@
         private ComboBox tipo;
         private TextBox valor;
         private TextBox nome;
-        private TextBox ID;
+        private TextBox id;
         private Label lbMl;
         private Label lbTipo;
         private Label lbValor;

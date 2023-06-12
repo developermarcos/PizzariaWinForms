@@ -1,10 +1,5 @@
 ﻿using FluentResults;
 using FluentValidation;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PizzariaDoZe.Distribuiton.Compartilhado
 {
@@ -20,8 +15,6 @@ namespace PizzariaDoZe.Distribuiton.Compartilhado
 
             foreach (var validationFailure in resultadoValidacao.Errors)
             {
-                //Log.Logger.Warning(validationFailure.ErrorMessage);
-
                 erros.Add(new Error(validationFailure.ErrorMessage));
             }
 

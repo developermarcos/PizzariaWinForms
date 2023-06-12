@@ -1,27 +1,66 @@
-﻿using PizzariaDoZe.Compartilhado.Configurar;
+﻿using FluentResults;
+using PizzariaDoZe.Compartilhado.Configurar;
 using PizzariaDoZe.Compartilhado.UserControlComponentes;
+using PizzariaDoZe.Domain.FeatureIngrediente;
+using PizzariaDoZe.Domain.FeatureSabor;
 
 namespace PizzariaDoZe.TelaSabores
 {
     public partial class TelaCadastroFuncionarioForm : Form
     {
         private UserControlSalvarCancelar AcoesUserControl = new UserControlSalvarCancelar();
-        private List<Tuple<string, string>> Mensagens;
-        public TelaCadastroFuncionarioForm(string nomeTela, string mensagemDejesaSalvar, string mensagemDesejaCancelar)
+
+        public Sabor _saborSelecionado;
+
+        public List<Ingrediente> Ingredientes { get; set; }
+
+        public Func<Sabor, Result<Sabor>> Gravar { get; internal set; }
+
+        public Sabor SaborSelecionado
+        {
+            get
+            {
+
+                Sabor sabor = new Sabor()
+                {
+                    tipo = Enum.Parse<TipoSabor>(tipo.Text),
+                    categoria = Enum.Parse<CategoriaSabor>(categorias.Text),
+                    nome = nome.Text
+                };
+
+                if (imagemPK.Image != null)
+                    sabor.foto = ImagemToByte(imagemPK.Image);
+
+
+                if (!string.IsNullOrEmpty(id.Text))
+                    sabor.id = Convert.ToInt32(id.Text);
+
+                sabor.ingredientes.Clear();
+
+                var contador = ingredientes.Items.Count;
+                for (int i = 0; i < contador; i++)
+                {
+                    if (ingredientes.GetItemCheckState(i) == CheckState.Checked)
+                    {
+                        sabor.ingredientes.Add((Ingrediente)ingredientes.Items[i]);
+                    }
+                }
+
+                return sabor;
+            }
+            set
+            {
+                _saborSelecionado = value;
+                PreencherTela();
+            }
+        }
+
+        public TelaCadastroFuncionarioForm(string nomeTela, List<Ingrediente> ingredientes)
         {
             InitializeComponent();
             Text = nomeTela;
-            Configurar();
-            Mensagens = new List<Tuple<string, string>>()
-            {
-                new Tuple<string, string>("mensagemSalvar", mensagemDejesaSalvar),
-                new Tuple<string, string>("mensagemCancelar", mensagemDesejaCancelar)
-            };
-        }
-        private void Configurar()
-        {
+            Ingredientes = ingredientes;
             ConfigurarTela();
-            //PreencherTela();
         }
 
         private void ConfigurarTela()
@@ -30,19 +69,85 @@ namespace PizzariaDoZe.TelaSabores
 
             AcoesUserControl.btnSalvar.Click += (object? sender, EventArgs e) =>
             {
-                if (MessageBox.Show(Mensagens.FirstOrDefault(t => t.Item1 == "mensagemSalvar").Item2, Text, MessageBoxButtons.OKCancel) == DialogResult.Cancel)
-                    DialogResult = DialogResult.None;
-            };
+                var validarResult = ValidarCampos();
 
-            AcoesUserControl.btnCancelar.Click += (object? sender, EventArgs e) =>
-            {
-                if (MessageBox.Show(Mensagens.FirstOrDefault(t => t.Item1 == "mensagemCancelar").Item2, Text, MessageBoxButtons.OKCancel) == DialogResult.Cancel)
+                if (validarResult != string.Empty)
+                {
+                    TelaPrincipalForm.Instancia.AtualizarRodape(validarResult);
                     DialogResult = DialogResult.None;
+                    return;
+                }
+
+                var gravarResult = Gravar(SaborSelecionado);
+
+                TelaPrincipalForm.Instancia.AtualizarRodape(Properties.Resources.ResourceManager.GetString("mensagemSucessoCadastro"));
             };
 
             new AjustarIdioma(this);
 
             Helpers.FocusTextBox(this);
+
+            ingredientes.Items.Clear();
+
+            ingredientes.Items.AddRange(Ingredientes.ToArray());
+
+            PreencherEnum(Enum.GetValues(typeof(TipoSabor)), tipo);
+
+            PreencherEnum(Enum.GetValues(typeof(CategoriaSabor)), categorias);
+        }
+
+        #region métodos auxiliares
+        private void PreencherEnum(Array valores, ComboBox comboBox)
+        {
+            comboBox.Items.Clear();
+
+            comboBox.Items.Clear();
+            foreach (var i in valores)
+            {
+                comboBox.Items.Add(i.ToString());
+            }
+        }
+        private string ValidarCampos()
+        {
+            var sabor = SaborSelecionado;
+
+            if (sabor.tipo == 0)
+                return "Tipo invalido";
+
+            if (sabor.categoria == 0)
+                return "categoria invalido";
+
+            if (string.IsNullOrEmpty(sabor.nome))
+                return "Nome não informado invalido";
+
+            if (sabor.ingredientes.Count == 0)
+                return "Nenhum ingrediente selecionado";
+
+            return string.Empty;
+        }
+        private void PreencherTela()
+        {
+            id.Text = _saborSelecionado.id.ToString();
+            nome.Text = _saborSelecionado.nome;
+            categorias.SelectedItem = _saborSelecionado.categoria.ToString();
+            tipo.SelectedItem = _saborSelecionado.tipo.ToString();
+
+            var tamanhoArray = ingredientes.Items.Count;
+
+            for (int i = 0; i < tamanhoArray; i++)
+            {
+                var ingredienteTeste = (Ingrediente)ingredientes.Items[i];
+                if (_saborSelecionado.ingredientes.Exists(x => x.Igual(ingredienteTeste)))
+                {
+                    ingredientes.SetItemChecked(i, true);
+                }
+
+            }
+
+            imagemPK.Image = ByteToImage(_saborSelecionado.foto);
+            imagemPK.SizeMode = PictureBoxSizeMode.StretchImage;
+            imagemPK.Height = 197;
+            imagemPK.Width = 229;
         }
 
         private void btnSelecionarImagem_Click(object sender, EventArgs e)
@@ -56,5 +161,22 @@ namespace PizzariaDoZe.TelaSabores
                 imagemPK.Image = Imagem;
             }
         }
+
+        private byte[] ImagemToByte(Image imagem)
+        {
+            using (MemoryStream mStream = new MemoryStream())
+            {
+                imagem.Save(mStream, imagem.RawFormat);
+                return mStream.ToArray();
+            }
+        }
+        private Image ByteToImage(byte[] bityImage)
+        {
+            using (var ms = new MemoryStream(bityImage))
+            {
+                return Image.FromStream(ms);
+            }
+        }
+        #endregion
     }
 }

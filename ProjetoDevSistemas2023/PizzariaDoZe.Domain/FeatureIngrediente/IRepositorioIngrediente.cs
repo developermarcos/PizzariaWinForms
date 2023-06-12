@@ -1,17 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using PizzariaDoZe.Domain.Compartilhado;
 
 namespace PizzariaDoZe.Domain.FeatureIngrediente
 {
-    public interface IRepositorioIngrediente
+    public interface IRepositorioIngrediente : IRepositorioBase<Ingrediente>
     {
-        void Editar(Ingrediente ingrediente);
-        void Excluir(Ingrediente ingrediente);
-        void Inserir(Ingrediente Ingrediente);
-        Ingrediente SelecionarPorId(int id);
-        List<Ingrediente> SelecionarTodos();
     }
 }

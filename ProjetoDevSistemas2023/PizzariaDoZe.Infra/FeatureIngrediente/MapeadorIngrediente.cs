@@ -1,14 +1,7 @@
-﻿using Microsoft.Win32;
-using PizzariaDoZe.Domain.FeatureIngrediente;
-using System;
-using System.Collections.Generic;
+﻿using PizzariaDoZe.Domain.FeatureIngrediente;
 using System.Data.Common;
 using System.Data.SqlClient;
-using System.Linq;
 using System.Reflection;
-using System.Reflection.PortableExecutable;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PizzariaDoZe.Infra.FeatureIngrediente
 {
@@ -37,18 +30,18 @@ namespace PizzariaDoZe.Infra.FeatureIngrediente
         {
             Ingrediente registro = new Ingrediente();
 
-            if (!leitorRegistro.IsDBNull(leitorRegistro.GetOrdinal("Id")))
+            if (!leitorRegistro.IsDBNull(leitorRegistro.GetOrdinal("id")))
             {
-                long Id = leitorRegistro.GetInt64(leitorRegistro.GetOrdinal("Id"));
-                registro.Id = Id;
+                int id_ingrediente = leitorRegistro.GetInt32(leitorRegistro.GetOrdinal("id"));
+                registro.id = id_ingrediente;
             }
 
-            if (!leitorRegistro.IsDBNull(leitorRegistro.GetOrdinal("Nome")))
+            if (!leitorRegistro.IsDBNull(leitorRegistro.GetOrdinal("nome")))
             {
-                string Nome = leitorRegistro.GetString(leitorRegistro.GetOrdinal("Nome"));
-                registro.Nome = Nome;
+                string descricao_ingrediente = leitorRegistro.GetString(leitorRegistro.GetOrdinal("nome"));
+                registro.nome = descricao_ingrediente;
             }
-            
+
             return registro;
         }
 

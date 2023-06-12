@@ -1,14 +1,28 @@
-﻿using PizzariaDoZe.Distribuiton.FeatureIngrediente;
+﻿using PizzariaDoZe.Distribuiton.FeatureCliente;
+using PizzariaDoZe.Distribuiton.FeatureFuncionario;
+using PizzariaDoZe.Distribuiton.FeatureIngrediente;
+using PizzariaDoZe.Distribuiton.FeatureProduto;
+using PizzariaDoZe.Distribuiton.FeatureSabor;
+using PizzariaDoZe.Distribuiton.FeatureValor;
+using PizzariaDoZe.Domain.FeatureCliente;
+using PizzariaDoZe.Domain.FeatureFuncionario;
 using PizzariaDoZe.Domain.FeatureIngrediente;
+using PizzariaDoZe.Domain.FeatureProduto;
+using PizzariaDoZe.Domain.FeatureSabor;
+using PizzariaDoZe.Domain.FeatureValor;
+using PizzariaDoZe.Infra.FeatureCliente;
+using PizzariaDoZe.Infra.FeatureFuncionario;
 using PizzariaDoZe.Infra.FeatureIngrediente;
+using PizzariaDoZe.Infra.FeatureProduto;
+using PizzariaDoZe.Infra.FeatureSabor;
+using PizzariaDoZe.Infra.FeatureValor;
 using PizzariaDoZe.Telas.Cadastros.TelaCliente;
 using PizzariaDoZe.Telas.Cadastros.TelaIngrediente;
-using System;
-using System.Collections.Generic;
+using PizzariaDoZe.Telas.Cadastros.TelaProduto;
+using PizzariaDoZe.Telas.Cadastros.TelaSabores;
+using PizzariaDoZe.Telas.Cadastros.TelasFuncionario;
+using PizzariaDoZe.Telas.Cadastros.TelaValor;
 using System.Data.Common;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PizzariaDoZe.Compartilhado
 {
@@ -38,10 +52,29 @@ namespace PizzariaDoZe.Compartilhado
         {
             controladores = new Dictionary<string, ControladorBase>();
 
-            IRepositorioIngrediente repositorioingrediente = new RepositorioIngrediente();
-            IngredienteService serviceCliente = new IngredienteService(repositorioingrediente);
-            controladores.Add("ControladorIngrediente", new ControladorIngrediente(serviceCliente));
+            IRepositorioFuncionario repositorioFuncionario = new RepositorioFuncionario();
+            FuncionarioService serviceFuncionario = new FuncionarioService(repositorioFuncionario);
+            controladores.Add("ControladorFuncionario", new ControladorFuncionario(serviceFuncionario));
 
+            IRepositorioCliente repositorioCliente = new RepositorioCliente();
+            ClienteService clienteService = new ClienteService(repositorioCliente);
+            controladores.Add("ControladorCliente", new ControladorCliente(clienteService));
+
+            IRepositorioIngrediente repositorioingrediente = new RepositorioIngrediente();
+            IngredienteService ingredienteService = new IngredienteService(repositorioingrediente);
+            controladores.Add("ControladorIngrediente", new ControladorIngrediente(ingredienteService));
+
+            IRepositorioSabor repositorioSabor = new RepositorioSabor();
+            SaborService saborService = new SaborService(repositorioSabor);
+            controladores.Add("ControladorSabor", new ControladorSabor(saborService, ingredienteService));
+
+            IRepositorioProduto repositorioProduto = new RepositorioProduto();
+            ProdutoService produtoService = new ProdutoService(repositorioProduto);
+            controladores.Add("ControladorProduto", new ControladorProduto(produtoService));
+
+            IRepositorioValor repositorioValor = new RepositorioValor();
+            ValorService valorService = new ValorService(repositorioValor);
+            controladores.Add("ControladorValor", new ControladorValor(valorService));
         }
     }
 }

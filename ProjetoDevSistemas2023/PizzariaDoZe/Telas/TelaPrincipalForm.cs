@@ -1,4 +1,3 @@
-using Microsoft.Extensions.DependencyInjection;
 using PizzariaDoZe.Compartilhado;
 using PizzariaDoZe.Compartilhado.Configurar;
 using PizzariaDoZe.TelaLogin;
@@ -10,7 +9,6 @@ using PizzariaDoZe.Telas.Cadastros.TelasFuncionario;
 using PizzariaDoZe.Telas.Cadastros.TelaValor;
 using PizzariaDoZe.Telas.Configuracoes;
 using PizzariaDoZe.Telas.Configuracoes.TelaIdioma;
-using System.ComponentModel;
 
 namespace PizzariaDoZe
 {
@@ -82,7 +80,7 @@ namespace PizzariaDoZe
 
         private void saboresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ConfigurarTela(_dependencias.Get<ControladorSabores>());
+            ConfigurarTela(_dependencias.Get<ControladorSabor>());
         }
 
         private void ingredientesToolStripMenuItem_Click(object sender, EventArgs e)

@@ -1,7 +1,6 @@
 ﻿using PizzariaDoZe.Compartilhado.Configurar;
 using PizzariaDoZe.Compartilhado.ExtensionMethods;
 using PizzariaDoZe.Telas.Configuracoes.TelaIdioma;
-using System.Globalization;
 
 namespace PizzariaDoZe.Configuracoes.TelaIdioma
 {

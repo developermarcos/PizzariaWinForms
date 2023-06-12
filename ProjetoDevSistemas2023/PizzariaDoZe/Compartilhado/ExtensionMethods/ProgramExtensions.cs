@@ -1,13 +1,6 @@
 ﻿using PizzariaDoZe.Telas.Configuracoes.TelaIdioma;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Configuration;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace PizzariaDoZe.Compartilhado.ExtensionMethods
 {

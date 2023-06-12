@@ -2,7 +2,16 @@
 {
     public class Ingrediente
     {
-        public long Id { get; set; }
-        public string Nome { get; set; }
+        public int id { get; set; }
+        public string nome { get; set; }
+
+        public override string ToString()
+        {
+            return nome;
+        }
+        public bool Igual(Ingrediente ingrediente)
+        {
+            return ingrediente.id == id && ingrediente.nome == nome;
+        }
     }
 }

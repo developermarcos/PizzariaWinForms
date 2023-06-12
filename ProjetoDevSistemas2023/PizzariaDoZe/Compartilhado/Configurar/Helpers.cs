@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace PizzariaDoZe.Compartilhado.Configurar
+﻿namespace PizzariaDoZe.Compartilhado.Configurar
 {
     public class Helpers
     {
@@ -89,7 +80,7 @@ namespace PizzariaDoZe.Compartilhado.Configurar
                 btn.BackColor = Color.Red;
             }
         }
-        
+
         #endregion
     }
 }

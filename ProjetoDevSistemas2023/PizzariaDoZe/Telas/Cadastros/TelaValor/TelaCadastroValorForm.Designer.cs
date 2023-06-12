@@ -35,10 +35,10 @@
             tamanho = new ComboBox();
             lbValorPizzaTradicional = new Label();
             lbValorBordaNormal = new Label();
-            valorTradicional = new TextBox();
-            valorEspecial = new TextBox();
-            valorBordaTradicional = new TextBox();
-            valorBordaEspecial = new TextBox();
+            tradicional = new TextBox();
+            especial = new TextBox();
+            bordaTradicional = new TextBox();
+            bordaEspecial = new TextBox();
             lbValorBordaEspecial = new Label();
             panelConteudo = new Panel();
             panelAcoes = new Panel();
@@ -109,33 +109,33 @@
             lbValorBordaNormal.TabIndex = 7;
             lbValorBordaNormal.Text = "Valor Borda Normal--";
             // 
-            // valorTradicional
+            // tradicional
             // 
-            valorTradicional.Location = new Point(12, 89);
-            valorTradicional.Name = "valorTradicional";
-            valorTradicional.Size = new Size(107, 23);
-            valorTradicional.TabIndex = 2;
+            tradicional.Location = new Point(12, 89);
+            tradicional.Name = "tradicional";
+            tradicional.Size = new Size(107, 23);
+            tradicional.TabIndex = 2;
             // 
-            // valorEspecial
+            // especial
             // 
-            valorEspecial.Location = new Point(158, 89);
-            valorEspecial.Name = "valorEspecial";
-            valorEspecial.Size = new Size(107, 23);
-            valorEspecial.TabIndex = 3;
+            especial.Location = new Point(158, 89);
+            especial.Name = "especial";
+            especial.Size = new Size(107, 23);
+            especial.TabIndex = 3;
             // 
-            // valorBordaTradicional
+            // bordaTradicional
             // 
-            valorBordaTradicional.Location = new Point(12, 133);
-            valorBordaTradicional.Name = "valorBordaTradicional";
-            valorBordaTradicional.Size = new Size(107, 23);
-            valorBordaTradicional.TabIndex = 4;
+            bordaTradicional.Location = new Point(12, 133);
+            bordaTradicional.Name = "bordaTradicional";
+            bordaTradicional.Size = new Size(107, 23);
+            bordaTradicional.TabIndex = 4;
             // 
-            // valorBordaEspecial
+            // bordaEspecial
             // 
-            valorBordaEspecial.Location = new Point(158, 133);
-            valorBordaEspecial.Name = "valorBordaEspecial";
-            valorBordaEspecial.Size = new Size(107, 23);
-            valorBordaEspecial.TabIndex = 5;
+            bordaEspecial.Location = new Point(158, 133);
+            bordaEspecial.Name = "bordaEspecial";
+            bordaEspecial.Size = new Size(107, 23);
+            bordaEspecial.TabIndex = 5;
             // 
             // lbValorBordaEspecial
             // 
@@ -149,13 +149,13 @@
             // panelConteudo
             // 
             panelConteudo.Controls.Add(lbId);
-            panelConteudo.Controls.Add(valorBordaEspecial);
+            panelConteudo.Controls.Add(bordaEspecial);
             panelConteudo.Controls.Add(lbValorBordaEspecial);
-            panelConteudo.Controls.Add(valorBordaTradicional);
+            panelConteudo.Controls.Add(bordaTradicional);
             panelConteudo.Controls.Add(ID);
-            panelConteudo.Controls.Add(valorEspecial);
+            panelConteudo.Controls.Add(especial);
             panelConteudo.Controls.Add(lbTamanho);
-            panelConteudo.Controls.Add(valorTradicional);
+            panelConteudo.Controls.Add(tradicional);
             panelConteudo.Controls.Add(tamanho);
             panelConteudo.Controls.Add(lbValorPizzaTradicional);
             panelConteudo.Controls.Add(lbValorPizzaEspecial);
@@ -200,10 +200,10 @@
         private ComboBox tamanho;
         private Label lbValorPizzaTradicional;
         private Label lbValorBordaNormal;
-        private TextBox valorTradicional;
-        private TextBox valorEspecial;
-        private TextBox valorBordaTradicional;
-        private TextBox valorBordaEspecial;
+        private TextBox tradicional;
+        private TextBox especial;
+        private TextBox bordaTradicional;
+        private TextBox bordaEspecial;
         private Label lbValorBordaEspecial;
         private Panel panelConteudo;
         private Panel panelAcoes;

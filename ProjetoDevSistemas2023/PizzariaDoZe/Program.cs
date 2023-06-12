@@ -1,10 +1,5 @@
 using PizzariaDoZe.Compartilhado;
 using PizzariaDoZe.Compartilhado.ExtensionMethods;
-using PizzariaDoZe.Domain.FeatureIngrediente;
-using PizzariaDoZe.Infra;
-using PizzariaDoZe.Infra.FeatureIngrediente;
-using System.Configuration;
-using System.Globalization;
 
 namespace PizzariaDoZe
 {

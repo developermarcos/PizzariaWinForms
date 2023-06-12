@@ -1,0 +1,115 @@
+﻿/* pizzaria do ze: */
+create database pizzaria_ze;
+
+use pizzaria_ze;
+
+
+CREATE TABLE tb_enderecos (
+    id_endereco INT PRIMARY KEY Identity,
+    logradouro VARCHAR(100),
+    cidade_id INT,
+	bairro varchar (50),
+	numero int,
+    cep VARCHAR(8) UNIQUE
+);
+
+CREATE TABLE cad_cidades (
+    id_cidade INT PRIMARY KEY Identity,
+    nome_cidade VARCHAR(50),
+    uf_id INT
+);
+
+CREATE TABLE cad_uf (
+    id_uf INT PRIMARY KEY Identity,
+    nome_uf VARCHAR(30),
+    pais_id INT
+);
+
+CREATE TABLE tb_funcionarios (
+    id_funcionario INT PRIMARY KEY Identity,
+    nome_funcionario VARCHAR(45),
+    cpf VARCHAR(11),
+    matricula VARCHAR(15),
+    senha VARCHAR(256),
+    grupo CHAR(1),
+    motorista VARCHAR(15),
+    validade_motorista DATE,
+    observacao VARCHAR(45),
+    telefone VARCHAR(11),
+    email VARCHAR(45),
+    endereco_id INT,
+    numero VARCHAR(10),
+    complemento VARCHAR(45),
+    UNIQUE (matricula, cpf, motorista)
+);
+
+CREATE TABLE tb_clientes (
+    id_cliente INT PRIMARY KEY Identity,
+    nome_cliente VARCHAR(50),
+    cpf VARCHAR(11) UNIQUE,
+    telefone VARCHAR(11),
+    email VARCHAR(45),
+    endereco_id INT,
+    numero VARCHAR(10),
+    complemento VARCHAR(45)
+);
+
+CREATE TABLE cad_ingredientes (
+    id_ingrediente INT PRIMARY KEY Identity,
+    descricao_ingrediente VARCHAR(100) UNIQUE
+);
+
+CREATE TABLE tb_sabores (
+    id_sabor INT PRIMARY KEY Identity,
+    descricao_sabor VARCHAR(50) UNIQUE,
+    foto Varbinary(MAX),
+    categoria CHAR(1),
+    tipo CHAR(1)
+);
+
+CREATE TABLE itens_sabores (
+    id_itens_sabor INT PRIMARY KEY Identity,
+    ingrediente_id INT,
+    sabor_id INT
+);
+
+CREATE TABLE cad_produtos (
+    id_produto INT PRIMARY KEY Identity,
+    descricao_produto VARCHAR(45),
+    valor DECIMAL(11,2),
+    tipo CHAR(1),
+    medida_unitaria VARCHAR(20)
+);
+
+CREATE TABLE cad_paises (
+    id_pais INT PRIMARY KEY Identity,
+    nome_pais VARCHAR(45)
+);
+ 
+ALTER TABLE tb_enderecos ADD CONSTRAINT FK_endereco_cidade
+    FOREIGN KEY (cidade_id)
+    REFERENCES cad_cidades (id_cidade);
+ 
+ALTER TABLE cad_cidades ADD CONSTRAINT FK_cidade_uf
+    FOREIGN KEY (uf_id)
+    REFERENCES cad_uf (id_uf);
+ 
+ALTER TABLE cad_uf ADD CONSTRAINT FK_uf_pais
+    FOREIGN KEY (pais_id)
+    REFERENCES cad_paises (id_pais);
+ 
+ALTER TABLE tb_funcionarios ADD CONSTRAINT FK_funcionario_endereco
+    FOREIGN KEY (endereco_id)
+    REFERENCES tb_enderecos (id_endereco);
+ 
+ALTER TABLE tb_clientes ADD CONSTRAINT FK_cliente_endereco
+    FOREIGN KEY (endereco_id)
+    REFERENCES tb_enderecos (id_endereco);
+ 
+ALTER TABLE itens_sabores ADD CONSTRAINT FK_itens_sabores
+    FOREIGN KEY (ingrediente_id)
+    REFERENCES cad_ingredientes (id_ingrediente);
+ 
+ALTER TABLE itens_sabores ADD CONSTRAINT FK_iten_sabor
+    FOREIGN KEY (sabor_id)
+    REFERENCES tb_sabores (id_sabor);

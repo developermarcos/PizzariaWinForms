@@ -2,7 +2,6 @@
 using PizzariaDoZe.Compartilhado.Configurar;
 using PizzariaDoZe.Distribuiton.FeatureIngrediente;
 using PizzariaDoZe.Domain.FeatureIngrediente;
-using PizzariaDoZe.TelaCliente;
 using PizzariaDoZe.TelaIngrediente;
 using PizzariaDoZe.Telas.Cadastros.TelaCliente;
 
@@ -41,9 +40,18 @@ namespace PizzariaDoZe.Telas.Cadastros.TelaIngrediente
         }
         public override void Editar()
         {
+
+            Ingrediente ingredienteSelecionado = this.ObtemCompromissoSelecionado();
+
+            if (ingredienteSelecionado is null || ingredienteSelecionado.id == 0)
+            {
+                TelaPrincipalForm.Instancia.AtualizarRodape($"Selecione um registro primeiro");
+
+                return;
+            }
             TelaCadastroIngredienteForm telaCadastroIngrediente = new TelaCadastroIngredienteForm($"{_editar} {_featureSingular}", _mensagemDesejaSalvar, _mensagemDesejaCancelar);
 
-            telaCadastroIngrediente.IngredienteSelecionado = this.ObtemCompromissoSelecionado();
+            telaCadastroIngrediente.IngredienteSelecionado = ingredienteSelecionado;
 
             telaCadastroIngrediente.Gravar = _ingredienteService.Editar;
 
@@ -52,7 +60,7 @@ namespace PizzariaDoZe.Telas.Cadastros.TelaIngrediente
                 TelaPrincipalForm.Instancia.AtualizarRodape($"{_mensagemRegistroNaoEditado}");
                 return;
             }
-            
+
             CarregarIngredientes();
 
             TelaPrincipalForm.Instancia.AtualizarRodape($"{_mensagemRegistroEditado}");
@@ -62,7 +70,7 @@ namespace PizzariaDoZe.Telas.Cadastros.TelaIngrediente
         {
             Ingrediente IngredienteSelecionado = this.ObtemCompromissoSelecionado();
 
-            if(IngredienteSelecionado == null)
+            if (IngredienteSelecionado == null)
             {
                 TelaPrincipalForm.Instancia.AtualizarRodape($"Selecione um registro caso deseje excluir");
 
@@ -94,7 +102,7 @@ namespace PizzariaDoZe.Telas.Cadastros.TelaIngrediente
         {
             TelaPrincipalForm.Instancia.AtualizarRodape("Nenhum filtro desponível no momento");
         }
-       
+
         private void CarregarIngredientes()
         {
             List<Ingrediente> contatos = _ingredienteService.SelecionarTodos().Value;

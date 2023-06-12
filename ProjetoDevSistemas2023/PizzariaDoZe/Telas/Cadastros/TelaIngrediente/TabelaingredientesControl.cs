@@ -1,14 +1,5 @@
 ﻿using PizzariaDoZe.Compartilhado.ExtensionMethods;
 using PizzariaDoZe.Domain.FeatureIngrediente;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace PizzariaDoZe.Telas.Cadastros.TelaIngrediente
 {
@@ -27,11 +18,11 @@ namespace PizzariaDoZe.Telas.Cadastros.TelaIngrediente
         {
             var colunas = new DataGridViewColumn[]
             {
-                new DataGridViewTextBoxColumn { DataPropertyName = "Id", HeaderText = "Id"},
+                new DataGridViewTextBoxColumn { DataPropertyName = "id", HeaderText = "Id"},
 
-                new DataGridViewTextBoxColumn { DataPropertyName = "Nome", HeaderText = "Nome"}
+                new DataGridViewTextBoxColumn { DataPropertyName = "nome", HeaderText = "Nome"}
             };
-            
+
             return colunas;
         }
 

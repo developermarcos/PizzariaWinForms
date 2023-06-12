@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace PizzariaDoZe.Compartilhado.ExtensionMethods
+﻿namespace PizzariaDoZe.Compartilhado.ExtensionMethods
 {
     public static class DataGridViewExtensions
     {
