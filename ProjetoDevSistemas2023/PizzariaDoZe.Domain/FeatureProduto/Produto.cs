@@ -2,8 +2,8 @@
 {
     public class Produto
     {
-        public int id_produto { get; set; }
-        public string descricao_produto { get; set; }
+        public int id { get; set; }
+        public string nome { get; set; }
         public decimal valor { get; set; }
         public TipoProduto tipo { get; set; }
         public string medida_unitaria { get; set; }

@@ -7,29 +7,29 @@ namespace PizzariaDoZe.Infra.FeatureProduto
 {
     public class RepositorioProduto : RepositorioBase<Produto>, IRepositorioProduto
     {
-        public override string selecionarTodosSql => @"SELECT TOP (1000) * FROM [pizzaria_ze].[dbo].[cad_produtos]";
+        public override string selecionarTodosSql => @"SELECT TOP (1000) * FROM [cadastro].[tb_produto]";
 
-        public override string selecionarPorIdSql => @"SELECT TOP (1000) * FROM [pizzaria_ze].[dbo].[cad_produtos] where id_produto = @id_produto";
+        public override string selecionarPorIdSql => @"SELECT TOP (1000) * FROM [cadastro].[tb_produto] where id = @id";
 
-        public override string insertSql => @"INSERT INTO [dbo].[cad_produtos]
-                                                   ([descricao_produto]
+        public override string insertSql => @"INSERT INTO [cadastro].[tb_produto]
+                                                   ([nome]
                                                    ,[valor]
                                                    ,[tipo]
                                                    ,[medida_unitaria])
                                              VALUES
-                                                   (@descricao_produto
+                                                   (@nome
                                                    ,@valor
                                                    ,@tipo
                                                    ,@medida_unitaria)";
 
-        public override string editarSql => @"UPDATE [dbo].[cad_produtos]
-                                               SET [descricao_produto] = @descricao_produto
+        public override string editarSql => @"UPDATE [cadastro].[tb_produto]
+                                               SET [nome] = @nome
                                                   ,[valor] = @valor
                                                   ,[tipo] = @tipo
                                                   ,[medida_unitaria] = @medida_unitaria
-                                             WHERE id_produto = @id_produto";
+                                             WHERE id = @id";
 
-        public override string exclusaoSql => @"DELETE FROM [dbo].[cad_produtos] WHERE id_produto = @id_produto";
+        public override string exclusaoSql => @"DELETE FROM [cadastro].[tb_produto] WHERE id = @id";
 
         public override Produto ConverterValor(SqlDataReader reader)
         {

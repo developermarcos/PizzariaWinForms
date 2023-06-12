@@ -10,16 +10,16 @@ namespace PizzariaDoZe.Infra.FeatureProduto
         {
             Produto registro = new Produto();
 
-            if (!leitorRegistro.IsDBNull(leitorRegistro.GetOrdinal("id_produto")))
+            if (!leitorRegistro.IsDBNull(leitorRegistro.GetOrdinal("id")))
             {
-                int id_produto = leitorRegistro.GetInt32(leitorRegistro.GetOrdinal("id_produto"));
-                registro.id_produto = id_produto;
+                int id = leitorRegistro.GetInt32(leitorRegistro.GetOrdinal("id"));
+                registro.id = id;
             }
 
-            if (!leitorRegistro.IsDBNull(leitorRegistro.GetOrdinal("descricao_produto")))
+            if (!leitorRegistro.IsDBNull(leitorRegistro.GetOrdinal("nome")))
             {
-                string descricao_produto = leitorRegistro.GetString(leitorRegistro.GetOrdinal("descricao_produto"));
-                registro.descricao_produto = descricao_produto;
+                string nome = leitorRegistro.GetString(leitorRegistro.GetOrdinal("nome"));
+                registro.nome = nome;
             }
 
             if (!leitorRegistro.IsDBNull(leitorRegistro.GetOrdinal("valor")))

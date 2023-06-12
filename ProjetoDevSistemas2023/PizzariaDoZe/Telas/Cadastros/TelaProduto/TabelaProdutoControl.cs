@@ -18,9 +18,9 @@ namespace PizzariaDoZe.Telas.Cadastros.TelaProduto
         {
             var colunas = new DataGridViewColumn[]
             {
-                new DataGridViewTextBoxColumn { DataPropertyName = "id_produto", HeaderText = "Id"},
+                new DataGridViewTextBoxColumn { DataPropertyName = "id", HeaderText = "Id"},
 
-                new DataGridViewTextBoxColumn { DataPropertyName = "descricao_produto", HeaderText = "Nome"},
+                new DataGridViewTextBoxColumn { DataPropertyName = "nome", HeaderText = "Nome"},
 
                 new DataGridViewTextBoxColumn { DataPropertyName = "valor", HeaderText = "Valor"},
 

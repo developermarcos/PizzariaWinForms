@@ -6,7 +6,7 @@ namespace PizzariaDoZe.Domain.FeatureProduto
     {
         public ValidadorProduto()
         {
-            RuleFor(x => x.descricao_produto)
+            RuleFor(x => x.nome)
                 .NotNull()
                 .NotEmpty();
         }

@@ -29,14 +29,14 @@ namespace PizzariaDoZe.TelaProduto
             {
                 var produto = new Produto()
                 {
-                    descricao_produto = nome.Text,
+                    nome = nome.Text,
                     medida_unitaria = ML.Text,
                     tipo = Enum.Parse<TipoProduto>(tipo.Text),
                     valor = Convert.ToDecimal(valor.Text)
                 };
 
                 if (id.Text != string.Empty && id.Text != "0")
-                    produto.id_produto = Convert.ToInt32(id.Text);
+                    produto.id = Convert.ToInt32(id.Text);
 
                 return produto;
             }
@@ -62,8 +62,8 @@ namespace PizzariaDoZe.TelaProduto
 
         private void PopularTela()
         {
-            id.Text = Convert.ToString(_produtoSelecionado.id_produto);
-            nome.Text = _produtoSelecionado.descricao_produto;
+            id.Text = Convert.ToString(_produtoSelecionado.id);
+            nome.Text = _produtoSelecionado.nome;
             ML.Text = _produtoSelecionado.medida_unitaria;
             tipo.SelectedItem = _produtoSelecionado.tipo.ToString();
             valor.Text = _produtoSelecionado.valor.ToString();
