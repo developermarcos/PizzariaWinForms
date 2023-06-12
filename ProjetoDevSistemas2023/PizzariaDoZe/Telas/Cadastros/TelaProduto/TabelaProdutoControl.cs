@@ -26,7 +26,7 @@ namespace PizzariaDoZe.Telas.Cadastros.TelaProduto
 
                 new DataGridViewTextBoxColumn { DataPropertyName = "tipo", HeaderText = "Tipo"},
 
-                new DataGridViewTextBoxColumn { DataPropertyName = "medida_unitaria", HeaderText = "Medida Unitária"},
+                new DataGridViewTextBoxColumn { DataPropertyName = "medida_unitaria", HeaderText = "Medida Unitária (ML)"},
             };
 
             return colunas;

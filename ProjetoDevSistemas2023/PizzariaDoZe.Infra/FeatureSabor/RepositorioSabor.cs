@@ -82,7 +82,7 @@ namespace PizzariaDoZe.Infra.FeatureSabor
 
                 registro.ingredientes.ForEach(x =>
                 {
-                    SqlCommand command2 = new SqlCommand(selecionarPorIdSql, connection);
+                    SqlCommand command2 = new SqlCommand(inserirIngredientes_saborSql, connection);
                     mapeadorSabor.ConfigurarParametro("@sabor_id", idSaborInserido.ToString(), command2);
                     mapeadorSabor.ConfigurarParametro("@ingrediente_id", x.id.ToString(), command2);
                     command2.ExecuteNonQuery();

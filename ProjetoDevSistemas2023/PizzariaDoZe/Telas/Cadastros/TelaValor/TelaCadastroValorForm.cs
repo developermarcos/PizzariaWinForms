@@ -75,12 +75,14 @@ namespace PizzariaDoZe.TelaValor
                 if (valor.bordaEspecial == 0)
                     return "Informe um valor para a pizza borda especial";
 
-                var tamanhoSelecionadoJaExiste = BuscarValorPorTamanho(valor.tamanho).Value;
-
-                if(tamanhoSelecionadoJaExiste != null)
+                if(valor.id == 0)
                 {
-                    return "Tamanho não pode ser cadastrado novamente";
+                    var tamanhoSelecionadoJaExiste = BuscarValorPorTamanho(valor.tamanho).Value;
+                
+                    if(tamanhoSelecionadoJaExiste != null)
+                        return "Tamanho não pode ser cadastrado novamente";
                 }
+
             }
             catch (Exception ex)
             {

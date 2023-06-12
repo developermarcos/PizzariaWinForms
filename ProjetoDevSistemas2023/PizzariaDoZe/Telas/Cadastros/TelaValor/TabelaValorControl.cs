@@ -30,7 +30,15 @@ namespace PizzariaDoZe.Telas.Cadastros.TelaValor
             {
                 new DataGridViewTextBoxColumn { DataPropertyName = "id", HeaderText = "Id"},
 
-                new DataGridViewTextBoxColumn { DataPropertyName = "tamanho", HeaderText = "Tamanho"}
+                new DataGridViewTextBoxColumn { DataPropertyName = "tamanho", HeaderText = "Tamanho"},
+
+                new DataGridViewTextBoxColumn { DataPropertyName = "tradicional", HeaderText = "Tradicional"},
+
+                new DataGridViewTextBoxColumn { DataPropertyName = "especial", HeaderText = "Especial"},
+
+                new DataGridViewTextBoxColumn { DataPropertyName = "bordaTradicional", HeaderText = "Borda Trad."},
+
+                new DataGridViewTextBoxColumn { DataPropertyName = "bordaEspecial", HeaderText = "Bord Esp."}
             };
 
             return colunas;
