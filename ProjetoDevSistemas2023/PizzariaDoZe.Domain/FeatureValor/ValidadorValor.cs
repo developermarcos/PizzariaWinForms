@@ -6,9 +6,9 @@ namespace PizzariaDoZe.Domain.FeatureValor
     {
         public ValidadorValor()
         {
-            //RuleFor(x => x.)
-            //    .NotNull()
-            //    .NotEmpty();
+            RuleFor(x => x.tamanho)
+                .NotNull()
+                .NotEmpty();
         }
     }
 }

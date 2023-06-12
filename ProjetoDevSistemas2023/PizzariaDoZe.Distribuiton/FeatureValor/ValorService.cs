@@ -103,5 +103,23 @@ namespace PizzariaDoZe.Distribuiton.FeatureValor
                 return Result.Fail("Falha no sistema ao tentar selecionar todos os Valors");
             }
         }
+        public Result<Valor> SelecionarPorTamanho(TamanhoPizza tamanho)
+        {
+            try
+            {
+                var result = repositorioValor.SelecionarPorTamanho(tamanho);
+
+                if (result is null)
+                {
+                    Result.Fail("Nenhum Valor encontrando");
+                }
+
+                return Result.Ok(result);
+            }
+            catch (Exception ex)
+            {
+                return Result.Fail("Falha no sistema ao tentar selecionar todos os Valors");
+            }
+        }
     }
 }

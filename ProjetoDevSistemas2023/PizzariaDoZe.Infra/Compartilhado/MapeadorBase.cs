@@ -4,7 +4,7 @@ using System.Reflection;
 
 namespace PizzariaDoZe.Infra.Compartilhado
 {
-    internal abstract class MapeadorBase<T>
+    public abstract class MapeadorBase<T>
     {
         public virtual void ConfigurarParametro(string parametro, string valor, DbCommand comando)
         {

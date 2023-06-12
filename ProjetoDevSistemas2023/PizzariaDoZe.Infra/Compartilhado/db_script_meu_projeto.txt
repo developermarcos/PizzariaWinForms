@@ -66,6 +66,15 @@ CREATE TABLE cadastro.tb_produto (
     medida_unitaria VARCHAR(20)
 );
 
+CREATE TABLE cadastro.tb_valor (
+    id INT PRIMARY KEY Identity,
+    tamanho char(1),
+    tradicional DECIMAL(11,2),
+    especial DECIMAL(11,2),
+    bordaTradicional DECIMAL(11,2),
+    bordaEspecial DECIMAL(11,2),
+);
+
 ALTER TABLE cadastro.ingredientes_sabores ADD CONSTRAINT FK_ingredientes_sabores
     FOREIGN KEY (ingrediente_id)
     REFERENCES cadastro.tb_ingrediente (id);
