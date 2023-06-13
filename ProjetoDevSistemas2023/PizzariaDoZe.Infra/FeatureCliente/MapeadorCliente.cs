@@ -13,12 +13,14 @@ namespace PizzariaDoZe.Infra.FeatureCliente
     {
         public override void ConfigurarParametros(Cliente registro, DbCommand comando)
         {
+            if (registro.id != 0)
+                AdicionarParameter("id", registro.id.ToString(), comando);
 
-            AdicionarParameter("id", registro.id.ToString(), comando);
             AdicionarParameter("nome", registro.nome, comando);
             AdicionarParameter("cpf", registro.cpf, comando);
             AdicionarParameter("email", registro.email, comando);
             AdicionarParameter("telefone", registro.telefone, comando);
+            AdicionarParameter("excluido", registro.excluido, comando);
             new MapeadorEndereco().ConfigurarParametros(registro.endereco, comando);
         }
 

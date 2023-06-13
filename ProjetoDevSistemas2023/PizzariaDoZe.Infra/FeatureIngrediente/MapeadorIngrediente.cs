@@ -16,7 +16,7 @@ namespace PizzariaDoZe.Infra.FeatureIngrediente
 
             foreach (PropertyInfo propriedade in propriedades)
             {
-                AdicionarParameter(propriedade.GetValue(registro), propriedade.Name, comando);
+                AdicionarParameter(propriedade.Name, propriedade.GetValue(registro), comando);
             }
         }
 

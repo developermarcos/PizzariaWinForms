@@ -53,11 +53,11 @@ namespace PizzariaDoZe.Infra.FeatureCliente
                                                         ,pais = @pais
                                                         ,complemento = @complemento
                                                         ,excluido = @excluido
-                                                    WHERE where id = @id";
+                                                    WHERE id = @id";
 
         public override string exclusaoSql => @"UPDATE [cadastro].[tb_cliente]
                                                     SET excluido = 1
-                                                    WHERE where id = @id";
+                                                    WHERE id = @id";
 
         public override Cliente ConverterValor(SqlDataReader reader)
         {

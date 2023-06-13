@@ -1,6 +1,6 @@
 ﻿namespace PizzariaDoZe.TelaCliente
 {
-    partial class TelaCadastroProdutoForm
+    partial class TelaCadastroClienteForm
     {
         /// <summary>
         /// Required designer variable.
@@ -34,7 +34,7 @@
             cpf = new MaskedTextBox();
             email = new MaskedTextBox();
             id = new TextBox();
-            textBox1 = new TextBox();
+            nome = new TextBox();
             lbTelefone = new Label();
             lbCpf = new Label();
             lbEmail = new Label();
@@ -57,7 +57,7 @@
             panelDadosPesooais.Controls.Add(cpf);
             panelDadosPesooais.Controls.Add(email);
             panelDadosPesooais.Controls.Add(id);
-            panelDadosPesooais.Controls.Add(textBox1);
+            panelDadosPesooais.Controls.Add(nome);
             panelDadosPesooais.Controls.Add(lbTelefone);
             panelDadosPesooais.Controls.Add(lbCpf);
             panelDadosPesooais.Controls.Add(lbEmail);
@@ -89,7 +89,7 @@
             email.Location = new Point(3, 107);
             email.Name = "email";
             email.Size = new Size(344, 23);
-            email.TabIndex = 1;
+            email.TabIndex = 2;
             // 
             // id
             // 
@@ -100,12 +100,12 @@
             id.TabIndex = 9;
             id.TabStop = false;
             // 
-            // textBox1
+            // nome
             // 
-            textBox1.Location = new Point(3, 63);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(344, 23);
-            textBox1.TabIndex = 1;
+            nome.Location = new Point(3, 63);
+            nome.Name = "nome";
+            nome.Size = new Size(344, 23);
+            nome.TabIndex = 1;
             // 
             // lbTelefone
             // 
@@ -160,7 +160,7 @@
             panelAcoes.Size = new Size(385, 59);
             panelAcoes.TabIndex = 3;
             // 
-            // TelaCadastroProdutoForm
+            // TelaCadastroClienteForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -171,7 +171,7 @@
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
             MinimizeBox = false;
-            Name = "TelaCadastroProdutoForm";
+            Name = "TelaCadastroClienteForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "TelaCadastroClienteForm--";
             panelDadosPesooais.ResumeLayout(false);
@@ -191,7 +191,7 @@
         private Label lbNome;
         private TextBox textBox4;
         private TextBox textBox2;
-        private TextBox textBox1;
+        private TextBox nome;
         private TextBox id;
         private MaskedTextBox email;
         private MaskedTextBox cpf;

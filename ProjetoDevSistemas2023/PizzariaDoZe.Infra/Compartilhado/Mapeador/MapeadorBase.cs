@@ -21,14 +21,14 @@ namespace PizzariaDoZe.Infra.Compartilhado.Mapeador
 
             foreach (PropertyInfo propriedade in propriedades)
             {
-                AdicionarParameter(propriedade.GetValue(registro), propriedade.Name, comando);
+                AdicionarParameter(propriedade.Name, propriedade.GetValue(registro), comando);
             }
         }
 
         public abstract T ConverterRegistro(SqlDataReader leitorRegistro);
 
         #region métodos privados
-        protected void AdicionarParameter(object propertieValue, string propertieName, DbCommand comando)
+        protected void AdicionarParameter(string propertieName, object propertieValue, DbCommand comando)
         {
             var item = comando.CreateParameter();
             item.ParameterName = propertieName;
