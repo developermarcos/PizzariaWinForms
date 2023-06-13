@@ -1,6 +1,8 @@
-﻿namespace PizzariaDoZe.Domain.FeatureCliente
+﻿using PizzariaDoZe.Domain.Compartilhado;
+
+namespace PizzariaDoZe.Domain.FeatureCliente
 {
-    public interface IRepositorioCliente
+    public interface IRepositorioCliente : IRepositorioBase<Cliente>
     {
     }
 }

@@ -1,5 +1,5 @@
 ﻿using PizzariaDoZe.Domain.FeatureSabor;
-using PizzariaDoZe.Infra.Compartilhado;
+using PizzariaDoZe.Infra.Compartilhado.Mapeador;
 using System.Data.Common;
 using System.Data.SqlClient;
 

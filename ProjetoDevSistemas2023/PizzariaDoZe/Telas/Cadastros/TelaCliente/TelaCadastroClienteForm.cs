@@ -1,6 +1,7 @@
-﻿using PizzariaDoZe.Compartilhado.Configurar;
+﻿using FluentResults;
+using PizzariaDoZe.Compartilhado.Configurar;
 using PizzariaDoZe.Compartilhado.UserControlComponentes;
-
+using PizzariaDoZe.Domain.FeatureCliente;
 
 namespace PizzariaDoZe.TelaCliente
 {
@@ -21,6 +22,8 @@ namespace PizzariaDoZe.TelaCliente
             };
             Configurar();
         }
+
+        public Func<Cliente, Result<Cliente>> Gravar { get; internal set; }
 
         private void Configurar()
         {

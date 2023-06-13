@@ -7,6 +7,9 @@
     <Compile Update="Compartilhado\UserControlComponentes\UserControlSalvarCancelar.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="Telas\Cadastros\TelaCliente\TabelaClienteControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="Telas\Cadastros\TelaCliente\TelaCadastroClienteForm.cs">
       <SubType>Form</SubType>
     </Compile>

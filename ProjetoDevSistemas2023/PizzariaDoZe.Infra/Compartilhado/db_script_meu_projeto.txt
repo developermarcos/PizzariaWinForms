@@ -18,12 +18,14 @@ CREATE TABLE cadastro.tb_funcionario (
     observacao VARCHAR(45),
     telefone VARCHAR(11),
     email VARCHAR(45),
-    numero VARCHAR(10),
-    complemento VARCHAR(45),
-    UNIQUE (matricula, cpf, motorista),
     logradouro VARCHAR(100),
     bairro varchar (50),
-	cep VARCHAR(8) UNIQUE
+    numero VARCHAR(10),
+	cep VARCHAR(8),
+    cidade varchar (50),
+    pais varchar (50),
+    complemento VARCHAR(45),
+    excluido bit,
 );
 
 CREATE TABLE cadastro.tb_cliente (
@@ -32,11 +34,14 @@ CREATE TABLE cadastro.tb_cliente (
     cpf VARCHAR(11) UNIQUE,
     telefone VARCHAR(11),
     email VARCHAR(45),
-    numero VARCHAR(10),
-    complemento VARCHAR(45),
     logradouro VARCHAR(100),
     bairro varchar (50),
-	cep VARCHAR(8) UNIQUE
+    numero VARCHAR(10),
+	cep VARCHAR(8),
+    cidade varchar (50),
+    pais varchar (50),
+    complemento VARCHAR(45),
+    excluido bit,
 );
 
 CREATE TABLE cadastro.tb_ingrediente (

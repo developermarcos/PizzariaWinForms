@@ -34,7 +34,7 @@ namespace PizzariaDoZe.Telas.Cadastros.TelaProduto
                 return;
             }
 
-            CarregarIngredientes();
+            CarregarProdutos();
 
             TelaPrincipalForm.Instancia.AtualizarRodape($"{_mensagemRegistroInserido}");
 
@@ -63,7 +63,7 @@ namespace PizzariaDoZe.Telas.Cadastros.TelaProduto
             }
             TelaPrincipalForm.Instancia.AtualizarRodape($"{_mensagemRegistroEditado}");
 
-            CarregarIngredientes();
+            CarregarProdutos();
         }
 
         public override void Excluir()
@@ -85,7 +85,7 @@ namespace PizzariaDoZe.Telas.Cadastros.TelaProduto
 
             _produtoService.Excluir(produtoSelecionado);
 
-            CarregarIngredientes();
+            CarregarProdutos();
 
             TelaPrincipalForm.Instancia.AtualizarRodape($"{_mensagemRegistroExcluido}");
         }
@@ -94,11 +94,11 @@ namespace PizzariaDoZe.Telas.Cadastros.TelaProduto
         {
             tabelaProduto = new TabelaProdutoControl();
 
-            CarregarIngredientes();
+            CarregarProdutos();
 
             return tabelaProduto;
         }
-        private void CarregarIngredientes()
+        private void CarregarProdutos()
         {
             List<Produto> produtos = _produtoService.SelecionarTodos().Value;
 

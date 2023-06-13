@@ -1,6 +1,9 @@
 ﻿using PizzariaDoZe.Compartilhado;
 using PizzariaDoZe.Compartilhado.Configurar;
 using PizzariaDoZe.Distribuiton.FeatureCliente;
+using PizzariaDoZe.Distribuiton.FeatureProduto;
+using PizzariaDoZe.Domain.FeatureCliente;
+using PizzariaDoZe.Domain.FeatureProduto;
 using PizzariaDoZe.TelaCliente;
 
 
@@ -16,6 +19,8 @@ namespace PizzariaDoZe.Telas.Cadastros.TelaCliente
 
         protected override string _featurePlural => Properties.Resources.ResourceManager.GetString("clientesToolStripMenuItem.Text");
 
+        public TabelaClienteControl tabelaCliente;
+
         public ControladorCliente()
         {
 
@@ -28,28 +33,31 @@ namespace PizzariaDoZe.Telas.Cadastros.TelaCliente
 
         public override void Inserir()
         {
-            TelaCadastroProdutoForm telaCadastroFuncionario =
-                new TelaCadastroProdutoForm($"{_inserir} {_novo} {_featureSingular}", _mensagemDesejaSalvar, _mensagemDesejaCancelar);
+            
+            //TelaCadastroClienteForm telaCadastroCliente =
+            //    new TelaCadastroClienteForm($"{_inserir} {_novo} {_featureSingular}", _mensagemDesejaSalvar, _mensagemDesejaCancelar);
 
-            if (telaCadastroFuncionario.ShowDialog() == DialogResult.Cancel)
-            {
-                TelaPrincipalForm.Instancia.AtualizarRodape($"{_mensagemRegistroNaoInserido}");
-                return;
-            }
+            //telaCadastroCliente.Gravar = clienteService.Inserir;
 
-            TelaPrincipalForm.Instancia.AtualizarRodape($"{_mensagemRegistroInserido}");
+            //if (telaCadastroCliente.ShowDialog() == DialogResult.Cancel)
+            //{
+            //    TelaPrincipalForm.Instancia.AtualizarRodape($"{_mensagemRegistroNaoInserido}");
+            //    return;
+            //}
+            //CarregarClientes();
+            //TelaPrincipalForm.Instancia.AtualizarRodape($"{_mensagemRegistroInserido}");
 
         }
         public override void Editar()
         {
-            TelaCadastroProdutoForm telaCadastroFuncionario = new TelaCadastroProdutoForm($"{_editar} {_featureSingular}", _mensagemDesejaSalvar, _mensagemDesejaCancelar);
+            //TelaCadastroClienteForm telaCadastroCliente = new TelaCadastroClienteForm($"{_editar} {_featureSingular}", _mensagemDesejaSalvar, _mensagemDesejaCancelar);
 
-            if (telaCadastroFuncionario.ShowDialog() == DialogResult.Cancel)
-            {
-                TelaPrincipalForm.Instancia.AtualizarRodape($"{_mensagemRegistroNaoEditado}");
-                return;
-            }
-            TelaPrincipalForm.Instancia.AtualizarRodape($"{_mensagemRegistroEditado}");
+            //if (telaCadastroCliente.ShowDialog() == DialogResult.Cancel)
+            //{
+            //    TelaPrincipalForm.Instancia.AtualizarRodape($"{_mensagemRegistroNaoEditado}");
+            //    return;
+            //}
+            //TelaPrincipalForm.Instancia.AtualizarRodape($"{_mensagemRegistroEditado}");
         }
 
         public override void Excluir()
@@ -64,9 +72,26 @@ namespace PizzariaDoZe.Telas.Cadastros.TelaCliente
 
         public override UserControl ObtemListagem()
         {
-            TelaPrincipalForm.Instancia.AtualizarRodape($"{_listando} 0 {_featurePlural}");
+            tabelaCliente = new TabelaClienteControl();
 
-            return new UserControl();
+            CarregarClientes();
+
+            return tabelaCliente;
+        }
+        private void CarregarClientes()
+        {
+            List<Cliente> clientes = clienteService.SelecionarTodos().Value;
+
+            tabelaCliente.AtualizarRegistros(clientes);
+
+            TelaPrincipalForm.Instancia.AtualizarRodape($"{_listando} {clientes.Count} {_featurePlural}");
+
+        }
+        private Cliente ObtemCompromissoSelecionado()
+        {
+            var numero = tabelaCliente.ObtemNumeroContatoSelecionado();
+
+            return clienteService.SelecionarPorId(numero).Value;
         }
 
         public void Filtrar()
