@@ -2,9 +2,8 @@
 using PizzariaDoZe.Compartilhado.Configurar;
 using PizzariaDoZe.Compartilhado.UserControlComponentes;
 using PizzariaDoZe.Domain.Compartilhado;
-using PizzariaDoZe.Domain.FeatureCliente;
-using PizzariaDoZe.Compartilhado.ExtensionMethods;
 using PizzariaDoZe.Domain.Compartilhado.ExtensionMethods;
+using PizzariaDoZe.Domain.FeatureCliente;
 
 namespace PizzariaDoZe.TelaCliente
 {
@@ -84,7 +83,7 @@ namespace PizzariaDoZe.TelaCliente
                 if (clienteSelecionado.email.ValidaCampoEstaVazioOuNuloOuTamanhoInvalido(80, 2))
                     return clienteSelecionado.email.CampoVazioOuNuloOuTamanhoInvalido("email", 80, 2);
 
-                if (clienteSelecionado.telefone.RemoverCaracterEspeciaisEhEspacoesEh().ValidaCampoEstaVazioOuNuloOuTamanhoInvalido(11,8))
+                if (clienteSelecionado.telefone.RemoverCaracterEspeciaisEhEspacoesEh().ValidaCampoEstaVazioOuNuloOuTamanhoInvalido(11, 8))
                     return clienteSelecionado.telefone.RemoverCaracterEspeciaisEhEspacoesEh().CampoVazioOuNuloOuTamanhoInvalido("telefone", 11, 8);
 
                 if (clienteSelecionado.endereco.logradouro.ValidaCampoEstaVazioOuNuloOuTamanhoInvalido(80, 2))
@@ -102,7 +101,7 @@ namespace PizzariaDoZe.TelaCliente
                 if (clienteSelecionado.endereco.cidade.ValidaCampoEstaVazioOuNuloOuTamanhoInvalido(80, 2))
                     return clienteSelecionado.endereco.cidade.CampoVazioOuNuloOuTamanhoInvalido("Cidade", 80, 2);
 
-                if (clienteSelecionado.endereco.pais.ValidaCampoEstaVazioOuNuloOuTamanhoInvalido(80,2))
+                if (clienteSelecionado.endereco.pais.ValidaCampoEstaVazioOuNuloOuTamanhoInvalido(80, 2))
                     return clienteSelecionado.endereco.pais.CampoVazioOuNuloOuTamanhoInvalido("Pais", 80, 2);
 
                 return string.Empty;

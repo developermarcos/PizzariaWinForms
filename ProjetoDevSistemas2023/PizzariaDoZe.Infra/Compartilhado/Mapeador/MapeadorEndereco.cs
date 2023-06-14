@@ -1,14 +1,7 @@
 ﻿using PizzariaDoZe.Domain.Compartilhado;
-using PizzariaDoZe.Domain.FeatureCliente;
-using System;
-using System.Collections.Generic;
 using System.Data.Common;
 using System.Data.SqlClient;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace PizzariaDoZe.Infra.Compartilhado.Mapeador
 {

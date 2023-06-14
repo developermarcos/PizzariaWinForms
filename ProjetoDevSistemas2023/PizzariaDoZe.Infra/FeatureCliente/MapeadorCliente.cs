@@ -1,11 +1,7 @@
-﻿using PizzariaDoZe.Domain.Compartilhado;
-using PizzariaDoZe.Domain.FeatureCliente;
-using PizzariaDoZe.Domain.FeatureIngrediente;
-using PizzariaDoZe.Infra.Compartilhado;
+﻿using PizzariaDoZe.Domain.FeatureCliente;
 using PizzariaDoZe.Infra.Compartilhado.Mapeador;
 using System.Data.Common;
 using System.Data.SqlClient;
-using System.Reflection;
 
 namespace PizzariaDoZe.Infra.FeatureCliente
 {

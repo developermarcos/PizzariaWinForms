@@ -1,8 +1,5 @@
-﻿using PizzariaDoZe.Domain.Compartilhado;
-using PizzariaDoZe.Domain.FeatureCliente;
-using PizzariaDoZe.Domain.FeatureFuncionario;
+﻿using PizzariaDoZe.Domain.FeatureFuncionario;
 using PizzariaDoZe.Infra.Compartilhado.Mapeador;
-using System.Data;
 using System.Data.Common;
 using System.Data.SqlClient;
 
@@ -105,7 +102,7 @@ namespace PizzariaDoZe.Infra.FeatureFuncionario
                 string observacao = leitorRegistro.GetString(leitorRegistro.GetOrdinal("observacao"));
                 registro.observacao = observacao;
             }
-            
+
             registro.endereco = new MapeadorEndereco().ConverterRegistro(leitorRegistro);
 
             return registro;

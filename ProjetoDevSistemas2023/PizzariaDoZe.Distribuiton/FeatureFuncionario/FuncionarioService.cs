@@ -67,7 +67,7 @@ namespace PizzariaDoZe.Distribuiton.FeatureFuncionario
         }
 
         public Result<List<Funcionario>> SelecionarTodos()
-         {
+        {
             try
             {
                 var result = repositorioFuncionario.SelecionarTodos();

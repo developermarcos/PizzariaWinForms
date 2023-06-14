@@ -1,10 +1,9 @@
-﻿using PizzariaDoZe.Compartilhado.Configurar;
+﻿using FluentResults;
+using PizzariaDoZe.Compartilhado.Configurar;
 using PizzariaDoZe.Compartilhado.UserControlComponentes;
-using PizzariaDoZe.Domain.Compartilhado.ExtensionMethods;
 using PizzariaDoZe.Domain.Compartilhado;
+using PizzariaDoZe.Domain.Compartilhado.ExtensionMethods;
 using PizzariaDoZe.Domain.FeatureFuncionario;
-using FluentResults;
-using PizzariaDoZe.Domain.FeatureProduto;
 
 namespace PizzariaDoZe.TelasFuncionario
 {

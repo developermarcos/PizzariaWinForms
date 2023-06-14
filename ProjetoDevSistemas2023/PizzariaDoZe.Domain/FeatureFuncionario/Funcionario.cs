@@ -1,5 +1,4 @@
 ﻿using PizzariaDoZe.Domain.Compartilhado;
-using System.Text.RegularExpressions;
 
 namespace PizzariaDoZe.Domain.FeatureFuncionario
 {

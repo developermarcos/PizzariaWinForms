@@ -1,10 +1,7 @@
 ﻿using PizzariaDoZe.Compartilhado;
 using PizzariaDoZe.Compartilhado.Configurar;
-using PizzariaDoZe.Distribuiton.FeatureSabor;
 using PizzariaDoZe.Distribuiton.FeatureValor;
-using PizzariaDoZe.Domain.FeatureSabor;
 using PizzariaDoZe.Domain.FeatureValor;
-using PizzariaDoZe.Telas.Cadastros.TelaSabores;
 using PizzariaDoZe.TelaValor;
 
 namespace PizzariaDoZe.Telas.Cadastros.TelaValor
@@ -66,7 +63,7 @@ namespace PizzariaDoZe.Telas.Cadastros.TelaValor
                 TelaPrincipalForm.Instancia.AtualizarRodape($"{_mensagemRegistroNaoEditado}");
                 return;
             }
-            
+
             CarregarValores();
 
             TelaPrincipalForm.Instancia.AtualizarRodape($"{_mensagemRegistroEditado}");
@@ -99,7 +96,7 @@ namespace PizzariaDoZe.Telas.Cadastros.TelaValor
         public override UserControl ObtemListagem()
         {
             tabelaValor = new TabelaValorControl();
-            
+
             CarregarValores();
 
             return tabelaValor;

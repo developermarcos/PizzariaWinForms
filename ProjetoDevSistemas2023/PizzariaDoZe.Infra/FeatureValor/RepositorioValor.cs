@@ -1,9 +1,7 @@
 ﻿using PizzariaDoZe.Domain.FeatureValor;
 using PizzariaDoZe.Infra.Compartilhado;
-using PizzariaDoZe.Infra.FeatureIngrediente;
 using System.Data.Common;
 using System.Data.SqlClient;
-using System.Reflection.Metadata;
 
 namespace PizzariaDoZe.Infra.FeatureValor
 {
@@ -55,7 +53,7 @@ namespace PizzariaDoZe.Infra.FeatureValor
 
         public Valor SelecionarPorTamanho(TamanhoPizza tamanho)
         {
-           
+
             using (SqlConnection connection = new SqlConnection(strConnection))
             {
                 connection.Open();

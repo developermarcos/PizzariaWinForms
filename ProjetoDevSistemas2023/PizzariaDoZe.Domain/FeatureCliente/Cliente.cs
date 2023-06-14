@@ -6,10 +6,10 @@ namespace PizzariaDoZe.Domain.FeatureCliente
     {
         public int id { get; set; }
         public string nome { get; set; }
-        public string cpf { get; set;}
-        public string telefone { get; set;}
-        public string email { get; set;}
-        public bool excluido { get; set;}
-        public Endereco endereco { get; set;}
+        public string cpf { get; set; }
+        public string telefone { get; set; }
+        public string email { get; set; }
+        public bool excluido { get; set; }
+        public Endereco endereco { get; set; }
     }
 }

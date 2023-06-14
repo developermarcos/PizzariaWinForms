@@ -1,7 +1,6 @@
 ﻿using PizzariaDoZe.Compartilhado;
 using PizzariaDoZe.Compartilhado.Configurar;
 using PizzariaDoZe.Distribuiton.FeatureFuncionario;
-using PizzariaDoZe.Domain.FeatureCliente;
 using PizzariaDoZe.Domain.FeatureFuncionario;
 using PizzariaDoZe.TelasFuncionario;
 using System.ComponentModel.DataAnnotations;

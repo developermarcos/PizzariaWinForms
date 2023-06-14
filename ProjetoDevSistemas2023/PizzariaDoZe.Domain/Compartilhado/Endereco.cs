@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace PizzariaDoZe.Domain.Compartilhado
+﻿namespace PizzariaDoZe.Domain.Compartilhado
 {
     public class Endereco
     {
@@ -15,6 +9,6 @@ namespace PizzariaDoZe.Domain.Compartilhado
         public string cidade { get; set; }
         public string pais { get; set; }
         public string complemento { get; set; }
-        
+
     }
 }
