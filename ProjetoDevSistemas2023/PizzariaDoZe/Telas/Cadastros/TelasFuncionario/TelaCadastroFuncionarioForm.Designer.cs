@@ -30,6 +30,7 @@
         {
             lbNomeCompleto = new Label();
             panelConteudo = new Panel();
+            telefone = new MaskedTextBox();
             cpf = new MaskedTextBox();
             id = new TextBox();
             panelEndereco = new Panel();
@@ -44,20 +45,19 @@
             lbSenha = new Label();
             grupoHabilitacao = new GroupBox();
             lbDataVencimento = new Label();
-            dateTimePicker1 = new DateTimePicker();
+            dataVencimentoHabilitacao = new DateTimePicker();
             nao = new RadioButton();
             sim = new RadioButton();
             lbNumero = new Label();
-            textBox1 = new TextBox();
-            comboBox1 = new ComboBox();
-            lbFuncao = new Label();
+            cnh = new TextBox();
+            grupoFuncionario = new ComboBox();
+            lbGrupoFuncionario = new Label();
             lbTelefone = new Label();
             matricula = new TextBox();
             lbMatricula = new Label();
             lbCpf = new Label();
             nomeCompleto = new TextBox();
             panelAcoes = new Panel();
-            telefone = new MaskedTextBox();
             panelConteudo.SuspendLayout();
             grupoHabilitacao.SuspendLayout();
             SuspendLayout();
@@ -87,8 +87,8 @@
             panelConteudo.Controls.Add(lbComfirmaSenha);
             panelConteudo.Controls.Add(lbSenha);
             panelConteudo.Controls.Add(grupoHabilitacao);
-            panelConteudo.Controls.Add(comboBox1);
-            panelConteudo.Controls.Add(lbFuncao);
+            panelConteudo.Controls.Add(grupoFuncionario);
+            panelConteudo.Controls.Add(lbGrupoFuncionario);
             panelConteudo.Controls.Add(lbTelefone);
             panelConteudo.Controls.Add(matricula);
             panelConteudo.Controls.Add(lbMatricula);
@@ -101,6 +101,13 @@
             panelConteudo.Padding = new Padding(30);
             panelConteudo.Size = new Size(728, 557);
             panelConteudo.TabIndex = 2;
+            // 
+            // telefone
+            // 
+            telefone.Location = new Point(173, 114);
+            telefone.Name = "telefone";
+            telefone.Size = new Size(179, 23);
+            telefone.TabIndex = 3;
             // 
             // cpf
             // 
@@ -202,11 +209,11 @@
             // grupoHabilitacao
             // 
             grupoHabilitacao.Controls.Add(lbDataVencimento);
-            grupoHabilitacao.Controls.Add(dateTimePicker1);
+            grupoHabilitacao.Controls.Add(dataVencimentoHabilitacao);
             grupoHabilitacao.Controls.Add(nao);
             grupoHabilitacao.Controls.Add(sim);
             grupoHabilitacao.Controls.Add(lbNumero);
-            grupoHabilitacao.Controls.Add(textBox1);
+            grupoHabilitacao.Controls.Add(cnh);
             grupoHabilitacao.Location = new Point(20, 426);
             grupoHabilitacao.Name = "grupoHabilitacao";
             grupoHabilitacao.Size = new Size(336, 100);
@@ -223,13 +230,13 @@
             lbDataVencimento.TabIndex = 5;
             lbDataVencimento.Text = "Data Vencimento--";
             // 
-            // dateTimePicker1
+            // dataVencimentoHabilitacao
             // 
-            dateTimePicker1.Location = new Point(171, 64);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(142, 23);
-            dateTimePicker1.TabIndex = 13;
-            dateTimePicker1.Value = new DateTime(2023, 3, 8, 0, 0, 0, 0);
+            dataVencimentoHabilitacao.Location = new Point(171, 64);
+            dataVencimentoHabilitacao.Name = "dataVencimentoHabilitacao";
+            dataVencimentoHabilitacao.Size = new Size(142, 23);
+            dataVencimentoHabilitacao.TabIndex = 13;
+            dataVencimentoHabilitacao.Value = new DateTime(2023, 3, 8, 0, 0, 0, 0);
             // 
             // nao
             // 
@@ -262,31 +269,31 @@
             lbNumero.TabIndex = 1;
             lbNumero.Text = "Numero--";
             // 
-            // textBox1
+            // cnh
             // 
-            textBox1.Location = new Point(6, 64);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(141, 23);
-            textBox1.TabIndex = 12;
+            cnh.Location = new Point(6, 64);
+            cnh.Name = "cnh";
+            cnh.Size = new Size(141, 23);
+            cnh.TabIndex = 12;
             // 
-            // comboBox1
+            // grupoFuncionario
             // 
-            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Atendente", "Entregador", "Gerente" });
-            comboBox1.Location = new Point(177, 158);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(179, 23);
-            comboBox1.TabIndex = 5;
+            grupoFuncionario.DropDownStyle = ComboBoxStyle.DropDownList;
+            grupoFuncionario.FormattingEnabled = true;
+            grupoFuncionario.Items.AddRange(new object[] { "Atendente", "Entregador", "Gerente" });
+            grupoFuncionario.Location = new Point(177, 158);
+            grupoFuncionario.Name = "grupoFuncionario";
+            grupoFuncionario.Size = new Size(179, 23);
+            grupoFuncionario.TabIndex = 5;
             // 
-            // lbFuncao
+            // lbGrupoFuncionario
             // 
-            lbFuncao.AutoSize = true;
-            lbFuncao.Location = new Point(177, 140);
-            lbFuncao.Name = "lbFuncao";
-            lbFuncao.Size = new Size(56, 15);
-            lbFuncao.TabIndex = 9;
-            lbFuncao.Text = "Função--";
+            lbGrupoFuncionario.AutoSize = true;
+            lbGrupoFuncionario.Location = new Point(177, 140);
+            lbGrupoFuncionario.Name = "lbGrupoFuncionario";
+            lbGrupoFuncionario.Size = new Size(56, 15);
+            lbGrupoFuncionario.TabIndex = 9;
+            lbGrupoFuncionario.Text = "Função--";
             // 
             // lbTelefone
             // 
@@ -337,13 +344,6 @@
             panelAcoes.Size = new Size(728, 56);
             panelAcoes.TabIndex = 3;
             // 
-            // telefone
-            // 
-            telefone.Location = new Point(173, 114);
-            telefone.Name = "telefone";
-            telefone.Size = new Size(179, 23);
-            telefone.TabIndex = 3;
-            // 
             // TelaCadastroFuncionarioForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -372,14 +372,14 @@
         private Panel panelAcoes;
         private TextBox matricula;
         private Label lbMatricula;
-        private Label lbFuncao;
+        private Label lbGrupoFuncionario;
         private Label lbTelefone;
         private GroupBox grupoHabilitacao;
-        private ComboBox comboBox1;
+        private ComboBox grupoFuncionario;
         private Label lbNumero;
-        private TextBox textBox1;
+        private TextBox cnh;
         private Label lbDataVencimento;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker dataVencimentoHabilitacao;
         private RadioButton nao;
         private RadioButton sim;
         private Label lbObservacoes;

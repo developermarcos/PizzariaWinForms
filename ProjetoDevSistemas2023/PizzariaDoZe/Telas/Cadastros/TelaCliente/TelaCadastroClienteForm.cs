@@ -4,6 +4,7 @@ using PizzariaDoZe.Compartilhado.UserControlComponentes;
 using PizzariaDoZe.Domain.Compartilhado;
 using PizzariaDoZe.Domain.FeatureCliente;
 using PizzariaDoZe.Compartilhado.ExtensionMethods;
+using PizzariaDoZe.Domain.Compartilhado.ExtensionMethods;
 
 namespace PizzariaDoZe.TelaCliente
 {
@@ -49,6 +50,9 @@ namespace PizzariaDoZe.TelaCliente
             }
         }
 
+        public Func<Cliente, Result<Cliente>> Gravar { get; internal set; }
+
+        #region métodos auxiliares
         private void PopularTela()
         {
             id.Text = cliente.id.ToString();
@@ -56,19 +60,15 @@ namespace PizzariaDoZe.TelaCliente
             cpf.Text = cliente.cpf;
             email.Text = cliente.email;
             telefone.Text = cliente.telefone;
-            EnderecoUserControl.Logradouro = cliente.endereco.logradouro ;
-            EnderecoUserControl.Bairro = cliente.endereco.bairro ;
-            EnderecoUserControl.Numero = cliente.endereco.numero ;
-            EnderecoUserControl.Cep = cliente.endereco.cep ;
-            EnderecoUserControl.Cidade = cliente.endereco.cidade ;
-            EnderecoUserControl.Pais = cliente.endereco.pais ;
+            EnderecoUserControl.Logradouro = cliente.endereco.logradouro;
+            EnderecoUserControl.Bairro = cliente.endereco.bairro;
+            EnderecoUserControl.Numero = cliente.endereco.numero;
+            EnderecoUserControl.Cep = cliente.endereco.cep;
+            EnderecoUserControl.Cidade = cliente.endereco.cidade;
+            EnderecoUserControl.Pais = cliente.endereco.pais;
             EnderecoUserControl.Complemento = cliente.endereco.complemento;
-            
+
         }
-
-        public Func<Cliente, Result<Cliente>> Gravar { get; internal set; }
-
-        #region métodos auxiliares
         private string ValidarCamposPreenchidos()
         {
             try

@@ -453,6 +453,15 @@ namespace PizzariaDoZe.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Grupo Funcionário.
+        /// </summary>
+        internal static string lbGrupoFuncionario_Text {
+            get {
+                return ResourceManager.GetString("lbGrupoFuncionario.Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ID.
         /// </summary>
         internal static string lbId_Text {

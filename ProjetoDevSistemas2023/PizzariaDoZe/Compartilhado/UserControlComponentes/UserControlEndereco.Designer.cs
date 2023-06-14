@@ -32,13 +32,11 @@
             cep = new MaskedTextBox();
             complemento = new TextBox();
             pais = new TextBox();
-            uf = new TextBox();
             cidade = new TextBox();
             numero = new TextBox();
             bairro = new TextBox();
             rua = new TextBox();
             lbPais = new Label();
-            lbUf = new Label();
             lbComplemento = new Label();
             lbCidade = new Label();
             lbBairro = new Label();
@@ -53,13 +51,11 @@
             lbEndereco.Controls.Add(cep);
             lbEndereco.Controls.Add(complemento);
             lbEndereco.Controls.Add(pais);
-            lbEndereco.Controls.Add(uf);
             lbEndereco.Controls.Add(cidade);
             lbEndereco.Controls.Add(numero);
             lbEndereco.Controls.Add(bairro);
             lbEndereco.Controls.Add(rua);
             lbEndereco.Controls.Add(lbPais);
-            lbEndereco.Controls.Add(lbUf);
             lbEndereco.Controls.Add(lbComplemento);
             lbEndereco.Controls.Add(lbCidade);
             lbEndereco.Controls.Add(lbBairro);
@@ -90,17 +86,10 @@
             // 
             // pais
             // 
-            pais.Location = new Point(175, 183);
+            pais.Location = new Point(19, 183);
             pais.Name = "pais";
             pais.Size = new Size(150, 23);
             pais.TabIndex = 15;
-            // 
-            // uf
-            // 
-            uf.Location = new Point(19, 183);
-            uf.Name = "uf";
-            uf.Size = new Size(150, 23);
-            uf.TabIndex = 14;
             // 
             // cidade
             // 
@@ -133,20 +122,11 @@
             // lbPais
             // 
             lbPais.AutoSize = true;
-            lbPais.Location = new Point(175, 165);
+            lbPais.Location = new Point(19, 165);
             lbPais.Name = "lbPais";
             lbPais.Size = new Size(38, 15);
             lbPais.TabIndex = 8;
             lbPais.Text = "País--";
-            // 
-            // lbUf
-            // 
-            lbUf.AutoSize = true;
-            lbUf.Location = new Point(19, 165);
-            lbUf.Name = "lbUf";
-            lbUf.Size = new Size(31, 15);
-            lbUf.TabIndex = 7;
-            lbUf.Text = "UF--";
             // 
             // lbComplemento
             // 
@@ -219,13 +199,11 @@
         private GroupBox lbEndereco;
         private TextBox complemento;
         private TextBox pais;
-        private TextBox uf;
         private TextBox cidade;
         private TextBox numero;
         private TextBox bairro;
         private TextBox rua;
         private Label lbPais;
-        private Label lbUf;
         private Label lbComplemento;
         private Label lbCidade;
         private Label lbBairro;

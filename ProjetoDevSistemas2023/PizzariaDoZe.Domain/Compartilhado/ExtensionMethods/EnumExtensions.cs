@@ -1,6 +1,11 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace PizzariaDoZe.Compartilhado.ExtensionMethods
+namespace PizzariaDoZe.Domain.Compartilhado.ExtensionMethods
 {
     public static class EnumExtensions
     {
@@ -30,6 +35,5 @@ namespace PizzariaDoZe.Compartilhado.ExtensionMethods
 
             return description;
         }
-
     }
 }

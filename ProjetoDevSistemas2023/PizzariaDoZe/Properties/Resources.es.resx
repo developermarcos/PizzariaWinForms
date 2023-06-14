@@ -418,4 +418,7 @@
   <data name="mensagemSucessoCadastro" xml:space="preserve">
     <value>Registration completed successfully!</value>
   </data>
+  <data name="lbGrupoFuncionario.Text" xml:space="preserve">
+    <value>Grupo de empleados</value>
+  </data>
 </root>

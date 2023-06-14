@@ -1,8 +1,11 @@
-﻿using System.Globalization;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 
-namespace PizzariaDoZe.Compartilhado.ExtensionMethods
+namespace PizzariaDoZe.Domain.Compartilhado.ExtensionMethods
 {
     public static class StringExtensions
     {
@@ -41,7 +44,7 @@ namespace PizzariaDoZe.Compartilhado.ExtensionMethods
             if (text.Length > tamanhoMaximo)
                 return true;
 
-            if(tamanhoMinimo > 0 && text.Length < tamanhoMinimo)
+            if (tamanhoMinimo > 0 && text.Length < tamanhoMinimo)
                 return true;
 
             return false;
@@ -55,7 +58,7 @@ namespace PizzariaDoZe.Compartilhado.ExtensionMethods
             if (text == string.Empty)
                 return $"Campo {nomeCampo} vazio";
 
-            if(text.Length > tamanhoMaximo)
+            if (text.Length > tamanhoMaximo)
                 return $"Campo {nomeCampo} deve conter no máximo {tamanhoMaximo} caracteres";
 
             if (tamanhoMinimo > 0 && text.Length < tamanhoMinimo)
