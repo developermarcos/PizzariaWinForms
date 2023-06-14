@@ -7,6 +7,9 @@
     <Compile Update="Compartilhado\UserControlComponentes\UserControlSalvarCancelar.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="Telas\Cadastros\TelaCliente\TabelaClienteControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="Telas\Cadastros\TelaCliente\TelaCadastroClienteForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -27,6 +30,9 @@
     </Compile>
     <Compile Update="Telas\Cadastros\TelaSabores\TelaCadastroSaboresForm.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Telas\Cadastros\TelasFuncionario\TabelaFuncionarioControl.cs">
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Telas\Cadastros\TelasFuncionario\TelaCadastroFuncionarioForm.cs">
       <SubType>Form</SubType>

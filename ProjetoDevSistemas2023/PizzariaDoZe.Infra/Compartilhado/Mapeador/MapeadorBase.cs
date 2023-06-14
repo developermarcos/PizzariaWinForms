@@ -2,11 +2,11 @@
 using System.Data.SqlClient;
 using System.Reflection;
 
-namespace PizzariaDoZe.Infra.Compartilhado
+namespace PizzariaDoZe.Infra.Compartilhado.Mapeador
 {
     public abstract class MapeadorBase<T>
     {
-        public virtual void ConfigurarParametro(string parametro, string valor, DbCommand comando)
+        public void ConfigurarParametro(string parametro, object valor, DbCommand comando)
         {
             var item = comando.CreateParameter();
             item.ParameterName = parametro;
@@ -21,14 +21,14 @@ namespace PizzariaDoZe.Infra.Compartilhado
 
             foreach (PropertyInfo propriedade in propriedades)
             {
-                AdicionarParameter(propriedade.GetValue(registro), propriedade.Name, comando);
+                AdicionarParameter(propriedade.Name, propriedade.GetValue(registro), comando);
             }
         }
 
         public abstract T ConverterRegistro(SqlDataReader leitorRegistro);
 
         #region métodos privados
-        private void AdicionarParameter(object propertieValue, string propertieName, DbCommand comando)
+        protected void AdicionarParameter(string propertieName, object propertieValue, DbCommand comando)
         {
             var item = comando.CreateParameter();
             item.ParameterName = propertieName;

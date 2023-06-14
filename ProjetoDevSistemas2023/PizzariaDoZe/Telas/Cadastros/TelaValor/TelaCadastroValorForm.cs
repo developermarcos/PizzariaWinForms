@@ -1,7 +1,6 @@
 ﻿using FluentResults;
 using PizzariaDoZe.Compartilhado.Configurar;
 using PizzariaDoZe.Compartilhado.UserControlComponentes;
-using PizzariaDoZe.Domain.FeatureSabor;
 using PizzariaDoZe.Domain.FeatureValor;
 
 
@@ -75,11 +74,11 @@ namespace PizzariaDoZe.TelaValor
                 if (valor.bordaEspecial == 0)
                     return "Informe um valor para a pizza borda especial";
 
-                if(valor.id == 0)
+                if (valor.id == 0)
                 {
                     var tamanhoSelecionadoJaExiste = BuscarValorPorTamanho(valor.tamanho).Value;
-                
-                    if(tamanhoSelecionadoJaExiste != null)
+
+                    if (tamanhoSelecionadoJaExiste != null)
                         return "Tamanho não pode ser cadastrado novamente";
                 }
 

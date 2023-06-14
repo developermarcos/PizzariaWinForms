@@ -1,6 +1,8 @@
-﻿namespace PizzariaDoZe.Domain.FeatureFuncionario
+﻿using PizzariaDoZe.Domain.Compartilhado;
+
+namespace PizzariaDoZe.Domain.FeatureFuncionario
 {
-    public interface IRepositorioFuncionario
+    public interface IRepositorioFuncionario : IRepositorioBase<Funcionario>
     {
     }
 }

@@ -231,6 +231,9 @@
   <data name="lbFoto.Text" xml:space="preserve">
     <value>Photograph</value>
   </data>
+  <data name="lbGrupoFuncionario.Text" xml:space="preserve">
+    <value>Group Employee</value>
+  </data>
   <data name="lbId.Text" xml:space="preserve">
     <value>ID</value>
   </data>

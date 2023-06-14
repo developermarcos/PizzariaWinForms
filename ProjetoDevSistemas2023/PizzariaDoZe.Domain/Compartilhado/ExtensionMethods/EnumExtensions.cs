@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace PizzariaDoZe.Compartilhado.ExtensionMethods
+namespace PizzariaDoZe.Domain.Compartilhado.ExtensionMethods
 {
     public static class EnumExtensions
     {
@@ -30,6 +30,5 @@ namespace PizzariaDoZe.Compartilhado.ExtensionMethods
 
             return description;
         }
-
     }
 }

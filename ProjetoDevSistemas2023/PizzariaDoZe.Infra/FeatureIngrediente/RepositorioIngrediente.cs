@@ -22,7 +22,7 @@ namespace PizzariaDoZe.Infra.FeatureIngrediente
 
         public override void MapearCampoIdentificador(SqlCommand command, int id)
         {
-            new MapeadorIngrediente().ConfigurarParametros("@id", id.ToString(), command);
+            new MapeadorIngrediente().ConfigurarParametro("@id", id.ToString(), command);
         }
 
         public override void MapearObjeto(Ingrediente objeto, DbCommand comando)

@@ -183,7 +183,7 @@ namespace PizzariaDoZe.Infra.FeatureSabor
 
                 var mapeadorIngrediente = new MapeadorIngrediente();
 
-                mapeadorIngrediente.ConfigurarParametros("@id", saborId.ToString(), command);
+                mapeadorIngrediente.ConfigurarParametro("@id", saborId.ToString(), command);
 
                 using (SqlDataReader reader = command.ExecuteReader())
                 {

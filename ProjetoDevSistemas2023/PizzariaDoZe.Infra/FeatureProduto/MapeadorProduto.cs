@@ -1,6 +1,8 @@
 ﻿using PizzariaDoZe.Domain.FeatureProduto;
-using PizzariaDoZe.Infra.Compartilhado;
+using PizzariaDoZe.Infra.Compartilhado.Mapeador;
+using System.Data.Common;
 using System.Data.SqlClient;
+using System.Reflection;
 
 namespace PizzariaDoZe.Infra.FeatureProduto
 {
@@ -41,6 +43,17 @@ namespace PizzariaDoZe.Infra.FeatureProduto
             }
 
             return registro;
+        }
+        public override void ConfigurarParametros(Produto registro, DbCommand comando)
+        {
+
+            Type tipo = registro.GetType();
+            PropertyInfo[] propriedades = tipo.GetProperties();
+
+            foreach (PropertyInfo propriedade in propriedades)
+            {
+                AdicionarParameter(propriedade.Name, propriedade.GetValue(registro), comando);
+            }
         }
     }
 }

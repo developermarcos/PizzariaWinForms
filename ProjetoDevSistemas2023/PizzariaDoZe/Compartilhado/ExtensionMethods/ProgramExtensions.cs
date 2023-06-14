@@ -1,4 +1,5 @@
-﻿using PizzariaDoZe.Telas.Configuracoes.TelaIdioma;
+﻿using PizzariaDoZe.Domain.Compartilhado.ExtensionMethods;
+using PizzariaDoZe.Telas.Configuracoes.TelaIdioma;
 using System.Configuration;
 using System.Globalization;
 
