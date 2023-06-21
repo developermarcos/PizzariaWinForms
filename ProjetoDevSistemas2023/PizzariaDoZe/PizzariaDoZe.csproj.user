@@ -52,6 +52,12 @@
     <Compile Update="Telas\TelaLogin\TelaLoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Telas\TelaPedido\TabelaPedidoControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Telas\TelaPedido\TelaPedidoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Telas\TelaPrincipalForm.cs">
       <SubType>Form</SubType>
     </Compile>

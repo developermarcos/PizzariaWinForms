@@ -133,6 +133,7 @@
             pedidosToolStripMenuItem.Name = "pedidosToolStripMenuItem";
             pedidosToolStripMenuItem.Size = new Size(71, 20);
             pedidosToolStripMenuItem.Text = "Pedidos--";
+            pedidosToolStripMenuItem.Click += pedidosToolStripMenuItem_Click;
             // 
             // relatoriosToolStripMenuItem
             // 

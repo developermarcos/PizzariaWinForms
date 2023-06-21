@@ -9,6 +9,7 @@ using PizzariaDoZe.Telas.Cadastros.TelasFuncionario;
 using PizzariaDoZe.Telas.Cadastros.TelaValor;
 using PizzariaDoZe.Telas.Configuracoes;
 using PizzariaDoZe.Telas.Configuracoes.TelaIdioma;
+using PizzariaDoZe.Telas.TelaPedido;
 
 namespace PizzariaDoZe
 {
@@ -97,6 +98,10 @@ namespace PizzariaDoZe
         {
             ConfigurarTela(_dependencias.Get<ControladorValor>());
         }
+        private void pedidosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ConfigurarTela(_dependencias.Get<ControladorPedido>());
+        }
 
         private void idiomasToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -120,6 +125,7 @@ namespace PizzariaDoZe
                     break;
             }
         }
+
         #endregion
 
         #region configuração tela inicial
@@ -233,6 +239,5 @@ namespace PizzariaDoZe
             notifyBandeja.Visible = false;
         }
         #endregion
-
     }
 }

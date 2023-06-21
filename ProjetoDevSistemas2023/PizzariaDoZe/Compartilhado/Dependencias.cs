@@ -22,6 +22,7 @@ using PizzariaDoZe.Telas.Cadastros.TelaProduto;
 using PizzariaDoZe.Telas.Cadastros.TelaSabores;
 using PizzariaDoZe.Telas.Cadastros.TelasFuncionario;
 using PizzariaDoZe.Telas.Cadastros.TelaValor;
+using PizzariaDoZe.Telas.TelaPedido;
 using System.Data.Common;
 
 namespace PizzariaDoZe.Compartilhado
@@ -75,6 +76,10 @@ namespace PizzariaDoZe.Compartilhado
             IRepositorioValor repositorioValor = new RepositorioValor();
             ValorService valorService = new ValorService(repositorioValor);
             controladores.Add("ControladorValor", new ControladorValor(valorService));
+
+            //IRepositorioValor repositorioValor = new RepositorioValor();
+            //ValorService valorService = new ValorService(repositorioValor);
+            controladores.Add("ControladorPedido", new ControladorPedido());
         }
     }
 }
