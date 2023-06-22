@@ -1,18 +1,21 @@
 ﻿using PizzariaDoZe.Distribuiton.FeatureCliente;
 using PizzariaDoZe.Distribuiton.FeatureFuncionario;
 using PizzariaDoZe.Distribuiton.FeatureIngrediente;
+using PizzariaDoZe.Distribuiton.FeaturePedido;
 using PizzariaDoZe.Distribuiton.FeatureProduto;
 using PizzariaDoZe.Distribuiton.FeatureSabor;
 using PizzariaDoZe.Distribuiton.FeatureValor;
 using PizzariaDoZe.Domain.FeatureCliente;
 using PizzariaDoZe.Domain.FeatureFuncionario;
 using PizzariaDoZe.Domain.FeatureIngrediente;
+using PizzariaDoZe.Domain.FeaturePedido;
 using PizzariaDoZe.Domain.FeatureProduto;
 using PizzariaDoZe.Domain.FeatureSabor;
 using PizzariaDoZe.Domain.FeatureValor;
 using PizzariaDoZe.Infra.FeatureCliente;
 using PizzariaDoZe.Infra.FeatureFuncionario;
 using PizzariaDoZe.Infra.FeatureIngrediente;
+using PizzariaDoZe.Infra.FeaturePedido;
 using PizzariaDoZe.Infra.FeatureProduto;
 using PizzariaDoZe.Infra.FeatureSabor;
 using PizzariaDoZe.Infra.FeatureValor;
@@ -77,9 +80,9 @@ namespace PizzariaDoZe.Compartilhado
             ValorService valorService = new ValorService(repositorioValor);
             controladores.Add("ControladorValor", new ControladorValor(valorService));
 
-            //IRepositorioValor repositorioValor = new RepositorioValor();
-            //ValorService valorService = new ValorService(repositorioValor);
-            controladores.Add("ControladorPedido", new ControladorPedido());
+            IRepositorioPedido repositorioPedido = new RepositorioPedido();
+            PedidoService pedidoService = new PedidoService(repositorioPedido, repositorioFuncionario, repositorioCliente, repositorioSabor, repositorioingrediente, repositorioProduto);
+            controladores.Add("ControladorPedido", new ControladorPedido(pedidoService, produtoService, clienteService, saborService, valorService));
         }
     }
 }

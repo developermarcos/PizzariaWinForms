@@ -10,5 +10,9 @@
         public string pais { get; set; }
         public string complemento { get; set; }
 
+        public override string ToString()
+        {
+            return $"Rua: {logradouro} | Número: {numero}";
+        }
     }
 }

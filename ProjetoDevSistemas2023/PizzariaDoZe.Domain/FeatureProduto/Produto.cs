@@ -7,6 +7,11 @@
         public decimal valor { get; set; }
         public TipoProduto tipo { get; set; }
         public string medida_unitaria { get; set; }
+
+        public override string ToString()
+        {
+            return $"{nome} - R$ {valor.ToString("N2")}";
+        }
     }
     public enum TipoProduto
     {

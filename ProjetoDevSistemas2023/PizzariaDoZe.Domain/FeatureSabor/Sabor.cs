@@ -15,6 +15,10 @@ namespace PizzariaDoZe.Domain.FeatureSabor
         {
             ingredientes = new List<Ingrediente>();
         }
+        public override string ToString()
+        {
+            return $"{nome}";
+        }
     }
     public enum TipoSabor
     {

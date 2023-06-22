@@ -88,3 +88,57 @@ ALTER TABLE cadastro.ingredientes_sabores ADD CONSTRAINT FK_ingredientes_sabores
 ALTER TABLE cadastro.ingredientes_sabores ADD CONSTRAINT FK_ingrediente_sabor
     FOREIGN KEY (sabor_id)
     REFERENCES cadastro.tb_sabor (id);
+
+CREATE TABLE pedido.tb_pedido (
+    id INT PRIMARY KEY Identity,
+    dataPedido DATE,
+    ClienteId INT,
+    FuncionarioId INT,
+);
+
+CREATE TABLE pedido.tb_pizza (
+    id INT PRIMARY KEY Identity,
+    PedidoId INT,
+    tamanho char(1),
+    tipoBorda CHAR(1),
+    valor DECIMAL(11,2),
+);
+
+
+CREATE TABLE pedido.pizza_sabor(
+    PizzaId INT,
+    SaborId INT
+);
+
+ALTER TABLE pedido.pizza_sabor ADD CONSTRAINT FK_pizzas_sabores
+    FOREIGN KEY (PizzaId)
+    REFERENCES pedido.tb_pizza (id);
+
+ALTER TABLE pedido.pizza_sabor ADD CONSTRAINT FK_sabores_pizzas
+    FOREIGN KEY (SaborId)
+    REFERENCES cadastro.tb_sabor (id);
+
+
+CREATE TABLE pedido.pedido_produto(
+    PedidoId INT,
+    ProdutoId INT
+);
+
+
+ALTER TABLE pedido.pedido_produto ADD CONSTRAINT FK_pedidos_produtos
+    FOREIGN KEY (PedidoId)
+    REFERENCES pedido.tb_pedido (id);
+
+ALTER TABLE pedido.pedido_produto ADD CONSTRAINT FK_produtos_pedidos
+    FOREIGN KEY (ProdutoId)
+    REFERENCES cadastro.tb_produto (id);
+
+
+
+ALTER TABLE pedido.pizza_sabor ADD CONSTRAINT FK_sabores_pizzas
+    FOREIGN KEY (SaborId)
+    REFERENCES cadastro.tb_sabor (id);
+
+ALTER TABLE pedido.pedido_produto ADD CONSTRAINT FK_produtos_pedidos
+    FOREIGN KEY (ProdutoId)
+    REFERENCES cadastro.tb_produto (id);

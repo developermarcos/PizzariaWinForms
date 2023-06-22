@@ -18,6 +18,11 @@ namespace PizzariaDoZe.Domain.FeatureFuncionario
         public string observacao { get; set; }
         public bool excluido { get; set; }
         public Endereco endereco { get; set; }
+
+        public override string ToString()
+        {
+            return $"{nome}";
+        }
     }
     public enum GrupoFuncionario
     {

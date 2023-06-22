@@ -29,13 +29,13 @@ namespace PizzariaDoZe.Telas.TelaPedido
             {
                 new DataGridViewTextBoxColumn { DataPropertyName = "id", HeaderText = "Id"},
 
-                new DataGridViewTextBoxColumn { DataPropertyName = "nome", HeaderText = "Nome"},
+                new DataGridViewTextBoxColumn { DataPropertyName = "Cliente", HeaderText = "Cliente"},
 
-                new DataGridViewTextBoxColumn { DataPropertyName = "valor", HeaderText = "Valor"},
+                new DataGridViewTextBoxColumn { DataPropertyName = "Funcionario", HeaderText = "Funcionario"},
 
-                new DataGridViewTextBoxColumn { DataPropertyName = "email", HeaderText = "Email"},
+                new DataGridViewTextBoxColumn { DataPropertyName = "ValorTotal", HeaderText = "Valor Total"},
 
-                new DataGridViewTextBoxColumn { DataPropertyName = "telefone", HeaderText = "Telefone"},
+                //new DataGridViewTextBoxColumn { DataPropertyName = "telefone", HeaderText = "Telefone"},
             };
 
             return colunas;

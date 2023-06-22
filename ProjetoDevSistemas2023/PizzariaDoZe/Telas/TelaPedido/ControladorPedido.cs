@@ -1,8 +1,13 @@
 ﻿using PizzariaDoZe.Compartilhado;
 using PizzariaDoZe.Compartilhado.Configurar;
 using PizzariaDoZe.Distribuiton.FeatureCliente;
+using PizzariaDoZe.Distribuiton.FeaturePedido;
+using PizzariaDoZe.Distribuiton.FeatureProduto;
+using PizzariaDoZe.Distribuiton.FeatureSabor;
+using PizzariaDoZe.Distribuiton.FeatureValor;
 using PizzariaDoZe.Domain.FeatureCliente;
 using PizzariaDoZe.Domain.FeaturePedido;
+using PizzariaDoZe.TelaCliente;
 using PizzariaDoZe.Telas.Cadastros.TelaCliente;
 using System;
 using System.Collections.Generic;
@@ -17,6 +22,20 @@ namespace PizzariaDoZe.Telas.TelaPedido
         public override ToolStripBase ToolTripConfiguracao => new ToolStripPedido();
         
         public TabelaPedidoControl tabelaPedido;
+        private PedidoService pedidoService;
+        private ProdutoService produtoService;
+        private ClienteService clienteService;
+        private SaborService saborService;
+        private ValorService valorService;
+
+        public ControladorPedido(PedidoService pedidoService, ProdutoService produtoService, ClienteService clienteService, SaborService saborService, ValorService valorService)
+        {
+            this.pedidoService = pedidoService;
+            this.produtoService = produtoService;
+            this.clienteService = clienteService;
+            this.saborService = saborService;
+            this.valorService = valorService;
+        }
 
         protected override string _featureSingular => "Pedido";
 
@@ -34,7 +53,27 @@ namespace PizzariaDoZe.Telas.TelaPedido
 
         public override void Inserir()
         {
-            throw new NotImplementedException();
+
+            TelaPedidoForm telaPedido =
+                    new TelaPedidoForm($"{_inserir} {_novo} {_featureSingular}", saborService.SelecionarTodos().Value, valorService.SelecionarTodos().Value);
+
+            telaPedido.Gravar = pedidoService.Inserir;
+
+            telaPedido.Clientes = clienteService.SelecionarTodos().Value;
+
+            telaPedido.Produtos = produtoService.SelecionarTodos().Value;
+
+            if (telaPedido.ShowDialog() == DialogResult.Cancel)
+            {
+                TelaPrincipalForm.Instancia.AtualizarRodape($"{_mensagemRegistroNaoInserido}");
+                return;
+            }
+
+            pedidoService.Inserir(telaPedido.Pedido);
+
+            CarregarClientes();
+
+            TelaPrincipalForm.Instancia.AtualizarRodape($"{_mensagemRegistroInserido}");
         }
 
         public override UserControl ObtemListagem()
@@ -47,20 +86,17 @@ namespace PizzariaDoZe.Telas.TelaPedido
         }
         private void CarregarClientes()
         {
-            //List<Pedido> pedidos = pedidoService.SelecionarTodos().Value;
+            List<Pedido> pedidos = pedidoService.SelecionarTodos(true, true).Value;
 
-            //tabelaPedido.AtualizarRegistros(pedidos);
+            tabelaPedido.AtualizarRegistros(pedidos);
 
-            //TelaPrincipalForm.Instancia.AtualizarRodape($"{_listando} {clientes.Count} {_featurePlural}");
-            TelaPrincipalForm.Instancia.AtualizarRodape($"Listando pedidos");
-
+            TelaPrincipalForm.Instancia.AtualizarRodape($"{_listando} {pedidos.Count} {_featurePlural}");
         }
-        private Cliente ObtemClienteSelecionado()
+        private Pedido ObtemClienteSelecionado()
         {
             var numero = tabelaPedido.ObtemNumeroContatoSelecionado();
 
-            //return pedidoService.SelecionarPorId(numero).Value;
-            return new Cliente();
+            return pedidoService.SelecionarPorId(numero).Value;
         }
 
         public void Filtrar()
