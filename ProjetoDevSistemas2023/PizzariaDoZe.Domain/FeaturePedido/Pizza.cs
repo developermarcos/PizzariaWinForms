@@ -17,7 +17,10 @@ namespace PizzariaDoZe.Domain.FeaturePedido
 
         public int PedidoId { get; set; }
         public List<Sabor> sabores { get; set; }
-
+        public Pizza()
+        {
+            sabores = new List<Sabor>();
+        }
         public void CalcularValor(List<Valor> valores)
         {
             Valor valor = valores.Find(x => x.tamanho == TamanhoPizza);

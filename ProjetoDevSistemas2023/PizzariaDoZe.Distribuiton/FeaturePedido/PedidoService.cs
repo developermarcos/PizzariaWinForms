@@ -82,7 +82,7 @@ namespace PizzariaDoZe.Distribuiton.FeaturePedido
             }
         }
 
-        public Result<List<Pedido>> SelecionarTodos(bool incluirCliente = false, bool incluirFuncionario = false, bool incluirPizzas = false)
+        public Result<List<Pedido>> SelecionarTodos(bool incluirCliente = false, bool incluirFuncionario = false, bool incluirPizzas = false, bool incluirProdutos = false)
         {
             try
             {
@@ -117,6 +117,14 @@ namespace PizzariaDoZe.Distribuiton.FeaturePedido
                     });
                 }
 
+                if (incluirProdutos)
+                {
+                    result.ForEach(Pedido =>
+                    {
+                        Pedido.Produtos = _repositorio.SelecionarProdutosPorPedido(Pedido.Id);
+                    });
+                }
+                
                 return Result.Ok(result);
             }
             catch (Exception ex)

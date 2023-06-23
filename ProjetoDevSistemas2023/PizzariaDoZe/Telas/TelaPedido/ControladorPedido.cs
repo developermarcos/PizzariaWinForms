@@ -48,7 +48,26 @@ namespace PizzariaDoZe.Telas.TelaPedido
 
         public override void Excluir()
         {
-            throw new NotImplementedException();
+            Pedido pedidoSelecionado = this.ObtemClienteSelecionado();
+
+            if (pedidoSelecionado is null || pedidoSelecionado.Id == 0)
+            {
+                TelaPrincipalForm.Instancia.AtualizarRodape($"Selecione um registro primeiro");
+
+                return;
+            }
+
+            if (MessageBox.Show($"{_mensagemConfirmacaoExclusao}", $"{_excluir} {_featureSingular}", MessageBoxButtons.OKCancel) == DialogResult.Cancel)
+            {
+                TelaPrincipalForm.Instancia.AtualizarRodape($"{_mensagemRegistroNaoExcluido}");
+                return;
+            }
+
+            pedidoService.Excluir(pedidoSelecionado);
+
+            CarergarPedidos();
+
+            TelaPrincipalForm.Instancia.AtualizarRodape($"{_mensagemRegistroExcluido}");
         }
 
         public override void Inserir()
@@ -71,7 +90,7 @@ namespace PizzariaDoZe.Telas.TelaPedido
 
             pedidoService.Inserir(telaPedido.Pedido);
 
-            CarregarClientes();
+            CarergarPedidos();
 
             TelaPrincipalForm.Instancia.AtualizarRodape($"{_mensagemRegistroInserido}");
         }
@@ -80,13 +99,13 @@ namespace PizzariaDoZe.Telas.TelaPedido
         {
             tabelaPedido = new TabelaPedidoControl();
 
-            CarregarClientes();
+            CarergarPedidos();
 
             return tabelaPedido;
         }
-        private void CarregarClientes()
+        private void CarergarPedidos()
         {
-            List<Pedido> pedidos = pedidoService.SelecionarTodos(true, true).Value;
+            List<Pedido> pedidos = pedidoService.SelecionarTodos(true, true, true, true).Value;
 
             tabelaPedido.AtualizarRegistros(pedidos);
 

@@ -34,8 +34,6 @@ namespace PizzariaDoZe.Telas.TelaPedido
                 new DataGridViewTextBoxColumn { DataPropertyName = "Funcionario", HeaderText = "Funcionario"},
 
                 new DataGridViewTextBoxColumn { DataPropertyName = "ValorTotal", HeaderText = "Valor Total"},
-
-                //new DataGridViewTextBoxColumn { DataPropertyName = "telefone", HeaderText = "Telefone"},
             };
 
             return colunas;

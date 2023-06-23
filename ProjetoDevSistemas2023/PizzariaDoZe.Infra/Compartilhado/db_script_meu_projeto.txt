@@ -94,6 +94,7 @@ CREATE TABLE pedido.tb_pedido (
     dataPedido DATE,
     ClienteId INT,
     FuncionarioId INT,
+    excluido bit DEFAULT (0),
 );
 
 CREATE TABLE pedido.tb_pizza (
@@ -121,23 +122,14 @@ ALTER TABLE pedido.pizza_sabor ADD CONSTRAINT FK_sabores_pizzas
 
 CREATE TABLE pedido.pedido_produto(
     PedidoId INT,
-    ProdutoId INT
+    ProdutoId INT,
+    produtoValor DECIMAL(11,2),
 );
 
 
 ALTER TABLE pedido.pedido_produto ADD CONSTRAINT FK_pedidos_produtos
     FOREIGN KEY (PedidoId)
     REFERENCES pedido.tb_pedido (id);
-
-ALTER TABLE pedido.pedido_produto ADD CONSTRAINT FK_produtos_pedidos
-    FOREIGN KEY (ProdutoId)
-    REFERENCES cadastro.tb_produto (id);
-
-
-
-ALTER TABLE pedido.pizza_sabor ADD CONSTRAINT FK_sabores_pizzas
-    FOREIGN KEY (SaborId)
-    REFERENCES cadastro.tb_sabor (id);
 
 ALTER TABLE pedido.pedido_produto ADD CONSTRAINT FK_produtos_pedidos
     FOREIGN KEY (ProdutoId)

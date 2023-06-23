@@ -18,13 +18,32 @@ namespace PizzariaDoZe.Domain.FeaturePedido
         public int ClienteId { get; set; }
         public Cliente Cliente { get; set; }
         public int FuncionarioId { get; set; }
+        public bool excluido { get; set; }
         public Funcionario Funcionario { get; set; }
         public decimal ValorTotal { 
-            get {
-                if(Pizzas == null || Pizzas?.Count == 0)
+            get
+            {
+                if (PizzasVazia() && ProdutosVazia())
                     return 0;
-                return Pizzas.Sum(x => x.Valor);
+
+                if (!PizzasVazia() && ProdutosVazia())
+                    return Pizzas.Sum(x => x.Valor);
+
+                if (PizzasVazia() && !ProdutosVazia())
+                    return Produtos.Sum(x => x.valor);
+
+                return Pizzas.Sum(x => x.Valor) + Produtos.Sum(x => x.valor);
             }
+        }
+
+        
+        private bool PizzasVazia()
+        {
+            return (Pizzas == null || Pizzas?.Count == 0);
+        }
+        private bool ProdutosVazia()
+        {
+            return (Produtos == null || Produtos?.Count == 0);
         }
     }
 }

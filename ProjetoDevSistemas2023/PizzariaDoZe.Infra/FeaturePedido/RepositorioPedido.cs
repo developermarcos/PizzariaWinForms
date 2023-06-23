@@ -6,6 +6,7 @@ using PizzariaDoZe.Domain.FeatureSabor;
 using PizzariaDoZe.Domain.FeatureValor;
 using PizzariaDoZe.Infra.Compartilhado;
 using PizzariaDoZe.Infra.FeatureIngrediente;
+using PizzariaDoZe.Infra.FeatureProduto;
 using PizzariaDoZe.Infra.FeatureSabor;
 using System;
 using System.Collections;
@@ -21,9 +22,9 @@ namespace PizzariaDoZe.Infra.FeaturePedido
 {
     public class RepositorioPedido : RepositorioBase<Pedido>, IRepositorioPedido
     {
-        public override string selecionarTodosSql => @"select * from pedido.tb_pedido";
+        public override string selecionarTodosSql => @"select * from pedido.tb_pedido where excluido = 0";
 
-        public override string selecionarPorIdSql => throw new NotImplementedException();
+        public override string selecionarPorIdSql => @"select * from pedido.tb_pedido where id = @id";
 
         public override string insertSql => @"INSERT INTO [pedido].[tb_pedido]
                                                    (dataPedido
@@ -37,7 +38,7 @@ namespace PizzariaDoZe.Infra.FeaturePedido
 
         public override string editarSql => throw new NotImplementedException();
 
-        public override string exclusaoSql => throw new NotImplementedException();
+        public override string exclusaoSql => @"UPDATE [pedido].[tb_pedido]  SET excluido = 1  WHERE id = @id";
 
         public override void Inserir(Pedido registro)
         {
@@ -89,6 +90,85 @@ namespace PizzariaDoZe.Infra.FeaturePedido
             return listaItens;
         }
 
+        public List<Pizza> SelecionarPizzarPorPedido(int id)
+        {
+            var listaItens = new List<Pizza>();
+
+            using (SqlConnection connection = new SqlConnection(strConnection))
+            {
+                connection.Open();
+
+                    SqlCommand command = new SqlCommand(@"SELECT pizza.[id]
+                                                              ,[PedidoId]
+                                                              ,[tamanho]
+                                                              ,[tipoBorda]
+                                                              ,[valor]
+                                                          FROM [pizzaria_ze].[pedido].[tb_pizza] as pizza
+  
+                                                          inner join [pizzaria_ze].[pedido].[tb_pedido] as pedido
+                                                          on pedido.id = pizza.PedidoId
+                            
+                                                          where PedidoId = @id", connection);
+
+                MapearCampoIdentificador(command, id);
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        if (reader.HasRows)
+                        {
+                            var result = ConverterPizza(reader);
+                            listaItens.Add(result);
+                        }
+                    }
+                }
+            }
+            SelecionarSabores(listaItens);
+            return listaItens;
+        }
+
+        public List<Produto> SelecionarProdutosPorPedido(int pedidoId)
+        {
+            var listaProdutos = new List<Produto>();
+
+            using (SqlConnection connection = new SqlConnection(strConnection))
+            {
+                connection.Open();
+
+                SqlCommand command = new SqlCommand(@"SELECT produto.[id]
+                                                          ,[nome]
+                                                          ,[tipo]
+                                                          ,[medida_unitaria]
+                                                          ,pedido_produto.produtoValor as valor
+                                                      FROM [pizzaria_ze].[cadastro].[tb_produto] produto
+  
+                                                      join pedido.pedido_produto pedido_produto
+                                                      on pedido_produto.ProdutoId = produto.id
+
+                                                      join pedido.tb_pedido pedido
+                                                      on pedido.id = pedido_produto.PedidoId
+
+                                                      where pedido.id = @id", connection);
+
+
+                MapearCampoIdentificador(command, pedidoId);
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        if (reader.HasRows)
+                        {
+                            var produto = new MapeadorProduto().ConverterRegistro(reader);
+                            listaProdutos.Add(produto);
+                        }
+                    }
+                }
+
+            }
+
+            return listaProdutos;
+        }
+
         public override Pedido ConverterValor(SqlDataReader reader)
         {
             return new MapeadorPedido().ConverterRegistro(reader);
@@ -103,7 +183,6 @@ namespace PizzariaDoZe.Infra.FeaturePedido
         {
             new MapeadorPedido().ConfigurarParametros(objeto, comando);
         }
-        
         #region métodos privados
         private void InserirAgregados(Pedido registro)
         {
@@ -131,14 +210,21 @@ namespace PizzariaDoZe.Infra.FeaturePedido
                         comandoInserirPizza.Parameters.AddWithValue("@tamanho", pizza.TamanhoPizza);
                         comandoInserirPizza.Parameters.AddWithValue("@tipoBorda", pizza.TipoBorda);
                         comandoInserirPizza.Parameters.AddWithValue("@valor", pizza.Valor);
-                        var idPizza = comandoInserirPizza.ExecuteNonQuery();
+
+                        var id = comandoInserirPizza.ExecuteScalar();
+
+                        var idPizza = Decimal.ToInt32((decimal)id);
+
                         if (idPizza != 0)
                             pizza.Id = idPizza;
                     }
                 }
-                using (SqlCommand comandoInserirSabores = new SqlCommand(@"UPDATE [pedido].[pizza_sabor]
-                                                                       SET PizzaId = @PizzaId
-                                                                          ,SaborId = @SaborId
+                using (SqlCommand comandoInserirSabores = new SqlCommand(@"INSERT INTO [pedido].[pizza_sabor]
+                                                                               (PizzaId
+                                                                               ,SaborId)
+                                                                         VALUES
+                                                                               (@PizzaId
+                                                                               ,@SaborId)
                                                                         SELECT SCOPE_IDENTITY()", connection))
                 {
                     foreach (Pizza pizza in registro.Pizzas)
@@ -155,54 +241,23 @@ namespace PizzariaDoZe.Infra.FeaturePedido
 
                 using (SqlCommand comandoInserirProdutos = new SqlCommand(@"INSERT INTO [pedido].[pedido_produto]
                                                                                        (PedidoId
-                                                                                       ,ProdutoId)
+                                                                                       ,ProdutoId
+                                                                                       ,produtoValor)       
                                                                                  VALUES
                                                                                        (@PedidoId
-                                                                                       ,@ProdutoId)", connection))
+                                                                                       ,@ProdutoId
+                                                                                       ,@produtoValor)", connection))
                 {
                     foreach (Produto produto in registro.Produtos)
                     {
                         comandoInserirProdutos.Parameters.Clear();
                         comandoInserirProdutos.Parameters.AddWithValue("@PedidoId", registro.Id);
                         comandoInserirProdutos.Parameters.AddWithValue("@ProdutoId", produto.id);
+                        comandoInserirProdutos.Parameters.AddWithValue("@produtoValor", produto.valor);
                         comandoInserirProdutos.ExecuteNonQuery();
                     }
                 }
             }
-        }
-
-        public List<Pizza> SelecionarPizzarPorPedido(int id)
-        {
-            var listaItens = new List<Pizza>();
-
-            using (SqlConnection connection = new SqlConnection(strConnection))
-            {
-                connection.Open();
-
-                    SqlCommand command = new SqlCommand(@"SELECT pizza.[id]
-                                                              ,[PedidoId]
-                                                              ,[tamanho]
-                                                              ,[tipoBorda]
-                                                              ,[valor]
-                                                          FROM [pizzaria_ze].[pedido].[tb_pizza] as pizza
-  
-                                                          inner join [pizzaria_ze].[pedido].[tb_pedido] as pedido
-                                                          on pedido.id = pizza.PedidoId", connection);
-
-                using (SqlDataReader reader = command.ExecuteReader())
-                {
-                    while (reader.Read())
-                    {
-                        if (reader.HasRows)
-                        {
-                            var result = ConverterPizza(reader);
-                            listaItens.Add(result);
-                        }
-                    }
-                }
-            }
-            SelecionarSabores(listaItens);
-            return listaItens;
         }
 
         private void SelecionarSabores(List<Pizza> listaItens)
@@ -228,6 +283,7 @@ namespace PizzariaDoZe.Infra.FeaturePedido
                 
                 foreach (var item in listaItens)
                 {
+                    command.Parameters.Clear();
                     MapearCampoIdentificador(command, item.Id);
                     var listaSabores = new List<Sabor>();
                     using (SqlDataReader reader = command.ExecuteReader())
@@ -236,8 +292,8 @@ namespace PizzariaDoZe.Infra.FeaturePedido
                         {
                             if (reader.HasRows)
                             {
-                                var result = new MapeadorSabor().ConverterRegistro(reader);
-                                listaSabores.Add(result);
+                                var sabor = ConverterSabore(reader);
+                                item.sabores.Add(sabor);
                             }
                         }
                     }
@@ -245,18 +301,103 @@ namespace PizzariaDoZe.Infra.FeaturePedido
             }
         }
 
+        private List<Produto> SelecionarProdutos(int pedidoId)
+        {
+            var listaProdutos = new List<Produto>();
+
+            using (SqlConnection connection = new SqlConnection(strConnection))
+            {
+                connection.Open();
+
+                SqlCommand command = new SqlCommand(@"SELECT produto.[id]
+                                                          ,[nome]
+                                                          ,[tipo]
+                                                          ,[medida_unitaria]
+                                                          ,pedido_produto.produtoValor as valor
+                                                      FROM [pizzaria_ze].[cadastro].[tb_produto] produto
+  
+                                                      join pedido.pedido_produto pedido_produto
+                                                      on pedido_produto.ProdutoId = produto.id
+
+                                                      join pedido.tb_pedido pedido
+                                                      on pedido.id = pedido_produto.PedidoId
+
+                                                      where pedido.id = @id", connection);
+
+                
+                MapearCampoIdentificador(command, pedidoId);
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        if (reader.HasRows)
+                        {
+                            var produto = new MapeadorProduto().ConverterRegistro(reader);
+                            listaProdutos.Add(produto);
+                        }
+                    }
+                }
+                
+            }
+
+            return listaProdutos;
+        }
+
+        private Sabor ConverterSabore(SqlDataReader leitorRegistro)
+        {
+            var sabor = new Sabor();
+            
+            if (!leitorRegistro.IsDBNull(leitorRegistro.GetOrdinal("id")))
+            {
+                int id = leitorRegistro.GetInt32(leitorRegistro.GetOrdinal("id"));
+                sabor.id = id;
+            }
+
+            if (!leitorRegistro.IsDBNull(leitorRegistro.GetOrdinal("nome")))
+            {
+                string nome = leitorRegistro.GetString(leitorRegistro.GetOrdinal("nome"));
+                sabor.nome = nome;
+            }
+
+            if (!leitorRegistro.IsDBNull(leitorRegistro.GetOrdinal("foto")))
+            {
+                byte[] foto = leitorRegistro.GetFieldValue<byte[]>(leitorRegistro.GetOrdinal("foto"));
+                sabor.foto = foto;
+            }
+
+            if (!leitorRegistro.IsDBNull(leitorRegistro.GetOrdinal("categoria")))
+            {
+                CategoriaSabor categoria = Enum.Parse<CategoriaSabor>(leitorRegistro.GetString(leitorRegistro.GetOrdinal("categoria")));
+                sabor.categoria = categoria;
+            }
+
+            if (!leitorRegistro.IsDBNull(leitorRegistro.GetOrdinal("tipo")))
+            {
+                TipoSabor tipo = Enum.Parse<TipoSabor>(leitorRegistro.GetString(leitorRegistro.GetOrdinal("tipo")));
+                sabor.tipo = tipo;
+            }
+
+            return sabor;
+        }
+
         private Pizza ConverterPizza(SqlDataReader leitorRegistro)
         {
             Pizza pizza = new Pizza();
+
+            if (!leitorRegistro.IsDBNull(leitorRegistro.GetOrdinal("id")))
+            {
+                int id = leitorRegistro.GetInt32(leitorRegistro.GetOrdinal("id"));
+                pizza.Id = id;
+            }
             if (!leitorRegistro.IsDBNull(leitorRegistro.GetOrdinal("PedidoId")))
             {
                 int PedidoId = leitorRegistro.GetInt32(leitorRegistro.GetOrdinal("PedidoId"));
                 pizza.PedidoId = PedidoId;
             }
 
-            if (!leitorRegistro.IsDBNull(leitorRegistro.GetOrdinal("TamanhoPizza")))
+            if (!leitorRegistro.IsDBNull(leitorRegistro.GetOrdinal("Tamanho")))
             {
-                TamanhoPizza tamanhoPizza = Enum.Parse<TamanhoPizza>(leitorRegistro.GetString(leitorRegistro.GetOrdinal("TamanhoPizza")));
+                TamanhoPizza tamanhoPizza = Enum.Parse<TamanhoPizza>(leitorRegistro.GetString(leitorRegistro.GetOrdinal("Tamanho")));
                 pizza.TamanhoPizza = tamanhoPizza;
             }
 
