@@ -15,6 +15,6 @@
         public abstract bool habilitarInserir { get; }
         public abstract bool habilitarEditar { get; }
         public abstract bool habilitarExcluir { get; }
-        public abstract bool habilitarFiltrar { get; }
+        public abstract bool habilitarVisualizar { get; }
     }
 }

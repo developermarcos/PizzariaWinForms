@@ -170,12 +170,12 @@ namespace PizzariaDoZe
             BtnInserir.Enabled = false;
             btnEditar.Enabled = false;
             btnExcluir.Enabled = false;
-            btnFiltrar.Enabled = false;
+            btnVisualizar.Enabled = false;
 
             BtnInserir.Text = "";
             btnEditar.Text = "";
             btnExcluir.Text = "";
-            btnFiltrar.Text = "";
+            btnVisualizar.Text = "";
         }
 
         private void ConfigurarToolTips(ControladorBase controlador)
@@ -185,12 +185,12 @@ namespace PizzariaDoZe
             BtnInserir.Text = toolStrip.InserirText;
             btnEditar.Text = toolStrip.EditarText;
             btnExcluir.Text = toolStrip.ExcluirText;
-            btnFiltrar.Text = toolStrip.FiltrarText;
+            btnVisualizar.Text = toolStrip.FiltrarText;
 
             BtnInserir.Enabled = toolStrip.habilitarInserir;
             btnEditar.Enabled = toolStrip.habilitarEditar;
             btnExcluir.Enabled = toolStrip.habilitarExcluir;
-            btnFiltrar.Enabled = toolStrip.habilitarFiltrar;
+            btnVisualizar.Enabled = toolStrip.habilitarVisualizar;
         }
         #endregion
 
@@ -212,10 +212,10 @@ namespace PizzariaDoZe
 
         private void btnFiltrar_Click(object sender, EventArgs e)
         {
-            if (_controladorSelecionado is ITelaTipoFiltrarDados)
+            if (_controladorSelecionado is ITelaTipoVisualizarDados)
             {
-                var telaFiltro = (ITelaTipoFiltrarDados)_controladorSelecionado;
-                telaFiltro.Filtrar();
+                var telaFiltro = (ITelaTipoVisualizarDados)_controladorSelecionado;
+                telaFiltro.Visualizar();
             }
         }
 

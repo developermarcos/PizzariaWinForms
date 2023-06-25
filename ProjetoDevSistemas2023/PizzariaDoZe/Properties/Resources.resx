@@ -117,311 +117,314 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="edit-button" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\edit-button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="add" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="filter" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\filter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="login-" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\login-.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="cancel" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cancel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="disk" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\disk.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="trash" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\trash.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="btnAdicionar.Text" xml:space="preserve">
-    <value>Adicionar</value>
-  </data>
-  <data name="btnCancelar.Text" xml:space="preserve">
-    <value>Cancelar</value>
-  </data>
-  <data name="btnEditar.Text" xml:space="preserve">
-    <value>Editar</value>
-  </data>
-  <data name="btnExcluir.Text" xml:space="preserve">
-    <value>Excluir</value>
-  </data>
-  <data name="btnFiltrar.Text" xml:space="preserve">
-    <value>Filtrar</value>
-  </data>
-  <data name="btnLogin.Text" xml:space="preserve">
-    <value>Login</value>
-  </data>
-  <data name="btnSalvar.Text" xml:space="preserve">
-    <value>Salvar</value>
-  </data>
-  <data name="cadastrosToolStripMenuItem.Text" xml:space="preserve">
-    <value>Cadastros</value>
-  </data>
-  <data name="clientesToolStripMenuItem.Text" xml:space="preserve">
-    <value>Clientes</value>
-  </data>
-  <data name="funcionariosToolStripMenuItem.Text" xml:space="preserve">
-    <value>Funcionários</value>
-  </data>
-  <data name="grupoHabilitacao.Text" xml:space="preserve">
-    <value>Possui Habilitação?</value>
-  </data>
-  <data name="ingredientesToolStripMenuItem.Text" xml:space="preserve">
-    <value>Ingredientes</value>
-  </data>
-  <data name="lbBairro.Text" xml:space="preserve">
-    <value>Bairro</value>
-  </data>
-  <data name="lbCategorias.Text" xml:space="preserve">
-    <value>Categorias</value>
-  </data>
-  <data name="lbCep.Text" xml:space="preserve">
-    <value>CEP</value>
-  </data>
-  <data name="lbCidade.Text" xml:space="preserve">
-    <value>Cidade</value>
-  </data>
-  <data name="lbComfirmarSenha.Text" xml:space="preserve">
-    <value>Confirmar Senha</value>
-  </data>
-  <data name="lbComplemento.Text" xml:space="preserve">
-    <value>Complemento</value>
-  </data>
-  <data name="lbCpf.Text" xml:space="preserve">
-    <value>CPF</value>
-  </data>
-  <data name="lbDataVencimento.Text" xml:space="preserve">
-    <value>Data Vencimento</value>
-  </data>
-  <data name="lbEmail.Text" xml:space="preserve">
-    <value>Email</value>
-  </data>
-  <data name="lbFoto.Text" xml:space="preserve">
-    <value>Foto</value>
-  </data>
-  <data name="lbId.Text" xml:space="preserve">
-    <value>ID</value>
-  </data>
-  <data name="lbIngredientes.Text" xml:space="preserve">
-    <value>Ingredientes</value>
-  </data>
-  <data name="lbMatricula.Text" xml:space="preserve">
-    <value>Matrícula</value>
-  </data>
-  <data name="lbMl.Text" xml:space="preserve">
-    <value>ML</value>
-  </data>
-  <data name="lbNome.Text" xml:space="preserve">
-    <value>Nome</value>
-  </data>
-  <data name="lbNomeCompleto.Text" xml:space="preserve">
-    <value>Nome Completo</value>
-  </data>
-  <data name="lbNumero.Text" xml:space="preserve">
-    <value>Número</value>
-  </data>
-  <data name="lbObservacoes.Text" xml:space="preserve">
-    <value>Observações</value>
-  </data>
-  <data name="lbPais.Text" xml:space="preserve">
-    <value>País</value>
-  </data>
-  <data name="lbPizzariaNome.Text" xml:space="preserve">
-    <value>Pizzaria do Zé</value>
-  </data>
-  <data name="lbRua.Text" xml:space="preserve">
-    <value>Rua</value>
-  </data>
-  <data name="lbSenha.Text" xml:space="preserve">
-    <value>Senha</value>
-  </data>
-  <data name="lbTelefone.Text" xml:space="preserve">
-    <value>Telefone</value>
-  </data>
-  <data name="lbTipo.Text" xml:space="preserve">
-    <value>Tipo</value>
-  </data>
-  <data name="lbUf.Text" xml:space="preserve">
-    <value>UF</value>
-  </data>
   <data name="lbUsuario.Text" xml:space="preserve">
     <value>Usuário</value>
-  </data>
-  <data name="lbValor.Text" xml:space="preserve">
-    <value>Valor</value>
-  </data>
-  <data name="nao.Text" xml:space="preserve">
-    <value>Não</value>
-  </data>
-  <data name="pedidosToolStripMenuItem.Text" xml:space="preserve">
-    <value>Pedidos</value>
-  </data>
-  <data name="produtosToolStripMenuItem.Text" xml:space="preserve">
-    <value>Produtos</value>
-  </data>
-  <data name="relatoriosToolStripMenuItem.Text" xml:space="preserve">
-    <value>Relatórios</value>
-  </data>
-  <data name="saboresToolStripMenuItem.Text" xml:space="preserve">
-    <value>Sabores</value>
-  </data>
-  <data name="sim.Text" xml:space="preserve">
-    <value>Sim</value>
-  </data>
-  <data name="lbTamanho.Text" xml:space="preserve">
-    <value>Tamanho</value>
-  </data>
-  <data name="TelaCadastroClienteForm.Text" xml:space="preserve">
-    <value>Cliente</value>
-  </data>
-  <data name="TelaCadastroFuncionarioForm.Text" xml:space="preserve">
-    <value>Funcionário</value>
-  </data>
-  <data name="TelaCadastroIngredienteForm.Text" xml:space="preserve">
-    <value>Ingrediente</value>
-  </data>
-  <data name="TelaCadastroLoginForm.Text" xml:space="preserve">
-    <value>Login</value>
-  </data>
-  <data name="TelaCadastroProdutoForm.Text" xml:space="preserve">
-    <value>Produto</value>
-  </data>
-  <data name="TelaCadastroSaborForm.Text" xml:space="preserve">
-    <value>Sabor</value>
-  </data>
-  <data name="TelaPrincipalForm.Text" xml:space="preserve">
-    <value>Pizzaria do Zé</value>
-  </data>
-  <data name="lbValorBordaEspecial.Text" xml:space="preserve">
-    <value>Valor Borda Especial</value>
-  </data>
-  <data name="lbValorBordaNormal.Text" xml:space="preserve">
-    <value>Valor Borda Normal</value>
-  </data>
-  <data name="valoresToolStripMenuItem.Text" xml:space="preserve">
-    <value>Valores</value>
-  </data>
-  <data name="lbValorPizzaEspecial.Text" xml:space="preserve">
-    <value>Valor Pizza Especial</value>
-  </data>
-  <data name="lbValorPizzaTradicional.Text" xml:space="preserve">
-    <value>Valor Pizza Tradicional</value>
-  </data>
-  <data name="FeatureCliente" xml:space="preserve">
-    <value>Cliente</value>
-  </data>
-  <data name="FeatureFuncionario" xml:space="preserve">
-    <value>Funcionário</value>
-  </data>
-  <data name="FeatureIngrediente" xml:space="preserve">
-    <value>Ingrediente</value>
-  </data>
-  <data name="FeatureLogin" xml:space="preserve">
-    <value>Login</value>
-  </data>
-  <data name="FeatureProduto" xml:space="preserve">
-    <value>Produto</value>
-  </data>
-  <data name="FeatureSabor" xml:space="preserve">
-    <value>Sabor</value>
-  </data>
-  <data name="FeatureValor" xml:space="preserve">
-    <value>Valor</value>
-  </data>
-  <data name="btnInserir.Text" xml:space="preserve">
-    <value>Inserir</value>
-  </data>
-  <data name="Novo" xml:space="preserve">
-    <value>Novo</value>
-  </data>
-  <data name="Listando" xml:space="preserve">
-    <value>Listando</value>
-  </data>
-  <data name="Listar" xml:space="preserve">
-    <value>Listar</value>
   </data>
   <data name="MensagemConfirmacaoExclusao" xml:space="preserve">
     <value>Deseja realmente excluir o dado?</value>
   </data>
-  <data name="MensagemEditadoSucesso" xml:space="preserve">
-    <value>Item editado com sucesso!</value>
-  </data>
-  <data name="MensagemExcluidoSucesso" xml:space="preserve">
-    <value>Item excluído com sucesso!</value>
-  </data>
-  <data name="MensagemInseridoSucesso" xml:space="preserve">
-    <value>Item salvo com sucesso!</value>
-  </data>
-  <data name="MensagemNenhumItemEditado" xml:space="preserve">
-    <value>Nenhum item editado</value>
-  </data>
-  <data name="MensagemNenhumItemExcluido" xml:space="preserve">
-    <value>Nenhum item excluído</value>
-  </data>
-  <data name="MensagemNenhumItemInserido" xml:space="preserve">
-    <value>Nenhum item inserido</value>
-  </data>
   <data name="MensagemDesejaCancelar" xml:space="preserve">
     <value>Deseja realmente cancelar? </value>
   </data>
-  <data name="MensagemDesejaSalvar" xml:space="preserve">
-    <value>Deseja realmente salvar as informações?</value>
+  <data name="MensagemEditadoSucesso" xml:space="preserve">
+    <value>Item editado com sucesso!</value>
   </data>
-  <data name="lbEndereco.Text" xml:space="preserve">
-    <value>Endereço</value>
+  <data name="lbNumero.Text" xml:space="preserve">
+    <value>Número</value>
   </data>
-  <data name="configuracoesToolStripMenuItem.Text" xml:space="preserve">
-    <value>Configurações</value>
-  </data>
-  <data name="espanhol.Text" xml:space="preserve">
-    <value>Espanhol</value>
-  </data>
-  <data name="idiomasToolStripMenuItem.Text" xml:space="preserve">
-    <value>Idiomais</value>
-  </data>
-  <data name="ingles.Text" xml:space="preserve">
-    <value>Inglês</value>
-  </data>
-  <data name="portugues.Text" xml:space="preserve">
-    <value>Português</value>
-  </data>
-  <data name="selecionarIdioma.Text" xml:space="preserve">
-    <value>Selecionar Idioma</value>
-  </data>
-  <data name="MensagemIdiomaAtualizado" xml:space="preserve">
-    <value>Idioma foi atualizado para potuguês</value>
-  </data>
-  <data name="sairToolStripMenuItem.Text" xml:space="preserve">
-    <value>Sair</value>
-  </data>
-  <data name="mensagemSairSistema" xml:space="preserve">
-    <value>Deseja realmente sair?</value>
-  </data>
-  <data name="btnBandeja.Text" xml:space="preserve">
-    <value>Bandeja</value>
-  </data>
-  <data name="abrirToolStripMenuItem.Text" xml:space="preserve">
-    <value>Abrir</value>
-  </data>
-  <data name="encerarToolStripMenuItem.Text" xml:space="preserve">
-    <value>Encerrar</value>
-  </data>
-  <data name="sobreToolStripMenuItem.Text" xml:space="preserve">
-    <value>Sobre</value>
-  </data>
-  <data name="mensagemFalhaCadastro" xml:space="preserve">
-    <value>Cadastro não realizado!</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="filter" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\filter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="mensagemSucessoCadastro" xml:space="preserve">
     <value>Cadastro realizado com sucesso!</value>
   </data>
+  <data name="lbValorPizzaEspecial.Text" xml:space="preserve">
+    <value>Valor Pizza Especial</value>
+  </data>
+  <data name="lbUf.Text" xml:space="preserve">
+    <value>UF</value>
+  </data>
+  <data name="encerarToolStripMenuItem.Text" xml:space="preserve">
+    <value>Encerrar</value>
+  </data>
+  <data name="valoresToolStripMenuItem.Text" xml:space="preserve">
+    <value>Valores</value>
+  </data>
+  <data name="TelaCadastroClienteForm.Text" xml:space="preserve">
+    <value>Cliente</value>
+  </data>
+  <data name="FeatureProduto" xml:space="preserve">
+    <value>Produto</value>
+  </data>
+  <data name="lbNomeCompleto.Text" xml:space="preserve">
+    <value>Nome Completo</value>
+  </data>
+  <data name="MensagemInseridoSucesso" xml:space="preserve">
+    <value>Item salvo com sucesso!</value>
+  </data>
+  <data name="MensagemIdiomaAtualizado" xml:space="preserve">
+    <value>Idioma foi atualizado para potuguês</value>
+  </data>
+  <data name="btnBandeja.Text" xml:space="preserve">
+    <value>Bandeja</value>
+  </data>
+  <data name="lbPizzariaNome.Text" xml:space="preserve">
+    <value>Pizzaria do Zé</value>
+  </data>
+  <data name="ingredientesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Ingredientes</value>
+  </data>
+  <data name="espanhol.Text" xml:space="preserve">
+    <value>Espanhol</value>
+  </data>
+  <data name="saboresToolStripMenuItem.Text" xml:space="preserve">
+    <value>Sabores</value>
+  </data>
+  <data name="TelaCadastroLoginForm.Text" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="lbValor.Text" xml:space="preserve">
+    <value>Valor</value>
+  </data>
+  <data name="MensagemNenhumItemEditado" xml:space="preserve">
+    <value>Nenhum item editado</value>
+  </data>
+  <data name="lbValorBordaNormal.Text" xml:space="preserve">
+    <value>Valor Borda Normal</value>
+  </data>
+  <data name="ingles.Text" xml:space="preserve">
+    <value>Inglês</value>
+  </data>
+  <data name="abrirToolStripMenuItem.Text" xml:space="preserve">
+    <value>Abrir</value>
+  </data>
+  <data name="Novo" xml:space="preserve">
+    <value>Novo</value>
+  </data>
+  <data name="lbMl.Text" xml:space="preserve">
+    <value>ML</value>
+  </data>
+  <data name="mensagemFalhaCadastro" xml:space="preserve">
+    <value>Cadastro não realizado!</value>
+  </data>
+  <data name="lbRua.Text" xml:space="preserve">
+    <value>Rua</value>
+  </data>
+  <data name="clientesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Clientes</value>
+  </data>
+  <data name="configuracoesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Configurações</value>
+  </data>
+  <data name="cadastrosToolStripMenuItem.Text" xml:space="preserve">
+    <value>Cadastros</value>
+  </data>
+  <data name="btnCancelar.Text" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="grupoHabilitacao.Text" xml:space="preserve">
+    <value>Possui Habilitação?</value>
+  </data>
+  <data name="FeatureValor" xml:space="preserve">
+    <value>Valor</value>
+  </data>
+  <data name="lbDataVencimento.Text" xml:space="preserve">
+    <value>Data Vencimento</value>
+  </data>
+  <data name="FeatureCliente" xml:space="preserve">
+    <value>Cliente</value>
+  </data>
+  <data name="btnFiltrar.Text" xml:space="preserve">
+    <value>Filtrar</value>
+  </data>
+  <data name="TelaPrincipalForm.Text" xml:space="preserve">
+    <value>Pizzaria do Zé</value>
+  </data>
+  <data name="Listando" xml:space="preserve">
+    <value>Listando</value>
+  </data>
+  <data name="lbTipo.Text" xml:space="preserve">
+    <value>Tipo</value>
+  </data>
+  <data name="lbPais.Text" xml:space="preserve">
+    <value>País</value>
+  </data>
+  <data name="edit-button" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\edit-button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="lbTelefone.Text" xml:space="preserve">
+    <value>Telefone</value>
+  </data>
+  <data name="lbComfirmarSenha.Text" xml:space="preserve">
+    <value>Confirmar Senha</value>
+  </data>
+  <data name="btnLogin.Text" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="pedidosToolStripMenuItem.Text" xml:space="preserve">
+    <value>Pedidos</value>
+  </data>
+  <data name="FeatureIngrediente" xml:space="preserve">
+    <value>Ingrediente</value>
+  </data>
+  <data name="FeatureSabor" xml:space="preserve">
+    <value>Sabor</value>
+  </data>
+  <data name="TelaCadastroFuncionarioForm.Text" xml:space="preserve">
+    <value>Funcionário</value>
+  </data>
+  <data name="mensagemSairSistema" xml:space="preserve">
+    <value>Deseja realmente sair?</value>
+  </data>
+  <data name="selecionarIdioma.Text" xml:space="preserve">
+    <value>Selecionar Idioma</value>
+  </data>
+  <data name="lbCep.Text" xml:space="preserve">
+    <value>CEP</value>
+  </data>
+  <data name="add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="lbGrupoFuncionario.Text" xml:space="preserve">
     <value>Grupo Funcionário</value>
+  </data>
+  <data name="lbEmail.Text" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="lbValorBordaEspecial.Text" xml:space="preserve">
+    <value>Valor Borda Especial</value>
+  </data>
+  <data name="relatoriosToolStripMenuItem.Text" xml:space="preserve">
+    <value>Relatórios</value>
+  </data>
+  <data name="lbBairro.Text" xml:space="preserve">
+    <value>Bairro</value>
+  </data>
+  <data name="portugues.Text" xml:space="preserve">
+    <value>Português</value>
+  </data>
+  <data name="idiomasToolStripMenuItem.Text" xml:space="preserve">
+    <value>Idiomais</value>
+  </data>
+  <data name="btnEditar.Text" xml:space="preserve">
+    <value>Editar</value>
+  </data>
+  <data name="funcionariosToolStripMenuItem.Text" xml:space="preserve">
+    <value>Funcionários</value>
+  </data>
+  <data name="MensagemExcluidoSucesso" xml:space="preserve">
+    <value>Item excluído com sucesso!</value>
+  </data>
+  <data name="TelaCadastroProdutoForm.Text" xml:space="preserve">
+    <value>Produto</value>
+  </data>
+  <data name="lbTamanho.Text" xml:space="preserve">
+    <value>Tamanho</value>
+  </data>
+  <data name="lbMatricula.Text" xml:space="preserve">
+    <value>Matrícula</value>
+  </data>
+  <data name="cancel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cancel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="nao.Text" xml:space="preserve">
+    <value>Não</value>
+  </data>
+  <data name="disk" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\disk.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnAdicionar.Text" xml:space="preserve">
+    <value>Adicionar</value>
+  </data>
+  <data name="btnExcluir.Text" xml:space="preserve">
+    <value>Excluir</value>
+  </data>
+  <data name="FeatureFuncionario" xml:space="preserve">
+    <value>Funcionário</value>
+  </data>
+  <data name="lbEndereco.Text" xml:space="preserve">
+    <value>Endereço</value>
+  </data>
+  <data name="lbObservacoes.Text" xml:space="preserve">
+    <value>Observações</value>
+  </data>
+  <data name="lbCpf.Text" xml:space="preserve">
+    <value>CPF</value>
+  </data>
+  <data name="sim.Text" xml:space="preserve">
+    <value>Sim</value>
+  </data>
+  <data name="btnInserir.Text" xml:space="preserve">
+    <value>Inserir</value>
+  </data>
+  <data name="sairToolStripMenuItem.Text" xml:space="preserve">
+    <value>Sair</value>
+  </data>
+  <data name="MensagemNenhumItemInserido" xml:space="preserve">
+    <value>Nenhum item inserido</value>
+  </data>
+  <data name="lbComplemento.Text" xml:space="preserve">
+    <value>Complemento</value>
+  </data>
+  <data name="lbCategorias.Text" xml:space="preserve">
+    <value>Categorias</value>
+  </data>
+  <data name="produtosToolStripMenuItem.Text" xml:space="preserve">
+    <value>Produtos</value>
+  </data>
+  <data name="MensagemNenhumItemExcluido" xml:space="preserve">
+    <value>Nenhum item excluído</value>
+  </data>
+  <data name="Listar" xml:space="preserve">
+    <value>Listar</value>
+  </data>
+  <data name="lbFoto.Text" xml:space="preserve">
+    <value>Foto</value>
+  </data>
+  <data name="FeatureLogin" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="TelaCadastroIngredienteForm.Text" xml:space="preserve">
+    <value>Ingrediente</value>
+  </data>
+  <data name="lbId.Text" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="login-" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\login-.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="lbNome.Text" xml:space="preserve">
+    <value>Nome</value>
+  </data>
+  <data name="TelaCadastroSaborForm.Text" xml:space="preserve">
+    <value>Sabor</value>
+  </data>
+  <data name="lbCidade.Text" xml:space="preserve">
+    <value>Cidade</value>
+  </data>
+  <data name="MensagemDesejaSalvar" xml:space="preserve">
+    <value>Deseja realmente salvar as informações?</value>
+  </data>
+  <data name="lbValorPizzaTradicional.Text" xml:space="preserve">
+    <value>Valor Pizza Tradicional</value>
+  </data>
+  <data name="btnSalvar.Text" xml:space="preserve">
+    <value>Salvar</value>
+  </data>
+  <data name="lbIngredientes.Text" xml:space="preserve">
+    <value>Ingredientes</value>
+  </data>
+  <data name="sobreToolStripMenuItem.Text" xml:space="preserve">
+    <value>Sobre</value>
+  </data>
+  <data name="trash" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\trash.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="lbSenha.Text" xml:space="preserve">
+    <value>Senha</value>
+  </data>
+  <data name="olho" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\olho.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

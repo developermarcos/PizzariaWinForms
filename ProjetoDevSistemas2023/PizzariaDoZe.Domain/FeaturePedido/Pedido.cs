@@ -36,7 +36,11 @@ namespace PizzariaDoZe.Domain.FeaturePedido
             }
         }
 
-        
+        public Pedido Bind(Func<Pedido, Pedido> pedido)
+        {
+            return pedido.Invoke(this);
+        }
+
         private bool PizzasVazia()
         {
             return (Pizzas == null || Pizzas?.Count == 0);

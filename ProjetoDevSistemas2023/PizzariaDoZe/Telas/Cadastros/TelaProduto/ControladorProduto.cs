@@ -6,7 +6,7 @@ using PizzariaDoZe.TelaProduto;
 
 namespace PizzariaDoZe.Telas.Cadastros.TelaProduto
 {
-    internal class ControladorProduto : ControladorBase, ITelaTipoFiltrarDados
+    internal class ControladorProduto : ControladorBase, ITelaTipoVisualizarDados
     {
         private ProdutoService _produtoService;
 
@@ -114,7 +114,7 @@ namespace PizzariaDoZe.Telas.Cadastros.TelaProduto
             return _produtoService.SelecionarPorId(numero).Value;
         }
 
-        public void Filtrar()
+        public void Visualizar()
         {
             TelaPrincipalForm.Instancia.AtualizarRodape("Nenhum filtro desponível no momento");
         }

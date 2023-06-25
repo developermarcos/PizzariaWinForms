@@ -82,7 +82,7 @@ namespace PizzariaDoZe.Distribuiton.FeaturePedido
             }
         }
 
-        public Result<List<Pedido>> SelecionarTodos(bool incluirCliente = false, bool incluirFuncionario = false, bool incluirPizzas = false, bool incluirProdutos = false)
+        public Result<List<Pedido>> SelecionarTodos(bool incluirDependencias)
         {
             try
             {
@@ -93,38 +93,15 @@ namespace PizzariaDoZe.Distribuiton.FeaturePedido
                     Result.Fail("Nenhum Pedido encotrando");
                 }
 
-                if (incluirCliente)
-                {
+                if(incluirDependencias)
                     result.ForEach(Pedido =>
                     {
-                        Pedido.Cliente = repositorioCliente.SelecionarPorId(Pedido.ClienteId);
+                        IncluirClientePedido(Pedido)
+                        .Bind(IncluirFuncionarioPedido)
+                        .Bind(IncluirPizzasPedido)
+                        .Bind(IncluirProdutosPedido);
                     });
-                }
 
-                if (incluirFuncionario)
-                {
-                    result.ForEach(Pedido =>
-                    {
-                        Pedido.Funcionario = repositorioFuncionario.SelecionarPorId(Pedido.FuncionarioId);
-                    });
-                }
-
-                if (incluirPizzas)
-                {
-                    result.ForEach(Pedido =>
-                    {
-                        Pedido.Pizzas = _repositorio.SelecionarPizzarPorPedido(Pedido.Id);
-                    });
-                }
-
-                if (incluirProdutos)
-                {
-                    result.ForEach(Pedido =>
-                    {
-                        Pedido.Produtos = _repositorio.SelecionarProdutosPorPedido(Pedido.Id);
-                    });
-                }
-                
                 return Result.Ok(result);
             }
             catch (Exception ex)
@@ -132,7 +109,7 @@ namespace PizzariaDoZe.Distribuiton.FeaturePedido
                 return Result.Fail("Falha no sistema ao tentar selecionar todos os Pedido");
             }
         }
-        public Result<Pedido> SelecionarPorId(int id)
+        public Result<Pedido> SelecionarPorId(int id, bool incluirDependencas = false)
         {
             try
             {
@@ -143,6 +120,13 @@ namespace PizzariaDoZe.Distribuiton.FeaturePedido
                     Result.Fail("Nenhum Pedido encotrando");
                 }
 
+                if (incluirDependencas)
+                    IncluirClientePedido(result)
+                        .Bind(IncluirFuncionarioPedido)
+                        .Bind(IncluirPizzasPedido)
+                        .Bind(IncluirProdutosPedido);
+
+
                 return Result.Ok(result);
             }
             catch (Exception ex)
@@ -150,5 +134,30 @@ namespace PizzariaDoZe.Distribuiton.FeaturePedido
                 return Result.Fail("Falha no sistema ao tentar selecionar todos os Pedidos");
             }
         }
+
+        #region métodos privados
+        public Pedido IncluirClientePedido(Pedido pedido)
+        {
+            pedido.Cliente = repositorioCliente.SelecionarPorId(pedido.ClienteId);
+
+            return pedido;
+        }
+        public Pedido IncluirFuncionarioPedido(Pedido pedido)
+        {
+            pedido.Funcionario = repositorioFuncionario.SelecionarPorId(pedido.FuncionarioId);
+
+            return pedido;
+        }
+        public Pedido IncluirPizzasPedido(Pedido pedido)
+        {
+            pedido.Pizzas = _repositorio.SelecionarPizzarPorPedido(pedido.Id);
+            return pedido;
+        }
+        public Pedido IncluirProdutosPedido(Pedido pedido)
+        {
+            pedido.Produtos = _repositorio.SelecionarProdutosPorPedido(pedido.Id);
+            return pedido;
+        }
+        #endregion
     }
 }

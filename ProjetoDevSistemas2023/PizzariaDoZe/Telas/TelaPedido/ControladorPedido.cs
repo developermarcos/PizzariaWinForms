@@ -7,17 +7,21 @@ using PizzariaDoZe.Distribuiton.FeatureSabor;
 using PizzariaDoZe.Distribuiton.FeatureValor;
 using PizzariaDoZe.Domain.FeatureCliente;
 using PizzariaDoZe.Domain.FeaturePedido;
+using PizzariaDoZe.Infra.FeaturePedido;
+using PizzariaDoZe.Infra.GerarPDF;
 using PizzariaDoZe.TelaCliente;
 using PizzariaDoZe.Telas.Cadastros.TelaCliente;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace PizzariaDoZe.Telas.TelaPedido
 {
-    public class ControladorPedido : ControladorBase, ITelaTipoFiltrarDados
+    public class ControladorPedido : ControladorBase, ITelaTipoVisualizarDados
     {
         public override ToolStripBase ToolTripConfiguracao => new ToolStripPedido();
         
@@ -103,24 +107,75 @@ namespace PizzariaDoZe.Telas.TelaPedido
 
             return tabelaPedido;
         }
+        public void Visualizar()
+        {
+            List<Pedido> pedidoSelecionado = new List<Pedido>();
+
+            pedidoSelecionado.Add(this.ObtemClienteSelecionado(true));
+
+            if (MessageBox.Show("Gerar PDF de todos?", "Impressão Específica?", MessageBoxButtons.YesNo) == DialogResult.No)
+            {
+                if (pedidoSelecionado is null || pedidoSelecionado.Count == 0)
+                {
+                    TelaPrincipalForm.Instancia.AtualizarRodape($"Selecione um registro primeiro");
+                    return;
+                }
+                return;
+            }
+            if (!pedidoSelecionado.Exists(x => x.Id != 0))
+                pedidoSelecionado = pedidoService.SelecionarTodos(true).Value;
+            
+            using (SaveFileDialog SaveFileDialog = new SaveFileDialog())
+            {
+                SaveFileDialog.InitialDirectory = "C:\\Users\\marco\\OneDrive\\Área de Trabalho";
+                //SaveFileDialog.InitialDirectory = "c:\\";
+                SaveFileDialog.Filter = "txt files (*.pdf)|*.pdf";
+                SaveFileDialog.FilterIndex = 2;
+                SaveFileDialog.RestoreDirectory = true;
+
+                if (SaveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    new GerarPDFPedido(SaveFileDialog.FileName, pedidoSelecionado).GerarPDF();
+
+                    if (MessageBox.Show("Deseja abrir o arquivo?", "Abrir", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                        AbrirDocumentoPDF(SaveFileDialog.FileName);
+                }
+            }
+
+            TelaPrincipalForm.Instancia.AtualizarRodape("Nenhum filtro desponível no momento");
+        }
+
+        #region métodos privados
         private void CarergarPedidos()
         {
-            List<Pedido> pedidos = pedidoService.SelecionarTodos(true, true, true, true).Value;
+            List<Pedido> pedidos = pedidoService.SelecionarTodos(true).Value;
 
             tabelaPedido.AtualizarRegistros(pedidos);
 
             TelaPrincipalForm.Instancia.AtualizarRodape($"{_listando} {pedidos.Count} {_featurePlural}");
         }
-        private Pedido ObtemClienteSelecionado()
+        private Pedido ObtemClienteSelecionado(bool incluirDependencas = false)
         {
             var numero = tabelaPedido.ObtemNumeroContatoSelecionado();
 
-            return pedidoService.SelecionarPorId(numero).Value;
+            return pedidoService.SelecionarPorId(numero, incluirDependencas).Value;
         }
-
-        public void Filtrar()
+        private void AbrirDocumentoPDF(string caminhoArquivo)
         {
-            TelaPrincipalForm.Instancia.AtualizarRodape("Nenhum filtro desponível no momento");
+            try
+            {
+                //Process.Start("C:/Users/marco/OneDrive/Área de Trabalho/teste.pdf");
+                Process.Start(new ProcessStartInfo
+                {
+                    FileName = caminhoArquivo,
+                    UseShellExecute = true
+                });
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Erro ao abrir o documento PDF: " + e.Message);
+            }
         }
+        #endregion
     }
 }

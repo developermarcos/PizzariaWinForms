@@ -8,7 +8,7 @@ using System.ComponentModel.DataAnnotations;
 namespace PizzariaDoZe.Telas.Cadastros.TelasFuncionario
 {
     [Display(Name = "funcionario")]
-    public class ControladorFuncionario : ControladorBase, ITelaTipoFiltrarDados
+    public class ControladorFuncionario : ControladorBase, ITelaTipoVisualizarDados
     {
         private FuncionarioService serviceFuncionario;
 
@@ -121,7 +121,7 @@ namespace PizzariaDoZe.Telas.Cadastros.TelasFuncionario
             return serviceFuncionario.SelecionarPorId(numero).Value;
         }
 
-        public void Filtrar()
+        public void Visualizar()
         {
             TelaPrincipalForm.Instancia.AtualizarRodape("Nenhum filtro desponível no momento");
         }

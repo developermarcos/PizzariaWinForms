@@ -12,6 +12,6 @@ namespace PizzariaDoZe.Telas.Configuracoes.TelaIdioma
 
         public override bool habilitarExcluir => false;
 
-        public override bool habilitarFiltrar => false;
+        public override bool habilitarVisualizar => false;
     }
 }

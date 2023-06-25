@@ -14,10 +14,10 @@ namespace PizzariaDoZe.Telas.TelaPedido
         protected override string Feature => _feature;
         public override bool habilitarInserir => true;
 
-        public override bool habilitarEditar => true;
+        public override bool habilitarEditar => false;
 
         public override bool habilitarExcluir => true;
 
-        public override bool habilitarFiltrar => false;
+        public override bool habilitarVisualizar => true;
     }
 }

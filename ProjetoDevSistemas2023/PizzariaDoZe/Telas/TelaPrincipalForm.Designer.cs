@@ -48,7 +48,7 @@
             BtnInserir = new ToolStripButton();
             btnEditar = new ToolStripButton();
             btnExcluir = new ToolStripButton();
-            btnFiltrar = new ToolStripButton();
+            btnVisualizar = new ToolStripButton();
             panelConteudo = new Panel();
             panelInformacoes = new Panel();
             lbRodape = new Label();
@@ -174,7 +174,7 @@
             // toolStripAcoes
             // 
             toolStripAcoes.Dock = DockStyle.Fill;
-            toolStripAcoes.Items.AddRange(new ToolStripItem[] { BtnInserir, btnEditar, btnExcluir, btnFiltrar });
+            toolStripAcoes.Items.AddRange(new ToolStripItem[] { BtnInserir, btnEditar, btnExcluir, btnVisualizar });
             toolStripAcoes.LayoutStyle = ToolStripLayoutStyle.HorizontalStackWithOverflow;
             toolStripAcoes.Location = new Point(0, 0);
             toolStripAcoes.Name = "toolStripAcoes";
@@ -219,17 +219,17 @@
             btnExcluir.Text = "toolStripButton2";
             btnExcluir.Click += btnExcluir_Click;
             // 
-            // btnFiltrar
+            // btnVisualizar
             // 
-            btnFiltrar.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            btnFiltrar.Image = Properties.Resources.filter;
-            btnFiltrar.ImageScaling = ToolStripItemImageScaling.None;
-            btnFiltrar.ImageTransparentColor = Color.Magenta;
-            btnFiltrar.Name = "btnFiltrar";
-            btnFiltrar.Padding = new Padding(10);
-            btnFiltrar.Size = new Size(48, 45);
-            btnFiltrar.Text = "toolStripButton3";
-            btnFiltrar.Click += btnFiltrar_Click;
+            btnVisualizar.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            btnVisualizar.Image = Properties.Resources.olho;
+            btnVisualizar.ImageScaling = ToolStripItemImageScaling.None;
+            btnVisualizar.ImageTransparentColor = Color.Magenta;
+            btnVisualizar.Name = "btnVisualizar";
+            btnVisualizar.Padding = new Padding(10);
+            btnVisualizar.Size = new Size(48, 45);
+            btnVisualizar.Text = "toolStripButton3";
+            btnVisualizar.Click += btnFiltrar_Click;
             // 
             // panelConteudo
             // 
@@ -337,7 +337,7 @@
         private ToolStripButton BtnInserir;
         private ToolStripButton btnEditar;
         private ToolStripButton btnExcluir;
-        private ToolStripButton btnFiltrar;
+        private ToolStripButton btnVisualizar;
         private Label lbRodape;
         private ToolStripMenuItem produtosToolStripMenuItem;
         private ToolStripMenuItem valoresToolStripMenuItem;

@@ -12,6 +12,6 @@ namespace PizzariaDoZe.Telas.Cadastros.TelaCliente
 
         public override bool habilitarExcluir => true;
 
-        public override bool habilitarFiltrar => false;
+        public override bool habilitarVisualizar => false;
     }
 }

@@ -7,7 +7,7 @@ using PizzariaDoZe.Telas.Cadastros.TelaCliente;
 
 namespace PizzariaDoZe.Telas.Cadastros.TelaIngrediente
 {
-    internal class ControladorIngrediente : ControladorBase, ITelaTipoFiltrarDados
+    internal class ControladorIngrediente : ControladorBase, ITelaTipoVisualizarDados
     {
         public override ToolStripBase ToolTripConfiguracao => new ToolStripCliente();
         protected override string _featureSingular => Properties.Resources.ResourceManager.GetString("FeatureIngrediente");
@@ -98,7 +98,7 @@ namespace PizzariaDoZe.Telas.Cadastros.TelaIngrediente
             return tabelaingredientes;
         }
 
-        public void Filtrar()
+        public void Visualizar()
         {
             TelaPrincipalForm.Instancia.AtualizarRodape("Nenhum filtro desponível no momento");
         }

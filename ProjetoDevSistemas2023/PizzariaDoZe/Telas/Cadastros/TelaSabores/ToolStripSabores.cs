@@ -13,6 +13,6 @@ namespace PizzariaDoZe.Telas.Cadastros.TelaSabores
 
         public override bool habilitarExcluir => true;
 
-        public override bool habilitarFiltrar => false;
+        public override bool habilitarVisualizar => false;
     }
 }

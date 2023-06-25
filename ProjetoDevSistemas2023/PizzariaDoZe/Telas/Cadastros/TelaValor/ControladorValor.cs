@@ -6,7 +6,7 @@ using PizzariaDoZe.TelaValor;
 
 namespace PizzariaDoZe.Telas.Cadastros.TelaValor
 {
-    internal class ControladorValor : ControladorBase, ITelaTipoFiltrarDados
+    internal class ControladorValor : ControladorBase, ITelaTipoVisualizarDados
     {
         private ValorService valorService;
 
@@ -117,7 +117,7 @@ namespace PizzariaDoZe.Telas.Cadastros.TelaValor
             return valorService.SelecionarPorId(numero).Value;
         }
 
-        public void Filtrar()
+        public void Visualizar()
         {
             TelaPrincipalForm.Instancia.AtualizarRodape("Nenhum filtro desponível no momento");
         }

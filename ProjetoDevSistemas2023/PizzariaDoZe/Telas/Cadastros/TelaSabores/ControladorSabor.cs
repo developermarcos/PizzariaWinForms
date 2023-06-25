@@ -7,7 +7,7 @@ using PizzariaDoZe.TelaSabores;
 
 namespace PizzariaDoZe.Telas.Cadastros.TelaSabores
 {
-    internal class ControladorSabor : ControladorBase, ITelaTipoFiltrarDados
+    internal class ControladorSabor : ControladorBase, ITelaTipoVisualizarDados
     {
         private SaborService saborService;
         private IngredienteService ingredienteService;
@@ -120,7 +120,7 @@ namespace PizzariaDoZe.Telas.Cadastros.TelaSabores
             return saborService.SelecionarPorId(numero, true).Value;
         }
 
-        public void Filtrar()
+        public void Visualizar()
         {
             TelaPrincipalForm.Instancia.AtualizarRodape("Nenhum filtro desponível no momento");
         }

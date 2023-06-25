@@ -7,7 +7,7 @@ using PizzariaDoZe.TelaCliente;
 
 namespace PizzariaDoZe.Telas.Cadastros.TelaCliente
 {
-    internal class ControladorCliente : ControladorBase, ITelaTipoFiltrarDados
+    internal class ControladorCliente : ControladorBase, ITelaTipoVisualizarDados
     {
         private ClienteService clienteService;
 
@@ -119,7 +119,7 @@ namespace PizzariaDoZe.Telas.Cadastros.TelaCliente
             return clienteService.SelecionarPorId(numero).Value;
         }
 
-        public void Filtrar()
+        public void Visualizar()
         {
             TelaPrincipalForm.Instancia.AtualizarRodape("Nenhum filtro desponível no momento");
         }
