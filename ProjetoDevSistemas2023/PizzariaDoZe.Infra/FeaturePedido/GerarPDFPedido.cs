@@ -12,31 +12,46 @@ namespace PizzariaDoZe.Infra.FeaturePedido
         }
         protected override void CriarImpressao(Document document)
         {
+            int interacao = 1;
+
             listaObjetos.ForEach(objeto =>
             {
                 CriarTitulo(document, objeto);
 
                 CriarTabela(document, objeto);
+
+                if(interacao != listaObjetos.Count)
+                    CriarLinhaCorte(document);
+
+                interacao++;
             });
         }
 
+
         #region métodos privados
+        private void CriarLinhaCorte(Document document)
+        {
+            Paragraph linhaCorte = new Paragraph(1);
+            linhaCorte.SpacingBefore = 30;
+            linhaCorte.SpacingAfter = 10;
+            linhaCorte.Alignment = iTextSharp.text.Element.ALIGN_CENTER;
+            linhaCorte.Add($"--------------------------------------------------------------------------");
+
+            document.Add(linhaCorte);
+        }
+
         private void CriarTabela(iTextSharp.text.Document document, Pedido objeto)
         {
-            // Criação do conteúdo do PDF
             PdfPTable table = new PdfPTable(1);
 
-            listaObjetos.ForEach(objeto =>
-            {
-                table.AddCell($"Funcionario: {objeto.Funcionario.ToString()}");
+            table.AddCell($"Funcionario: {objeto.Funcionario.ToString()}");
 
-                AdicionarPizzas(table, objeto);
+            AdicionarPizzas(table, objeto);
 
-                AdicionarProdutos(table, objeto);
+            AdicionarProdutos(table, objeto);
 
-                table.AddCell($"Valor: {objeto.ValorTotal.ToString()}");
-            });
-
+            table.AddCell($"Valor: {objeto.ValorTotal.ToString()}");
+            
             document.Add(table);
         }
 

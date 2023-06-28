@@ -51,6 +51,8 @@
             produtosListaAdicionados = new ListBox();
             btnAdicionarProduto = new Button();
             produtoLista = new ComboBox();
+            Total = new Label();
+            valorTotal = new TextBox();
             grupoCliente.SuspendLayout();
             grupoPizzas.SuspendLayout();
             panel1.SuspendLayout();
@@ -153,6 +155,7 @@
             clientePesquisa.Name = "clientePesquisa";
             clientePesquisa.Size = new Size(192, 23);
             clientePesquisa.TabIndex = 0;
+            clientePesquisa.KeyUp += clientePesquisa_KeyUp;
             // 
             // grupoPizzas
             // 
@@ -207,7 +210,7 @@
             // panelBotoes
             // 
             panelBotoes.Dock = DockStyle.Bottom;
-            panelBotoes.Location = new Point(0, 584);
+            panelBotoes.Location = new Point(0, 626);
             panelBotoes.Name = "panelBotoes";
             panelBotoes.Size = new Size(411, 78);
             panelBotoes.TabIndex = 2;
@@ -281,11 +284,30 @@
             produtoLista.Size = new Size(295, 23);
             produtoLista.TabIndex = 0;
             // 
+            // Total
+            // 
+            Total.AutoSize = true;
+            Total.Location = new Point(255, 591);
+            Total.Name = "Total";
+            Total.Size = new Size(32, 15);
+            Total.TabIndex = 4;
+            Total.Text = "Total";
+            // 
+            // valorTotal
+            // 
+            valorTotal.Enabled = false;
+            valorTotal.Location = new Point(299, 588);
+            valorTotal.Name = "valorTotal";
+            valorTotal.Size = new Size(100, 23);
+            valorTotal.TabIndex = 5;
+            // 
             // TelaPedidoForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(411, 662);
+            ClientSize = new Size(411, 704);
+            Controls.Add(valorTotal);
+            Controls.Add(Total);
             Controls.Add(panel1);
             Controls.Add(panelBotoes);
             Controls.Add(grupoPizzas);
@@ -302,6 +324,7 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -331,5 +354,7 @@
         private TextBox textBox1;
         private ComboBox produtoLista;
         private Label lbProdutosAdionados;
+        private Label Total;
+        private TextBox valorTotal;
     }
 }

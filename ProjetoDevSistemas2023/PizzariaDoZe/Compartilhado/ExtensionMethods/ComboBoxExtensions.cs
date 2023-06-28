@@ -23,14 +23,5 @@ namespace PizzariaDoZe.Compartilhado.ExtensionMethods
             return (T)campo.Items[campo.SelectedIndex];
         }
 
-        //public static T ObterEnumSelecionado<T>(this ComboBox campo) where T : Enum
-        //{
-        //    Array values = Enum.GetValues(typeof(T));
-
-        //    if (campo.SelectedIndex < 0)
-        //        return default;
-
-        //    return (T)campo.Items[campo.SelectedIndex];
-        //}
     }
 }

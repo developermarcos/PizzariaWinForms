@@ -109,25 +109,27 @@ namespace PizzariaDoZe.Telas.TelaPedido
         }
         public void Visualizar()
         {
+            var telaFiltro = new TelaPedidoFiltroForm();
+
+            if (telaFiltro.ShowDialog() == DialogResult.Cancel) return;
+            
             List<Pedido> pedidoSelecionado = new List<Pedido>();
 
-            pedidoSelecionado.Add(this.ObtemClienteSelecionado(true));
+            if(telaFiltro.TipoSelecionado == TipoFiltro.ApenasSelecionado)
+                pedidoSelecionado.Add(this.ObtemClienteSelecionado(true));
+            else
+                pedidoSelecionado = pedidoService.SelecionarTodos(true).Value;
 
-            if (MessageBox.Show("Gerar PDF de todos?", "Impressão Específica?", MessageBoxButtons.YesNo) == DialogResult.No)
+            if (pedidoSelecionado.Exists(x => x.Id != 0) == false)
             {
-                if (pedidoSelecionado is null || pedidoSelecionado.Count == 0)
-                {
-                    TelaPrincipalForm.Instancia.AtualizarRodape($"Selecione um registro primeiro");
-                    return;
-                }
+                TelaPrincipalForm.Instancia.AtualizarRodape("Selecione um item primeiro");
+
                 return;
             }
-            if (!pedidoSelecionado.Exists(x => x.Id != 0))
-                pedidoSelecionado = pedidoService.SelecionarTodos(true).Value;
-            
+
             using (SaveFileDialog SaveFileDialog = new SaveFileDialog())
             {
-                SaveFileDialog.InitialDirectory = "C:\\Users\\marco\\OneDrive\\Área de Trabalho";
+                SaveFileDialog.InitialDirectory = "C:";
                 //SaveFileDialog.InitialDirectory = "c:\\";
                 SaveFileDialog.Filter = "txt files (*.pdf)|*.pdf";
                 SaveFileDialog.FilterIndex = 2;
@@ -141,8 +143,6 @@ namespace PizzariaDoZe.Telas.TelaPedido
                         AbrirDocumentoPDF(SaveFileDialog.FileName);
                 }
             }
-
-            TelaPrincipalForm.Instancia.AtualizarRodape("Nenhum filtro desponível no momento");
         }
 
         #region métodos privados

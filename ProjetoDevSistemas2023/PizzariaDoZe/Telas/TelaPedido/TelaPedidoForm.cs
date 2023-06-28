@@ -78,6 +78,8 @@ namespace PizzariaDoZe.Telas.TelaPedido
         {
             clienteSelecionado = clienteLista.ObterItemSelecionado<Cliente>();
 
+            if (clienteSelecionado == null) return;
+
             PreencherCamposCliente();
         }
         private void btnLimpar_Click(object sender, EventArgs e)
@@ -85,6 +87,25 @@ namespace PizzariaDoZe.Telas.TelaPedido
             clienteEndereco.Text = string.Empty;
             clienteTelefone.Text = string.Empty;
             clienteLista.SelectedIndex = -1;
+        }
+
+        private void clientePesquisa_KeyUp(object sender, KeyEventArgs e)
+        {
+            var clientesComFiltro = new List<Cliente>();
+
+            foreach (var cliente in _clientes)
+            {
+                if (cliente.nome.Contains(clientePesquisa.Text) || cliente.cpf.Contains(clientePesquisa.Text) || cliente.email.Contains(clientePesquisa.Text))
+                    clientesComFiltro.Add(cliente);
+            }
+
+            if (clientesComFiltro.Count != 0)
+            {
+                PopularClientes(clientesComFiltro);
+                return;
+            }
+
+            PopularClientes(_clientes);
         }
 
         #endregion
@@ -100,10 +121,15 @@ namespace PizzariaDoZe.Telas.TelaPedido
             _pizzas.Add(telaPizza.Pizza);
 
             pizzasMontadas.Items.Add(telaPizza.Pizza);
+
+            AtualizarValor();
         }
+
         private void btnExcluirPizza_Click(object sender, EventArgs e)
         {
             pizzasMontadas.Items.Remove(pizzasMontadas.Items[pizzasMontadas.SelectedIndex]);
+
+            AtualizarValor();
         }
         #endregion
 
@@ -116,10 +142,14 @@ namespace PizzariaDoZe.Telas.TelaPedido
                 return;
 
             produtosListaAdicionados.Items.Add(produtoSelecionado);
+
+            AtualizarValor();
         }
         private void btnExcluirProduto_Click(object sender, EventArgs e)
         {
             produtosListaAdicionados.Items.Remove(produtosListaAdicionados.Items[produtosListaAdicionados.SelectedIndex]);
+
+            AtualizarValor();
         }
         #endregion
 
@@ -159,7 +189,8 @@ namespace PizzariaDoZe.Telas.TelaPedido
 
         private Pedido ObterPedido()
         {
-            return new Pedido() {
+            return new Pedido()
+            {
                 Produtos = produtosListaAdicionados.ObterListObjetosSelecionados<Produto>(),
                 dataPedido = DateTime.Parse(DateTime.Now.ToString("dd/MM/yyyy")),
                 ClienteId = clienteSelecionado.id,
@@ -175,6 +206,23 @@ namespace PizzariaDoZe.Telas.TelaPedido
             pizzas.ForEach(pizza => pizza.CalcularValor(_valores));
 
             return pizzas;
+        }
+
+        private void AtualizarValor()
+        {
+            decimal totalPedido = 0;
+            foreach (var pizza in pizzasMontadas.ObterListObjetosSelecionados<Pizza>()) 
+            { 
+                pizza.CalcularValor(_valores);
+                totalPedido += pizza.Valor;
+            }
+
+            foreach (var produto in produtosListaAdicionados.ObterListObjetosSelecionados<Produto>())
+            {
+                totalPedido += produto.valor;
+            }
+
+            valorTotal.Text = totalPedido.ToString();
         }
         #endregion
     }

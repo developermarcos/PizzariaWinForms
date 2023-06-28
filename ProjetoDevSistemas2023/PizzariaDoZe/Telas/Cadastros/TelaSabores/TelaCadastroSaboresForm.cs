@@ -152,6 +152,7 @@ namespace PizzariaDoZe.TelaSabores
 
         private void btnSelecionarImagem_Click(object sender, EventArgs e)
         {
+            selecionarImagem.Filter = "txt files (*.png)|*.png";
             if (selecionarImagem.ShowDialog() == DialogResult.OK)
             {
                 Image Imagem = Image.FromFile(selecionarImagem.FileName);
